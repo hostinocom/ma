@@ -13,6 +13,8 @@ import BenchmarkHostingMorocco from "../components/commonSections/BenchmarkHosti
 import PlansSection from "../components/commonSections/PlansSection.astro"
 import SixCards from '../components/commonSections/SixCards.astro';
 import FAQSection from '../components/commonSections/FAQSection.tsx';
+import { SEO } from "astro-seo";
+
 
 import Head from "./Head.astro";
 
@@ -20,17 +22,17 @@ import Head from "./Head.astro";
 
 
 
-
-
-
-
-
-
+const {
 const title = "Hébergement Web Maroc - Hébergeur web 100% marocain";
-const description = "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc";
-const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const description =
+  "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
 const canonical_url = "https://www.hostino.ma/";
 const og_alt = "Hébergement Web Maroc";
+} = Astro.props;
+
+
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -81,6 +83,8 @@ const articleSchema = {
 };
 ---
 
+
+
 <Layout 
   title={title}
   description={description}
@@ -88,6 +92,44 @@ const articleSchema = {
   ogImage={imageUrl}
   ogAlt={og_alt}
 >
+	<SEO
+      title: {
+    template: "%s | Hostino",
+    default: title,
+  },
+  description: description,
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  alternates: {
+    canonical: canonical_url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: canonical_url,
+    siteName: "Hostino",
+    title: title,
+    description: description,
+    images: [
+      {
+        url: imageUrl,
+        secureUrl: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: og_alt,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    images: [imageUrl],
+    creator: "@admin",
+  },
+    />
+
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <main>

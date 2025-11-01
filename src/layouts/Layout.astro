@@ -13,11 +13,13 @@ interface Props {
 }
 
 const {
-  title = "A Very Descriptive Title",
-  description = "A heavily optimized description full of well-researched keywords.",
-  canonical = "",
-  ogImage = "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
-  ogAlt = "A Very Descriptive Title"
+const title = "Hébergement Web Maroc - Hébergeur web 100% marocain";
+const description =
+  "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/";
+const og_alt = "Hébergement Web Maroc";
 } = Astro.props;
 
 ---
@@ -26,34 +28,7 @@ const {
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta charset="UTF-8">
-		<SEO
-      title={title}
-      description={description}
-      canonical={canonical}
-      openGraph={{
-        basic: {
-          title: title,
-          type: "website",
-          image: ogImage,
-        }
-      }}
-      twitter={{
-        creator: "@jonasmerlins1"
-      }}
-      extend={{
-        // extending the default link tags
-        link: [{ rel: "icon", href: "/favicon.ico" }],
-        // extending the default meta tags
-        meta: [
-          {
-            name: "twitter:image",
-            content: ogImage,
-          },
-          { name: "twitter:title", content: title },
-          { name: "twitter:description", content: description },
-        ],
-      }}
-    />
+	
 	</head>
 	<body>
 	<Header />
