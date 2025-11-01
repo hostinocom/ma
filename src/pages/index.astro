@@ -15,7 +15,6 @@ import SixCards from '../components/commonSections/SixCards.astro';
 import FAQSection from '../components/commonSections/FAQSection.tsx';
 import Head from "./Head.astro";
 import { main_schema } from '../mainSchema.ts';
-import { SEO }  
 
 
 
@@ -124,7 +123,6 @@ const articleSchema = {
   ogAlt={og_alt}
 >
 
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <main>
     <HeroSection consultButton={true}/>
@@ -142,3 +140,5 @@ const articleSchema = {
 
   </main>
 </Layout>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
