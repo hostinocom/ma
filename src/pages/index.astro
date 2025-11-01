@@ -1,0 +1,111 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/commonSections/HeroSection.astro';
+import TrustedBySection from '../components/commonSections/TrustedBySection.astro';
+import WhatsHostingSection from '../components/commonSections/WhatsHostingSection.astro';
+import FastestHostingSection from '../components/commonSections/FastestHostingSection.astro';
+import DomainSearchSection from "../components/commonSections/DomainSearchSection.tsx";
+import EasyHebergementSection from "../components/commonSections/EasyHebergementSection.astro"
+import BenefitsSection from "../components/commonSections/BenefitsSection.astro"
+import WhyChooseSection from "../components/commonSections/WhyChooseSection.astro"
+import BenchmarkHostingMorocco from "../components/commonSections/BenchmarkHostingMorocco.astro"
+import PlansSection from "../components/commonSections/PlansSection.astro"
+import FAQSectionHome from '../components/commonSections/FAQSectionHome';
+import SixCards from '../components/commonSections/SixCards.astro';
+import Head from "./Head.astro";
+
+
+
+
+
+
+
+
+
+
+
+const title = "Hébergement Web Maroc - Hébergeur web 100% marocain";
+const description = "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc";
+const imageUrl = "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/";
+const og_alt = "Hébergement Web Maroc";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+  
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: og_alt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+---
+
+<Layout 
+  title={title}
+  description={description}
+  canonical={canonical_url}
+  ogImage={imageUrl}
+  ogAlt={og_alt}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <main>
+    <HeroSection consultButton={true}/>
+	<PlansSection client:load />
+  	<TrustedBySection classNameImage="md:w-[80%] w-[100%] mx-auto h-auto brightness" />
+  	<WhatsHostingSection />
+	<DomainSearchSection id="ma" />
+	<WhyChooseSection />
+
+
+	
+
+    <FastestHostingSection />
+    <EasyHebergementSection />
+	<BenefitsSection />
+	<BenchmarkHostingMorocco />
+
+	<FAQSectionHome client:load />
+
+  </main>
+</Layout>

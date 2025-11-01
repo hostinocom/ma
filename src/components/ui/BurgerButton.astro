@@ -1,0 +1,40 @@
+---
+// src/components/ui/BurgerButton.astro
+export interface Props {
+  isOpen?: boolean;
+}
+
+const { isOpen = false } = Astro.props;
+---
+
+<label class="burger-button-label relative block w-8 h-8 rounded text-title cursor-pointer">
+  <input
+    type="checkbox"
+    checked={isOpen}
+    class="burger-checkbox absolute invisible w-0 h-0"
+  />
+  <span class="burger-line"></span>
+</label>
+
+<script>
+  const label = document.querySelector('.burger-button-label');
+  const checkbox = document.querySelector('.burger-checkbox') as HTMLInputElement;
+  const burgerLine = document.querySelector('.burger-line');
+
+  label?.addEventListener('click', () => {
+    const isChecked = checkbox?.checked || false;
+    checkbox!.checked = !isChecked;
+    
+    if (checkbox?.checked) {
+      burgerLine?.classList.add('open');
+    } else {
+      burgerLine?.classList.remove('open');
+    }
+
+    // Dispatch custom event for the header to listen to
+    const event = new CustomEvent('burger-toggle', { 
+      detail: { isOpen: checkbox?.checked } 
+    });
+    document.dispatchEvent(event);
+  });
+</script>

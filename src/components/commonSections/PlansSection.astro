@@ -1,0 +1,410 @@
+---
+// src/components/sections/PlansSection.astro
+import AnimatedButton from "../ui/AnimatedButton.astro";
+
+// Define plan type
+export type Plan = {
+  id: number;
+  name: string;
+  subtext: string;
+  price_original: string;
+  price_discounted: string;
+  save: string;
+  price_ttc: string;
+  performance_stars: number;
+  more_performance: {
+    text: string;
+    href: string;
+    exists: boolean;
+  };
+  order: {
+    text: string;
+    href: string;
+  };
+  features: {
+    seo_optimized: boolean;
+    free_domain: boolean;
+    wordpress_preinstalled: boolean;
+    control_panel: string;
+    ssl: string;
+    disk_space: string | number;
+    bandwidth: string;
+    databases: number | string;
+    email_accounts: number | string;
+    subdomains: number;
+    backups: string;
+  };
+  most_popular: {
+    text: string;
+    is_most_popular: boolean;
+  };
+};
+
+export interface Props {
+  class?: string;
+  title?: string;
+  smallTitle?: string;
+  plans?: Plan[];
+}
+
+const hostingPlans: Plan[] = [
+  {
+    id: 1,
+    name: "Hébergement <br/>web <i>Eco</i>",
+    subtext:
+      "Offre d'hébergement web économique pour sites personnels et blogs.",
+    price_original: "299 DH/an",
+    price_discounted: "199 DH/an",
+    save: "33%",
+    price_ttc: "Pour 1 an, vous payez <b> 238,8 DH TTC.</b>",
+    performance_stars: 1,
+    more_performance: {
+      text: "Plus de performances ?",
+      href: "/business/",
+      exists: true,
+    },
+    order: {
+      text: "Commander",
+      href: "https://my.hostino.com/order.php?pid=70&amp;language=french&amp;country=MA&amp;promocode=UI12E&amp;1=USD",
+    },
+    features: {
+      seo_optimized: false,
+      free_domain: false,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Gratuit et illimité",
+      disk_space: "10 GB NVMe",
+      bandwidth: "100 GB",
+      databases: 1,
+      email_accounts: 1,
+      subdomains: 1,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "Le plus populaire",
+      is_most_popular: false,
+    },
+  },
+  {
+    id: 2,
+    name: "Hébergement <br/>web <i>Starty</i>",
+    subtext:
+      "Hébergement idéal pour les petits sites à faible consommation de ressources.",
+    price_original: "499 DH/an",
+    price_discounted: "399 DH/an",
+    price_ttc: "Pour 1 an, vous payez <b>478,8 DH TTC.</b>",
+    save: "20%",
+    performance_stars: 4,
+    more_performance: {
+      text: "Plus de performances ?",
+      href: "/business/",
+      exists: true,
+    },
+    order: {
+      text: "Commander",
+      href: "https://my.hostino.com/order.php?pid=36&amp;language=french&amp;country=MA&amp;promocode=UI12S&amp;1=USD",
+    },
+    features: {
+      seo_optimized: false,
+      free_domain: true,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Gratuit et illimité",
+      disk_space: "25 GB NVMe",
+      bandwidth: "250 GB",
+      databases: 5,
+      email_accounts: 5,
+      subdomains: 5,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "Le plus populaire",
+      is_most_popular: true,
+    },
+  },
+  {
+    id: 3,
+    name: "Hébergement <br/>web <i>Business</i>",
+    subtext:
+      "Spécialement conçu pour répondre aux besoins des sites web d'entreprise.",
+    price_original: "1199 DH/an",
+    price_discounted: "999 DH/an",
+    save: "20%",
+    price_ttc: "Pour 1 an, vous payez <b>1198,8 DH TTC.</b>",
+    performance_stars: 5,
+    more_performance: {
+      text: "Plus de performances ?",
+      href: "/business/",
+      exists: true,
+    },
+    order: {
+      text: "Commander",
+      href: "https://my.hostino.com/order.php?pid=42&amp;language=french&amp;country=MA&amp;promocode=UI12B&amp;1=USD",
+    },
+    features: {
+      seo_optimized: true,
+      free_domain: true,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Gratuit et illimité",
+      disk_space: "50 GB NVMe",
+      bandwidth: "Illimitée",
+      databases: "Illimitées",
+      email_accounts: 10,
+      subdomains: 10,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "Le plus populaire",
+      is_most_popular: false,
+    },
+  },
+];
+
+const {
+  class: className,
+  title,
+  smallTitle,
+  plans = hostingPlans,
+} = Astro.props;
+
+const montserratClassName = "font-montserrat";
+---
+
+<section
+  id="plans"
+  class={`${className} overflow-hidden plans-section relative`}
+>
+  <div class="container">
+    <div class="text-center">
+      {smallTitle && (
+        <h1 class="md:text-[19px] text-[18px] font-[600] tracking-[-0.5px] text-title">
+          {smallTitle}
+        </h1>
+      )}
+      <h2 class="title-section text-title">
+        Nos offres
+        <br />
+        Hébergement Web Maroc
+      </h2>
+    </div>
+
+    <div
+      class={`${
+        plans.length >= 3
+          ? "grid grid-cols-1 py-[30px] lg:grid-cols-3 lg:gap-6 gap-8 w-full"
+          : "flex lg:flex-row flex-col justify-center py-[30px] lg:gap-6 gap-8 w-full"
+      }`}
+    >
+      {plans?.map((plan: Plan) => (
+        <div
+          class={`${
+            plan.most_popular.is_most_popular && "border-3 border-primary"
+          } bg-white relative lg:text-left text-center rounded-[10px] lg:w-full md:w-[70vw] w-full mx-auto mb-4 md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px] shadow_main h-full`}
+        >
+          {plan.most_popular.is_most_popular && (
+            <div class="absolute py-[8px] bg-primary px-[20px] text-[16px] sm:left-1/3 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-white text-center font-[500] inline-block">
+              <AnimatedButton
+                text={plan.most_popular.text.toUpperCase()}
+                hoverText={plan.most_popular.text.toUpperCase()}
+                bgColor="bg-primary"
+                textColor="text-white"
+              />
+            </div>
+          )}
+
+          <h3
+            class="lg:text-[26px] lg:text-left text-center md:text-[30px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+            set:html={plan.name}
+          />
+          <p class="text-[#022545BD] md:text-left text-center text-[14px] font-[400] leading-[21px] tracking-[0.3px]">
+            {plan.subtext}
+          </p>
+
+          <div class="border-t py-[15px] border-gray-200 my-4"></div>
+
+          <!-- Pricing -->
+          <div class="mb-6">
+            <div class="flex items-center lg:justify-start justify-center gap-2 mb-2">
+              <span
+                class={`${montserratClassName} text-primary font-medium line-through text-lg`}
+              >
+                {plan.price_original}
+              </span>
+              <span
+                class={`${montserratClassName} bg-primary py-[8px] text-white text-[15px] font-[600] px-[10px] rounded-[8px]`}
+              >
+                Economisez {plan.save}
+              </span>
+            </div>
+            <p class="text-base text-title font-semibold mb-1">À seulement</p>
+            <p
+              class={`${montserratClassName} text-[45px] font-bold leading-[54px] text-[#14213D]`}
+            >
+              {plan.price_discounted}
+            </p>
+          </div>
+            <a
+            href={plan.order.href}
+            class={`w-full ${
+              plan.most_popular.is_most_popular
+                ? "bg-primary"
+                : "bg-title hover:bg-primary transition"
+            } text-white flex items-center mt-[18px] gap-3 justify-center font-bold py-[16px] rounded-[10px] text-center mb-4 transition`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {plan.order.text}
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width={4}
+              stroke="currentColor"
+              class="size-3 font-bold"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </a>
+
+          <p
+            class="text-sm text-gray-600 mb-4"
+            set:html={plan.price_ttc}
+          />
+
+          <div class="border-t border-gray-200 my-4"></div>
+
+          <!-- Star Rating -->
+          <div class="flex items-center lg:justify-start justify-center gap-2 mb-6">
+            <span class="text-sm font-bold text-gray-700 mr-2">Performances</span>
+            <div class="flex">
+              {[...Array(5)].map((_, i) => (
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill={i < plan.performance_stars ? "#FFA500" : "none"}
+                  stroke="#FFA500"
+                  stroke-width="2"
+                  class="mr-1"
+                >
+                  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.857 1.524 8.276L12 18.897l-7.46 4.542 1.524-8.276L.001 9.306l8.331-1.151z" />
+                </svg>
+              ))}
+            </div>
+          </div>
+
+          <ul class="text-gray-700 text-sm space-y-2 flex-grow">
+            <li class="flex items-center lg:justify-start justify-center">
+              {plan.features.seo_optimized ? (
+                <>
+                  <img
+                    src="/images/google-svg.svg"
+                    alt="SEO Optimized"
+                    width={16}
+                    height={16}
+                    class="mr-1"
+                  />
+                  <span class="text-title">
+                    Optimisé <b>SEO</b>
+                  </span>
+                </>
+              ) : (
+                <>
+                  <img
+                    src="/images/google-svg-dark.svg"
+                    alt="SEO Optimized"
+                    width={16}
+                    height={16}
+                    class="mr-1"
+                  />
+                  <span class="text-shadow-gray-200 opacity-20">
+                    Optimisé SEO
+                  </span>
+                </>
+              )}
+            </li>
+            <li>
+              {plan.features.free_domain ? (
+                <p>
+                  Nom de domaine <b>gratuit</b>
+                </p>
+              ) : (
+                <p class="text-shadow-gray-200 opacity-20">
+                  Nom de domaine gratuit
+                </p>
+              )}
+            </li>
+            <li>
+              {plan.features.wordpress_preinstalled ? (
+                <div class="flex items-center gap-1 lg:justify-start justify-center gap-2">
+                  <img
+                    src="/images/wp.svg"
+                    alt="WordPress préinstallé"
+                    width={16}
+                    height={16}
+                    class="mr-1"
+                  />
+                  <p>
+                    WordPress <b>préinstallé</b>
+                  </p>
+                </div>
+              ) : (
+                <p class="text-shadow-gray-200 opacity-20">
+                  WordPress préinstallé
+                </p>
+              )}
+            </li>
+            <li>
+              Panneau de contrôle{" "}
+              <b>
+                <i>{plan.features.control_panel}</i>
+              </b>
+            </li>
+            <li>
+              SSL : <b>{plan.features.ssl}</b>
+            </li>
+            <li>
+              Espace disque : <b>{plan.features.disk_space}</b>
+            </li>
+            <li>
+              Bande passante : <b>{plan.features.bandwidth}</b>
+            </li>
+            <li>
+              Bases de données : <b>{plan.features.databases}</b>
+            </li>
+            <li>
+              Comptes email : <b>{plan.features.email_accounts}</b>
+            </li>
+            <li>
+              Sous-domaines : <b>{plan.features.subdomains}</b>
+            </li>
+            <li>
+              Sauvegardes : <b>{plan.features.backups}</b>
+            </li>
+          </ul>
+
+          <div class="mt-6">
+            {plan.more_performance.exists && (
+              <a
+                href={plan.more_performance?.href}
+                class="text-title text-base font-semibold underline inline-flex items-center"
+              >
+                {plan.more_performance.text}
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div
+      class="elementor-shape elementor-shape-bottom"
+      aria-hidden="true"
+      data-negative="false"
+    >
+    </div>
+  </div>
+</section>

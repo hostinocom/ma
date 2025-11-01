@@ -1,0 +1,408 @@
+---
+// src/components/Header.astro
+import { Image } from 'astro:assets';
+import AnimatedButton from '../ui/AnimatedButton.astro';
+import logo from '../../images/01/logo-maroc.webp';
+import googleSvg from '../../images/google-svg.svg';
+---
+
+<header class="bg-white py-[20px] shadow-sm top-0 z-70">
+  <div class="h-[70px] flex items-center justify-between header">
+    <div class="flex w-full items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <Image
+          src={logo}
+          alt="Hostino"
+          width={234}
+          height={39}
+          class="h-10"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center sm:gap-[12px] xl:gap-[20px]">
+        <!-- Hébergement web Dropdown -->
+        <div class="relative dropdown-hebergement">
+          <button class="font-poppins animated-link hover:text-primary text-[17px] flex items-center gap-2 font-semibold border-none p-0">
+            Hébergement web
+            <svg
+              class="w-4 h-4 transition-transform duration-300 dropdown-arrow"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="pt-[35px] absolute dropdown-menu hidden">
+            <div class="dropDown-menu top-full left-0 w-56 bg-white py-2">
+              <a
+                href="/starty"
+                class="block animated-link ml-6 my-3 text-title font-[600]"
+              >
+                Starty
+              </a>
+              <a
+                href="/business"
+                class="block animated-link ml-6 my-3 text-title font-[600]"
+              >
+                Business
+              </a>
+              <a
+                href="/cloud-maroc"
+                class="block animated-link ml-6 my-3 text-title font-[600]"
+              >
+                Cloud Maroc
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- @Email Pro -->
+        <a
+        
+          href="/email-professionnel/"
+          class="font-poppins hover:text-primary animated-link text-[17px] flex items-center gap-2 text-title font-[600] border-none p-0"
+        >
+          @Email Pro
+        </a>
+
+        <!-- Nom de domaine -->
+        <a
+          href="/nom-de-domaine-ma"
+          class="text-title animated-link font-[600] hover:text-primary transition-colors"
+        >
+          Nom de domaine
+        </a>
+
+        <!-- SEO/SEA Dropdown -->
+        <div class="relative dropdown-seo">
+          <button class="flex items-center animated-link gap-2 text-title font-[600] hover:text-primary transition-colors">
+            <Image
+              src={googleSvg}
+              alt="Google"
+              width={20}
+              height={20}
+            />
+            SEO/SEA
+            <svg
+              class="w-4 h-4 transition-transform duration-300 dropdown-arrow"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="pt-[35px] absolute dropdown-menu hidden">
+            <div class="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
+              <a
+                href="/agence-seo-maroc/"
+                class="block font-[600] ml-6 my-3 animated-link text-title transition-colors"
+              >
+                Agence SEO
+              </a>
+              <a
+                href="/google-my-business-maroc/"
+                class="block font-[600] ml-6 my-3 animated-link text-title transition-colors"
+              >
+                Agence GMB
+              </a>
+              <a
+                href="/google-ads-maroc/"
+                class="block font-[600] ml-6 my-3 animated-link text-title hover:bg-gray-50 transition-colors"
+              >
+                Google Ads
+              </a>
+              <a
+                href="/creation-site-web-maroc/"
+                class="block font-[600] ml-6 my-3 animated-link text-title hover:bg-gray-50 transition-colors"
+              >
+                Site web
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right Side Actions -->
+      <div class="flex items-center gap-4">
+        <!-- Connexion Button -->
+        <a
+          href="https://my.hostino.com/index.php?rp=/login"
+          class="hidden sm:block text-title"
+        >
+          <AnimatedButton
+            text="Connexion"
+            hoverText="Connexion"
+            bgColor="bg-gray-100"
+            hoverBgColor="bg-title"
+            textColor="text-white"
+            class="btn-10-20 text-title lg:block hidden transition-colors"
+          />
+        </a>
+
+        <!-- Language Selector -->
+        <AnimatedButton
+          text="EN"
+          hoverText="EN"
+          bgColor="bg-primary"
+          hoverBgColor="bg-title"
+          textColor="text-white"
+          class="hidden lg:block text-white bg-primary font-bold px-2 py-1"
+        />
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden text-title burger-button" aria-label="Toggle menu">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu lg:hidden bg-white border-t border-gray-200 shadow-lg hidden">
+    <nav class="px-6 py-4 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
+      <!-- Hébergement web Mobile -->
+      <div class="mobile-dropdown-hebergement">
+        <button
+          class="w-full hover:text-primary cursor-pointer flex items-center justify-between py-2 text-title font-[600]"
+        >
+          Hébergement web
+          <svg
+            class="w-5 h-5 transition-transform duration-300 mobile-arrow"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <div class="mobile-submenu pl-4 space-y-2 mt-2 hidden">
+          <a href="/starty" class="block py-2 text-title font-[600]">
+            Starty
+          </a>
+          <a href="/business" class="block py-2 text-title font-[600]">
+            Business
+          </a>
+          <a href="/cloud-maroc/" class="block py-2 text-title font-[600]">
+            Cloud Maroc
+          </a>
+        </div>
+      </div>
+
+      <!-- @Email Pro -->
+      <a
+        href="/email-professionnel/"
+        class="block text-title cursor-pointer hover:text-primary py-2 font-[600]"
+      >
+        @Email Pro
+      </a>
+
+      <!-- Nom de domaine -->
+      <a
+        href="/nom-de-domaine-ma"
+        class="block text-title cursor-pointer hover:text-primary font-[600] py-2"
+      >
+        Nom de domaine
+      </a>
+
+      <!-- SEO/SEA Mobile -->
+      <div class="mobile-dropdown-seo">
+        <button
+          class="flex items-center justify-between w-full py-2 hover:text-primary text-title font-[600]"
+        >
+          <div class="flex items-center gap-2">
+            <Image src={googleSvg} alt="Google" width={20} height={20} />
+            SEO/SEA
+          </div>
+          <svg
+            class="w-5 h-5 transition-transform duration-300 mobile-arrow"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <div class="mobile-submenu pl-4 space-y-2 mt-2 hidden">
+          <a
+            href="/agence-seo-maroc/"
+            class="block max-w-max py-2 text-title font-[600] animated-link"
+          >
+            Agence SEO
+          </a>
+          <a
+            href="/google-my-business-maroc/"
+            class="block max-w-max py-2 text-title font-[600] animated-link"
+          >
+            Agence GMB
+          </a>
+          <a
+            href="/google-ads-maroc/"
+            class="block max-w-max py-2 text-title font-[600] animated-link"
+          >
+            Google Ads
+          </a>
+          <a
+            href="/creation-site-web-maroc/"
+            class="block max-w-max py-2 text-title font-[600] animated-link"
+          >
+            Site web
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Actions -->
+      <div class="pt-4 space-y-3 border-t border-gray-200">
+        <a
+          href="https://my.hostino.com/index.php?rp=/login"
+          class="block w-full py-3 text-center text-title font-[600] hover:text-primary transition-colors"
+        >
+          Connexion
+        </a>
+        <button class="w-full bg-primary text-white font-[600] px-4 py-3 rounded-lg hover:bg-[#00a84e] transition-colors">
+          EN
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<script>
+    // Desktop dropdown functionality
+  const hebergementDropdown = document.querySelector('.dropdown-hebergement');
+  const seoDropdown = document.querySelector('.dropdown-seo');
+
+  if (hebergementDropdown) {
+    const menu = hebergementDropdown.querySelector('.dropdown-menu');
+    const arrow = hebergementDropdown.querySelector('.dropdown-arrow');
+    
+    hebergementDropdown.addEventListener('mouseenter', () => {
+      menu?.classList.remove('hidden');
+      arrow?.classList.add('rotate-180');
+      seoDropdown?.querySelector('.dropdown-menu')?.classList.add('hidden');
+      seoDropdown?.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
+    });
+    
+    hebergementDropdown.addEventListener('mouseleave', () => {
+      menu?.classList.add('hidden');
+      arrow?.classList.remove('rotate-180');
+    });
+  }
+
+  if (seoDropdown) {
+    const menu = seoDropdown.querySelector('.dropdown-menu');
+    const arrow = seoDropdown.querySelector('.dropdown-arrow');
+    
+    seoDropdown.addEventListener('mouseenter', () => {
+      menu?.classList.remove('hidden');
+      arrow?.classList.add('rotate-180');
+      hebergementDropdown?.querySelector('.dropdown-menu')?.classList.add('hidden');
+      hebergementDropdown?.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
+    });
+    
+    seoDropdown.addEventListener('mouseleave', () => {
+      menu?.classList.add('hidden');
+      arrow?.classList.remove('rotate-180');
+    });
+  }
+
+  // Mobile menu functionality
+  const burgerButton = document.querySelector('.burger-button');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const burgerIcon = document.querySelector('.burger-icon');
+
+  burgerButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    burgerIcon?.classList.toggle('open');
+  });
+
+  // Mobile dropdowns
+  const mobileHebergement = document.querySelector('.mobile-dropdown-hebergement');
+  const mobileSeo = document.querySelector('.mobile-dropdown-seo');
+
+  mobileHebergement?.querySelector('button')?.addEventListener('click', () => {
+    const submenu = mobileHebergement.querySelector('.mobile-submenu');
+    const arrow = mobileHebergement.querySelector('.mobile-arrow');
+    submenu?.classList.toggle('hidden');
+    arrow?.classList.toggle('rotate-180');
+  });
+
+  mobileSeo?.querySelector('button')?.addEventListener('click', () => {
+    const submenu = mobileSeo.querySelector('.mobile-submenu');
+    const arrow = mobileSeo.querySelector('.mobile-arrow');
+    submenu?.classList.toggle('hidden');
+    arrow?.classList.toggle('rotate-180');
+  });
+
+  // Close mobile menu when clicking links
+  const mobileLinks = document.querySelectorAll('.mobile-menu a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      burgerIcon?.classList.remove('open');
+    });
+  });
+</script>
+
+<style>
+  .burger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .burger-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+  }
+
+  .burger-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+</style>

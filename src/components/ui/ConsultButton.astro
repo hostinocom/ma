@@ -1,0 +1,30 @@
+---
+// src/components/ui/ConsultButton.astro
+import AnimatedButton from "./AnimatedButton.astro";
+
+export interface Props {
+  href: string;
+  text?: string;
+  arrowButton?: boolean;
+}
+
+const {
+  href,
+  text = "Consultez les plans",
+  arrowButton = false
+} = Astro.props;
+---
+
+<div>
+  <a href={href} class="inline-block text-white">
+    <AnimatedButton
+      text={text}
+      hoverText={text}
+      bgColor="bg-primary"
+      textColor="text-white"
+      hoverBgColor="bg-title"
+      class="py-[12px] px-[40px] font-[600] rounded-lg"
+      arrowButton={arrowButton}
+    />
+  </a>
+</div>
