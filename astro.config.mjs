@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
+import compress from 'astro-compress';
 
 
 import tailwindcss from '@tailwindcss/vite';
@@ -14,10 +15,11 @@ export default defineConfig({
         external: ['node:path'],
     },
   },
-  integrations: [react()],
+  integrations: [react() , compress()],
   adapter: cloudflare({
      imageService: 'cloudflare'
   }),
+  devToolbar: { enabled: false },
 
 
 });
