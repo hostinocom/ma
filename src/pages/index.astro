@@ -83,14 +83,7 @@ const articleSchema = {
 
 
 
-<Layout 
-  title={title}
-  description={description}
-  canonical={canonical_url}
-  ogImage={imageUrl}
-  ogAlt={og_alt}
->
-	<head>
+<head>
 
   <!-- Basic Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -121,6 +114,15 @@ const articleSchema = {
   <meta name="twitter:image" content={imageUrl} />
   <meta name="twitter:creator" content="@admin" />
 </head>
+
+<Layout 
+  title={title}
+  description={description}
+  canonical={canonical_url}
+  ogImage={imageUrl}
+  ogAlt={og_alt}
+>
+
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <main>
