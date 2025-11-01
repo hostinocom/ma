@@ -2,7 +2,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
-import compress from 'astro-compress';
 
 
 import tailwindcss from '@tailwindcss/vite';
@@ -18,7 +17,7 @@ export default defineConfig({
         external: ['node:path'],
     },
   },
-  integrations: [react(), compress(), sitemap({
+  integrations: [react(), sitemap({
     filter: (page) => page !== 'https://ma-6zt.pages.dev/secret-vip-lounge/',
 
   })],
