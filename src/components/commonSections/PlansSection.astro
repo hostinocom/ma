@@ -12,6 +12,8 @@ export type Plan = {
   save: string;
   price_ttc: string;
   performance_stars: number;
+  wordpress_alt: string;
+  seo_alt : string;
   more_performance: {
     text: string;
     href: string;
@@ -58,6 +60,8 @@ const hostingPlans: Plan[] = [
     save: "33%",
     price_ttc: "Pour 1 an, vous payez <b> 238,8 DH TTC.</b>",
     performance_stars: 1,
+    wordpress_alt : "wordpress Eco",
+    seo_alt : "Seo optimisé Eco"
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
@@ -95,6 +99,9 @@ const hostingPlans: Plan[] = [
     price_ttc: "Pour 1 an, vous payez <b>478,8 DH TTC.</b>",
     save: "20%",
     performance_stars: 4,
+    seo_alt : "Seo optimisé starty"
+    wordpress_alt : "wordpress Starty"
+
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
@@ -132,6 +139,9 @@ const hostingPlans: Plan[] = [
     save: "20%",
     price_ttc: "Pour 1 an, vous payez <b>1198,8 DH TTC.</b>",
     performance_stars: 5,
+    seo_alt : "Seo optimisé Business"
+    wordpress_alt : "wordpress Business"
+
     more_performance: {
       text: "Plus de performances ?",
       href: "/business/",
@@ -303,7 +313,7 @@ const montserratClassName = "font-montserrat";
                 <>
                   <img
                     src="/images/google-svg.svg"
-                    alt="SEO Optimized"
+                    alt={plan.seo_alt}
                     width={16}
                     height={16}
                     class="mr-1"
@@ -343,7 +353,7 @@ const montserratClassName = "font-montserrat";
                 <div class="flex items-center gap-1 lg:justify-start justify-center gap-2">
                   <img
                     src="/images/wp.svg"
-                    alt="WordPress préinstallé"
+                    alt={plan.wordpress_alt}
                     width={16}
                     height={16}
                     class="mr-1"
