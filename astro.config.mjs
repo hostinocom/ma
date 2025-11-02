@@ -11,7 +11,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ma-6zt.pages.dev/',
-  output: 'static',
+  output: 'server',
   vite: {
     plugins: [tailwindcss()],
       ssr: {
