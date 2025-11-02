@@ -2,7 +2,6 @@
 // src/components/sections/HeroSection.astro
 
 // Import the image (recommended for local images in Astro)
-import { Image } from 'astro:assets';
 import ConsultButton from '../ui/ConsultButton.astro';
 
 ---
@@ -34,12 +33,12 @@ import ConsultButton from '../ui/ConsultButton.astro';
     <!-- Hero Image -->
     <div class="col-span-1 flex z-10 justify-center">
       <div class="relative w-full">
-        <Image
+        <img
           src="/images/01/hebergement-web-maroc.webp"
-          alt="Hébergement Web au Maroc"
-          width={1300}
-          height={900}
-          class="w-full h-full md:p-[20px] p-[25px] rounded-lg"
+          alt="Web Hosting in Morocco"
+          fetchpriority=high
+           loading="lazy"
+          class="w-full h-full md:p-[20px] p-[25px] md:scale-100 lg:scale-100 rounded-lg"
         />
       </div>
     </div>
