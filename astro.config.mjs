@@ -9,8 +9,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ma-6zt.pages.dev/',
-  output: 'server',
+  site: "https://ma-6zt.pages.dev/",
+  output: "server",
   vite: {
     plugins: [tailwindcss()],
     ssr: {
@@ -27,15 +27,9 @@ export default defineConfig({
       },
       rollupOptions: {
         output: {
-          manualChunks: (id) => {
-            // Split vendor chunks for better caching
-            if (id.includes("node_modules")) {
-              if (id.includes("react")) {
-                return "react-vendor";
-              }
-              return "vendor";
-            }
-          },
+          entryFileNames: "_astro/[name].[hash].js",
+          chunkFileNames: "_astro/[name].[hash].js",
+          assetFileNames: "_astro/[name].[hash][extname]",
         },
       },
     },
