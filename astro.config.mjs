@@ -2,14 +2,12 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import cloudflare from "@astrojs/cloudflare";
-import { cpus } from "os";
 
 
 import tailwindcss from "@tailwindcss/vite";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 
-const CPU_COUNT = cpus().length;
 
 
 // https://astro.build/config
@@ -32,7 +30,7 @@ export default defineConfig({
       },
       
       rollupOptions: {
-        maxParallelFileOps: CPU_COUNT * 3,
+        
         output: {
           // Fewer, larger chunks = less overhead
           // Faster code generation
