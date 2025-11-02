@@ -48,11 +48,6 @@ export default defineConfig({
   integrations: [react(), compress(), sitemap({})],
   adapter: cloudflare({
      imageService: 'cloudflare',
-     
-     
   }),
   compressHTML: true,
-  experimental: {
-    clientPrerender: true,
-  },
 });
