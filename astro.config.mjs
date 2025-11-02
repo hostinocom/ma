@@ -2,10 +2,15 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import cloudflare from "@astrojs/cloudflare";
+import { cpus } from "os";
+
 
 import tailwindcss from "@tailwindcss/vite";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
+
+const CPU_COUNT = cpus().length;
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,20 +23,33 @@ export default defineConfig({
     },
     build: {
       cssCodeSplit: true,
-      minify: "terser",
+      minify: "esbuild",
       terserOptions: {
         compress: {
           drop_console: true, // Remove console.logs in production
           drop_debugger: true,
         },
       },
+      
       rollupOptions: {
+        maxParallelFileOps: CPU_COUNT * 3,
         output: {
-          entryFileNames: "_astro/[name].[hash].js",
-          chunkFileNames: "_astro/[name].[hash].js",
-          assetFileNames: "_astro/[name].[hash][extname]",
+          // Fewer, larger chunks = less overhead
+          // Faster code generation
+          generatedCode: 'es2022'
+          } 
+        } ,
+
+        esbuild: {
+          target: 'es2022',
+          // Fast minification settings
+          minifyIdentifiers: false, // Skip for speed
+          minifySyntax: true,
+          minifyWhitespace: true,
         },
-      },
+        
+      }
+     
     },
     optimizeDeps: {
       include: ["react", "react-dom"],
