@@ -85,7 +85,6 @@ const articleSchema = {
 
 <head>
 
-  <!-- astro:Basic Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8">
   <title>{title}</title>
@@ -93,7 +92,6 @@ const articleSchema = {
   <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
   <link rel="canonical" href={canonical_url} />
 
-  <!-- astro:Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:url" content={canonical_url} />
@@ -107,14 +105,12 @@ const articleSchema = {
   <meta property="og:image:alt" content={og_alt} />
   <meta property="og:image:type" content="image/png" />
 
-  <!-- astro:Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={imageUrl} />
   <meta name="twitter:creator" content="@admin" />
 
-  <!-- astro:schema linked data -->
 <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
 </head>
