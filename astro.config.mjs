@@ -26,19 +26,6 @@ export default defineConfig({
           drop_debugger: true,
         },
       },
-      rollupOptions: {
-        output: {
-          manualChunks: (id) => {
-            // Split vendor chunks for better caching
-            if (id.includes('node_modules')) {
-              if (id.includes('react')) {
-                return 'react-vendor';
-              }
-              return 'vendor';
-            }
-          },
-        },
-      },
     },
     optimizeDeps: {
       include: ['react', 'react-dom'],
