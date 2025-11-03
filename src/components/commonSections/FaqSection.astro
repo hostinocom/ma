@@ -1,0 +1,280 @@
+---
+interface FAQItem {
+  question: string;
+  answer?: string | any;
+  answers?: string[];
+}
+
+interface Props {
+  faqData?: FAQItem[];
+  title: string;
+}
+
+const { faqData = [], title } = Astro.props;
+
+const questionsAnswers: FAQItem[] = [
+  {
+    question: "Est‑ce que l'hébergement web Starty répond à mes besoins ?",
+    answer: `
+      
+        <p class="mb-4">
+          Si vous débutez votre présence en ligne ou si vous gérez un site
+          personnel avec un trafic faible ou moyen, l'hébergement web Starty®
+          répond parfaitement à votre besoin par trois formules différentes :
+        </p>
+        <ul class="space-y-3 mb-4">
+          <li class="flex items-start gap-2">
+            <svg
+              class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>Starty®, pour un démarrage à petit prix.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg
+              class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>
+              Starty® pro, commencez comme un pro, prêt à passer au niveau
+              supérieur.
+            </span>
+          </li>
+        </ul>
+      `
+    
+  },
+  {
+    question: "Quel délai pour activer mon compte hébergement web Starty® ?",
+    answers: [
+      "Votre commande de l'hébergement web Starty sera activée une fois votre paiement est confirmé",
+      "Dans le cas d'un paiement par carte bancaire marocaine (CMI) ou internationale (Stripe), l'activation est presque instantanée. Pour les paiements par virement bancaire, il est nécessaire d'envoyer le justificatif de votre transfert.",
+    ],
+  },
+  {
+    question: "Mes envois d'emails sont‑ils limités ?",
+    answers: [
+      "Afin de prévenir toute utilisation abusive du mass‑mailing, le nombre d'e‑mails envoyés par heure est limité en fonction de la quantité d'e‑mails incluse dans votre formule.",
+    ],
+  },
+  {
+    question: "Est‑il possible de changer le domaine de mon hébergement ?",
+    answers: [
+      "Le changement de domaine est permis dans les 30 jours qui suivent votre achat. Au‑delà de cette date le changement n'est pas possible.",
+    ],
+  },
+  {
+    question:
+      "Mon hébergement Starty® a expiré, est‑ce que mes données sont perdues ?",
+    answers: [
+      "Vos données restent disponibles sur nos serveurs pendant une période de 30 jours après l'expiration de votre service.",
+      "Elles peuvent être récupérées instantanément une fois que les frais de renouvellement sont réglés.",
+      "Après cette première période de 30 jours, vos données restent uniquement sur nos serveurs de sauvegarde pendant une durée supplémentaire de 30 jours. Pour les restaurer, des frais de restauration de 499 DH HT sont exigés.",
+      "Au‑delà de cette période totale de 60 jours après l'expiration du service, aucune récupération n'est possible, et les données sont définitivement supprimées.",
+    ],
+  },
+  {
+    question: "Puis‑je changer mon offre d'hébergement à tout moment ?",
+    answers: [
+      "Vous pouvez faire l'augmentation ou la baisse de formule à tout moment. Cela implique de payer uniquement le prorata en cas d'augmentation.",
+    ],
+  },
+];
+
+const renderAnswer = (item: FAQItem) => {
+  if (item.answer) {
+    return typeof item.answer === "string" ? item.answer : item.answer;
+  } else if (item.answers && Array.isArray(item.answers)) {
+    return item.answers.map((phrase: string) => phrase);
+  }
+  return null;
+};
+
+const usedFaqData = faqData.length > 0 ? faqData : questionsAnswers;
+const firstHalf = usedFaqData.slice(0, Math.ceil(usedFaqData.length / 2));
+const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
+---
+
+<section class="bg-gray-100 py-[150px]">
+  <div class="container">
+    <h2 class="title-section" set:html={title}></h2>
+
+    <div class="flex md:flex-row flex-col gap-6 mt-[50px]">
+      <div class="flex-1 md:max-w-[48%] flex flex-col gap-6" id="faq-left">
+        {firstHalf.map((item: FAQItem, index: number) => (
+          <div
+            key={index}
+            class="w-full transition-shadow duration-300"
+            data-faq-index={index}
+          >
+            <button
+              class="w-full bg-white rounded-lg px-6 py-5 flex items-center justify-between text-left group"
+              data-faq-button={index}
+              aria-expanded="false"
+            >
+              <span class="text-lg font-semibold text-[#14213D] pr-4 transition-colors duration-300">
+                {item.question}
+              </span>
+              <svg
+                class="w-6 h-6 text-primary flex-shrink-0 transition-transform duration-500 ease-in-out"
+                data-faq-icon={index}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"
+              data-faq-content={index}
+            >
+              <div class="px-6 pb-6 text-[#022545] leading-relaxed transform transition-all duration-500 -translate-y-4">
+                {(() => {
+                  const answer = renderAnswer(item);
+                  if (typeof answer === "string") {
+                    return <p set:html={answer}></p>;
+                  } else if (Array.isArray(answer)) {
+                    return answer.map((phrase: string, idx: number) => (
+                      <p key={idx} class="paragraph" set:html={phrase}></p>
+                    ));
+                  } else {
+                    return <Fragment>{answer}</Fragment>;
+                  }
+                })()}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex-1 flex flex-col md:max-w-[48%] gap-6" id="faq-right">
+        {secondHalf.map((item: FAQItem, index: number) => {
+          const adjustedIndex = index + firstHalf.length;
+          return (
+            <div key={adjustedIndex} class="transition-shadow duration-300" data-faq-index={adjustedIndex}>
+              <button
+                class="w-full bg-white rounded-lg px-6 py-5 flex items-center justify-between text-left group"
+                data-faq-button={adjustedIndex}
+                aria-expanded="false"
+              >
+                <span class="text-lg font-semibold text-[#14213D] pr-4 transition-colors duration-300">
+                  {item.question}
+                </span>
+                <svg
+                  class="w-6 h-6 text-primary flex-shrink-0 transition-transform duration-500 ease-in-out"
+                  data-faq-icon={adjustedIndex}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div
+                class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"
+                data-faq-content={adjustedIndex}
+              >
+                <div class="px-6 pb-6 text-[#022545] leading-relaxed transform transition-all duration-500 -translate-y-4">
+                  {(() => {
+                    const answer = renderAnswer(item);
+                    if (typeof answer === "string") {
+                      return <p set:html={answer}></p>;
+                    } else if (Array.isArray(answer)) {
+                      return answer.map((phrase: string, idx: number) => (
+                        <p key={idx} class="paragraph" set:html={phrase}></p>
+                      ));
+                    } else {
+                      return <Fragment>{answer}</Fragment>;
+                    }
+                  })()}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('[data-faq-button]');
+    
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const index = button.getAttribute('data-faq-button');
+        const content = document.querySelector(`[data-faq-content="${index}"]`);
+        const icon = document.querySelector(`[data-faq-icon="${index}"]`);
+        
+        // Close all other items (accordion behavior)
+        document.querySelectorAll('[data-faq-content]').forEach((item) => {
+          if (item !== content) {
+            const itemIndex = item.getAttribute('data-faq-content');
+            const itemButton = document.querySelector(`[data-faq-button="${itemIndex}"]`);
+            const itemIcon = document.querySelector(`[data-faq-icon="${itemIndex}"]`);
+            
+            item.classList.remove('max-h-[2000px]', 'pt-10', 'opacity-100');
+            item.classList.add('max-h-0', 'opacity-0');
+            item.querySelector('div')?.classList.remove('translate-y-0');
+            item.querySelector('div')?.classList.add('-translate-y-4');
+            
+            if (itemButton) itemButton.setAttribute('aria-expanded', 'false');
+            if (itemIcon) {
+              itemIcon.classList.remove('rotate-180');
+            }
+          }
+        });
+        
+        // Toggle current item
+        if (content && icon) {
+          const isOpen = content.classList.contains('opacity-100');
+          
+          if (isOpen) {
+            content.classList.remove('max-h-[2000px]', 'pt-10', 'opacity-100');
+            content.classList.add('max-h-0', 'opacity-0');
+            content.querySelector('div')?.classList.remove('translate-y-0');
+            content.querySelector('div')?.classList.add('-translate-y-4');
+            button.setAttribute('aria-expanded', 'false');
+            icon.classList.remove('rotate-180');
+          } else {
+            content.classList.remove('max-h-0', 'opacity-0');
+            content.classList.add('max-h-[2000px]', 'pt-10', 'opacity-100');
+            content.querySelector('div')?.classList.remove('-translate-y-4');
+            content.querySelector('div')?.classList.add('translate-y-0');
+            button.setAttribute('aria-expanded', 'true');
+            icon.classList.add('rotate-180');
+          }
+        }
+      });
+    });
+  });
+</script>
+

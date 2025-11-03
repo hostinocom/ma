@@ -1,0 +1,66 @@
+---
+import ConsultButton from "../ui/ConsultButton.astro";
+
+interface Props {
+  title?: string;
+  paragraphs: string[];
+  videoUrl?: string;
+  consultButtonTextExiste?: boolean;
+  textButton?: string;
+  href?: string;
+  className?: string;
+}
+
+const {
+  title,
+  paragraphs,
+  videoUrl,
+  consultButtonTextExiste = true,
+  textButton,
+  href = "https://www.hostino.ma/contact/",
+  className,
+} = Astro.props;
+---
+
+<section class={`${className ? className : "lg:my-[150px] my-[80px]"}`}>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="col-span-1">
+        {title && (
+          <h2
+            class="title-section xl:pr-[10px] lg:pr-[50px] font-bold text-title mb-6"
+            set:html={title}
+          ></h2>
+        )}
+        {paragraphs.map((paragraph, index) =>
+          typeof paragraph === "object" ? (
+            <Fragment key={index}>{paragraph}</Fragment>
+          ) : (
+            <p
+              key={index}
+              class="paragraph"
+              set:html={paragraph}
+            ></p>
+          )
+        )}
+        {consultButtonTextExiste && (
+          <ConsultButton href={href} text={textButton} />
+        )}
+      </div>
+
+      <div class="col-span-1 flex justify-end">
+        <div class="w-full aspect-video rounded-lg overflow-hidden">
+          <iframe
+            class="w-full h-full rounded-lg"
+            src={videoUrl}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

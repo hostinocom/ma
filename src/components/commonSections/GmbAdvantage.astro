@@ -1,0 +1,55 @@
+---
+interface GMBAdvantage {
+  title: string;
+  description: string;
+  highlight?: string;
+}
+
+interface Props {
+  advantages?: GMBAdvantage[];
+  title: string;
+}
+
+const { advantages = [], title } = Astro.props;
+---
+
+<section class="lg:my-[150px] my-[80px]">
+  <div class="container">
+    <h2 class="big-title font-[600] mb-[30px] text-title" set:html={title}></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-16">
+      {advantages.map((advantage, index) => (
+        <div key={index} class="flex flex-col">
+          <div class="md:mb-[24px] mb-[12px]">
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="25" cy="25" r="25" fill="#00CC61" />
+              <path
+                d="M15 25L22 32L35 18"
+                stroke="white"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+
+          <h3 class="md:text-[28px] text-[22px] text-title md:leading-[36px] tracking-[-0.8px] font-[600] mb-[20px]">
+            {advantage.title}
+          </h3>
+
+          <p
+            class="paragraph text-[16px] leading-[28px] text-title"
+            set:html={advantage.description}
+          ></p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

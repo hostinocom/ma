@@ -1,0 +1,29 @@
+---
+interface Props {
+  icon?: string;
+  text?: string;
+  className?: string;
+}
+
+const {
+  icon = "⚠️",
+  text = "Lancez votre site à petit prix avec nos offres d'hébergement web Starty. Quand votre activité grandit, passez aux packs Business pour des performances pro.",
+  className 
+} = Astro.props;
+---
+
+<div class="container">
+  <div
+    class={`w-[100%] lg:w-[75%] rounded-lg mx-auto border-2 border-dashed border-gray-300 px-[39px] py-[25px] `}
+  >
+    <div class="w-full bg-white">
+      <div class="flex justify-center text-center">
+        <span role="img" aria-label="warning">
+          {icon}
+        </span>
+        <p class="paragraph-mb-0" set:html={text}></p>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,59 @@
+---
+interface GMBService {
+  title: string;
+  description: string;
+  link: string;
+  textButton?: string;
+}
+
+interface Props {
+  data: GMBService[];
+  title: string;
+}
+
+const { data, title } = Astro.props;
+---
+
+<section class="lg:my-[150px] my-[80px]">
+  <div class="container">
+    <h2 class="big-title mb-[20px] text-center" set:html={title}></h2>
+
+    <div class="flex justify-center mb-[60px]">
+      <div class="w-[80px] h-[6px] bg-primary"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-32 md:gap-y-16 gap-y-8">
+      {data.map((service, index) => (
+        <div key={index} class="flex flex-col py-[40px] px-[30px] lg:py-[10px] lg:px-[30px]">
+          <h3 class="md:text-[34px] text-title md:leading-[39px] tracking-[-1.1px] font-[600] text-[24px] mb-[20px]" set:html={service.title}></h3>
+          <p
+            class="paragraph mb-[24px] flex-grow"
+            set:html={service.description}
+          ></p>
+          <a
+            href={service.link}
+            class="flex md:justify-start justify-center text-[18px] items-center gap-2 text-title font-[600] hover:text-primary transition-colors group"
+          >
+            <span>{service.textButton || "Contactez-nous"}</span>
+            <span class="transform group-hover:translate-x-1 transition-transform">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

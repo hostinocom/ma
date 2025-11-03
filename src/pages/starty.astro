@@ -1,0 +1,201 @@
+---
+import Layout from "../layouts/Layout.astro";
+import StartyComparison from "../components/sectionsStartyPage/StartyComparison.astro";
+import TextLeftImageRight from "../components/commonSections/TextLeftImageRight.astro";
+import SixCards from "../components/commonSections/SixCards.astro";
+import FAQSection from "../components/commonSections/FaqSection.astro";
+import StarRating from "../components/ui/StartRatingFooter.astro";
+import Plans from "../components/commonSections/Plans.astro";
+import HeroHeadingPages from "../components/ui/heroHeadingPages.astro";
+import TrustedBySection from "../components/commonSections/TrustedBySection.astro";
+import PromoBanner from "../components/ui/PromoBanner.astro";
+import { main_schema } from "../mainSchema.ts";
+import type { Plan } from "../components/commonSections/Plans.astro";
+
+const title = "Hébergement web pas cher au Maroc | Hostino";
+const description =
+  "Hébergement web pas cher Maroc. Starty® vous permet d'héberger vos sites web à petit prix pour débuter votre activité en ligne";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/starty";
+const ogAlt = "Hébergement web pas cher";
+
+const hostingPlans: Plan[] = [
+  {
+    id: 1,
+    name: "Hébergement <br/>web <i>Eco</i>",
+    subtext:
+      "Offre d'hébergement web économique pour sites personnels et blogs.",
+    price_original: "299 DH/an",
+    price_discounted: "199 DH/an",
+    save: "33%",
+    price_ttc: "Pour 1 an, vous payez <b> 238,8 DH TTC.</b>",
+    performance_stars: 1,
+    more_performance: {
+      text: "Plus de performances ?",
+      href: "/business/",
+      exists: true,
+    },
+    order: {
+      text: "Commander",
+      href: "https://my.hostino.com/order.php?pid=70&amp;language=french&amp;country=MA&amp;promocode=UI12E&amp;1=USD",
+    },
+    features: {
+      seo_optimized: false,
+      free_domain: false,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Gratuit et illimité",
+      disk_space: "10 GB NVMe",
+      bandwidth: "100 GB",
+      databases: 1,
+      email_accounts: 1,
+      subdomains: 1,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "Le plus populaire",
+      is_most_popular: false,
+    },
+  },
+  {
+    id: 2,
+    name: "Hébergement <br/>web <i>Starty</i>",
+    subtext:
+      "Hébergement idéal pour les petits sites à faible consommation de ressources.",
+    price_original: "499 DH/an",
+    price_discounted: "399 DH/an",
+    price_ttc: "Pour 1 an, vous payez <b>478,8 DH TTC.</b>",
+    save: "20%",
+    performance_stars: 4,
+    more_performance: {
+      text: "Plus de performances ?",
+      href: "https://www.hostino.ma/business/",
+      exists: true,
+    },
+    order: {
+      text: "Commander",
+      href: "https://my.hostino.com/order.php?pid=36&amp;language=french&amp;country=MA&amp;promocode=UI12S&amp;1=USD",
+    },
+    features: {
+      seo_optimized: false,
+      free_domain: true,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Gratuit et illimité",
+      disk_space: "25 GB NVMe",
+      bandwidth: "250 GB",
+      databases: 5,
+      email_accounts: 5,
+      subdomains: 5,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "Le plus populaire",
+      is_most_popular: true,
+    },
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+---
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+>
+
+  <main>
+    <HeroHeadingPages
+      smallTitle="Hébergement web pas cher"
+      bigTitle="Starty®, Hébergement <br />web pas cher"
+      lineGreen="true"
+    />
+    <Plans
+      title="Starty®, Hébergement web pas cher"
+      smallTitle="Hébergement web pas cher"
+      plans={hostingPlans}
+      heroHeading={true}
+    />
+    <PromoBanner
+      icon="⚠️"
+      text="Lancez votre site à petit prix avec nos offres d'hébergement web <b><i>Starty</i></b>. Quand votre activité grandit, passez aux packs <b><a style='text-decoration:underline' href='https://www.hostino.ma/business/'>Business</a></b> pour des performances pro."
+    />
+
+    <TrustedBySection
+      classNameImage="md:w-[65%] w-[100%] mx-auto  h-auto"
+      className="mt-[60px]"
+    />
+
+    <StartyComparison />
+
+    <TextLeftImageRight
+      title="Découvrez Maily®, la révolution de la messagerie <i>pro</i>"
+      paragraphs={[
+        "Sécurisez vos échanges professionnels avec Maily®, la messagerie cloud la plus fiable du marché, conçue par Hostino®.",
+        "Oubliez les problèmes d'envoi et de réception liés aux solutions mail traditionnelles intégrées au cPanel (webmail de Roundcube). Maily® est bien plus qu'une simple boîte mail : c'est la solution qui allie sécurité, productivité et efficacité pour une expérience collaborative inégalée.",
+        "Notre équipe d'experts est à votre écoute pour vous accompagner dans la mise en place, la configuration et l'utilisation de Maily®. Appelez-nous dès maintenant au +212 (05) 31 03 11 86.",
+      ]}
+      imageSrc="/images/02/email-professionnel-maroc.jpg"
+      imageAlt="Maily - Messagerie professionnelle"
+    />
+    <SixCards
+      title="Pourquoi faire confiance à Hostino pour l'hébergement de votre site web ?"
+      alignment="left"
+    />
+
+    <FAQSection title="FAQ sur l'hébergement web Starty" />
+    <StarRating client:load />
+  </main>
+
+</Layout>
+

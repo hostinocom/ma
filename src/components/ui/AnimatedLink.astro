@@ -1,0 +1,49 @@
+---
+interface Props {
+  href: string;
+  children?: any;
+  className?: string;
+  borderColor?: string;
+}
+
+const {
+  href,
+  className = '',
+  borderColor = 'currentColor',
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class={`animated-link ${className}`}
+  style={`--border-color: ${borderColor};`}
+>
+  <slot />
+  <style>
+    .animated-link {
+      position: relative;
+    }
+
+    .animated-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--border-color, currentColor);
+      transition: width 0.4s ease;
+    }
+
+    .animated-link:hover::after {
+      width: 100%;
+    }
+
+    .animated-link:not(:hover)::after {
+      left: auto;
+      right: 0;
+      width: 0;
+    }
+  </style>
+</a>
+

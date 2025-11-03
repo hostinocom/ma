@@ -1,0 +1,38 @@
+---
+import ConsultButton from "../ui/ConsultButton.astro";
+
+interface Props {
+  title: string;
+  paragraphs: (string | any)[];
+  buttonText: string;
+  buttonHref: string;
+  subtitle?: string;
+  arrowButton?: boolean;
+}
+
+const { title, paragraphs, buttonText, buttonHref, subtitle, arrowButton } =
+  Astro.props;
+---
+
+<section class="lg:my-[150px] my-[80px]">
+  <div class="container">
+    {subtitle && (
+      <h3
+        class="text-[27px] font-[600] tracking-[-.8px] text-title"
+        set:html={subtitle}
+      ></h3>
+    )}
+    <h2 class="max-big-title mb-[20px]" set:html={title}></h2>
+
+    {paragraphs.map((paragraph, index) =>
+      typeof paragraph === "string" ? (
+        <p key={index} class="paragraph" set:html={paragraph}></p>
+      ) : (
+        <Fragment key={index}>{paragraph}</Fragment>
+      )
+    )}
+
+    <ConsultButton arrowButton={arrowButton} href={buttonHref} text={buttonText} />
+  </div>
+</section>
+

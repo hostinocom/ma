@@ -1,0 +1,176 @@
+---
+// This component requires client-side interactivity
+// It will need to be used with client:load or client:hydrate directive
+---
+
+<div id="cookie-consent-container"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('cookie-consent-container');
+    if (!container) return;
+
+    let showButton = true;
+    let showModal = false;
+    let isHovered = false;
+
+    // Check if user has already accepted cookies
+    const hasConsented = localStorage.getItem('cookieConsent');
+    if (hasConsented) {
+      showButton = false;
+    }
+
+    const render = () => {
+      if (!showButton) {
+        container.innerHTML = '';
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="fixed bottom-[-32px] shadow-6xl cursor-pointer transition-all duration-300 hover:bottom-0 left-6 z-50">
+          <button
+            id="cookie-open-btn"
+            class="relative bg-white text-[#003B5C] font-bold py-3 px-6 rounded-lg"
+          >
+            Gérer le consentement
+          </button>
+        </div>
+
+        ${showModal ? `
+          <div class="fixed left-1 sm:w-auto w-full bottom-1 px-4 py-4 bg-opacity-50 z-50 pt-[100px]">
+            <div class="bg-white rounded-xl shadow-2xl p-6 relative animate-slideUp">
+              <button
+                id="cookie-close-btn"
+                class="absolute top-2 right-2 text-[#003B5C]"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+
+              <div class="mb-6">
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Ce site web utilise des cookies pour améliorer votre expérience.
+                </p>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                <button
+                  id="cookie-accept-btn"
+                  class="flex-1 bg-[#00D563] text-white py-2 px-4 rounded hover:bg-[#00C055] transition-colors"
+                >
+                  Accepter
+                </button>
+                <button
+                  id="cookie-more-btn"
+                  class="flex-1 bg-gray-100 text-[#003B5C] py-2 px-4 rounded hover:bg-gray-200 transition-colors"
+                >
+                  En savoir plus.
+                </button>
+              </div>
+
+              <div class="flex justify-center gap-6 text-sm">
+                <a
+                  href="/politique-cookies/"
+                  class="text-blue-600 text-[12px] underline font-medium"
+                >
+                  Politique cookies
+                </a>
+                <a
+                  href="/conditions-generales/"
+                  class="text-blue-600 text-[12px] underline font-medium"
+                >
+                  Conditions générales
+                </a>
+              </div>
+            </div>
+          </div>
+        ` : ''}
+      `;
+
+      // Attach event listeners
+      const openBtn = document.getElementById('cookie-open-btn');
+      const closeBtn = document.getElementById('cookie-close-btn');
+      const acceptBtn = document.getElementById('cookie-accept-btn');
+      const moreBtn = document.getElementById('cookie-more-btn');
+
+      if (openBtn) {
+        openBtn.addEventListener('click', () => {
+          showModal = true;
+          render();
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          showModal = false;
+          render();
+        });
+      }
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', async () => {
+          // Call API route to set the cookie server-side
+          try {
+            await fetch('/api/consent', { method: 'POST' });
+          } catch (e) {
+            console.error('Failed to set consent:', e);
+          }
+          localStorage.setItem('cookieConsent', 'true');
+          showModal = false;
+          showButton = false;
+          render();
+        });
+      }
+
+      if (moreBtn) {
+        moreBtn.addEventListener('click', () => {
+          showModal = false;
+          render();
+        });
+      }
+    };
+
+    render();
+  });
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.4s ease-out;
+  }
+</style>
+

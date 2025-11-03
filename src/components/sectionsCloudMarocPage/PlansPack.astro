@@ -1,0 +1,191 @@
+---
+import AnimatedButton from "../ui/AnimatedButton.astro";
+
+interface Plan {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  isHighlighted: boolean;
+  features: (string | { html: string })[];
+  is_most_popular: boolean;
+  href: string;
+}
+
+interface Props {
+  className?: string;
+  title?: string;
+  smallTitle?: string;
+  plans?: Plan[];
+}
+
+const hostingPlans: Plan[] = [
+  {
+    id: 1,
+    name: "Pack MA1",
+    description: "Idéal pour débuter avec un petit site web.",
+    price: "1399 DH",
+    isHighlighted: false,
+    features: [
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title">Données hébergées au Maroc</span></div>` },
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>Adresse IP marocaine</b></span></div>` },
+      "Nom de domaine <b>gratuit</b>",
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/wp.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>WordPress</b> pré-installé</span></div>` },
+      "<b>Certificat SSL</b> (https://)",
+      "Panneau de gestion <b><i>cPanel®</i></b>",
+      "<b>10 Go</b> de stockage SSD NVMe",
+      "Bande Passante : <b>50 GB</b>",
+      "Adresses e-mails: <b>5</b>",
+      "Antivirus, Antimalware et WAF",
+      "Datacenter certifié TIER III, ISO 27001",
+      "Conforme PCI-DSS",
+      "Conforme à la <b>loi marocaine 09-08</b>",
+      "Activation instantannée",
+    ],
+    is_most_popular: false,
+    href: "https://my.hostino.com/order.php?pid=27&language=french&currency=1&country=MA",
+  },
+  {
+    id: 2,
+    name: "Pack MA2",
+    description: "Plus de performance, plus de ressources.",
+    price: "2399 DH",
+    isHighlighted: true,
+    features: [
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title">Données hébergées au Maroc</span></div>` },
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>Adresse IP marocaine</b></span></div>` },
+      "Nom de domaine <b>gratuit</b>",
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/wp.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>WordPress</b> pré-installé</span></div>` },
+      "<b>Certificat SSL</b> (https://)",
+      "Panneau de gestion <b><i>cPanel®</i></b>",
+      "<b>25 Go</b> de stockage SSD NVMe",
+      "Bande Passante : <b>100 GB</b>",
+      "Adresses e-mails: <b>100</b>",
+      "Antivirus, Antimalware et WAF",
+      "Datacenter certifié TIER III, ISO 27001",
+      "Conforme PCI-DSS",
+      "Conforme à la <b>loi marocaine 09-08</b>",
+      "Activation instantannée",
+    ],
+    is_most_popular: true,
+    href: "https://my.hostino.com/order.php?pid=28&language=french&currency=1&country=MA",
+  },
+  {
+    id: 3,
+    name: "Pack MA3",
+    description: "Meilleur choix pour les sites corporate.",
+    price: "4899 DH",
+    isHighlighted: false,
+    features: [
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title">Données hébergées au Maroc</span></div>` },
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>Adresse IP marocaine</b></span></div>` },
+      "Nom de domaine <b>gratuit</b>",
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/wp.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>WordPress</b> pré-installé</span></div>` },
+      "<b>Certificat SSL</b> (https://)",
+      "Panneau de gestion <b><i>cPanel®</i></b>",
+      "<b>50 Go</b> de stockage SSD NVMe",
+      "Bande Passante : <b>250 GB</b>",
+      "Adresses e-mails: <b>illimitées</b>",
+      "Antivirus, Antimalware et WAF avancés",
+      "Datacenter certifié TIER III, ISO 27001",
+      "Conforme PCI-DSS",
+      "Conforme à la <b>loi marocaine 09-08</b>",
+      "Activation instantannée",
+    ],
+    is_most_popular: false,
+    href: "https://my.hostino.com/order.php?pid=29&language=french&currency=1&country=MA",
+  },
+];
+
+const {
+  className = "",
+  title,
+  smallTitle,
+  plans = hostingPlans,
+}: Props = Astro.props;
+---
+
+<section
+  id="plans"
+  class={`${className} overflow-hidden plans-section relative`}
+>
+  <div class="container">
+    <div
+      class={`${
+        plans.length >= 3
+          ? "grid grid-cols-1 py-[30px] lg:grid-cols-3 lg:gap-6 gap-8 w-full"
+          : "flex lg:flex-row flex-col justify-center py-[30px] lg:gap-6 gap-8 w-full"
+      }`}
+    >
+      {plans.map((plan) => (
+        <div
+          class={`${
+            plan.is_most_popular && "border-3 border-primary"
+          } bg-white relative lg:text-left text-center rounded-[10px] lg:w-full md:w-[70vw] w-full mx-auto mb-4 md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px] border border-gray-300 h-full`}
+        >
+          <h3
+            class="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+            set:html={plan.name}
+          />
+          <p class="text-[#022545BD] md:text-left text-center text-[14px] font-[400] leading-[21px] tracking-[0.3px]">
+            {plan.description}
+          </p>
+
+          <div class="border-t-3 py-[15px] border-gray-200 my-4"></div>
+
+          {/* Pricing */}
+          <div class="mb-6">
+            <p class="text-[45px] font-bold leading-[54px] text-[#14213D]" style="font-family: 'Montserrat', sans-serif;">
+              {plan.price}
+            </p>
+          </div>
+
+          <a href={plan.href} class="">
+            <AnimatedButton
+              text="Commender"
+              hoverText="Commander"
+              bgColor={plan.is_most_popular ? "bg-primary" : "bg-title"}
+              textColor="text-white"
+              hoverBgColor={plan.is_most_popular ? "hover:bg-title" : ""}
+              className="text-white px-[40px] font-[600] py-[10px] rounded-[10px]"
+              arrowButton={true}
+            />
+          </a>
+
+          <div class="border-t border-gray-200 my-4"></div>
+
+          <div>
+            {plan.features.map((feature) => (
+              <div class="flex items-start">
+                {typeof feature === "object" && "html" in feature ? (
+                  <div
+                    class="text-[14px] text-title font-[400] leading-[1.8em]"
+                    set:html={feature.html}
+                  />
+                ) : (
+                  <p
+                    class="text-[14px] text-title font-[400] leading-[1.8em]"
+                    set:html={feature as string}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-6">
+            <p class="text-title text-[14px] font-[400] inline-flex items-center">
+              Activation instantannée
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div
+      class="elementor-shape elementor-shape-bottom"
+      aria-hidden="true"
+      data-negative="false"
+    >
+    </div>
+  </div>
+</section>
+

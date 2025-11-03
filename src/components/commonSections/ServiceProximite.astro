@@ -1,0 +1,64 @@
+---
+interface Props {
+  page: string;
+}
+
+const { page } = Astro.props;
+
+const moroccanCities = [
+  "Tanger",
+  "Tétouan",
+  "Larache",
+  "Asilah",
+  "Chefchaouen",
+  "Ksar El Kébir",
+  "Ouezzane",
+  "Al Hoceïma",
+  "Fès",
+  "Meknès",
+  "Séfrou",
+  "Taza",
+  "Taounate",
+  "Khémisset",
+  "Rabat",
+  "Kénitra",
+  "Sidi Kacem",
+  "Sidi Slimane",
+  "Casablanca",
+  "Mohammédia",
+  "El Jadida",
+  "Khénifra",
+  "Béni Mellal",
+  "Khouribga",
+  "Ifrane",
+  "Marrakech",
+  "Essaouira",
+  "Benguerir",
+];
+---
+
+<section class="py-12 px-4 md:px-6 lg:px-8">
+  <div class="container mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-title mb-8 text-center md:text-left">
+      Service
+      <br />
+      de proximité
+    </h2>
+
+    <div class="flex flex-wrap gap-1">
+      {moroccanCities.map((city) => {
+        const formattedCity = city.toUpperCase().replace(/\s+/g, "-");
+        return (
+          <a
+            key={city}
+            href={`https://www.hostino.ma/${page}-${formattedCity}`}
+            class="py-[2.5px] px-[4px] border border-gray-400 text-[16px] text-title"
+          >
+            {city}
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>
+

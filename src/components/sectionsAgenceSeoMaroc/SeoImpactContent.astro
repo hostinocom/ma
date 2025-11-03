@@ -1,0 +1,184 @@
+---
+interface PerformanceMetric {
+  indicator: string;
+  idealValue: string;
+  hostinoValue: string;
+  hostinoStatus: "success" | "warning";
+  classicHosting: string;
+  classicStatus: "success" | "warning" | "error";
+}
+
+const seoImpactContent = {
+  title: "Impact de l'hébergement et du domaine sur le SEO au Maroc",
+  paragraphs: [
+    "Dans le digital marocain, la base d'une bonne stratégie SEO commence par un <a href='https://www.hostino.ma/' style='text-decoration: underline;'><b>hébergement web</b></a> solide.",
+    "Nos packs d'hébergement sont spécialement conçus pour le référencement : serveurs optimisés pour la rapidité, protection renforcée selon les normes de sécurité internationales et conformité aux attentes de Google.",
+    'Enfin, le choix du <strong><span style="text-decoration: underline;"><a href="/nom-de-domaine-ma">nom de domaine en .ma</a></span></strong> est un atout stratégique incontournable. Il renforce la crédibilité de votre projet, affirme votre ancrage au marché marocain et envoie un signal fort à Google pour le référencement local. Un domaine en .ma inspire confiance aux internautes et favorise un meilleur positionnement sur les recherches ciblées au Maroc.',
+  ],
+  performanceTable: {
+    headers: [
+      "Indicateur",
+      "Valeur idéale",
+      "Hostino™",
+      "Hébergement classique",
+    ],
+    metrics: [
+      {
+        indicator: "Performance globale",
+        idealValue: "> 90",
+        hostinoValue: "95",
+        hostinoStatus: "success",
+        classicHosting: "72",
+        classicStatus: "warning",
+      },
+      {
+        indicator: "LCP (Largest Contentful Paint)",
+        idealValue: "< 2.5s",
+        hostinoValue: "1.8s",
+        hostinoStatus: "success",
+        classicHosting: "3.9s",
+        classicStatus: "error",
+      },
+      {
+        indicator: "FID (First Input Delay)",
+        idealValue: "< 100ms",
+        hostinoValue: "50ms",
+        hostinoStatus: "success",
+        classicHosting: "120ms",
+        classicStatus: "warning",
+      },
+      {
+        indicator: "CLS (Cumulative Layout Shift)",
+        idealValue: "< 0.1",
+        hostinoValue: "0.03",
+        hostinoStatus: "success",
+        classicHosting: "0.15",
+        classicStatus: "warning",
+      },
+      {
+        indicator: "TTFB (Time to First Byte)",
+        idealValue: "< 0.8s",
+        hostinoValue: "0.4s",
+        hostinoStatus: "success",
+        classicHosting: "1.2s",
+        classicStatus: "error",
+      },
+    ],
+    legend: {
+      success: "conforme",
+      warning: "à améliorer",
+      error: "non conforme",
+    },
+  },
+  closingParagraph:
+    "Enfin, le choix du <strong>nom de domaine en .ma</strong> est un atout stratégique incontournable. Il renforce la crédibilité de votre projet, affirme votre ancrage au marché marocain et envoie un signal fort à Google pour le référencement local. Un domaine en .ma inspire confiance aux internautes et favorise un meilleur positionnement sur les recherches ciblées au Maroc.",
+};
+
+function getStatusIcon(status: "success" | "warning" | "error") {
+  if (status === "success") {
+    return '<span class="text-green-600">✓</span>';
+  } else if (status === "warning") {
+    return '<span class="text-yellow-600">⚠</span>';
+  } else {
+    return '<span class="text-red-600">✕</span>';
+  }
+}
+---
+
+<section class="lg:my-[150px] my-[80px]">
+  <div class="container">
+    <h2 class="big-title pr-[100px] mb-[20px]">{seoImpactContent.title}</h2>
+
+    {seoImpactContent.paragraphs.map((paragraph) => (
+      <p
+        class="paragraph"
+        set:html={paragraph}
+      />
+    ))}
+
+    {/* Performance Comparison Table */}
+    <div class="my-[20px] overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-gray-100">
+            {seoImpactContent.performanceTable.headers.map((header, index) => (
+              <th
+                class={`p-4 text-left font-semibold ${
+                  index === 2
+                    ? "text-[#0A2540] bg-[#E8F5E9]"
+                    : index === 3
+                    ? "bg-[#FFF3E0]"
+                    : ""
+                }`}
+              >
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {seoImpactContent.performanceTable.metrics.map((metric) => (
+            <tr class="border-b border-gray-200">
+              <td class="p-4 font-medium">{metric.indicator}</td>
+              <td class="p-4 text-gray-600">{metric.idealValue}</td>
+              <td class="p-4 bg-green-50">
+                <div class="flex items-center gap-2">
+                  <span set:html={getStatusIcon(metric.hostinoStatus)} />
+                  <span class="font-bold text-green-600">
+                    {metric.hostinoValue}
+                  </span>
+                </div>
+              </td>
+              <td
+                class={`p-4 ${
+                  metric.classicStatus === "success"
+                    ? "bg-green-50"
+                    : metric.classicStatus === "warning"
+                    ? "bg-yellow-50"
+                    : "bg-red-50"
+                }`}
+              >
+                <div class="flex items-center gap-2">
+                  <span set:html={getStatusIcon(metric.classicStatus)} />
+                  <span
+                    class={`font-bold ${
+                      metric.classicStatus === "success"
+                        ? "text-green-600"
+                        : metric.classicStatus === "warning"
+                        ? "text-yellow-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    {metric.classicHosting}
+                  </span>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Legend */}
+      <div class="flex gap-6 mt-4 text-sm text-gray-600">
+        <span class="flex items-center gap-2">
+          <span set:html={getStatusIcon("success")} />
+          {seoImpactContent.performanceTable.legend.success}
+        </span>
+        <span class="flex items-center gap-2">
+          <span set:html={getStatusIcon("warning")} />
+          {seoImpactContent.performanceTable.legend.warning}
+        </span>
+        <span class="flex items-center gap-2">
+          <span set:html={getStatusIcon("error")} />
+          {seoImpactContent.performanceTable.legend.error}
+        </span>
+      </div>
+    </div>
+
+    <p
+      class="paragraph"
+      set:html={seoImpactContent.closingParagraph}
+    />
+  </div>
+</section>
+

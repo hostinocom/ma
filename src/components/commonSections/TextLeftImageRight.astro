@@ -1,0 +1,72 @@
+---
+import ConsultButton from "../ui/ConsultButton.astro";
+
+interface Props {
+  title: string | any;
+  paragraphs: (string | any)[];
+  imageSrc: string;
+  imageAlt?: string;
+  consultButtonTextExiste?: boolean;
+  textButton?: string;
+  href?: string;
+  className?: string;
+  arrowButton?: boolean;
+}
+
+const {
+  title,
+  paragraphs,
+  imageSrc,
+  imageAlt = "Image",
+  consultButtonTextExiste = true,
+  textButton,
+  href = "/email-professionnel/",
+  className,
+  arrowButton = false,
+} = Astro.props;
+---
+
+<section class={`${className ? className : "lg:my-[150px] my-[80px]"}`}>
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="col-span-1">
+        {typeof title === "string" ? (
+          <h2
+            class="big-title xl:pr-[10px] lg:pr-[50px] font-bold text-title mb-6"
+            set:html={title}
+          ></h2>
+        ) : (
+          <h2 class="big-title xl:pr-[10px] lg:pr-[50px] font-bold text-title mb-6">
+            {title}
+          </h2>
+        )}
+        {paragraphs.map((paragraph, index) =>
+          typeof paragraph === "object" ? (
+            <Fragment key={index}>{paragraph}</Fragment>
+          ) : (
+            <p
+              key={index}
+              class="paragraph"
+              set:html={paragraph as string}
+            ></p>
+          )
+        )}
+        {consultButtonTextExiste && (
+          <ConsultButton arrowButton={arrowButton} href={href} text={textButton} />
+        )}
+      </div>
+
+      <div class="col-span-1 flex justify-end">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          width={3508}
+          height={2481}
+          class="xl:w-[95%] lg:w-[85%] md:w-[85%] h-auto rounded-lg"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+

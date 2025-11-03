@@ -107,44 +107,12 @@ span {
 
 }
 
-.elementor-shape-bottom svg {
-  width: calc(272% + 1.3px);
-  height: 427px;
-}
-
-@media screen and (max-width : 1024px) {
-  .elementor-shape-bottom svg {
-    width: 4700px !important;
-    left: 25% !important;
-    height: 1500px;
-  }
-}
 
 
-.elementor-shape {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  opacity: 0.2;
-  z-index: -1;
 
-}
 
-.elementor-shape svg {
-  display: block;
-  width: calc(100% + 1.3px);
-  position: relative;
-  left: 50%;
-  transform: translateY(-50%);
-}
 
-.elementor-shape svg {
-  display: block;
-  left: 50%;
-  position: relative;
-  transform: translateX(-50%);
-  width: calc(100% + 1.3px);
-}
+
 
 .container {
   @apply max-w-7xl mx-auto px-4 lg:px-7;
@@ -177,12 +145,6 @@ span {
 }
 
 
-.paragraph {
-  color: var(--text);
-  line-height: 1.7rem;
-  font-weight: 400;
-  @apply md:text-[17px] text-[16px];
-}
 
 .paragraph {
   color: var(--text);
@@ -190,6 +152,14 @@ span {
   font-weight: 400;
   @apply md:text-[17px] text-[16px];
 }
+
+.paragraph-mb-0 {
+  color: var(--text);
+  line-height: 1.7rem;
+  font-weight: 400;
+  @apply md:text-[17px] text-[16px];
+}
+
 
 .title-15-bold {
   font-size: 18px;

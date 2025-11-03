@@ -1,0 +1,54 @@
+---
+interface TableRow {
+  criteria: string;
+  leadGen: string;
+  lowCost: string;
+}
+
+interface Props {
+  tableData: TableRow[];
+}
+
+const { tableData } = Astro.props;
+---
+
+<section>
+  <div class="container">
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-[#0a2540] text-white">
+            <th class="border border-gray-300 px-6 py-4 text-left font-semibold">
+              Critères
+            </th>
+            <th class="border border-gray-300 px-6 py-4 text-left font-semibold">
+              Site web qui génère des leads
+            </th>
+            <th class="border border-gray-300 px-6 py-4 text-left font-semibold">
+              Site web low-cost
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((row: TableRow, index: number) => (
+            <tr
+              key={index}
+              class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+            >
+              <td class="border border-gray-300 px-6 py-4 font-medium text-gray-900">
+                {row.criteria}
+              </td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700">
+                {row.leadGen}
+              </td>
+              <td class="border border-gray-300 px-6 py-4 text-gray-700">
+                {row.lowCost}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+

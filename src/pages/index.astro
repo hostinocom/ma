@@ -2,7 +2,7 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HomeSection/HeroSection.astro';
-import TrustedBySection from '../components/HomeSection/TrustedBySection.astro';
+import TrustedBySection from '../components/commonSections/TrustedBySection.astro';
 import WhatsHostingSection from '../components/HomeSection/WhatsHostingSection.astro';
 import FastestHostingSection from '../components/HomeSection/FastestHostingSection.astro';
 import DomainSearchSection from "../components/HomeSection/DomainSearchSection.tsx";
@@ -31,7 +31,7 @@ const ogAlt = "Hébergement Web Maroc";
 
 
 
-const articleSchemaHome = {
+const articleSchema = {
   "@context": "https://schema.org",
   "@graph": [
    ...main_schema,
@@ -90,12 +90,12 @@ const articleSchemaHome = {
   canonical_url={canonical_url}
   imageUrl={imageUrl}
   ogAlt={ogAlt}
-  articleSchema={articleSchemaHome}
+  articleSchema={articleSchema}
 >
 
   <main>
     <HeroSection consultButton={true}/>
-	<PlansSection  />
+	  <PlansSection  />
   	<TrustedBySection classNameImage="md:w-[80%] w-[100%] mx-auto h-auto brightness" />
   	<WhatsHostingSection />
 	<DomainSearchSection id="ma" />

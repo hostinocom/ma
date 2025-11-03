@@ -1,0 +1,222 @@
+---
+import AnimatedButton from "../ui/AnimatedButton.astro";
+
+interface ComparisonRow {
+  feature: string;
+  starty: string;
+  startyPlus: string;
+  bgTransparent: boolean;
+  title_bold: boolean;
+  starty_bold: boolean;
+  startyPlus_bold: boolean;
+}
+
+const comparisonData: ComparisonRow[] = [
+  {
+    feature: "Nombre de comptes email",
+    starty: "5",
+    startyPlus: "10",
+    bgTransparent: false,
+    title_bold: false,
+    starty_bold: true,
+    startyPlus_bold: true,
+  },
+  {
+    feature: "Espace de stockage par adresse",
+    starty: "1 Go",
+    startyPlus: "5 Go",
+    bgTransparent: false,
+    title_bold: false,
+    starty_bold: true,
+    startyPlus_bold: true,
+  },
+  {
+    feature: "Limite d'envoi par heure",
+    starty: "50",
+    startyPlus: "100",
+    bgTransparent: false,
+    title_bold: false,
+    starty_bold: true,
+    startyPlus_bold: true,
+  },
+  {
+    feature: "Redirecteur d'emails",
+    starty: "check",
+    startyPlus: "check",
+    bgTransparent: true,
+    title_bold: false,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "Répondeur automatique",
+    starty: "check",
+    startyPlus: "check",
+    bgTransparent: true,
+    title_bold: false,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "CPU Limit",
+    starty: "100%",
+    startyPlus: "100%",
+    bgTransparent: true,
+    title_bold: true,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "I/O Limit(IO)",
+    starty: "2MB/s",
+    startyPlus: "3MB/s",
+    bgTransparent: true,
+    title_bold: true,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "Memory Limit",
+    starty: "512 MB",
+    startyPlus: "1 Go",
+    bgTransparent: true,
+    title_bold: true,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "Processus simultanés",
+    starty: "20",
+    startyPlus: "50",
+    bgTransparent: true,
+    title_bold: true,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+];
+---
+
+<section class="my-[80px] relative md:my-[150px]">
+  <div class="container mx-auto px-4">
+    <div class="flex py-[20px] gap-[10px] border-t-2 border-gray-200 sticky top-0 bg-white items-center">
+      <div class="lg:w-[40%] md:w-[37%] w-[55%] flex flex-col gap-y-[8px]">
+        <h3
+          class="font-[600] lg:text-[49px] md:text-[39px] lg:trancking-[-2.1px] tracking-[-0.9px] lg:leading-[57px] md:leading-[46px] leading-[41px] text-[35px] md:pr-[50px] mb-0 text-title"
+          style="margin-bottom: 0 !important"
+        >
+          Comparer les plans Starty®
+        </h3>
+        <p class="paragraph text-title">
+          Tarification transparente pour chaque étape.
+        </p>
+      </div>
+      <div class="text-center lg:w-[25%] md:md:w-[21%] w-[22%]">
+        <h3 class="font-[600] lg:text-[34px] sm:text-[31px] text-[15px] sm:leading-[1.3em] leading-[1.2em] lg:leading-[35px] text-title italic">
+          Starty
+        </h3>
+      </div>
+      <div class="text-center lg:w-[25%] md:md:w-[21%] w-[22%]">
+        <h3 class="font-[600] lg:text-[34px] sm:text-[31px] text-[15px] sm:leading-[1.4em] leading-[1.2em] lg:leading-[35px] text-title">
+          Starty Plus
+        </h3>
+      </div>
+    </div>
+
+    <div>
+      {comparisonData.map((row, index) => (
+        <div
+          key={index}
+          class={`flex items-center p-4 gap-[10px] ${
+            row.bgTransparent ? "bg-transparent" : "bg-gray-100"
+          }`}
+        >
+          <div class="lg:w-[40%] md:w-[37%] w-[55%] p-[10px]">
+            <h5 class={row.title_bold ? "title-15-bold" : "title-15"}>
+              {row.feature}
+            </h5>
+          </div>
+
+          <div class="text-center md:text-[18px] font-[600] lg:w-[25%] md:md:w-[21%] w-[22%] text-title">
+            {row.starty === "check" ? (
+              <div class="flex justify-center">
+                <svg
+                  class="w-6 h-6 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+            ) : (
+              <span class={row.starty_bold ? "title-15-bold" : "title-15"}>
+                {row.starty}
+              </span>
+            )}
+          </div>
+
+          <div class="text-center lg:w-[25%] md:md:w-[21%] w-[22%] text-title">
+            {row.startyPlus === "check" ? (
+              <div class="flex justify-center">
+                <svg
+                  class="w-6 h-6 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+            ) : (
+              <span
+                class={row.startyPlus_bold ? "title-15-bold" : "title-15"}
+              >
+                {row.startyPlus}
+              </span>
+            )}
+          </div>
+        </div>
+      ))}
+
+      <div class="flex gap-[10px] w-full">
+        <div class="lg:w-[40%] md:w-[37%] w-[0%]"></div>
+        <a
+          href="https://my.hostino.com/order.php?pid=37&language=french&country=MA"
+          class="text-white lg:w-[25%] md:md:w-[21%] w-[48%]"
+        >
+          <AnimatedButton
+            text="Starty®"
+            hoverText="Starty®"
+            bgColor="bg-primary"
+            hoverBgColor="bg-title"
+            textColor="text-white"
+            className="btn-10-20 w-full"
+          />
+        </a>
+        <a
+          href="https://my.hostino.com/order.php?pid=36&language=french&country=MA&promocode=UI12S"
+          class="text-white lg:w-[25%] md:md:w-[21%] w-[48%]"
+        >
+          <AnimatedButton
+            text="Starty® Plus"
+            hoverText="Starty® Plus"
+            bgColor="bg-title"
+            textColor="text-white"
+            className="btn-10-20 w-full"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+

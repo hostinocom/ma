@@ -1,0 +1,68 @@
+---
+import ConsultButton from "../ui/ConsultButton.astro";
+
+const title = "Serveur VPS Cloud situé au Maroc 🇲🇦";
+const paragraphs = [
+  `La solution Cloud <a href="/vps-maroc/">VPS Maroc</a> de Hostino vous offre une infrastructure performante, <b>sécurisée et souveraine</b>, parfaitement adaptée aux exigences des institutions gouvernementales, du secteur de la santé, de l'éducation et des services publics.`,
+  `Que ce soit pour héberger des données sensibles, des applications critiques ou des sites à fort trafic, notre solution garantit confidentialité, <b>stabilité et conformité</b> aux standards de sécurité.`,
+  `Grâce à une flexibilité totale, vous pouvez ajuster vos ressources en fonction de vos besoins, tout en bénéficiant d'une haute disponibilité et d'un support technique réactif.`,
+];
+---
+
+<section id="vps" class="lg:my-[150px] my-[80px]">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      {/* Text Section */}
+      <div class="col-span-1">
+        <h2
+          class="title-section xl:pr-[130px] lg:pr-[50px] font-bold text-title mb-6"
+          set:html={title}
+        />
+
+        {paragraphs.map((paragraph) => (
+          <p
+            class="paragraph"
+            set:html={paragraph}
+          />
+        ))}
+        <ConsultButton href="/vps-maroc#vps" text="Demander un devis" />
+      </div>
+
+      {/* Image Section */}
+      <div class="col-span-1">
+        <div class="flex flex-col lg:ml-[100px] rounded-[10px] border-1 border-primary px-[30px] py-[40px] items-center h-full gap-5 justify-center text-center">
+          <h3 class="lg:text-[29px] lg:leading-[33px] md:leading-[52px] leading-[40px] md:text-[45px] text-[35px] font-[600] md:tracking-[-3px] lg:tracking-[-1.5px] tracking-[-1.2px] text-title">
+            Cloud <br /> VPS Maroc
+          </h3>
+
+          <ConsultButton href="/vps-maroc#vps" text="Demander un devis" />
+
+          <ul class="pl-6 space-y-2 text-title">
+            <li class="text-center mx-auto">
+              <div class="flex mx-auto justify-center">
+                <img
+                  src="/images/03/flag-maroc.svg"
+                  alt="Check"
+                  width={20}
+                  height={20}
+                />
+                <p><b>Adresse IP marocaine</b></p>
+              </div>
+            </li>
+            <li class="text-[14px]">Jusqu'à <b>512 vCPU</b></li>
+            <li class="text-[14px]">Jusqu'à <b>1024 Go de RAM</b></li>
+            <li class="text-[14px]">Stockage <b>NVMe SSD évolutif</b></li>
+            <li class="text-[14px]">Datacenter certifié <b>Tier III et ISO 27001</b></li>
+            <li class="text-[14px]">Redondance réseau sur 2 emplacements</li>
+            <li class="text-[14px]">Sauvegardes automatisées</li>
+            <li class="text-[14px]">WAF avancé inclus</li>
+            <li class="text-[14px]">Connectivité partagée ou dédiée</li>
+            <li class="text-[14px]">Uptime garanti de <b>99.9%</b></li>
+            <li class="text-[14px]"><b>Infogérance sur mesure</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
