@@ -76,7 +76,7 @@ select {
 }
 
 .big-title {
-  @apply lg:text-[56px] md:text-[45px] text-[43px] leading-[49px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[59px] font-[600] text-title;
+  @apply lg:text-[56px] md:text-[45px] text-[43px] leading-[49px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[64px] font-[600] text-title;
 }
 
 .big-title.title-hero-section {
