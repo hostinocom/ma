@@ -2,6 +2,7 @@
 
 
 @import "tailwindcss";
+@import '@fontsource/poppins/300.css';
 @import '@fontsource/poppins/400.css';
 @import '@fontsource/poppins/500.css';
 @import '@fontsource/poppins/600.css';
@@ -149,7 +150,7 @@ span {
 .paragraph {
   color: var(--text);
   line-height: 1.7rem;
-  font-weight: 400;
+  font-weight: 300;
   @apply md:text-[17px] text-[16px];
 }
 
