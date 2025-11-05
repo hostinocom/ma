@@ -1,0 +1,348 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/commonSections/HeroSection.astro";
+import ContactForm from "../components/commonSections/ContactForm.astro";
+import TextLeftImageRight from "../components/commonSections/TextLeftImageRight.astro";
+import NationalCoverage from "../components/commonSections/NationalCoverage.astro";
+import FAQSection from "../components/commonSections/FaqSection.astro";
+import SeoServiceCards from "../components/commonSections/SeoServiceCards.astro";
+import GmbServices from "../components/commonSections/GmbServices.astro";
+import TitleParagraphButton from "../components/commonSections/TitleParagraphButton.astro";
+import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter.astro";
+import { main_schema } from "../mainSchema.ts";
+
+const title = "Agence Marketing Médical Larache | SEO Santé – Médecins &amp; Cliniques";
+const description = "Agence Marketing Medical Larache. Publicité Google &amp; Référencement SEO pour Médecins, Cabinets, Cliniques et Laboratoires ☎️ 0663 75 09 08"; Référencement SEO pour Médecins, Cabinets, Cliniques et Laboratoires ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://maroc-1hp.pages.dev/images/agence-marketing-medical/agence-marketing-medical-maroc.png";
+const canonical_url = "https://www.hostino.ma/agence-marketing-medical";
+const ogAlt = "Agence Marketing Médical Larache";
+
+const faqData = [
+  {
+    question: "Je suis médecin, est-ce possible d'être n°1 sur Google ?",
+    answers: [
+      `Oui, c'est possible, mais cela repose sur une stratégie SEO bien pensée et adaptée à votre <span style="text-decoration: underline"><strong><a href="https://fr.wikipedia.org/wiki/Sp%C3%A9cialit%C3%A9_m%C3%A9dicale" rel="noopener">spécialité médicale</a></strong></span>. Google ne place pas un site en première position par hasard : il analyse la qualité du contenu, la pertinence par rapport aux recherches des patients, la notoriété en ligne, et de nombreux critères techniques.`,
+      `Notre agence optimise votre site internet afin qu'il réponde parfaitement aux attentes de Google et surtout aux besoins des patients. Cela passe par la création de contenus médicaux de qualité, la mise en avant de vos expertises, ainsi que l'optimisation de la vitesse, du design et de la structure de votre site.`,
+      `Avec une stratégie bien exécutée, votre cabinet peut se positionner en haut des résultats de recherche, notamment sur des mots-clés liés à votre spécialité et à votre ville.`,
+    ],
+  },
+  {
+    question:
+      "Une clinique propose plusieurs spécialités, est-il possible de référencer le site sur plusieurs mots-clés ?",
+    answers: [
+      `<p class="paragraph">
+        Oui, c'est tout à fait possible. Lorsqu'une clinique propose plusieurs
+        spécialités, chaque service peut être optimisé et référencé sur Google
+        avec ses propres mots-clés.
+      </p>
+
+      <p class="paragraph">
+        L'idée est de créer une page dédiée pour chaque spécialité ou service,
+        avec un contenu clair, pertinent et adapté aux recherches des
+        patients.
+      </p>
+
+      <p class="paragraph">
+        Par exemple, si votre clinique à Larache propose plusieurs services,
+        vous pouvez viser :
+      </p>
+
+      <ul class="flex flex-col gap-[10px] mb-[20px]">
+        <li class="flex gap-2">
+          <svg
+            class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>
+            Gynécologue Larache » avec une page dédiée à la gynécologie
+            (présentation du médecin, services, consultations, suivi de
+            grossesse, etc.).
+          </span>
+        </li>
+
+        <li class="flex gap-2">
+          <svg
+            class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>
+            Pédiatre Larache » avec une page spécifique aux soins pour enfants.
+          </span>
+        </li>
+
+        <li class="flex gap-2">
+          <svg
+            class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>
+            Urgence médicale Larache » avec une page expliquant la disponibilité
+            24h/24 et la rapidité de prise en charge.
+          </span>
+        </li>
+
+        <li class="flex gap-2">
+          <svg
+            class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>
+            Médecin à domicile Larache » avec une page détaillant ce service
+            particulier, horaires, zones couvertes et numéro d'urgence.
+          </span>
+        </li>
+      </ul>
+
+      <p class="paragraph">
+        De cette manière, une même clinique peut apparaître en première page
+        sur Google pour plusieurs spécialités à la fois. Cela augmente non
+        seulement la visibilité, mais aussi le nombre de patients qui vous
+        trouvent directement pour le service dont ils ont besoin.
+      </p>`,
+    ],
+  },
+  {
+    question:
+      "Est-ce que vous gérez les pages Google My Business pour les médecins ?",
+    answers: [
+      `Oui, notre agence SEO médicale peut tout à fait gérer les pages Google My Business (aujourd'hui <strong><span style="text-decoration: underline"><a href="/google-my-business-maroc/">Google Business</a></span></strong> Profile) pour les médecins, cabinets et cliniques.`,
+    ],
+  },
+  {
+    question:
+      "Quels services marketing proposez-vous pour les médecins au Maroc ?",
+    answers: [
+      "Nous proposons en premier lieu le référencement Google (SEO médical) afin que votre cabinet ou clinique apparaisse parmi les premiers résultats lorsqu'un patient recherche un spécialiste dans sa ville.",
+      `Grâce à une stratégie adaptée, vous pouvez être visible sur des mots-clés comme "dentiste Larache" ou "pédiatre Larache", ce qui attire directement de nouveaux patients. Nous créons également des sites web médicaux modernes et professionnels, conçus pour répondre aux besoins des praticiens.",
+      "Votre site devient une véritable vitrine digitale, mettant en avant vos spécialités, vos horaires et vos coordonnées, avec la possibilité d'intégrer la prise de rendez-vous en ligne pour simplifier le parcours patient. La gestion des réseaux sociaux fait aussi partie de nos services.`,
+      "Nous vous aidons à communiquer efficacement sur Facebook, Instagram ou LinkedIn afin de renforcer votre notoriété, informer vos patients et fidéliser votre communauté, toujours dans le respect de la déontologie médicale.",
+      "Enfin, nous optimisons et gérons vos fiches Google My Business, un outil indispensable pour améliorer votre visibilité locale. Grâce à une fiche complète et bien référencée, vos patients peuvent facilement trouver votre adresse, vos horaires, vos avis et prendre contact directement depuis Google.",
+    ],
+  },
+  {
+    question:
+      "Pourquoi un médecin au Maroc a-t-il besoin du référencement Google SEO ?",
+    answers: [
+      "Le SEO permet à un médecin d'être visible directement sur Google lorsqu'un patient recherche une spécialité médicale.",
+      "Par exemple, au lieu de dépendre uniquement du bouche-à-oreille ou des plateformes de rendez-vous, le référencement naturel place votre nom et votre cabinet au premier plan. C'est une stratégie durable qui génère un flux constant de nouveaux patients.",
+    ],
+  },
+  {
+    question:
+      "Combien de temps faut-il pour qu'un médecin voie des résultats avec le SEO ?",
+    answers: [
+      "Le SEO médical est une stratégie progressive. Les premiers résultats peuvent apparaître après 3 à 6 mois, selon la spécialité, la ville et la concurrence locale.",
+    ],
+  },
+];
+
+const prestations = [
+  {
+    title: "Référencement Google SEO",
+    description:
+      `Nous optimisons la visibilité de votre cabinet médical ou de votre clinique afin d'assurer un positionnement durable en <b>première page de Google</b> sur des mots-clés stratégiques tels que : "<b>Gynécologue Larache</b>", "<b>Dentiste Larache</b>" ou "<b>Neurologue Larache</b>".<br/>Résultat : un flux constant de demandes de consultation et une augmentation significative des appels téléphoniques.`,
+    link: "https://www.hostino.ma/contact",
+    textButton: "Contactez-nous",
+  },
+  {
+    title: "Fiches d'établissement Google",
+    description:
+      `Optimisez la visibilité de votre cabinet médical, clinique, parapharmacie, service d'ambulance, laboratoire d'analyses ou centre de radiologie grâce à <a href="/google-my-business-maroc/">une fiche </a><b><a href="/google-my-business-maroc/">d'établissement Google</a> parfaitement</b> optimisée. Elle facilite le partage de l'itinéraire et attire davantage de consultations et de patients.<br/><br/>En 2025, la réputation d'un médecin, d'une clinique, d'un pharmacien ou de tout autre professionnel de santé au Maroc dépend largement du volume et de la qualité des <b>avis clients sur Google</b>.`,
+    link: "https://www.hostino.ma/contact",
+    textButton: "Contactez-nous",
+  },
+  {
+    title: "Création de sites web pour médecins et cliniques",
+    description:
+      "Nous créons des sites web modernes et optimisés pour médecins, cliniques et cabinets, conçus pour inspirer confiance et faciliter la prise de <b>rendez-vous en ligne</b>. Chaque site intègre un système de réservation de consultations, la <b>géolocalisation de votre cabinet</b>, ainsi qu'un appel téléphonique direct depuis le site.&nbsp;<br/><br/>Nous proposons également la <b>connexion à WhatsApp</b> Business pour un contact instantané avec vos patients.",
+    link: "https://www.hostino.ma/contact",
+    textButton: "Contactez-nous",
+  },
+  {
+    title: "Gestion des réseaux sociaux",
+    description:
+      "Gestion de vos réseaux sociaux pour valoriser votre cabinet médical : contenus visuels, <b>podcasts</b>, <b>vidéos, Reels</b> et <b>conseils santé</b> adaptés à votre audience.<br/><br/>Notre objectif est de développer votre communauté, valoriser vos services (consultations, spécialités, équipements…), mettre en avant vos expertises, tout en respectant <b>l'éthique et la réglementation médicale</b> en vigueur au Maroc.",
+    link: "/maintenance-site-web-maroc",
+    textButton: "Lire la suite",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+>
+  <main>
+    <HeroSection
+      subtitle="Agence Marketing Médical Larache"
+      title="Agence marketing digital santé"
+      text="Agence de visibilité Google et de marketing digital pour <b>médecins</b>, <b>cliniques</b>, <b>laboratoires</b> et <b>parapharmacies</b> au Maroc."
+      emailLabel={{
+        textEmail: "Consultation par Email ?",
+        color: "text-primary",
+      }}
+      email="info@hostino.com"
+      imageSrc="images/14/agence-marketing-medical-maroc.png"
+      imageAlt="Agence Marketing Médical au Maroc"
+    />
+
+    <ContactForm
+      title={`Marketing Médical : un conseiller <br class="lg:hidden block" /><span class="border-bottom">vous rappelle !</span>`}
+    />
+
+    <TextLeftImageRight
+      title="Agence marketing pour médecins et cliniques"
+      paragraphs={[
+        `Hostino, agence de marketing médical expérimentée au Maroc, accompagne les <b>médecins</b>, <b>cliniques</b>, <b>laboratoires</b>, <b>parapharmacies</b> et l’ensemble des professionnels de la santé en leur offrant un éventail complet de services destinés à renforcer leur visibilité sur Google.`,
+        `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Nous mettons à votre disposition une équipe d’experts prête à vous guider dans la </span><b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">conception, l’exécution, le suivi et l’optimisation</b><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"> de votre stratégie de marketing digital.</span>`,
+        `Notre agence met en place des stratégies de positionnement local, conçues dans les règles de l’art et en <strong><u>parfaite conformité avec les régulations marocaines</u></strong>.`,
+        `Appelez le +212 663 75 09 08 et confiez votre marketing médical à des experts de confiance au Maroc.`
+      ]}
+      imageSrc="images/14/agence-marketing-medical.png"
+      imageAlt="Référencement Google pour articles de presse au Maroc"
+      consultButtonTextExiste={true}
+      textButton="Contactez-nous"
+      href="https://www.hostino.ma/contact"
+    />
+
+    <TitleParagraphButton
+      title={`Référencement Google <br/><span style="font-weight: 400">vs</span> plateforme de prise de rendez-vous en ligne`}
+      paragraphs={[
+        `Lorsqu'un médecin souhaite renforcer sa visibilité, il pense souvent d'abord aux réseaux sociaux ou aux plateformes de prise de rendez-vous en ligne. Ces solutions semblent simples et rapides à mettre en place, mais elles restent limitées : <span><b>tout le monde peut le faire</b></span>, et au final, cela ne permet pas de réellement se différencier.`,
+        `En réalité, lorsqu'on parle de plateformes de prise de rendez-vous, elles mettent souvent en avant l'argument selon lequel votre cabinet serait « <span style="font-weight: bold;">référencé sur Google</span> ». Mais en vérité, ce n'est pas le médecin qui est mis en avant, <span style="font-weight: bold;">c'est la plateforme elle-même</span>.`,
+        `Votre nom se retrouve alors intégré dans une <span style="font-weight: bold;">longue liste de confrères</span> sur leur site, au lieu de mettre en avant votre cabinet directement et en première ligne sur Google, capable même de <b>dépasser ces plateformes</b>.`,
+        `<img loading="lazy" src="images/14/marketing-medecin-maroc-google-scaled-e1759336272263.jpg" alt="Marketing médical pour médecins au Maroc" width="2560" height="940" />`,
+        `Notre approche est différente : nous <span style="text-decoration: underline;"><strong><a href="/creation-site-web-maroc/">créons pour vous un site</a></strong></span> web Google-friendly, conçu pour être positionné en haut des résultats Google sur des mots-clés très concurrentiels liés à votre spécialité et votre ville.`,
+        `Cette stratégie vous permet de générer des consultations directes, de développer la notoriété de votre cabinet et d'installer une image forte et indépendante auprès de vos patients.`,
+      ]}
+      buttonText="Contactez-nous"
+      buttonHref="https://www.hostino.ma/contact"
+    />
+
+    <TextLeftImageRight
+      title="Référencement Google pour médecins et cliniques"
+      paragraphs={[
+        "Le <a href='/agence-seo-maroc/' style='text-decoration: underline;' target='_blank'><strong>référencement SEO</strong></a> pour votre cabinet médical ou clinique est un levier incontournable pour attirer plus de patients et développer votre notoriété en ligne.",
+        "Grâce à une stratégie SEO adaptée, votre établissement peut apparaître <b>parmi les premiers résultats</b> lorsqu'un patient potentiel recherche un médecin, une spécialité ou une clinique dans votre ville.",
+        "Cela passe par l'optimisation technique de votre site, la création de contenus de santé pertinents, et une gestion efficace de votre fiche <a href='/google-my-business-maroc/' style='text-decoration: underline;' target='_blank'><strong>Google Business</strong></a> afin de renforcer votre <b>visibilité locale</b>. Être bien référencé vous permet également d'inspirer confiance et de faciliter la prise de rendez-vous, un atout majeur pour fidéliser vos patients.",
+        "Contactez-nous au +212 663 75 09 08 et confiez le référencement SEO de votre cabinet à des experts reconnus en marketing santé au Maroc.",
+      ]}
+      imageSrc="images/14/marketing-google-medecins-maroc.png"
+      imageAlt="Marketing Google pour médecins et cliniques au Maroc"
+      consultButtonTextExiste={true}
+      textButton="Contactez-nous"
+      href="https://www.hostino.ma/contact"
+    />
+
+    <GmbServices
+      data={prestations}
+      title="Prestations de notre <br/> agence de marketing médical"
+    />
+
+    <TitleParagraphButton
+      title="Référencement Google<br/>pour médecins au Maroc"
+      paragraphs={[
+        "Aujourd'hui, la majorité des marocains cherchent un médecin en ligne avant de prendre rendez-vous. Être bien positionné sur Google permet à un <b>cabinet médical</b> ou à une <b>clinique</b> d'apparaître parmi les premiers résultats lorsqu'un patient recherche un médecin dans sa ville ou pour une spécialité précise. Sans visibilité, même un cabinet compétent peut passer inaperçu face à d'autres <b>confrères plus présents sur Google</b>.",
+        "Le référencement en ligne ne consiste pas seulement à apparaître en haut des résultats de recherche, mais aussi à offrir une information claire, fiable et accessible aux patients. Pour un médecin, c'est un investissement qui doit toujours respecter <strong><span style='text-decoration: underline;'><a href='https://www.wma.net/wp-content/uploads/2016/11/Ethics_manual_3rd_Nov2015_fr.pdf' rel='noopener'>l'éthique médicale</a></span></strong> : transparence, véracité des informations et mise en avant de la qualité des soins <b>plutôt que de simples arguments commerciaux</b>.",
+        "Ainsi, le référencement Google devient un véritable levier au service de la médecine elle-même : il facilite la recherche de spécialités et de services médicaux par les patients, en leur offrant la possibilité de <b>trouver rapidement le médecin</b> ou la clinique qui répond le mieux à leurs besoins de santé.",
+      ]}
+      buttonText="Contactez-nous"
+      buttonHref="https://www.hostino.ma/contact"
+    />
+
+    <SeoServiceCards />
+
+    <NationalCoverage
+      title="Agence marketing médical, une couverture nationale"
+      text="Chez Hostino™, nous accompagnons les cliniques, médecins, centres de santé et professionnels du secteur médical dans la mise en place de stratégies marketing et SEO ciblées."
+      topic={"Marketing Médical "}
+    />
+
+    <FAQSection
+      faqData={faqData}
+      title="FAQ - Agence Marketing Médical Larache"
+    />
+   </main>
+</Layout>
+

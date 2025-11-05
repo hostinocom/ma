@@ -124,7 +124,7 @@ function getStatusIcon(status: "success" | "warning" | "error") {
               <td class="p-4 bg-green-50">
                 <div class="flex items-center gap-2">
                   <span set:html={getStatusIcon(metric.hostinoStatus)} />
-                  <span class="font-bold text-green-600">
+                  <span class="font-[600] text-green-600">
                     {metric.hostinoValue}
                   </span>
                 </div>
@@ -141,7 +141,7 @@ function getStatusIcon(status: "success" | "warning" | "error") {
                 <div class="flex items-center gap-2">
                   <span set:html={getStatusIcon(metric.classicStatus)} />
                   <span
-                    class={`font-bold ${
+                    class={`font-[600] ${
                       metric.classicStatus === "success"
                         ? "text-green-600"
                         : metric.classicStatus === "warning"

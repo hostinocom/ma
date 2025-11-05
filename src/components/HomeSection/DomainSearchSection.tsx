@@ -91,7 +91,7 @@ export default function DomainSearchSection({ id }: { id: string }) {
                 className="sm:block hidden text-right text-[20px] text-title font-[600]"
               >
                 {domainOptions.map((domain) => (
-                  <option key={domain} className="font-bold" value={domain}>
+                  <option key={domain} className="font-[600]" value={domain}>
                     {domain}
                   </option>
                 ))}
@@ -99,7 +99,7 @@ export default function DomainSearchSection({ id }: { id: string }) {
             </div>
             <button
               type="submit"
-              className="bg-primary sm:py-0 py-6 text-white font-bold px-8 sm:text-lg text-xl transition whitespace-nowrap"
+              className="bg-primary sm:py-0 py-6 text-white font-[600] px-8 sm:text-lg text-xl transition whitespace-nowrap"
             >
               Rechercher
             </button>

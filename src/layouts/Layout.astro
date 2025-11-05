@@ -26,7 +26,7 @@ const {
 <!doctype html>
 <html lang="fr-MA" transition:animate="none">
     <head>
-	  	<link rel="icon" type="image/png" href="/favicon.png" />
+	  	<link rel="icon" type="image/ico" href="favicon.ico" />
 		 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   		<meta charset="UTF-8" />
   <title>{title}</title>
@@ -57,9 +57,43 @@ const {
       <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     )}
 
+
+
+
+  <!-- Crisp Chat -->
+    <script is:inline type="text/javascript">
+      window.$crisp=[];
+      window.CRISP_WEBSITE_ID="fb2f1b57-6d80-40f5-ade7-52e4637dc0c5";
+      (function(){
+        d=document;
+        s=d.createElement("script");
+        s.src="https://client.crisp.chat/l.js";
+        s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
+
+   <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5QLCSWWS');</script>
 	</head>
 
 	<body transition:animate="none">
+
+<!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe 
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5QLCSWWS"
+        height="0" 
+        width="0" 
+        style="display:none;visibility:hidden"
+        title="Google Tag Manager">
+      </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
 	<Header />
 		<slot />
     <Footer />

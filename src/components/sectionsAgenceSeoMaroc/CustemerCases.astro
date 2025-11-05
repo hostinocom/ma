@@ -118,14 +118,14 @@ const rankingsData: RankingCardProps[] = [
             {/* Keywords Section */}
             <div class="space-y-3">
               <div class="flex justify-between items-center pb-2 border-b border-gray-200">
-                <h3 class="font-bold text-gray-900">Mots-clés</h3>
-                <h3 class="font-bold text-gray-900">Position</h3>
+                <h3 class="font-[600] text-gray-900">Mots-clés</h3>
+                <h3 class="font-[600] text-gray-900">Position</h3>
               </div>
 
               {item.keywords.map((keyword) => (
                 <div class="flex justify-between items-center">
                   <span class="text-gray-700">{keyword.term}</span>
-                  <div class="flex items-center justify-center w-9 h-9 rounded-full bg-green-500 text-white font-bold text-sm">
+                  <div class="flex items-center justify-center w-9 h-9 rounded-full bg-green-500 text-white font-[600] text-sm">
                     {keyword.position}
                   </div>
                 </div>

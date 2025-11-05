@@ -575,6 +575,11 @@ label.label-radio:hover label.label-radio {
   animation: 0.4s ease-in both move-in;
 }
 
-.price_ttc b {
-  color : #022545 !important;
+
+b , strong{
+  font-weight: 600 !important;
+}
+
+li{
+  list-style: none !important;
 }

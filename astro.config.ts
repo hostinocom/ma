@@ -3,8 +3,6 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import cloudflare from "@astrojs/cloudflare";
 
-
-
 import tailwindcss from "@tailwindcss/vite";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
@@ -14,7 +12,8 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://ma-6zt.pages.dev/",
-  integrations: [react(), compress(), sitemap()],
+  integrations: [react(), compress()],
+   
   adapter: cloudflare({ 
     imageService: "cloudflare"
   }),
