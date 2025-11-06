@@ -1,15 +1,16 @@
 import type { APIRoute } from 'astro';
-import { sendEmail } from '../../lib/email';
+import { sendEmail } from '../../src/lib/email';
 
 export const POST: APIRoute = async ({ request }) => {
+  console.log(import.meta.env.BREVO_API_KEY);
   try {
     const body = await request.json();
-    const { fullName, company, phone, email, message } = body;
+    const { fullName, phone, email, page } = body;
 
     // Validate required fields
-    if (!fullName || !email || !message) {
+    if (!fullName || !phone || !email) {
       return new Response(
-        JSON.stringify({ error: 'Les champs Nom, Email et Message sont requis' }),
+        JSON.stringify({ error: 'Tous les champs sont requis' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -23,15 +24,13 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Phone validation (optional but if provided, must be valid)
-    if (phone) {
-      const phoneValidation = validatePhone(phone);
-      if (!phoneValidation.valid) {
-        return new Response(
-          JSON.stringify({ error: phoneValidation.error }),
-          { status: 400, headers: { 'Content-Type': 'application/json' } }
-        );
-      }
+    // Strong phone validation
+    const phoneValidation = validatePhone(phone);
+    if (!phoneValidation.valid) {
+      return new Response(
+        JSON.stringify({ error: phoneValidation.error }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
     }
 
     // Strong email validation
@@ -43,21 +42,11 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Message validation
-    const messageValidation = validateMessage(message);
-    if (!messageValidation.valid) {
-      return new Response(
-        JSON.stringify({ error: messageValidation.error }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
-    }
-
     // Sanitize inputs to prevent XSS
     const sanitizedFullName = sanitizeInput(fullName);
-    const sanitizedCompany = company ? sanitizeInput(company) : 'Non spécifiée';
-    const sanitizedPhone = phone ? sanitizeInput(phone) : 'Non spécifié';
+    const sanitizedPhone = sanitizeInput(phone);
     const sanitizedEmail = sanitizeInput(email);
-    const sanitizedMessage = sanitizeInput(message);
+    const sanitizedPage = page ? sanitizeInput(page) : 'Non spécifiée';
 
     // Create HTML email content
     const htmlContent = `
@@ -76,11 +65,11 @@ export const POST: APIRoute = async ({ request }) => {
       margin-bottom: 10px;
       color: #222;
     ">
-      Nouveau message de contact
+      Bonjour,
     </h2>
 
     <p style="margin: 0 0 15px;">
-      Vous avez reçu un nouveau message depuis le formulaire de contact :
+      Voici les informations de la demande de rappel client :
     </p>
 
     <div style="
@@ -90,30 +79,21 @@ export const POST: APIRoute = async ({ request }) => {
       border: 1px solid #ddd;
     ">
       <p style="margin: 8px 0;">
-        <strong>Nom et prénom :</strong> ${sanitizedFullName}
+        <strong>Nom complet :</strong> ${sanitizedFullName}
       </p>
       <p style="margin: 8px 0;">
-        <strong>Entreprise :</strong> ${sanitizedCompany}
+        <strong>Numéro de téléphone :</strong> ${sanitizedPhone}
       </p>
       <p style="margin: 8px 0;">
-        <strong>Téléphone :</strong> ${sanitizedPhone}
+        <strong>Adresse email :</strong> ${sanitizedEmail}
       </p>
       <p style="margin: 8px 0;">
-        <strong>Email :</strong> ${sanitizedEmail}
+        <strong>Page :</strong> 
+        <a href="${sanitizedPage}" target="_blank" style="color: #007BFF; text-decoration: none;">
+          ${sanitizedPage}
+        </a>
       </p>
-      <p style="margin: 8px 0;">
-        <strong>Message :</strong>
-      </p>
-      <div style="
-        background-color: #f5f5f5;
-        padding: 10px;
-        border-radius: 4px;
-        margin-top: 5px;
-        white-space: pre-wrap;
-      ">
-        ${sanitizedMessage.replace(/\n/g, '<br>')}
-      </div>
-      <p style="margin: 8px 0; margin-top: 15px; font-size: 12px; color: #666;">
+      <p style="margin: 8px 0; font-size: 12px; color: #666;">
         <strong>Date et heure :</strong> ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablanca' })}
       </p>
     </div>
@@ -125,16 +105,14 @@ export const POST: APIRoute = async ({ request }) => {
 `;
 
     const textContent = `
-Nouveau message de contact
+Bonjour,
 
-Nom et prénom: ${sanitizedFullName}
-Entreprise: ${sanitizedCompany}
-Téléphone: ${sanitizedPhone}
-Email: ${sanitizedEmail}
+Voici les informations de la demande de rappel client
 
-Message:
-${sanitizedMessage}
-
+Nom complet: ${sanitizedFullName}
+Numéro de téléphone: ${sanitizedPhone}
+Adresse email: ${sanitizedEmail}
+Page: ${sanitizedPage}
 Date et heure: ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablanca' })}
 
 — Message automatique de votre site Hostino.ma
@@ -142,7 +120,7 @@ Date et heure: ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablan
 
     const result = await sendEmail({
       to: "info@hostino.com",
-      subject: `Hostino MA - Nouveau message de contact - ${sanitizedFullName}`,
+      subject: `Hostino MA - Demande de rappel client - ${sanitizedFullName}`,
       htmlContent,
       textContent,
       senderName: 'Hostino',
@@ -151,17 +129,17 @@ Date et heure: ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablan
 
     if (result.success) {
       return new Response(
-        JSON.stringify({ message: 'Message envoyé avec succès' }),
+        JSON.stringify({ message: 'Email envoyé avec succès' }),
         { status: 200, headers: { 'Content-Type': 'application/json' } }
       );
     } else {
       return new Response(
-        JSON.stringify({ error: 'Échec de l\'envoi du message' }),
+        JSON.stringify({ error: 'Échec de l\'envoi de l\'email' }),
         { status: 500, headers: { 'Content-Type': 'application/json' } }
       );
     }
   } catch (error) {
-    console.error('Error in contact API:', error);
+    console.error('Error in send-email API:', error);
     return new Response(
       JSON.stringify({ error: 'Erreur serveur' }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
@@ -171,25 +149,36 @@ Date et heure: ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablan
 
 // Strong name validation
 function validateName(name: string): { valid: boolean; error?: string } {
+  // Trim whitespace
   const trimmedName = name.trim();
 
+  // Check if empty
   if (trimmedName.length === 0) {
     return { valid: false, error: 'Le nom complet est requis' };
   }
 
+  // Check minimum length
   if (trimmedName.length < 2) {
     return { valid: false, error: 'Le nom complet doit contenir au moins 2 caractères' };
   }
 
+  // Check maximum length
   if (trimmedName.length > 100) {
     return { valid: false, error: 'Le nom complet ne peut pas dépasser 100 caractères' };
   }
 
+  // Check for valid characters (letters, spaces, hyphens, apostrophes, accents, unicode letters)
   const nameRegex = /^[\p{L}\s'-]+$/u;
   if (!nameRegex.test(trimmedName)) {
     return { valid: false, error: 'Le nom complet contient des caractères invalides' };
   }
 
+  // Check for at least one space (first name and last name)
+  if (!trimmedName.includes(' ')) {
+    return { valid: false, error: 'Veuillez entrer votre nom complet (prénom et nom)' };
+  }
+
+  // Check for suspicious patterns (repeated characters)
   const repeatedCharsRegex = /(.)\1{4,}/;
   if (repeatedCharsRegex.test(trimmedName)) {
     return { valid: false, error: 'Le nom complet contient des caractères répétés suspects' };
@@ -198,39 +187,50 @@ function validateName(name: string): { valid: boolean; error?: string } {
   return { valid: true };
 }
 
-// Universal phone validation
+// Universal phone validation (accepts national and international formats)
 function validatePhone(phone: string): { valid: boolean; error?: string } {
+  // Remove all spaces, dashes, parentheses, and dots
   const cleanPhone = phone.replace(/[\s\-().\u00A0]/g, '');
 
+  // Check if empty
   if (cleanPhone.length === 0) {
     return { valid: false, error: 'Le numéro de téléphone est requis' };
   }
 
+  // Check for valid characters (only digits, +, and parentheses)
   const validCharsRegex = /^[\d+()]+$/;
   if (!validCharsRegex.test(cleanPhone)) {
     return { valid: false, error: 'Le numéro de téléphone contient des caractères invalides' };
   }
 
+  // Remove parentheses for further validation
   const phoneDigits = cleanPhone.replace(/[()]/g, '');
-  const digitsOnly = phoneDigits.replace(/\+/g, '');
 
+  // Check minimum length (at least 7 digits for shortest valid numbers)
+  // E.g., some local numbers can be 7 digits
+  const digitsOnly = phoneDigits.replace(/\+/g, '');
   if (digitsOnly.length < 7) {
     return { valid: false, error: 'Le numéro de téléphone est trop court (minimum 7 chiffres)' };
   }
 
+  // Check maximum length (15 digits is the international standard per E.164)
   if (digitsOnly.length > 15) {
     return { valid: false, error: 'Le numéro de téléphone est trop long (maximum 15 chiffres)' };
   }
 
+  // If starts with +, validate international format
   if (phoneDigits.startsWith('+')) {
+    // International format: +[country code][number]
+    // Must have at least country code (1-3 digits) + number
     const internationalRegex = /^\+\d{1,3}\d{4,14}$/;
     if (!internationalRegex.test(phoneDigits)) {
       return { 
         valid: false, 
-        error: 'Format international invalide' 
+        error: 'Format international invalide (ex: +33 6 12 34 56 78, +1 555 123 4567)' 
       };
     }
   } else {
+    // National format: must start with 0 or digit
     const nationalRegex = /^\d{7,15}$/;
     if (!nationalRegex.test(phoneDigits)) {
       return { 
@@ -240,15 +240,18 @@ function validatePhone(phone: string): { valid: boolean; error?: string } {
     }
   }
 
+  // Check that + only appears at the start
   if (phoneDigits.indexOf('+') > 0) {
     return { valid: false, error: 'Le symbole + doit être au début du numéro' };
   }
 
+  // Additional check: ensure it's not all the same digit
   const allSameDigit = /^(\+)?(\d)\2+$/;
   if (allSameDigit.test(phoneDigits)) {
     return { valid: false, error: 'Le numéro de téléphone semble invalide' };
   }
 
+  // Check for suspicious patterns (too many zeros at the end)
   if (/0{6,}$/.test(digitsOnly)) {
     return { valid: false, error: 'Le numéro de téléphone semble invalide' };
   }
@@ -258,68 +261,87 @@ function validatePhone(phone: string): { valid: boolean; error?: string } {
 
 // Strong email validation
 function validateEmail(email: string): { valid: boolean; error?: string } {
+  // Trim whitespace
   const trimmedEmail = email.trim().toLowerCase();
 
+  // Check if empty
   if (trimmedEmail.length === 0) {
     return { valid: false, error: 'L\'adresse email est requise' };
   }
 
+  // Check maximum length (RFC 5321)
   if (trimmedEmail.length > 254) {
     return { valid: false, error: 'L\'adresse email est trop longue' };
   }
 
+  // Basic format validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(trimmedEmail)) {
     return { valid: false, error: 'Veuillez entrer une adresse email valide' };
   }
 
+  // More strict email validation
   const strictEmailRegex = /^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?@[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
   if (!strictEmailRegex.test(trimmedEmail)) {
     return { valid: false, error: 'L\'adresse email contient des caractères invalides' };
   }
 
+  // Split email into local and domain parts
   const [localPart, domainPart] = trimmedEmail.split('@');
 
+  // Validate local part (before @)
   if (localPart.length > 64) {
     return { valid: false, error: 'La partie locale de l\'email est trop longue' };
   }
 
+  // Check for consecutive dots
   if (localPart.includes('..') || domainPart.includes('..')) {
     return { valid: false, error: 'L\'adresse email ne peut pas contenir des points consécutifs' };
   }
 
+  // Check for dots at start or end
   if (localPart.startsWith('.') || localPart.endsWith('.')) {
     return { valid: false, error: 'L\'adresse email ne peut pas commencer ou finir par un point' };
   }
 
+  // Validate domain part (after @)
   const domainParts = domainPart.split('.');
   
+  // Check if domain has at least 2 parts
   if (domainParts.length < 2) {
     return { valid: false, error: 'Le domaine de l\'email est invalide' };
   }
 
+  // Check TLD (top-level domain) length
   const tld = domainParts[domainParts.length - 1];
   if (tld.length < 2) {
     return { valid: false, error: 'L\'extension du domaine est invalide' };
   }
 
-  return { valid: true };
-}
-
-// Message validation
-function validateMessage(message: string): { valid: boolean; error?: string } {
-  const trimmedMessage = message.trim();
-
-  if (trimmedMessage.length === 0) {
-    return { valid: false, error: 'Le message est requis' };
+  // Block common disposable/temporary email domains
+  const disposableDomains = [
+    'tempmail.com', 'throwaway.email', '10minutemail.com', 'guerrillamail.com',
+    'mailinator.com', 'trashmail.com', 'temp-mail.org', 'fakeinbox.com'
+  ];
+  
+  if (disposableDomains.includes(domainPart)) {
+    return { valid: false, error: 'Les adresses email temporaires ne sont pas acceptées' };
   }
 
-  if (trimmedMessage.length < 10) {
-    return { valid: false, error: 'Le message doit contenir au moins 10 caractères' };
-  }
+  // Check for suspicious patterns
+  const suspiciousPatterns = [
+    /^test@/i,
+    /^admin@/i,
+    /^noreply@/i,
+    /^no-reply@/i,
+    /@example\./i,
+    /@test\./i
+  ];
 
-  if (trimmedMessage.length > 2000) {
-    return { valid: false, error: 'Le message ne peut pas dépasser 2000 caractères' };
+  for (const pattern of suspiciousPatterns) {
+    if (pattern.test(trimmedEmail)) {
+      return { valid: false, error: 'Cette adresse email semble être un exemple ou une adresse de test' };
+    }
   }
 
   return { valid: true };
@@ -329,10 +351,9 @@ function validateMessage(message: string): { valid: boolean; error?: string } {
 function sanitizeInput(input: string): string {
   return input
     .trim()
-    .replace(/[<>]/g, '')
+    .replace(/[<>]/g, '') // Remove < and >
     .replace(/&/g, '&amp;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#x27;')
     .replace(/\//g, '&#x2F;');
 }
-
