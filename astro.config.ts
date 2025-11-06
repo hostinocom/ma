@@ -41,9 +41,21 @@ export default defineConfig({
            * to generate the `@font-rule` and head tags.
            */
           transform(font) {
-            if (font.basename === 'Poppins-Meduim') {
+            if (font.basename === 'Poppins-SemiBold') {
               // update the font weight
               font.weight = 600
+            }else if (font.basename === 'Poppins-Regular') {
+              font.weight = 400
+            }else if (font.basename === 'Poppins-Light') {
+              font.weight = 300
+            }else if (font.basename === 'Poppins-Medium') {
+              font.weight = 500
+            }else if (font.basename === 'Poppins-Bold') {
+              font.weight = 700
+            }else if (font.basename === 'Poppins-ExtraBold') {
+              font.weight = 800
+            }else if (font.basename === 'Poppins-Black') {
+              font.weight = 900
             }
     
             // we can also return null to skip the font
