@@ -1,6 +1,4 @@
 
-
-
 @import "tailwindcss";
 
 
@@ -11,6 +9,7 @@
 @import '@fontsource/montserrat/500.css';
 @import '@fontsource/montserrat/600.css';
 @import '@fontsource/montserrat/700.css';
+
 
 
 
@@ -41,8 +40,8 @@
 
 body{
   font-family: "Poppins" , sans-serif;
-  font-display: swap;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -102,7 +101,7 @@ select {
 }
 
 .list-paragraph{
-  @apply text-[17px] font-[300];
+  @apply text-[17px] font-normal;
 }
 
 
@@ -172,15 +171,13 @@ span {
 .paragraph {
   color: var(--text);
   line-height: 1.7rem;
-  font-weight: 300;
-  @apply md:text-[17px] text-[16px];
+  @apply md:text-[17px] text-[16px] font-normal;
 }
 
 .paragraph-mb-0 {
   color: var(--text);
   line-height: 1.7rem;
-  font-weight: 300;
-  @apply md:text-[17px] text-[16px];
+  @apply md:text-[17px] text-[16px] font-normal;
 }
 
 
@@ -207,27 +204,29 @@ span {
   color: var(--text);
   line-height: 1.7rem;
   font-size: 16px;
-  font-weight: 300;
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
+  @apply font-normal;
 }
 
 .paragraph-15 {
   color: var(--text);
   line-height: 1.7rem;
   font-size: 15px;
-  font-weight: 300;
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
+  @apply font-normal;
+
 }
 
 .paragraph-16 {
   color: var(--text);
   line-height: 1.7rem;
   font-size: 16px;
-  font-weight: 300;
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
+  @apply font-normal;
+
 }
 
 .paragraph-16.mb-0 {
@@ -328,7 +327,7 @@ span {
 
 
 .text-legal-documents p {
-  @apply text-title text-[17px] font-[300] mb-[27px]
+  @apply text-title text-[17px] font-normal mb-[27px]
 }
 
 .text-legal-documents h3 {
@@ -346,7 +345,7 @@ span {
 
 .text-legal-documents li {
   margin-bottom: 10px;
-  @apply text-title text-[16px] tracking-[-0.2px] font-[300]
+  @apply text-title text-[16px] tracking-[-0.2px] font-normal
 }
 
 .text-legal-documents table {

@@ -336,9 +336,9 @@ const PlanCard = ({
 
       {/* Pricing */}
       <div className="mb-6">
-        <p className="text-base text-title font-[600] mb-1">À seulement</p>
+        <p className="text-base text-title font-semibold mb-1">À seulement</p>
         <p
-          className="font-[Montserrat] text-[40px] font-[600] leading-[54px] text-title"
+          className="font-[Montserrat] text-[40px] font-semibold leading-[54px] text-title"
         >
           {currentOption?.price}
         </p>
