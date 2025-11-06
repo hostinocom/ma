@@ -23,7 +23,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
         <!-- Hébergement web Dropdown -->
         <ul class="hidden lg:flex items-center sm:gap-[12px] xl:gap-[20px]">
           <li class="relative dropdown-hebergement">
-           <a href="#" class=" animated-link hover:text-primary text-[17px] text-title flex items-center gap-2 font-[600] border-none p-0">
+           <a href="#" class=" animated-link hover:text-primary link_header text-title flex items-center gap-2 font-[600] border-none p-0">
               Hébergement web
             <svg
               class="w-4 h-4 transition-transform duration-300 dropdown-arrow"
@@ -45,7 +45,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
               <li>
                     <a
                 href="/starty"
-                class="block animated-link ml-6 my-3 text-title font-[600]"
+                class="block animated-link link_header ml-6 my-3 text-title font-[600]"
               >
                 Starty
               </a>
@@ -53,7 +53,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
               <li>
                     <a
                       href="/business"
-                      class="block animated-link ml-6 my-3 text-title font-[600]"
+                      class="block animated-link link_header ml-6 my-3 text-title font-[600]"
                       >
                       Business
                   </a>
@@ -61,7 +61,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
               <li>
                     <a
                       href="/cloud-maroc"
-                      class="block animated-link ml-6 my-3 text-title font-[600]"
+                      class="block animated-link link_header ml-6 my-3 text-title font-[600]"
                      >
                   Cloud Maroc
               </a>
@@ -75,7 +75,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
           <li>
               <a
                 href="/email-professionnel/"
-                class="font-poppins hover:text-primary animated-link text-[17px] flex items-center gap-2 text-title font-[600] border-none p-0"
+                class="font-poppins hover:text-primary link_header animated-link  flex items-center gap-2 text-title font-[600] border-none p-0"
               >
             @Email Pro
           </a>
@@ -85,7 +85,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
           <li>
                 <a
                   href="/nom-de-domaine-ma"
-                  class="text-title animated-link font-[600] hover:text-primary transition-colors"
+                  class="text-title animated-link link_header font-[600] hover:text-primary transition-colors"
                   >
                   Nom de domaine
                 </a>
@@ -94,7 +94,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
         <!-- SEO/SEA Dropdown -->
         
         <div class="relative dropdown-seo">
-          <a href="#" class="flex items-center animated-link gap-2 text-title font-[600] hover:text-primary transition-colors">
+          <a href="#" class="flex items-center animated-link link_header gap-2 text-title font-[600] hover:text-primary transition-colors">
             <img
               src='..//images/google-svg.svg'
               alt="Google"
@@ -124,7 +124,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
               <li>
                     <a
                       href="/agence-seo-maroc/"
-                      class="block font-[600] ml-6 my-3 animated-link text-title transition-colors"
+                      class="block font-[600] ml-6 my-3 link_header animated-link text-title transition-colors"
                     >
                       Agence SEO
               </a>
@@ -132,7 +132,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
               <li>
                     <a
                       href="/google-my-business-maroc/"
-                      class="block font-[600] ml-6 my-3 animated-link text-title transition-colors"
+                      class="block font-[600] ml-6 my-3 link_header animated-link text-title transition-colors"
                       >
                   Agence GMB
               </a>
@@ -140,7 +140,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
               <li>
                   <a
                       href="/google-ads-maroc/"
-                      class="block font-[600] ml-6 my-3 animated-link text-title hover:bg-gray-50 transition-colors"
+                      class="block font-[600] ml-6 my-3 animated-link link_header text-title hover:bg-gray-50 transition-colors"
                     >
                     Google Ads
                    </a>
@@ -148,7 +148,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
               <li>
                     <a
                        href="/creation-site-web-maroc/"
-                       class="block font-[600] ml-6 my-3 animated-link text-title hover:bg-gray-50 transition-colors"
+                       class="block font-[600] ml-6 my-3 link_header animated-link text-title hover:bg-gray-50 transition-colors"
                        >
                          Site web
               </a>
@@ -205,7 +205,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
 
         <li class="mobile-dropdown-hebergement">
         <a href="#"
-          class="w-full 
+          class="w-full link_header
            hover:text-primary button cursor-pointer flex items-center justify-between py-2 text-title font-[600]"
         >
           Hébergement web
@@ -226,17 +226,17 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
 
         <ul class="mobile-submenu pl-4 space-y-2 mt-2 hidden">
           <li>
-                 <a href="/starty" class="block py-2 text-title font-[600]">
+                 <a href="/starty" class="link_header block py-2 text-title font-[600]">
                     Starty
                 </a>
           </li>
           <li>
-              <a href="/business" class="block py-2 text-title font-[600]">
+              <a href="/business" class="link_header block py-2 text-title font-[600]">
                 Business
               </a>
           </li>
          <li>
-              <a href="/cloud-maroc/" class="block py-2 text-title font-[600]">
+              <a href="/cloud-maroc/" class="link_header block py-2 text-title font-[600]">
                 Cloud Maroc
                 </a>
          </li>
@@ -247,7 +247,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
      <li>
            <a
               href="/email-professionnel/"
-             class="block text-title cursor-pointer hover:text-primary py-2 font-[600]"
+             class="block text-title link_header cursor-pointer hover:text-primary py-2 font-[600]"
              >
              @Email Pro
             </a>
@@ -257,7 +257,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
       <li>
             <a
               href="/nom-de-domaine-ma"
-              class="block text-title cursor-pointer hover:text-primary font-[600] py-2"
+              class="block text-title link_header cursor-pointer hover:text-primary font-[600] py-2"
             >
               Nom de domaine
       </a>
@@ -266,7 +266,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
       <!-- SEO/SEA Mobile -->
       <li class="mobile-dropdown-seo">
         <a href="#"
-          class="flex button items-center justify-between w-full py-2 hover:text-primary text-title font-[600]"
+          class="flex button link_header items-center justify-between w-full py-2 hover:text-primary text-title font-[600]"
         >
           <div class="flex items-center gap-2">
             <img src="/images/google-svg.svg" alt="google svg" loading="eager" alt="Google" width={20} height={20} />
@@ -291,7 +291,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
           <li>
               <a
                 href="/agence-seo-maroc/"
-                class="block max-w-max py-2 text-title font-[600] animated-link"
+                class="block link_header max-w-max py-2 text-title font-[600] animated-link"
               >
             Agence SEO
           </a>
@@ -299,7 +299,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
           <li>
                 <a
                    href="/google-my-business-maroc/"
-                    class="block max-w-max py-2 text-title font-[600] animated-link"
+                    class="block link_header max-w-max py-2 text-title font-[600] animated-link"
           >
             Agence GMB
           </a>
@@ -307,7 +307,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
           <li>
               <a
                   href="/google-ads-maroc/"
-                  class="block max-w-max py-2 text-title font-[600] animated-link"
+                  class="block link_header max-w-max py-2 text-title font-[600] animated-link"
                 >
                  Google Ads
               </a>
@@ -315,7 +315,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
           <li>
               <a
                 href="/creation-site-web-maroc/"
-                class="block max-w-max py-2 text-title font-[600] animated-link"
+                class="block link_header max-w-max py-2 text-title font-[600] animated-link"
               >
                 Site web
           </a>
