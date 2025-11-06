@@ -13,6 +13,7 @@ import BenchmarkHostingMorocco from "../components/HomeSection/BenchmarkHostingM
 import PlansSection from "../components/HomeSection/PlansSection.astro"
 import SixCards from '../components/HomeSection/SixCards.astro';
 import FaqSection from '../components/HomeSection/FaqSection.astro';
+import TextLeftImageRight from "../components/commonSections/TextLeftImageRight.astro"
 import { main_schema } from '../mainSchema.ts';
 
 
@@ -100,6 +101,39 @@ const articleSchema = {
   	<WhatsHostingSection />
 	<DomainSearchSection id="ma" />
 	<WhyChooseSection />
+
+
+
+ <TextLeftImageRight
+      title="Hébergement web : qu'est-ce que c'est ?"
+      paragraphs={[
+        `L'hébergement web est un élément essentiel pour rendre votre
+            site web accessible sur Internet. C'est le service qui permet de
+            stocker Les fichiers et les bases de données associés de votre
+            projet en ligne.`,
+        ` Le choix de votre hébergement est stratégique, car il impacte
+            directement l'expérience utilisateur. Un hébergement performant
+            garantit une navigation fluide, tandis qu'un hébergement
+            sécurisé protège vos données{" "}
+            <b>
+              contre les{" "}
+              <a
+                href="https://about.google/intl/ALL_fr/stories/notin-interview/"
+                rel="noopener"
+              >
+                cyberattaques.
+              </a>
+            </b>
+          `,
+          `Le service d'hébergement web, offert par des entreprises
+            spécialisées appelées 'hébergeurs web', consiste à mettre
+            l'infrastructure nécessaire pour rendre votre site accessible en
+            ligne.`
+      ]}
+      imageSrc="/images/01/hebergement-web.jpg"
+      imageAlt="What is Web Hosting?"
+    />
+
 
     <FastestHostingSection />
     <EasyHebergementSection />

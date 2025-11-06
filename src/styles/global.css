@@ -160,7 +160,7 @@ span {
 .paragraph-mb-0 {
   color: var(--text);
   line-height: 1.7rem;
-  font-weight: 400;
+  font-weight: 300;
   @apply md:text-[17px] text-[16px];
 }
 
@@ -188,7 +188,7 @@ span {
   color: var(--text);
   line-height: 1.7rem;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
 }
@@ -197,7 +197,7 @@ span {
   color: var(--text);
   line-height: 1.7rem;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
 }
@@ -206,7 +206,7 @@ span {
   color: var(--text);
   line-height: 1.7rem;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
 }
@@ -309,7 +309,7 @@ span {
 
 
 .text-legal-documents p {
-  @apply text-title text-[17px] font-[400] mb-[27px]
+  @apply text-title text-[17px] font-[300] mb-[27px]
 }
 
 .text-legal-documents h3 {
@@ -327,7 +327,7 @@ span {
 
 .text-legal-documents li {
   margin-bottom: 10px;
-  @apply text-title text-[16px] tracking-[-0.2px] font-[400]
+  @apply text-title text-[16px] tracking-[-0.2px] font-[300]
 }
 
 .text-legal-documents table {
