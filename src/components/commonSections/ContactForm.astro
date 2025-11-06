@@ -4,19 +4,21 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <div class="py-[80px] flex items-center justify-center bg-title p-4">
   <div class="container text-center">
-    <h1 
-  class="text-white lg:text-[40px] md:text-[40px] font-[600] text-[29px] mb-6 pb-2 leading-relaxed"
-  set:html={title}
-/>
+    <h1
+      class="text-white lg:text-[40px] md:text-[40px] font-[600] text-[29px] mb-6 pb-2 leading-relaxed"
+      set:html={title}
+    />
 
-    <form class="mt-10 lg:w-[80%] sm:w-[95%] w-[100%] mx-auto">
+    <form id="contact-form" class="mt-10 lg:w-[80%] sm:w-[95%] w-[100%] mx-auto">
       <div class="flex flex-col md:flex-row justify-center gap-4">
         <input
           type="text"
+          name="fullName"
           placeholder="Nom complet"
           class="bg-transparent rounded-[26px] text-white placeholder-gray-400 border border-primary focus:border-gray-500 focus:ring-gray-500 py-3 px-4 w-full md:w-1/3 transition duration-300 ease-in-out focus:outline-none"
           aria-label="Nom complet"
@@ -25,6 +27,7 @@ const { title } = Astro.props;
 
         <input
           type="tel"
+          name="phone"
           placeholder="Numéro de téléphone"
           class="bg-transparent rounded-[26px] text-white placeholder-gray-400 border border-primary focus:border-gray-500 focus:ring-gray-500 py-3 px-4 w-full md:w-1/3 transition duration-300 ease-in-out focus:outline-none"
           aria-label="Numéro de téléphone"
@@ -33,6 +36,7 @@ const { title } = Astro.props;
 
         <input
           type="email"
+          name="email"
           placeholder="Adresse email"
           class="bg-transparent rounded-[26px] text-white placeholder-gray-400 border border-primary focus:border-gray-500 focus:ring-gray-500 py-3 px-4 w-full md:w-1/3 transition duration-300 ease-in-out focus:outline-none"
           aria-label="Adresse email"
@@ -40,20 +44,117 @@ const { title } = Astro.props;
         />
       </div>
 
+      <!-- Turnstile Widget -->
+      <div class="flex justify-center mt-8">
+        <div 
+          class="cf-turnstile" 
+          data-sitekey={turnstileSiteKey}
+          data-theme="light"
+          data-size="normal"
+        ></div>
+      </div>
+
+      <div id="turnstile-error" class="text-red-400 text-sm mt-2 hidden">
+        Veuillez compléter la vérification de sécurité
+      </div>
+
       <button
         type="submit"
-        class="bg-primary hover:bg-primary/90 text-white rounded-[26px] sm:px-[150px] mt-12 sm:w-auto w-full font-[600] py-3 text-center"
+        class="bg-primary hover:bg-primary/90 text-white rounded-[26px] sm:px-[150px] mt-8 sm:w-auto w-full font-[600] py-3 text-center disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Envoyer
       </button>
+
+      <div id="form-message" class="mt-4 text-sm hidden"></div>
     </form>
 
     <p class="text-gray-400 text-sm mt-8">
       En cliquant sur "Envoyer", vous acceptez notre{' '}
-      <a href="/politique-de-confidentialite/" class="underline hover:text-green-500 transition duration-300">
+      
+        href="/politique-de-confidentialite/"
+        class="underline hover:text-green-500 transition duration-300"
+      >
         politique de confidentialité.
       </a>
     </p>
   </div>
 </div>
 
+<!-- Load Turnstile Script -->
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const messageDiv = document.getElementById('form-message') as HTMLDivElement;
+  const turnstileError = document.getElementById('turnstile-error') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Get Turnstile token
+    const turnstileResponse = (window as any).turnstile.getResponse();
+    
+    if (!turnstileResponse) {
+      turnstileError.classList.remove('hidden');
+      return;
+    }
+
+    turnstileError.classList.add('hidden');
+
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Envoi en cours...';
+    messageDiv.classList.add('hidden');
+
+    const formData = new FormData(form);
+    const data = {
+      fullName: formData.get('fullName'),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      page: window.location.href,
+      turnstileToken: turnstileResponse, // Add Turnstile token
+    };
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Success
+        messageDiv.textContent = 'Email envoyé avec succès ! Nous vous contacterons bientôt.';
+        messageDiv.className = 'mt-4 text-sm text-green-400';
+        messageDiv.classList.remove('hidden');
+        form.reset();
+        
+        // Reset Turnstile
+        (window as any).turnstile.reset();
+      } else {
+        // Error
+        messageDiv.textContent = result.error || 'Erreur lors de l\'envoi de l\'email.';
+        messageDiv.className = 'mt-4 text-sm text-red-400';
+        messageDiv.classList.remove('hidden');
+        
+        // Reset Turnstile on error
+        (window as any).turnstile.reset();
+      }
+    } catch (error) {
+      // Network error
+      messageDiv.textContent = 'Erreur de connexion. Veuillez réessayer.';
+      messageDiv.className = 'mt-4 text-sm text-red-400';
+      messageDiv.classList.remove('hidden');
+      
+      // Reset Turnstile on error
+      (window as any).turnstile.reset();
+    } finally {
+      // Re-enable button
+      submitButton.disabled = false;
+      submitButton.textContent = 'Envoyer';
+    }
+  });
+</script>

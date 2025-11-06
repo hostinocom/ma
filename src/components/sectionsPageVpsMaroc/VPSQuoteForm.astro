@@ -19,6 +19,7 @@ interface FormErrors {
 }
 ---
 
+
 <section class="lg:my-[150px] demande-devis my-[80px] bg-gray-100 py-16">
   <div class="container mx-auto px-20">
     <div class="max-w-6xl mx-auto">
@@ -254,7 +255,7 @@ interface FormErrors {
           </div>
 
           <div class="mb-6">
-            <p class="block text-title text-[17] font-[300] mb-3">
+            <p class="block text-title text-[17] font-normal mb-3">
               Avez-vous besoin d'infogérance ?
             </p>
             <div class="flex gap-8">
@@ -280,7 +281,7 @@ interface FormErrors {
           </div>
 
           <div class="mb-8">
-            <p class="block text-title text-[17] font-[300] mb-3">
+            <p class="block text-title text-[17] font-normal mb-3">
               Avez-vous besoin d'une sauvegarde distante ?
             </p>
             <div class="flex gap-8">
@@ -506,7 +507,6 @@ interface FormErrors {
         }
       });
 
-      // Mark all fields as touched
       requiredFields.forEach((field) => {
         touched[field] = true;
       });
@@ -522,7 +522,6 @@ interface FormErrors {
       e.preventDefault();
 
       if (!validateForm()) {
-        // Scroll to first error
         const firstError = document.querySelector(".border-red-500");
         if (firstError) {
           firstError.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -535,26 +534,40 @@ interface FormErrors {
       submitBtn.classList.add("opacity-50", "cursor-not-allowed");
 
       try {
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1500));
         const formData = new FormData(form);
         const data: { [key: string]: string } = {};
         formData.forEach((value, key) => {
           data[key] = value as string;
         });
-        console.log("Form submitted:", data);
 
-        successMessage.classList.remove("hidden");
-        form.reset();
+        // Send to API
+        const response = await fetch('/api/send-vps-quote', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          successMessage.classList.add("hidden");
-          Object.keys(touched).forEach((key) => delete touched[key]);
-          Object.keys(errors).forEach((key) => delete errors[key]);
-        }, 3000);
+        const result = await response.json();
+
+        if (response.ok) {
+          successMessage.classList.remove("hidden");
+          form.reset();
+
+          // Scroll to success message
+          successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            successMessage.classList.add("hidden");
+            Object.keys(touched).forEach((key) => delete touched[key]);
+            Object.keys(errors).forEach((key) => delete errors[key]);
+          }, 5000);
+        } else {
+          alert(result.error || "Une erreur est survenue lors de l'envoi du formulaire.");
+        }
       } catch (error) {
         console.error("Error submitting form:", error);
+        alert("Erreur de connexion. Veuillez réessayer.");
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Envoyer";
@@ -572,4 +585,3 @@ interface FormErrors {
     form.addEventListener("submit", handleSubmit);
   });
 </script>
-
