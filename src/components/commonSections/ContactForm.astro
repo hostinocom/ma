@@ -92,12 +92,12 @@ const { title } = Astro.props;
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json'
-          'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      const result = await response;
+      console.log(result)
 
       if (response.ok) {
         // Success

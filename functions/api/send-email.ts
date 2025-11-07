@@ -3,7 +3,7 @@
 
 export async function onRequestPost(context : any) {
   try {
-    console.log('context');
+    console.log('context : ', context);
     const body = await context.request.json();
     const { fullName, phone, email, page } = body;
 
