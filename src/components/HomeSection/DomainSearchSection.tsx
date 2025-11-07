@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 const domainOptions = [
@@ -38,14 +40,20 @@ const domainOptions = [
 export default function DomainSearchSection({ id }: { id: string }) {
   const [domain, setDomain] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const tld = (e.target as any).domain_tld.value;
-    const fullDomain = domain.trim() + tld;
-    window.location.href = `https://my.hostino.com/order.php?spage=domain&action=register&a=add&domain=${encodeURIComponent(
-      fullDomain
-    )}&language=english&country=MA&currency=1`;
+
+  const handleSubmit = () => {
+    console.log(domain);
+    
   };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const tld = (e.target as any).domain_tld.value;
+  //   const fullDomain = domain.trim() + tld;
+  //   console.log(fullDomain);
+  //   window.location.href = `https://my.hostino.com/order.php?spage=domain&action=register&a=add&query=${
+  //     fullDomain
+  //   }&language=french&country=MA&currency=1`
+  // };
   
   return (
     <section
@@ -71,7 +79,7 @@ export default function DomainSearchSection({ id }: { id: string }) {
         </p>
 
         <form
-          onSubmit={handleSubmit}
+         
           className="md:max-w-2xl w-full mx-auto mb-8"
         >
           <div className="flex rounded-lg overflow-hidden sm:border-0 border border-primary bg-white flex-col sm:flex-row">
@@ -98,8 +106,10 @@ export default function DomainSearchSection({ id }: { id: string }) {
               </select>
             </div>
             <button
-              type="submit"
-              className="bg-primary sm:py-0 py-6 text-white font-[600] px-8 sm:text-lg text-xl transition whitespace-nowrap"
+               onClick={()=>{
+                console.log("clicked");
+              }}
+              className="bg-primary sm:py-0 py-6 text-white font-semibold px-8 sm:text-lg text-xl transition whitespace-nowrap"
             >
               Rechercher
             </button>

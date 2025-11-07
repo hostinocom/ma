@@ -1,0 +1,84 @@
+---
+// DomainSearchSection.astro
+const domainOptions = [
+  ".ma", ".com", ".net", ".info", ".org", ".co.ma", ".org.ma", ".net.ma",
+  ".edu.ma", ".press.ma", ".gov.ma", ".ac.ma", ".us", ".es", ".fr", ".be",
+  ".nl", ".it", ".de", ".ch", ".eu", ".ca", ".uk", ".co.uk", ".tv", ".biz",
+  ".co", ".tech", ".cloud", ".store", ".shop", ".ai"
+];
+
+const { id } = Astro.props;
+---
+<section
+  id={id}
+  style="background-image: linear-gradient(180deg, #004C48 18%, #084448 100%);"
+  class="lg:mt-[150px] mt-[60px] bg-gradient-to-r from-[#1b083b] to-[#7e5eba] text-white"
+>
+  <div class="container py-[120px] text-center">
+    <h2 class="title-section-white max-big-title text-white font-[600] mb-4">
+      Enregistrer votre nom de domaine
+    </h2>
+    <p class="mb-8 paragraph-white">
+      Achetez dès maintenant votre
+      <a href="/nom-de-domaine-ma/" class="underline">.ma domain name</a>
+      à partir de 118 DH/an..
+    </p>
+
+    <form id="domainForm" class="md:max-w-2xl w-full mx-auto mb-8">
+      <div class="flex rounded-lg overflow-hidden sm:border-0 border border-primary bg-white flex-col sm:flex-row">
+        <input
+          type="text"
+          id="domainInput"
+          placeholder="Entrer un nom de domaine"
+          class="flex-1 px-8 sm:py-6 py-8 text-title font-[20px] rounded-l-lg focus:outline-none"
+          required
+        />
+
+        <div class="mr-[20px] flex items-center">
+          <select
+            id="domainTld"
+            class="sm:block hidden text-right text-[20px] text-title font-[600]"
+          >
+            {domainOptions.map((tld) => (
+              <option value={tld}>{tld}</option>
+            ))}
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          class="bg-primary sm:py-0 py-6 text-white font-semibold px-8 sm:text-lg text-xl transition whitespace-nowrap"
+        >
+          Rechercher
+        </button>
+      </div>
+    </form>
+
+    <img
+      src="/images/01/nav-domaines.png"
+      alt="Nav domaines"
+      class="mx-auto md:w-[50%] sm:w-[80%] w-[100%]"
+      loading="eager"
+      width="1300"
+      height="900"
+    />
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("domainForm");
+  const domainInput = document.getElementById("domainInput");
+  const domainTld = document.getElementById("domainTld");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const domain = domainInput.value.trim();
+    const tld = domainTld.value;
+    const fullDomain = domain + tld;
+
+    console.log(fullDomain);
+
+    // Redirect
+    window.location.href = `https://my.hostino.com/order.php?spage=domain&action=register&a=add&query=${fullDomain}&language=french&country=MA&currency=1`;
+  });
+</script>

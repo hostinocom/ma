@@ -177,7 +177,7 @@ export default defineConfig({
       imageService: "cloudflare",
    }),
   compressHTML: true,
-  output: "server",
+  
   vite: {
     plugins: [tailwindcss()],
     ssr: {
