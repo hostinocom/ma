@@ -175,7 +175,6 @@ export default defineConfig({
   ],
    adapter: cloudflare({ 
       imageService: "cloudflare",
-      
    }),
   compressHTML: true,
   output: "server",

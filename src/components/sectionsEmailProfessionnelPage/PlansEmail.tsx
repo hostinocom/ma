@@ -398,7 +398,6 @@ const PlanCard = ({
 
 export default function PlansEmail({
   className,
-  title,
   heroHeading,
   plans = hostingPlans,
   namePlaneBold,
