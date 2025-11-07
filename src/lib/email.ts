@@ -1,9 +1,11 @@
 import * as brevo from '@getbrevo/brevo';
 
+
+const brevoApiKey = import.meta.env.BREVO_API_KEY;
 const apiInstance = new brevo.TransactionalEmailsApi();
 apiInstance.setApiKey(
   brevo.TransactionalEmailsApiApiKeys.apiKey,
-  import.meta.env.BREVO_API_KEY
+  brevoApiKey
 );
 
 export async function sendEmail({
