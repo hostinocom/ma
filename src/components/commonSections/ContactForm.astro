@@ -88,16 +88,16 @@ const { title } = Astro.props;
 
     try {
       // Utilise une URL relative - fonctionnera sur n'importe quel domaine
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('/send-email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-         }, 
+        headers: { 
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(data),
       });
 
       const result = await response;
-      console.log(result)
+      console.log(re)
 
       if (response.ok) {
         // Success
