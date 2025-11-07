@@ -141,11 +141,11 @@ Date et heure: ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablan
     `;
 
     const result = await sendEmail({
-      to: "info@hostino.com",
+      to: import.meta.env.BREVO_RECIPIENT_EMAIL,
       subject: `Hostino MA - Nouveau message de contact - ${sanitizedFullName}`,
       htmlContent,
       textContent,
-      senderName: 'Hostino',
+      senderName: import.meta.env.BREVO_SENDER_NAME,
       senderEmail: import.meta.env.BREVO_SENDER_EMAIL,
     });
 
