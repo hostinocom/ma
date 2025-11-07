@@ -89,31 +89,18 @@ const { title } = Astro.props;
     try {
       // Utilise une URL relative - fonctionnera sur n'importe quel domaine
 
-      const get = await fetch("/send-email")
-      const response = awit get.json()
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      });
 
-      console.log(response)
-     
+      const result = await response.json();
+      console.log(result)
 
-    
-
-      if (response.ok) {
-        // Success
-        messageDiv.textContent = '✅ Email envoyé avec succès ! Nous vous contacterons bientôt.';
-        messageDiv.className = 'mt-4 text-sm text-green-400 font-semibold';
-        messageDiv.classList.remove('hidden');
-        form.reset();
-
-        // Auto-hide success message after 5 seconds
-        setTimeout(() => {
-          messageDiv.classList.add('hidden');
-        }, 5000);
-      } else {
-        // Error from server
-        messageDiv.textContent = `❌ ${result.error || 'Erreur lors de l\'envoi de l\'email.'}`;
-        messageDiv.className = 'mt-4 text-sm text-red-400 font-semibold';
-        messageDiv.classList.remove('hidden');
-      }
+      
     } catch (error) {
       // Network error
       console.error('Erreur réseau:', error);
@@ -125,6 +112,7 @@ const { title } = Astro.props;
       submitButton.disabled = false;
       submitButton.textContent = 'Envoyer';
     }
+    
   });
 </script>
 
