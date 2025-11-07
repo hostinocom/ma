@@ -206,6 +206,8 @@ const articleSchema = {
       smallTitle="Email professionnel Maroc"
       bigTitle="Adresse email professionnelle pour votre entreprise"
       lineGreen={true}
+      classTitle="2xl:px-[350px] xl:px-[300px] lg:px-[150px] px-[35px]"
+
     />
     <div class="bg-gray-200 md:pb-[100px] pb-[80px]">
       <div class="container">
@@ -252,7 +254,7 @@ const articleSchema = {
     <PlansEmail
       titleExiste={true}
       title="Choisissez votre plan email professionnel Maroc"
-      id="plans"
+      id="offres"
       client:load
     />
 
@@ -279,10 +281,22 @@ const articleSchema = {
       paragraphs={[
         `La solution Maily, conçue par Hostino, est le choix idéal pour les entreprises marocaines en quête d'une plateforme de collaboration <b>conforme aux normes</b>, dotée de mesures de sécurité avancées et facile à utiliser.`,
         `De plus, nous mettons en place des protocoles d'authentification reconnus comme <span style="text-decoration: underline;"><a href="https://www.cloudflare.com/fr-fr/learning/dns/dns-records/dns-dkim-record/" rel="noopener">DKIM</a></span>, SPF et DMARC.&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Ces technologies permettent de protéger l'identité de votre domaine, d'éviter l'usurpation d'adresse email, et d'assurer une meilleure </span><b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">délivrabilité de vos emails.</b>`,
-        `<ul class="pl-[30px] flex flex-col gap-5">
-          <li>L'activation obligatoire de l'authentification à deux facteurs (2FA)</li>
-          <li>La restriction d'accès par adresse IP, permettant par exemple de limiter l'accès aux boîtes mail uniquement depuis les locaux de l'entreprise.</li>
+        `<ul class="pl-[30px] list-dots-paragraph flex flex-col gap-5">
+        
+  <li class="flex items-start gap-3">
+    <span class="w-2 h-2 mt-2  bg-primary rounded-full flex-shrink-0"></span>
+    <span>L'activation obligatoire de l'authentification à deux facteurs (2FA)</span>
+  </li>
+
+  <li class="flex items-start gap-3">
+    <span class="w-2 h-2 mt-2  bg-primary rounded-full flex-shrink-0"></span>
+    <span>La restriction d'accès par adresse IP, permettant par exemple de limiter l'accès aux boîtes mail uniquement depuis les locaux de l'entreprise.</span>
+  </li>
+
+  
+          
         </ul>`,
+        
       ]}
       imageSrc="/images/05/email-professionnel-securise.jpg"
       imageAlt="Email professionnel Hostino sécurisé au Maroc"

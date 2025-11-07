@@ -4,13 +4,14 @@ interface Props {
   bigTitle: string | TrustedHTML;
   lineGreen?: boolean;
   className?: string;
+  classTitle?: string
 }
 
-const { smallTitle, bigTitle, lineGreen = false, className } = Astro.props;
+const { smallTitle, bigTitle, lineGreen = false, className , classTitle} = Astro.props;
 ---
 
 <div
-  class={`${className ? className : "pb-[20px]"} col-span-1 flex md:pt-[100px] pt-[80px] flex-col bg-gray-200 custom-row-gap md:mb-0 md:pr-10 text-center md:text-left`}
+  class={`${className ? className : "pb-[20px]"} col-span-1 flex md:pt-[100px] pt-[80px] flex-col bg-gray-200 custom-row-gap md:mb-0  text-center md:text-left`}
 >
   <div class="flex flex-col gap-[20px]">
     {smallTitle && (
@@ -18,9 +19,9 @@ const { smallTitle, bigTitle, lineGreen = false, className } = Astro.props;
         {smallTitle}
       </h1>
     )}
-    <div class="xl:px-[250px] md:px-[0px] px-[10px]">
+    <div class=`${classTitle}`>
       <h2
-        class="max-big-title title-hero-section title text-center lg:px-[0] sm:px-[120px] font-[600] text-title"
+        class="max-big-title title-hero-section title text-center font-[600] text-title"
         set:html={bigTitle as string}
       ></h2>
     </div>

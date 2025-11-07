@@ -8,15 +8,14 @@ interface Props {
 const {
   icon = "⚠️",
   text = "Lancez votre site à petit prix avec nos offres d'hébergement web Starty. Quand votre activité grandit, passez aux packs Business pour des performances pro.",
-  className 
+  className  = "lg:w-[75%]"
 } = Astro.props;
 ---
 
 <section>
-
   <div class="container">
   <div
-    class={`w-[100%] lg:w-[75%] rounded-lg mx-auto border-2 border-dashed border-gray-300 px-[39px] py-[25px] `}
+    class={`w-[100%]  ${className} rounded-lg mx-auto border-2 border-dashed border-gray-300 px-[39px] py-[25px] `}
   >
     <div class="w-full bg-white">
       <div class="flex justify-center text-center">

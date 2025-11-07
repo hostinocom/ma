@@ -273,6 +273,7 @@ const PlanCard = ({
   plan: Plan;
   totalPlans: number;
   namePlaneBold?: boolean;
+  id?: string;
 }) => {
   const [selectedGb, setSelectedGb] = useState(plan.defaultGb);
   const currentOption = plan.gbOptions.find((opt) => opt.gb === selectedGb);
@@ -286,7 +287,7 @@ const PlanCard = ({
   };
 
   return (
-    <div
+    <div 
       className={`${
         plan.most_popular.is_most_popular && "border-3 border-primary"
       } bg-white relative lg:text-left text-center rounded-[10px] 
@@ -404,7 +405,7 @@ export default function PlansEmail({
   id
 }: Props) {
   return (
-    <section id="plans" className={`${className} overflow-hidden  relative`}>
+    <section id={id} className={`${className} overflow-hidden  relative`}>
       <div className="container">
         {!heroHeading && (
           <div className="text-center">

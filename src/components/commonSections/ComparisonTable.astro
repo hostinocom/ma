@@ -16,32 +16,32 @@ const { tableData } = Astro.props;
   <div class="container">
     <div class="overflow-x-auto">
       <table class="w-full border-collapse">
-        <thead>
-          <tr class="bg-[#f8f8f8] text-white">
-            <th class="border border-gray-300 px-6 py-4 text-left font-[600]">
+        <thead class="border border-[#f8f8f8]">
+          <tr class="bg-[#f8f8f8] text-title">
+            <th class=" px-6 py-4 text-left font-[600]">
               Critères
             </th>
-            <th class="border border-gray-300 px-6 py-4 text-left font-[600]">
+            <th class="  px-6 py-4 text-left font-[600]">
               Site web qui génère des leads
             </th>
-            <th class="border border-gray-300 px-6 py-4 text-left font-[600]">
+            <th class="  px-6 py-4 text-left font-[600]">
               Site web low-cost
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="border border-[#f8f8f8]">
           {tableData.map((row: TableRow, index: number) => (
             <tr
               key={index}
-              class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+              class={index % 2 === 0 ? "bg-white text-title " : " text-title bg-[#f8f8f8]"}
             >
-              <td class="border border-gray-300 px-6 py-4 font-medium text-gray-900">
+              <td class=" px-6 border border-[#f8f8f8] py-4 font-medium">
                 {row.criteria}
               </td>
-              <td class="border border-gray-300 px-6 py-4 text-gray-700">
+              <td class=" px-6 border border-[#f8f8f8] py-4">
                 {row.leadGen}
               </td>
-              <td class="border border-gray-300 px-6 py-4 text-gray-700">
+              <td class=" px-6 border border-[#f8f8f8] py-4 ">
                 {row.lowCost}
               </td>
             </tr>

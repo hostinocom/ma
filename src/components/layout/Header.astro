@@ -198,8 +198,8 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
   </div>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu lg:hidden bg-white border-t border-gray-200 shadow-lg hidden">
-    <nav class="px-6 py-4 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
+  <div class="mobile-menu  lg:hidden bg-white border-t border-gray-200 min-h-screen z-11 fixed w-[100%] h-[100%] hidden">
+    <nav class="px-6 py-4 space-y-2  overflow-y-auto">
       <!-- Hébergement web Mobile -->
       <ul >
 
@@ -325,14 +325,14 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
         </ul>
 
       <!-- Mobile Actions -->
-      <div class="pt-4 space-y-3 border-t border-gray-200">
+      <div class="pt-4 space-y-3  border-t border-gray-200">
         <a
           href="https://my.hostino.com/index.php?rp=/login"
-          class="block w-full py-3 text-center text-title font-[600] hover:text-primary transition-colors"
+          class="block w-full py-3 text-center text-white  bg-primary  font-[600] rounded-lg  hover:text-primary transition-colors"
         >
           Connexion
         </a>
-        <button class="w-full bg-primary text-white font-[600] px-4 py-3 rounded-lg hover:bg-[#00a84e] transition-colors">
+        <button class="w-full border border-primary text-title rounded-lg font-[600] px-4 py-3 hover:bg-[#00a84e] transition-colors">
           EN
         </button>
       </div>
@@ -344,6 +344,8 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
 <script>
     // Desktop dropdown functionality
   const hebergementDropdown = document.querySelector('.dropdown-hebergement');
+  const header = document.querySelector('.dropdown-hebergement');
+
   const seoDropdown = document.querySelector('.dropdown-seo');
 
   if (hebergementDropdown) {

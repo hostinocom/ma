@@ -108,9 +108,13 @@ select {
   color: var(--text);
 }
 
+.list-dots-paragraph li span{
+  @apply sm:text-[17px] text-[16px];
+}
+
 
 .max-big-title {
-  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[50px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[59px] font-[600] text-title;
+  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[50px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[59px] font-[600] text-title;
 }
 
 span {
@@ -161,7 +165,7 @@ span {
 .title-section {
   letter-spacing: -2.5px;
   font-weight: 600;
-  @apply text-[35px] md:text-[44px] leading-[40px] md:tracking-[-2.5px] tracking-[-1.5px] md:leading-[50px] text-title mb-[30px];
+  @apply text-[35px] sm:px-[0px] px-[20px] md:text-[44px] leading-[40px] md:tracking-[-2.5px] tracking-[-1.5px] md:leading-[50px] text-title mb-[10px];
 }
 
 .title-section-white {

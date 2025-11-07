@@ -1,7 +1,7 @@
 // functions/api/send-email.js
 // Place this file in: functions/api/send-email.js
 
-export async function onRequestPost(context : any) {
+export async function onRequestPost(context) {
     try {
       console.log('context : ', context);
       const body = await context.request.json();
@@ -225,7 +225,7 @@ export async function onRequestPost(context : any) {
   }
   
   // Strong name validation
-  function validateName(name: string) {
+  function validateName(name) {
     // Trim whitespace
     const trimmedName = name.trim();
   
@@ -265,7 +265,7 @@ export async function onRequestPost(context : any) {
   }
   
   // Universal phone validation (accepts national and international formats)
-  function validatePhone(phone: string) {
+  function validatePhone(phone) {
     // Remove all spaces, dashes, parentheses, and dots
     const cleanPhone = phone.replace(/[\s\-().\u00A0]/g, '');
   
@@ -333,7 +333,7 @@ export async function onRequestPost(context : any) {
   }
   
   // Strong email validation
-  function validateEmail(email: string) {
+  function validateEmail(email) {
     // Trim whitespace
     const trimmedEmail = email.trim().toLowerCase();
   
@@ -421,7 +421,7 @@ export async function onRequestPost(context : any) {
   }
   
   // Sanitize input to prevent XSS attacks
-  function sanitizeInput(input: string) {
+  function sanitizeInput(input) {
     return input
       .trim()
       .replace(/[<>]/g, '') // Remove < and >
