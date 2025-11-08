@@ -74,6 +74,45 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5QLCSWWS');</script>
+
+     {crispId && (
+  <script is:inline define:vars={{ crispId }}>
+    if (typeof window.$crisp === 'undefined') {
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = crispId;
+      
+      // Force HTTP long-polling (bypasses WebSocket issues)
+      window.CRISP_RUNTIME_CONFIG = {
+        locale: 'fr',
+        lock_maximized: false,
+        lock_full_view: false,
+        cross_origin_cookies: false
+      };
+      
+      // Disable WebSocket transport entirely
+      window.CRISP_TOKEN_ID = crispId;
+      
+      (function() {
+        var d = document;
+        var s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = true;
+        s.setAttribute('crossorigin', 'anonymous');
+        
+        // Inject script after Crisp loads to force polling
+        s.onload = function() {
+          if (window.$crisp) {
+            // Force reconnection with polling only
+            window.$crisp.push(['safe', true]);
+          }
+        };
+        
+        d.head.appendChild(s);
+      })();
+    }
+  </script>
+)}
+
 	</head>
 
 	<body >
@@ -94,37 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<slot />
     <Footer />
 
-{crispId && (
-  <script is:inline define:vars={{ crispId }}>
-    if (typeof window.$crisp === 'undefined') {
-      window.$crisp = [];
-      window.CRISP_WEBSITE_ID = crispId;
-      window.CRISP_RUNTIME_CONFIG = {
-        locale: 'fr',
-        lock_maximized: false,
-        lock_full_view: false,
-        cross_origin_cookies: false,
-        safe_mode: true  // ← زيد هاد السطر - مهم بزاف!
-      };
-      
-      (function() {
-        var d = document;
-        var s = d.createElement("script");
-        s.src = "https://client.crisp.chat/l.js";
-        s.async = true;
-        s.setAttribute('crossorigin', 'anonymous');
-        
-        if (d.readyState === 'loading') {
-          d.addEventListener('DOMContentLoaded', function() {
-            d.getElementsByTagName("head")[0].appendChild(s);
-          });
-        } else {
-          d.getElementsByTagName("head")[0].appendChild(s);
-        }
-      })();
-    }
-  </script>
-)}
+
 
   Connection: Upgrade
 	</body>
