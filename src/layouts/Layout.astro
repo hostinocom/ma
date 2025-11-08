@@ -94,22 +94,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<slot />
     <Footer />
 
-     {crispId && (
+{crispId && (
   <script is:inline define:vars={{ crispId }}>
     if (typeof window.$crisp === 'undefined') {
       window.$crisp = [];
       window.CRISP_WEBSITE_ID = crispId;
-      
-      // Force HTTP long-polling (bypasses WebSocket issues)
       window.CRISP_RUNTIME_CONFIG = {
         locale: 'fr',
         lock_maximized: false,
         lock_full_view: false,
-        cross_origin_cookies: false
+        cross_origin_cookies: false,
+        safe_mode: true  // ← زيد هاد السطر - مهم بزاف!
       };
-      
-      // Disable WebSocket transport entirely
-      window.CRISP_TOKEN_ID = crispId;
       
       (function() {
         var d = document;
@@ -118,20 +114,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         s.async = true;
         s.setAttribute('crossorigin', 'anonymous');
         
-        // Inject script after Crisp loads to force polling
-        s.onload = function() {
-          if (window.$crisp) {
-            // Force reconnection with polling only
-            window.$crisp.push(['safe', true]);
-          }
-        };
-        
-        d.head.appendChild(s);
+        if (d.readyState === 'loading') {
+          d.addEventListener('DOMContentLoaded', function() {
+            d.getElementsByTagName("head")[0].appendChild(s);
+          });
+        } else {
+          d.getElementsByTagName("head")[0].appendChild(s);
+        }
       })();
     }
   </script>
 )}
-
 
   Connection: Upgrade
 	</body>
