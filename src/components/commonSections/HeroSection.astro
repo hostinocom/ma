@@ -25,17 +25,19 @@ const {
   imageAlt,
   sectionBg = "bg-gray-200",
   text = "",
+  consultButton,
+  classH2
 } = Astro.props;
 ---
 
 <section class={sectionBg}>
-  <div class="container grid-cols-1 md:py-[150px] py-[80px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
-    <div class="col-span-1 flex flex-col custom-row-gap gap-y-[20px] md:mb-0 md:pr-10 text-center md:text-left">
+  <div class="container grid-cols-1 md:py-[120px] py-[80px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
+    <div class="col-span-1 flex sm:px-[0] px-[30px] flex-col custom-row-gap gap-y-[20px] md:mb-0 md:pr-10 text-center md:text-left">
       <h1 class="md:text-[19px] text-[18px] font-[600] tracking-[-0.5px] text-title">
         {subtitle}
       </h1>
 
-      <h2 class="title-hero-section">
+      <h2 class=`title-hero-section ${classH2}` >
         {title}
       </h2>
 
@@ -43,7 +45,12 @@ const {
         <p class="paragraph" style="margin-bottom:0 !important" set:html={text}></p>
       )}
 
-      <div class="flex flex-col md:items-start items-center">
+     {consultButton && <ConsultButton href="#plans" />}
+
+
+      {
+        email && (
+          <div class="flex flex-col md:items-start items-center">
         <p class={`${emailLabel.color ? emailLabel.color : 'text-title '} text-[13px] font-[500] py-[5px] mb-[10px] tracking-[1.2px]`}>
           {emailLabel.textEmail}
         </p>
@@ -51,6 +58,8 @@ const {
           {email}
         </p>
       </div>
+        )
+      }
     </div>
 
     <div class="col-span-1 flex z-10 justify-center">

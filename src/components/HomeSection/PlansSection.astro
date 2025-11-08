@@ -174,6 +174,7 @@ const {
   title,
   smallTitle,
   plans = hostingPlans,
+  
 } = Astro.props;
 
 const montserratClassName = "font-montserrat";
@@ -190,11 +191,17 @@ const montserratClassName = "font-montserrat";
           {smallTitle}
         </h1>
       )}
-      <h2 class="title-section   text-title pb-[20px]" >
-        Nos offres
-        <br />
-        Hébergement Web Maroc
-      </h2>
+      <h2 class="title-section lg:w-[50%] mx-auto md:w-[60%] sm:w-[70%] w-[80%] text-title pb-[20px]" >
+
+      {
+        title ? title : (
+           <>Nos offres
+              <br />
+            Hébergement Web Maroc</>
+        )
+      }
+       </h2>
+       
     </div>
 
     <div
@@ -211,7 +218,7 @@ const montserratClassName = "font-montserrat";
           } bg-white relative lg:text-left text-center rounded-[10px] lg:w-full md:w-[70vw] w-full mx-auto mb-4 md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px] shadow_main h-full`}
         >
           {plan.most_popular.is_most_popular && (
-            <div class="absolute py-[8px] bg-primary px-[20px] text-[16px] sm:left-1/3 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-white text-center font-[500] inline-block">
+            <div class="absolute py-[4px] bg-primary w-[60%] px-[5px] sm:px-[6px] text-[16px] sm:left-1/3 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-white text-center font-[400] inline-block">
               <AnimatedButton
                 text={plan.most_popular.text.toUpperCase()}
                 hoverText={plan.most_popular.text.toUpperCase()}

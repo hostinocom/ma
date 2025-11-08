@@ -4,10 +4,15 @@
 // Import the image (recommended for local images in Astro)
 import ConsultButton from '../ui/ConsultButton.astro';
 
+const {
+  email
+} = Astro.props;
 ---
 
+
+
 <section class="bg-gray-200">
-  <div class="container grid-cols-1 md:pt-[150px] md:pb-[150px] pb-[55px]  pt-[80px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
+  <div class="container grid-cols-1 md:pt-[130px] md:pb-[130px] pb-[55px]  pt-[80px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
     <!-- Text Content -->
     <div class="col-span-1 flex sm:px-[0] px-[30px] flex-col custom-row-gap mb-5 md:mb-0 md:pr-10 text-center md:text-left">
       <h1 class="md:text-[19px] text-[18px] font-[600] tracking-[-0.5px] text-title">
@@ -20,7 +25,8 @@ import ConsultButton from '../ui/ConsultButton.astro';
      
        <ConsultButton href="#plans" />
       
-      <div class="flex flex-col md:items-start items-center">
+     
+             <div class="flex flex-col md:items-start items-center">
         <p class="text-title text-[13px] font-[500] py-[5px] mb-[10px] tracking-[1.2px]">
           CONSULTATION PAR EMAIL ?
         </p>
@@ -28,6 +34,8 @@ import ConsultButton from '../ui/ConsultButton.astro';
           info@hostino.com
         </p>
       </div>
+      
+     
     </div>
 
     <!-- Hero Image -->

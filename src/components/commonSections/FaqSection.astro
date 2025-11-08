@@ -113,7 +113,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
   <div class="container">
     <h2 class="title-section" set:html={title}></h2>
 
-    <div class="flex md:flex-row flex-col gap-6 mt-[50px]">
+    <div class="flex md:flex-row flex-col gap-6 sm:mt-[50px] mt-[30px]" >
       <div class="flex-1 md:max-w-[48%] flex flex-col gap-6" id="faq-left">
         {firstHalf.map((item: FAQItem, index: number) => (
           <div
@@ -126,7 +126,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
               data-faq-button={index}
               aria-expanded="false"
             >
-              <span class="text-lg font-semibold text-title pr-4 transition-colors duration-300">
+              <span class="text-[18px] font-semibold text-title pr-4 transition-colors duration-300">
                 {item.question}
               </span>
               <svg
@@ -178,7 +178,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
                 data-faq-button={adjustedIndex}
                 aria-expanded="false"
               >
-                <span class="text-lg font-semibold text-title pr-4 transition-colors duration-300">
+                <span class="text-[18px] font-semibold text-title pr-4 transition-colors duration-300">
                   {item.question}
                 </span>
                 <svg

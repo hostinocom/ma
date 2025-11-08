@@ -40,8 +40,6 @@
 
 body{
   font-family: "Poppins" , sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -165,7 +163,7 @@ span {
 .title-section {
   letter-spacing: -2.5px;
   font-weight: 600;
-  @apply text-[35px] sm:px-[0px] px-[20px] md:text-[44px] leading-[40px] md:tracking-[-2.5px] tracking-[-1.5px] md:leading-[50px] text-title mb-[10px];
+  @apply text-[35px]  md:text-[44px] leading-[40px] md:tracking-[-2.5px] tracking-[-1.5px] md:leading-[50px] text-title mb-[10px];
 }
 
 .title-section-white {
