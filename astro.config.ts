@@ -33,7 +33,7 @@ export default defineConfig({
            * Regex(es) of font files to import. The names of the files will
            * predicate the `font-style` and `font-weight` values of the `@font-rule`'s.
            */
-          src: '/Poppins/*.ttf',
+          src: '/fonts/*.ttf',
     
           /**
            * This function allow you to transform the font object before it is used

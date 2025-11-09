@@ -596,7 +596,7 @@ b , strong{
 }
 
 li{
-  list-style: none !important;
+  list-style: none;
 }
 
 
@@ -632,4 +632,8 @@ li{
 
 .link_header{
   font-size: 17px;
+}
+
+.list-disc li{
+  list-style: disc !important;
 }
