@@ -24,7 +24,7 @@ const {
 } = Astro.props;
 
 // Get Crisp ID from environment variable
-const crispId = env.CRISP_WEBSITE_ID;
+const crispId = import.meta.env.CRISP_WEBSITE_ID;
 ---
 <!doctype html>
 <html lang="fr-MA">
