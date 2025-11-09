@@ -1,0 +1,22 @@
+---
+// src/components/CrispChat.astro
+const crispId = import.meta.env.CRISP_WEBSITE_ID || "fb2f1b57-6d80-40f5-ade7-52e4637dc0c5";
+---
+
+<script define:vars={{ crispId }}>
+  // Ensure script runs in browser context
+  if (typeof window !== 'undefined') {
+    // Initialize Crisp
+    window.$crisp = window.$crisp || [];
+    window.CRISP_WEBSITE_ID = crispId;
+    
+    // Load Crisp script
+    (function() {
+      var d = document;
+      var s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = true;
+      d.head.appendChild(s);
+    })();
+  }
+</script>
