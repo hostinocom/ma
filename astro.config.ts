@@ -189,34 +189,34 @@ export default defineConfig({
    } as any),
   compressHTML: true,
   
-  vite: {
-    plugins: [tailwindcss()],
-    ssr: {
-      external: ["node:buffer"],
-    },
-    build: {
-      cssCodeSplit: true,
-      minify: "esbuild",
-      terserOptions: {
-        compress: {
-          drop_console: true, // Remove console.logs in production
-          drop_debugger: true,
-        },
-      },
+  // vite: {
+  //   plugins: [tailwindcss()],
+  //   ssr: {
+  //     external: ["node:buffer"],
+  //   },
+  //   build: {
+  //     cssCodeSplit: true,
+  //     minify: "esbuild",
+  //     terserOptions: {
+  //       compress: {
+  //         drop_console: true, // Remove console.logs in production
+  //         drop_debugger: true,
+  //       },
+  //     },
       
-        } ,
+  //       } ,
 
-        esbuild: {
-          target: 'es2022',
-          // Fast minification settings
-          minifyIdentifiers: false, // Skip for speed
-          minifySyntax: true,
-          minifyWhitespace: true,
-        },
-        optimizeDeps: {
-          include: ["react", "react-dom"],
-        },
-      }
+  //       esbuild: {
+  //         target: 'es2022',
+  //         // Fast minification settings
+  //         minifyIdentifiers: false, // Skip for speed
+  //         minifySyntax: true,
+  //         minifyWhitespace: true,
+  //       },
+  //       optimizeDeps: {
+  //         include: ["react", "react-dom"],
+  //       },
+  //     }
       
      
 });
