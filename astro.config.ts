@@ -174,7 +174,7 @@ export default defineConfig({
     })
   ],
 
-  output: 'server',
+  output: 'static',
    adapter: cloudflare({
     routes: {
       strategy: 'auto',
@@ -187,7 +187,7 @@ export default defineConfig({
     mode: 'directory'
 
    } as any),
-  compressHTML: true,
+  //compressHTML: true,
   
   // vite: {
   //   plugins: [tailwindcss()],
