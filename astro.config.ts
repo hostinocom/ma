@@ -8,7 +8,6 @@ import compress from "astro-compress";
 import { EnumChangefreq } from "sitemap/dist/lib/types";
 import sitemap  from "@astrojs/sitemap";
 
- 
 
 // https://astro.build/config
 export default defineConfig({
