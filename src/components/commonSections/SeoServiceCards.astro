@@ -137,7 +137,7 @@ const seoServiceCardsData: SEOServiceCard[] = [
   },
 ];
 
-const {ville = "sdsd" , seoServiceCardsDataImporter = seoServiceCardsData} = Astro.props;
+const { seoServiceCardsDataImporter = seoServiceCardsData} = Astro.props;
 ---
 
 <section class="lg:my-[150px] my-[80px]">
@@ -149,7 +149,7 @@ const {ville = "sdsd" , seoServiceCardsDataImporter = seoServiceCardsData} = Ast
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {seoServiceCardsData.map((card, index) => (
+      {seoServiceCardsDataImporter.map((card, index) => (
         <div
           key={index}
           class={`${card.bgColor} rounded-[36px] md:px-[50px] py-[40px] px-[20px]  md:py-[50px] flex flex-col justify-between`}

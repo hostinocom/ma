@@ -10,7 +10,7 @@ interface Props {
   topic?: string;
 }
 
-const { title, text, topic } = Astro.props;
+const { title, text, topic , href } = Astro.props;
 
 const moroccanCities: City[] = [
   { name: "Tanger", href: "https://www.hostino.ma/agence-seo-tanger/" },
@@ -57,7 +57,7 @@ const moroccanCities: City[] = [
           {moroccanCities.map((city, index) => (
             <a
               key={index}
-              href={city.href}
+              href={href+(city.name.toLowerCase())}
               class="text-title mb-[5px] transition-colors font-normal"
             >
               {topic} {city.name}

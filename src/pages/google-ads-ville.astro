@@ -11,18 +11,84 @@ import HostingImpactSection from "../components/sectionsGoogleAdsMarocPage/Hosti
 import SeoServiceCards from "../components/sectionsGoogleAdsMarocPage/SeoServiceCards.astro";
 import { main_schema } from "../mainSchema";
 
-const title = "Agence Google Ads Maroc | Publicité Google et Sponsoring";
+const title = "Agence Google Ads Ville | Publicité Google et Sponsoring";
 const description =
-  "Google Ads Maroc. Hostino accompagne les professionnels et les marques dans la gestion des campagnes Google Ads au Maroc ☎️ 0663 75 09 08";
+  "Google Ads Ville. Hostino accompagne les professionnels et les marques dans la gestion des campagnes Google Ads au Maroc ☎️ 0663 75 09 08";
 const imageUrl =
   "https://maroc-1hp.pages.dev/images/google-ads-maroc/google-ads-maroc.png";
-const canonical_url = "https://www.hostino.ma/google-ads-maroc";
-const ogAlt = "Agence Google Ads Maroc";
+const canonical_url = "https://www.hostino.ma/google-ads-maroc-ville";
+const ogAlt = "Agence Google Ads Ville";
+
+
+
+
+const seoServiceCardsAdsDataImporter: SEOServiceCard[] = [
+  {
+    title: "Publicité sur le moteur de recherche",
+    paragraphs: [
+      "La publicité sur les moteurs de recherche vous permet d'afficher vos annonces exactement au moment où les utilisateurs <b>recherchent vos produits ou services</b> sur Google. Vous atteignez ainsi des personnes réellement intéressées par ce que vous proposez, au moment clé de leur décision.&nbsp;",
+      "Avec une stratégie bien optimisée, vous pouvez augmenter les <b>appels</b>, les <b>clics</b> et les <b>ventes</b> sans gaspiller de budget. Le ciblage par ville, par mots-clés et par horaires garantit que vos annonces ne sont vues que par de vrais clients potentiels.&nbsp;",
+      "Dans un marché compétitif, apparaître parmi les <b>premiers résultats</b> est essentiel. La publicité sur les moteurs de recherche vous offre une visibilité immédiate et transforme les recherches en clients prêts à acheter.",
+    ],
+    buttonText: "Contacte-nous",
+    buttonLink: "https://www.hostino.ma/contact/",
+  },
+  {
+    title: "Sponsoring Google My Business",
+    paragraphs: [
+      `Vos clients recherchent chaque jour des entreprises comme la vôtre sur Google Maps à Ville et dans les recherches locales.&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Avec Google Ads pour les </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>fiches Google My Business</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">, vous pouvez mettre en avant votre profil et apparaître avant la concurrence, au moment précis où un client est prêt à appeler, </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>demander un itinéraire</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"> ou visiter votre site web.</span>`,
+      `Ce type de campagnes relie votre fiche Google Business Profile à des annonces payantes, ce qui génère davantage de clics sur "<b>Appeler</b>", "<b>Itinéraire</b>" ou "<b>Visiter le site web</b>`,
+      "Ainsi, vous transformez les recherches locales en clients réels et augmentez la visibilité de votre entreprise dans votre zone.",
+    ],
+    buttonText: "Contacte-nous",
+    buttonLink: "https://www.hostino.ma/contact/",
+  },
+  {
+    title: "Publicité sur le réseau display de Google Ads",
+    paragraphs: [
+      "Avec le Réseau Display de Google Ads, votre entreprise peut apparaître sur des <b>millions de sites web</b>, <b>d'applications</b> et de vidéos YouTube où vos clients potentiels passent leur temps.",
+      "Il ne s'agit pas seulement de recherche, mais d'être présent de manière stratégique pendant que les utilisateurs naviguent, lisent des actualités ou consomment du contenu lié à <b>vos produits ou services</b>.",
+      "Les annonces peuvent être au format image, responsive, vidéo, texte, shopping (produits avec photo, prix et lien vers votre boutique) ou <b>rich media</b> (formats dynamiques et interactifs qui génèrent plus d'engagement).",
+      "De cette façon, votre entreprise bénéficie d'une visibilité stratégique et se connecte avec des clients au moment parfait.",
+    ],
+    buttonText: "Contacte-nous",
+    buttonLink: "https://www.hostino.ma/contact/",
+  },
+  {
+    title: "Campagnes vidéo avec YouTube Ads",
+    paragraphs: [
+      `Avec YouTube Ads, votre entreprise apparaît exactement là où vos clients regardent du contenu chaque jour.&nbsp;`,
+      `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Types </span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"><b>d'annonces sur YouTube</b></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;"> :</span>`,
+      {
+        html: `<ul class="list-disc ml-6">
+          <li>
+            <b>In-Stream skippables</b> : l'annonce peut être ignorée après 5
+            secondes.
+          </li>
+          <li>
+            In-Stream non skippables : 15 à 20 secondes d'impact garanti.
+          </li>
+          <li>Bumper Ads : vidéos courtes de 6 secondes.</li>
+          <li>
+            Discovery Ads : apparaissent dans les résultats de recherche et les <b>vidéos associées</b>.
+          </li>
+          <li>
+            Masthead : visibilité maximale sur la page d'accueil de YouTube.
+          </li>
+        </ul>`,
+      },
+      `Transformez chaque vue en une <b>opportunité commerciale</b> avec des campagnes vidéo bien optimisées.`,
+    ],
+    buttonText: "Contacte-nous",
+    buttonLink: "https://www.hostino.ma/contact/",
+  },
+];
+
 
 const faqData = [
   {
     question:
-      "Comment fonctionne une campagne Google Ads pour les entreprises au Maroc ?",
+      "Comment fonctionne une campagne Google Ads pour les entreprises à Tanger ?",
     answers: [
       "Une campagne Google Ads repose sur un système d'enchères publicitaires où vos annonces apparaissent lorsque des internautes recherchent des mots-clés liés à vos produits ou services. Contrairement aux méthodes publicitaires traditionnelles, vous ne payez pas simplement pour la diffusion mais uniquement lorsqu'un utilisateur clique sur votre annonce. Cela garantit un budget mieux maîtrisé et des résultats mesurables.",
       "Au Maroc, les campagnes sont adaptées aux comportements locaux : bilinguisme (arabe/français), recherche mobile en forte croissance, et importance de la géolocalisation pour toucher les clients proches.",
@@ -53,7 +119,7 @@ const faqData = [
       "Pourquoi chaque entreprise au Maroc devrait-elle allouer un budget mensuel Google Ads ?",
     answers: [
       "Allouer un budget mensuel à Google Ads est essentiel pour assurer une visibilité continue sur un marché marocain de plus en plus digitalisé.",
-      "Les consommateurs recherchent quotidiennement des produits et services sur Google, YouTube et les sites partenaires.",
+      "Les consommateurs recherchent quotidiennement des produits et services sur Google, <a class='underline hover:text-primary' href='https://www.youtube.com/ads/'>YouTube</a> et les sites partenaires.",
       "Une présence régulière permet à votre entreprise d'apparaître en tête des résultats, d'attirer des clients qualifiés et de rester compétitive face à vos concurrents.",
       "Un budget récurrent, même modeste, permet d'éviter les coupures de campagnes, de maintenir la notoriété de votre marque et d'analyser les performances pour améliorer vos résultats mois après mois.",
       "Grâce à Google Ads, vous pouvez cibler avec précision vos prospects selon leur ville, leur langue ou leur comportement en ligne, ce qui maximise l'efficacité de chaque dirham investi.",
@@ -66,7 +132,7 @@ const faqData = [
     answers: [
       "Absolument. Google Ads n'est pas réservé aux grandes entreprises.",
       "Les petites et moyennes structures, tout comme les autoentrepreneurs, peuvent cibler une zone géographique précise et concentrer leurs efforts sur les mots-clés les plus pertinents.",
-      "Cela permet à un comptable, un médecin, un plombier, un hôtel, une agence de voyage ou tout autre professionnel d'être visible au bon moment, exactement lorsque des clients potentiels recherchent leurs services.",
+      `Cela permet à un comptable, un <strong><span style="text-decoration: underline"><a href="/agence-seo-medical">médecin</a></span></strong>, un plombier, un <strong><span style="text-decoration: underline"><a href="/agence-seo-hotel">hôtel</a></span></strong>, une agence de voyage ou tout autre professionnel d’être visible au bon moment, exactement lorsque des clients potentiels recherchent leurs services.`,
       "Grâce à sa grande flexibilité, Google Ads s'adapte à toutes les tailles d'entreprise et à tous les objectifs : attirer de nouveaux clients, augmenter la visibilité locale ou développer des ventes en ligne.",
     ],
   },
@@ -80,18 +146,18 @@ const faqData = [
     ],
   },
   {
-    question: "Faites-vous du sponsoring pour ma fiche Google My Business ?",
+    question: "Faites-vous du sponsoring pour ma fiche Google My Business à Ville ?",
     answers: [
-      'Oui, absolument. Nous aidons les entreprises locales à promouvoir leur fiche Google My Business via des campagnes sponsorisées. Cela permet à votre établissement d\'apparaître tout en haut des résultats Google Maps, avec plus de visibilité que vos concurrents directs. Lorsqu\'un utilisateur tape "restaurant italien Rabat", votre fiche peut être mise en avant, accompagnée d\'appels à l\'action comme "Appeler" ou "Itinéraire". En complément, nous optimisons aussi votre fiche : ajout de photos attractives, gestion des avis clients, mise à jour régulière des horaires et des services. Ce travail combiné (optimisation + sponsoring) améliore considérablement votre crédibilité et attire davantage de clients potentiels directement dans votre restaurant.',
+      `oui, absolument. Nous aidons les entreprises locales à promouvoir leur fiche <strong><span style="text-decoration: underline"><a href="/google-my-business-maroc/">Google My Business</a></span></strong> via des campagnes sponsorisées. Cela permet à votre établissement d’apparaître tout en haut des résultats Google Maps, avec plus de visibilité que vos concurrents directs. Lorsqu’un utilisateur tape "restaurant italien Rabat", votre fiche peut être mise en avant, accompagnée d’appels à l’action comme "Appeler" ou "Itinéraire". En complément, nous optimisons aussi votre fiche : ajout de photos attractives, gestion des avis clients, mise à jour régulière des horaires et des services. Ce travail combiné (optimisation + sponsoring) améliore considérablement votre crédibilité et attire davantage de clients potentiels directement dans votre restaurant.`
     ],
   },
   {
     question:
-      "Comment faire pour que mon restaurant italien sorte numéro un à Rabat ?",
+      "Comment faire pour que mon restaurant italien sorte numéro un à Ville ?",
     answers: [
-      "Avec Google Ads, vous pouvez apparaître en première position sur Google dès qu'un internaute recherche un mot-clé comme restaurant italien Rabat ou meilleure pizzeria à Rabat.",
+      "Avec Google Ads, vous pouvez apparaître en première position sur Google dès qu'un internaute recherche un mot-clé comme restaurant italien Ville ou meilleure pizzeria à Ville.",
       "En choisissant des mots-clés précis, en paramétrant correctement la zone géographique (par exemple uniquement Rabat et ses quartiers), vos annonces s'afficheront directement devant vos clients potentiels au moment où ils cherchent où manger.",
-      "L'avantage est que vous ne payez que lorsqu'un utilisateur clique sur votre annonce. Cela vous permet de contrôler votre budget et d'obtenir des résultats mesurables rapidement : appels, réservations ou visites dans votre restaurant.",
+      "L'avantage est que vous ne payez que lorsqu'un utilisateur clique sur votre annonce. Cela vous permet de contrôler votre budget et d'obtenir des résultats mesurables rapidement : appels, réservations ou visites dans votre restaurant à Ville.",
     ],
   },
 ];
@@ -195,9 +261,9 @@ const articleSchema = {
 >
   <main>
     <HeroSection
-      subtitle="Agence Google Ads Maroc"
+      subtitle="Agence Google Ads Ville"
       title="Agence de publicité Google Ads"
-      text="Agence Google Ads Maroc qui vous aide à générer <b>instantanément</b> des appels et des clients."
+      text="Agence Google Ads Ville qui vous aide à générer <b>instantanément</b> des appels et des clients."
       emailLabel={{
         textEmail: "CONSULTATION PAR EMAIL",
         color: "text-primary",
@@ -208,13 +274,13 @@ const articleSchema = {
     />
 
     <ContactForm
-      title="Votre stratégie Google Ads <br class='lg:hidden block' /><span class='border-bottom'>commence ici !</span>"
+      title="Votre stratégie Google Ads Ville <br class='lg:hidden block' /><span class='border-bottom'>commence ici !</span>"
     />
 
     <TextLeftImageRight
-      title="Agence Google Ads au Maroc"
+      title="Agence Google Ads à Ville"
       paragraphs={[
-        "Hostino est une agence Google Ads au Maroc qui accompagne les <b>entreprises de toutes tailles</b> et de tous <b>secteurs</b> dans la gestion et l'optimisation de leurs campagnes sur le Réseau de recherche, YouTube et Display, afin que chaque dirham investi génère des résultats concrets.",
+        "Hostino est une agence Google Ads à  Ville qui accompagne les <b>entreprises de toutes tailles</b> et de tous <b>secteurs</b> dans la gestion et l'optimisation de leurs campagnes sur le Réseau de recherche, YouTube et Display, afin que chaque dirham investi génère des résultats concrets.",
         "Nous aidons les <b>entreprises de toutes tailles</b> à gagner en visibilité, générer des appels, attirer un trafic qualifié et transformer chaque clic en opportunité de croissance.",
         "Notre force réside dans notre parfaite compréhension du <b>marché marocain</b> : ses langues, sa culture, ses zones géographiques et ses habitudes de consommation.",
         "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez vos campagnes publicitaires à des experts Google Ads reconnus.",
@@ -226,12 +292,12 @@ const articleSchema = {
       href="https://www.hostino.ma/contact"
     />
 
-    <SeoServiceCards />
+    <SeoServiceCards seoServiceCardsAdsDataImporter={seoServiceCardsAdsDataImporter} title="Les prestations de notre<br/> agence Google Ads à Ville"/>
 
     <TextLeftImageRight
-      title="Qu'est-ce qu'une agence Google Ads ?"
+      title="Qu'est-ce qu'une agence Google Ads Ville?"
       paragraphs={[
-        "Une agence Google Ads est une entreprise spécialisée dans la création, la gestion et l'optimisation de campagnes publicitaires sur la plateforme Google Ads.",
+        "Une agence Google Ads Ville est une entreprise spécialisée dans la création, la gestion et l'optimisation de campagnes publicitaires sur la plateforme Google Ads.",
         "Son rôle couvre la sélection de mots-clés, la rédaction d'annonces percutantes, la mise en place d'une segmentation précise, le suivi des conversions, ainsi que l'amélioration continue des performances grâce à des ajustements des <b>enchères</b>, de la qualité des annonces et de <b>l'expérience utilisateur sur le site web de l'annonceur</b>.",
         "Notre agence spécialisée en Google Ads se distingue par son professionnalisme dans la création de campagnes rentables pour votre entreprise, aussi bien au niveau local qu'au niveau national partout au Maroc.",
         "Nous combinons expérience, outils avancés et connaissance approfondie du marché marocain afin de garantir des résultats mesurables et durables.",
@@ -247,7 +313,7 @@ const articleSchema = {
       <div class="container">
         <h2 class="title-section mb-[20px]">
           Comment fonctionne <br />
-          Google Ads au Maroc ?
+          Google Ads à Ville ?
         </h2>
 
         <p class="paragraph">
@@ -291,9 +357,9 @@ const articleSchema = {
     
 
     <TextLeftImageRight
-      title="Consultant expert Google Ads au Maroc"
+      title="Consultant expert Google Ads à ville"
       paragraphs={[
-        "Chez Hostino, nos experts Google Ads au Maroc pilotent depuis <b>plus de 20 ans</b> des campagnes publicitaires performantes sur Google Ads et YouTube Ads.",
+        "Chez Hostino, nos experts Google Ads à Ville pilotent depuis <b>plus de 20 ans</b> des campagnes publicitaires performantes sur Google Ads et YouTube Ads.",
         "En tant que <b>consultants seniors</b>, nous mettons à profit une expertise approfondie pour éviter les pièges courants et maximiser le retour sur investissement de vos campagnes. Notre objectif est clair : transformer chaque budget investi en résultats concrets et mesurables pour votre entreprise.",
         "Grâce à une solide expérience dans des secteurs variés, nos experts Google Ads savent exactement quelle méthodologie adopter selon les spécificités de votre entreprise. Nous avons accompagné avec succès de grandes marques de l'agroalimentaire, des <b>compagnies aériennes</b>, des <b>banques</b>, des <b>assureurs</b> ainsi que de nombreux <b>prestataires de services</b>.",
         "Appelez-nous dès maintenant au +212 663 75 09 08 et confiez vos campagnes publicitaires à des experts Google Ads reconnus.",
@@ -309,14 +375,14 @@ const articleSchema = {
 
     <GmbAdvantages
       advantages={advantages}
-      title="Avantages de Google Ads<br />au Maroc"
+      title="Avantages de Google Ads<br />à Ville"
     />
 
     <TextLeftImageRight
       title="Maximiser vos résultats grâce à la synergie Google Ads & SEO"
       paragraphs={[
         "La synergie entre Google Ads et le SEO permet de combiner <strong>visibilité immédiate</strong> et positionnement durable. Les annonces Google Ads assurent une présence instantanée, tandis que le SEO consolide la notoriété à long terme dans les résultats naturels.",
-        "Les deux leviers se complètent : les données issues des campagnes Ads aident à cibler les bons mots-clés pour le <strong>SEO</strong>, et un site bien optimisé améliore le Quality Score, réduisant ainsi le <strong>coût par clic</strong>.",
+        "Les deux leviers se complètent : les données issues des campagnes Ads aident à cibler les bons mots-clés pour le <strong><a class='underline' href='/agence-seo-maroc/'>SEO</a></strong>, et un site bien optimisé améliore le Quality Score, réduisant ainsi le <strong>coût par clic</strong>.",
         "Résultat : plus de visibilité, un trafic qualifié et des conversions accrues. L'association <strong>Google Ads + SEO</strong> offre un impact rapide et une croissance pérenne.",
       ]}
       imageSrc="/images/07/seo-google-ads-maroc.jpg"
@@ -327,10 +393,11 @@ const articleSchema = {
     />
 
     <NationalCoverage
-      title="Une agence Google Ads à vos côtés partout au Maroc"
+      title="Une agence Google Ads à Ville et partout au Maroc"
       topic="Google Ads"
+      href="google-ads-"
     />
 
-    <FAQSection faqData={faqData} title="FAQ - Agence Google Ads Maroc" />
+    <FAQSection faqData={faqData} title="FAQ - Agence Google Ads Ville" />
   </main>
 </Layout>
