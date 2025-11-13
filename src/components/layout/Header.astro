@@ -165,7 +165,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
           href="https://my.hostino.com/index.php?rp=/login"
           class="hidden sm:block text-title"
         >
-          <AnimatedButton
+        <AnimatedButton
             text="Connexion"
             hoverText="Connexion"
             bgColor="bg-gray-100"
@@ -182,7 +182,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
           bgColor="bg-primary"
           hoverBgColor="bg-title"
           textColor="text-white"
-          class="hidden lg:block text-white bg-primary font-bold px-2 py-1"
+          class="lang-switch-en hidden lg:block text-white bg-primary font-bold px-2 py-1"
         />
 
         <!-- Mobile Menu Button -->
@@ -332,7 +332,7 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
         >
           Connexion
         </a>
-        <button class="w-full border border-primary text-title rounded-lg font-[600] px-4 py-1 hover:bg-[#00a84e] transition-colors">
+        <button class="lang-switch-en-mobile w-full border border-primary text-title rounded-lg font-[600] px-4 py-1 hover:bg-[#00a84e] transition-colors">
           EN
         </button>
       </div>
@@ -410,7 +410,17 @@ import AnimatedButton from '../ui/AnimatedButton.astro';
     arrow?.classList.toggle('rotate-180');
   });
 
-  // Close mobile menu when clicking links
-  
+  // Language switcher (FR -> EN)
+  const langButtons = document.querySelectorAll('.lang-switch-en');
+  const langButtonsMobile = document.querySelectorAll('.lang-switch-en-mobile');
+  const goToEnglish = () => {
+    const { pathname, search, hash } = window.location;
+    if (pathname.endsWith('/en')) return;
+    const basePath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+    window.location.href = `${basePath}en${search}${hash}`;
+  };
+  [...langButtons, ...langButtonsMobile].forEach((btn) =>
+    btn?.addEventListener('click', goToEnglish)
+  );
 </script>
 

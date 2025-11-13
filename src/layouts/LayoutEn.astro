@@ -1,0 +1,112 @@
+---
+import "../styles/global.css";
+import HeaderEn from "../components/layout/HeaderEn.astro";
+import Footer from "../components/layout/Footer.astro";
+import Unfont from "unplugin-fonts/astro/component.astro";
+import CrispChat from "../components/CrispChat.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical_url?: string;
+  imageUrl?: string;
+  ogAlt?: string;
+  articleSchema?: any;
+}
+
+const {
+  title,
+  description,
+  canonical_url,
+  imageUrl,
+  ogAlt,
+  articleSchema,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Unfont />
+
+    <link rel="dns-prefetch" href="//client.crisp.chat" />
+    <link rel="dns-prefetch" href="//client.relay.crisp.chat" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="preconnect" href="https://client.crisp.chat" crossorigin />
+    <link rel="preconnect" href="https://client.relay.crisp.chat" crossorigin />
+
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+    />
+    <link rel="canonical" href={canonical_url} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonical_url} />
+    <meta property="og:site_name" content="Hostino" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:secure_url" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta property="og:image:type" content="image/png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:creator" content="@admin" />
+
+    {articleSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    )}
+
+    <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5QLCSWWS');
+    </script>
+
+    <script is:inline type="text/javascript">
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = "fb2f1b57-6d80-40f5-ade7-52e4637dc0c5";
+      (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5QLCSWWS"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+        title="Google Tag Manager"
+      ></iframe>
+    </noscript>
+
+    <HeaderEn />
+    <slot />
+    <Footer />
+
+    <CrispChat />
+  </body>
+</html>
+
