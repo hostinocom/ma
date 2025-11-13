@@ -10,11 +10,13 @@ interface Props {
   arrowButton?: boolean;
 }
 
-const { title, paragraphs, buttonText, buttonHref, subtitle, arrowButton } =
+const { title, paragraphs, buttonText, buttonHref, subtitle, arrowButton , 
+  className='lg:my-[150px] my-[80px]'
+} =
   Astro.props;
 ---
 
-<section class="lg:my-[150px] my-[80px]">
+<section class={className}>
   <div class="container">
     {subtitle && (
       <h3

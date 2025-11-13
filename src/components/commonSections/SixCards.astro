@@ -77,14 +77,14 @@ const usedFeatures = features.length > 0 ? features : hostingFeatures;
   <div class="container">
     {title && (
       <h2
-         class={`${className}  ${
+         class={`${className}   ${
         alignment === "left" && "md:pr-[180px] lg:pr-[250px]"
-      } sm:text-${alignment} title-section text-left  `}
+      } sm:text-${alignment} title-section  text-left  `}
       set:html={title as string}
       />
     )}
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-[30px] mb-12">
       {usedFeatures.map((feature, i) => (
         <div
           key={i}

@@ -293,7 +293,7 @@ const PlanCard = ({
         plan.most_popular.is_most_popular && "border-3 border-primary"
       } bg-white relative lg:text-left text-center rounded-[10px] 
       ${getWidthClass()}
-       md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px] border border-gray-300 h-full`}
+       lg:pt-[55px] lg:px-[50px] lg:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px] border border-gray-300 h-full`}
     >
       {plan.most_popular.is_most_popular && (
         <div className="absolute py-[8px] bg-primary px-[20px] text-[16px] sm:left-1/3 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-white text-center font-meduim inline-block">

@@ -22,7 +22,7 @@ const ogAlt = "Nom de domaine Ville";
 
 const faqData = [
   {
-    question: "L'activation de mon nom de domaine Maroc est-elle instantanée ?",
+    question: "L'activation de mon nom de domaine Ville est-elle instantanée ?",
     answers: [
       "L'enregistrement de votre nom de domaine .ma est effectué instantanément après votre paiement. Un email de confirmation vous est automatiquement envoyé pour valider l'opération.",
       "L'activation se fait généralement en quelques minutes, sauf si le nom de domaine .ma contient un terme réservé, auquel cas une validation manuelle par l'ANRT est nécessaire.",
@@ -38,7 +38,7 @@ const faqData = [
     ],
   },
   {
-    question: "Comment acheter un nom de domaine Maroc ?",
+    question: "Comment acheter un nom de domaine Ville ?",
     answers: [
       "La réservation d'un nom de domaine .MA est ouverte aussi bien aux particuliers qu'aux entreprises du monde entier. En enregistrant un nom de domaine .MA, vous acceptez les conditions générales de l'ANRT relatives à la réglementation en vigueur pour les noms de domaine .ma.",
     ],
@@ -326,7 +326,7 @@ const articleSchema = {
     <SixCards
       features={whyChooseNomDomaineHostino}
       title="Pourquoi acheter un nom de <br />domaine chez Hostino ?"
-      classNameTitleCard="lg:pr-[180px]"
+      classNameTitleCard="lg:pr-[180px] mb-[30px]"
     />
 
     <TextLeftImageRight
@@ -380,96 +380,24 @@ const articleSchema = {
       arrowButton={true}
     />
 
-    <TextLeftImageRight
-      title="Résolution des litiges des Noms de domaine Maroc"
-      paragraphs={[
-        "La gestion des noms de domaine au Maroc repose sur un cadre réglementaire strict, notamment pour les extensions en .ma et .المغرب. ",
-        "Pour garantir une protection efficace des droits de propriété intellectuelle, l'Agence Nationale de Réglementation des Télécommunications (ANRT), en collaboration avec , <b>l'Organisation Mondiale de la Propriété Intellectuelle</b> (OMPI), a mis en place une Procédure Alternative de Résolution de Litiges (PARL).",
-        "Cette procédure permet de traiter les conflits liés à l'enregistrement abusif de noms de domaine correspondant à des marques protégées, des dénominations sociales, ainsi que des indications géographiques ou appellations d'origine au Maroc.",
-      ]}
-      imageSrc="/images/08/nom-de-domaine-ompi-anrt.jpg"
-      className="lg:mt-[150px] mt-[80px] mb-[0]"
-      consultButtonTextExiste={false}
-    />
+   
 
-    <section>
-      <div class="container">
-        <p class="paragraph">
-          Dans le but de renforcer la protection des entreprises et des
-          détenteurs de droits, l'ANRT a récemment procédé à une révision du
-          règlement de la PARL. Désormais, cette procédure couvre un
-          éventail plus large de litiges, incluant les conflits relatifs aux
-          noms de domaine enregistrés sous l'extension .المغرب en arabe.
-          Cette extension bénéficie ainsi du même niveau de protection que
-          les domaines en .ma, garantissant une meilleure <b>sécurité juridique aux entreprises</b> et aux titulaires de
-          droits.
-        </p>
-        <p class="paragraph">
-          Le nouveau règlement entrera en vigueur le 15 février 2025, et
-          offrira aux requérants des recours plus adaptés pour défendre
-          leurs intérêts. Toute personne ou entreprise confrontée à un
-          litige lié à un nom de domaine au Maroc peut consulter les détails
-          de cette procédure et soumettre une requête via le Centre
-          d'Arbitrage de l'OMPI.&nbsp;
-        </p>
-        <p class="paragraph">
-          Pour en savoir plus, consultez le règlement complet sur le site
-          officiel de l'OMPI :
-          <span>
-            <a
-              href="https://www.wipo.int/amc/fr/domains/cctld/ma/index.html"
-              target="_new"
-              rel="noopener"
-              data-start="1723"
-              data-end="1804"
-            >
-              Lien vers le règlement.
-            </a>
-          </span>
-        </p>
-      </div>
-    </section>
-
-    <DomainPricingSection client:load />
+    
+    <DomainPricingSection client:load  />
 
     <TitleParagraphButton
-      title="Nom de domaine .ma gratuit"
+      subtitle="Nom de domaine .ma gratuit"
       paragraphs={[
-        `<span style="color: #022545;">Pour finaliser l'enregistrement d'un nom de domaine Maroc contenant un terme réservé, merci de nous transmettre les informations suivants en ouvrant un <span style="text-decoration: underline;"><a style="color: #022545; text-decoration: underline;" href="https://my.hostino.com/submitticket.php" rel="noopener"><b>ticket de support</b></a></span> :</span>`,
-        `<ul class="flex flex-col list-dots-paragraph gap-y-4 mb-[40px] md:pl-[50px] pl-[30px]">
-  <li class="flex items-start gap-3">
-    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
-    <span>Nom de l'entreprise ou organisme pour lequel ce nom de domaine va être réservé</span>
-  </li>
-
-  <li class="flex items-start gap-3">
-    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
-    <span>Email, adresse postale et N° de téléphone de l'entreprise</span>
-  </li>
-
-  <li class="flex items-start gap-3">
-    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
-    <span>La raison pour laquelle ce domaine sera enregistré (avec tous les détails possibles pour convaincre l'ANRT de vous enregistrer ce domaine)</span>
-  </li>
-
-  <li class="flex items-start gap-3">
-    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
-    <span>
-      <a class="underline text-[#022545]" href="https://www.hostino.ma/Examen_Prealable_nom_de_domaine_maroc.pdf">Formulaire</a>
-      rempli, signé et cacheté, disponible via ce 
-      <a class="underline text-[#022545]" href="https://www.hostino.ma/Examen_Prealable_nom_de_domaine_maroc.pdf"><u>lien</u></a>.
-    </span>
-  </li>
-</ul>
-`,
+        `<span style="color: #022545;">Un nom de domaine Ville (.ma) est gratuit la première année avec toutes nos formules <a href="https://www.hostino.ma"><strong class='underline'>d’hébergement web Business</strong></a></span>`,
       ]}
       buttonText="Commencer maintenant"
       arrowButton={true}
       buttonHref="#ma"
+      className="mt-16 lg:mb-[150px] mb-[80px]"
     />
 
-    <FAQSection faqData={faqData} title="FAQ - Nom de domaine Maroc" />
-    <ServiceProximite page="nom-de-domaine" />
+    <FAQSection faqData={faqData} title="FAQ - Nom de domaine Ville" />
+    <ServiceProximite page="nom-de-domaine" title="Nom de domaine à Ville et partout au Maroc" map={true} />
   </main>
 </Layout>
 
