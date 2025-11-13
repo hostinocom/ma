@@ -39,6 +39,10 @@
   --row-gap: var(--gap);
 }
 
+html{
+  line-height: 1.5;
+}
+
 body{
   font-family: "Poppins" , sans-serif;
 }

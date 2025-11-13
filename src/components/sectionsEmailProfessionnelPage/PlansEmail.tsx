@@ -49,6 +49,7 @@ type Props = {
   namePlaneBold?: boolean;
   titleExiste: boolean;
   id?: string
+  ville?: string
 };
 
 const hostingPlans: Plan[] = [
@@ -312,12 +313,12 @@ const PlanCard = ({
         />
       ) : (
         <h3
-          className="lg:text-[26px] md:text-left text-center md:text-[30px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+          className="lg:text-[26px] md:text-left text-center md:text-[30px] text-[28px] text-title md:leading-[33px] leading-[1.3em] "
           dangerouslySetInnerHTML={{ __html: plan.name }}
         />
       )}
 
-      <div className="border-t py-[15px] border-gray-200 my-4"></div>
+      <div className="border-t  border-gray-200 my-[40px]"></div>
 
       <div className="flex rounded-[6px]  max-w-max overflow-hidden items-center lg:justify-start justify-center mb-6 flex-wrap">
         {plan.gbOptions.map((option) => (
@@ -351,7 +352,7 @@ const PlanCard = ({
           plan.most_popular.is_most_popular
             ? "bg-primary"
             : "bg-title hover:bg-primary transition"
-        } text-white flex items-center mt-[18px] gap-3 justify-center font-[600] py-[16px] rounded-[10px] text-center mb-4 transition`}
+        } text-white flex items-center mt-[18px] gap-3 justify-center  py-[20px] rounded-[10px] text-center mb-4 transition`}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -371,9 +372,9 @@ const PlanCard = ({
         </svg>
       </a>
 
-      <p className="text-[14px] text-title mb-12">{plan.countUser}</p>
+      <p className="text-[14px] text-title">{plan.countUser}</p>
 
-      <div className="border-t border-gray-200 my-4"></div>
+      <div className="border-t  border-gray-200 my-[40px]"></div>
 
       <ul className="text-gray-700 text-sm space-y-2 flex-grow">
         {plan.features.map((feature : any, index : number)  => (
@@ -401,7 +402,8 @@ export default function PlansEmail({
   heroHeading,
   plans = hostingPlans,
   namePlaneBold,
-  id
+  id,
+  ville = "Maroc"
 }: Props) {
   return (
     <section id={id} className={`${className} overflow-hidden  relative`}>
@@ -409,7 +411,7 @@ export default function PlansEmail({
         {!heroHeading && (
           <div className="text-center">
             <h2 className="title-section text-title">
-              Choisissez votre plan email<br className="sm:block hidden"/> professionnel Maroc
+              Choisissez votre plan email<br className="sm:block hidden"/> professionnel {ville}
             </h2>
           </div>
         )}

@@ -77,8 +77,10 @@ const usedFeatures = features.length > 0 ? features : hostingFeatures;
   <div class="container">
     {title && (
       <h2
-        class={``}
-        set:html={title as string}
+         class={`${className}  ${
+        alignment === "left" && "md:pr-[180px] lg:pr-[250px]"
+      } sm:text-${alignment} title-section text-left  `}
+      set:html={title as string}
       />
     )}
 

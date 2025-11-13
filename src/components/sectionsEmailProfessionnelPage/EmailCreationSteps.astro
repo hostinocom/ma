@@ -46,7 +46,7 @@ const steps: Step[] = [
     </h2>
 
     <!-- Steps Container - Responsive layout -->
-    <div class="flex flex-col lg:flex-row gap-8 lg:gap-5">
+    <div class="flex mt-[40px] flex-col lg:flex-row gap-8 lg:gap-5">
       {steps.map((step) => (
         <div class="flex-1">
           <!-- Step Number/Icon -->
@@ -70,7 +70,7 @@ const steps: Step[] = [
 
           <!-- Title -->
           <h3
-            class="text-[28px] md:text-[27px] font-[600] text-title lg:mb-[15px] mb-[5px] inline-block"
+            class="text-[28px] md:text-[27px] leading-[36px] font-[600] text-title lg:mb-[15px] mb-[5px] inline-block"
             set:html={step.title}
           />
 

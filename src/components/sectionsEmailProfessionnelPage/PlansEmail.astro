@@ -182,6 +182,7 @@ const {
   plans = hostingPlans,
   namePlaneBold = false,
   id = "plans",
+  ville = "Maroc"
 } = Astro.props;
 
 // Price mapping for each plan
@@ -206,7 +207,7 @@ const getWidthClass = (totalPlans: number) => {
     {!heroHeading && (
       <div class="text-center">
         <h2 class="title-section text-title">
-          Choisissez votre plan email<br class="sm:block hidden" /> professionnel Maroc
+          Choisissez votre plan email<br class="sm:block hidden" /> professionnel {ville}
         </h2>
       </div>
     )}
@@ -249,10 +250,10 @@ const getWidthClass = (totalPlans: number) => {
                   type="button"
                   data-gb={option.gb}
                   data-plan-id={plan.id}
-                  class={`gb-selector py-[10px] px-[24px] font-[600] text-[16px] transition ${
+                  class={`gb-selector py-[10px] px-[24px]  font-[600] text-[16px] transition ${
                     option.gb === plan.defaultGb
                       ? "bg-primary text-white"
-                      : "bg-title text-white hover:bg-primary"
+                      : "bg-title py-[10px] text-white hover:bg-primary"
                   }`}
                 >
                   {option.gb}
