@@ -162,7 +162,7 @@ export default defineConfig({
         'https://www.hostino.ma/google-my-business-maroc',
         'https://www.hostino.ma/google-ads-maroc',
         'https://www.hostino.ma/creation-site-web-maroc',
-        'https://www.hostino.ma/contact',
+        '/contact',
         'https://www.hostino.ma/mentions-legales',
         'https://www.hostino.ma/politique-de-confidentialite',
         'https://www.hostino.ma/conditions-generales',

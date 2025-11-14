@@ -117,7 +117,7 @@ select {
 
 
 .max-big-title {
-  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[50px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[59px] font-[600] text-title;
+  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[52px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[59px] font-[600] text-title;
 }
 
 span {
