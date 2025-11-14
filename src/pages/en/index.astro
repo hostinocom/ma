@@ -1,0 +1,144 @@
+---
+// src/pages/index.astro
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HomeSection/HeroSection.astro';
+import TrustedBySection from '../../components/commonSections/TrustedBySection.astro';
+import FastestHostingSection from '../../components/HomeSection/FastestHostingSection.astro';
+import DomainSearchSection from "../../components/HomeSection/DomainSearchSection.tsx";
+import EasyHebergementSection from "../../components/HomeSection/EasyHebergementSection.astro"
+import BenefitsSection from "../../components/HomeSection/BenefitsSection.astro"
+import WhyChooseSection from "../../components/HomeSection/WhyChooseSection.astro"
+import BenchmarkHostingMorocco from "../../components/HomeSection/BenchmarkHostingMorocco.astro"
+import PlansSection from "../../components/HomeSection/PlansSection.astro"
+import SixCards from '../../components/HomeSection/SixCards.astro';
+import FaqSection from '../../components/HomeSection/FaqSection.astro';
+import TextLeftImageRight from "../../components/commonSections/TextLeftImageRight.astro"
+import { main_schema } from '../../mainSchema.ts';
+
+
+
+
+
+const title = "Hébergement Web Maroc - Hébergeur web 100% marocain";
+const description =
+  "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/";
+const ogAlt = "Hébergement Web Maroc";
+
+
+
+
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+   ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+---
+
+
+
+
+
+<Layout 
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+  lang="en"
+>
+
+  <main>
+    <HeroSection consultButton={true}/>
+	<PlansSection  />
+    <TrustedBySection classNameImage="md:w-[80%] w-[100%] mx-auto h-auto brightness" />
+
+    <TextLeftImageRight
+      title="Hébergement web : qu'est-ce que c'est ?"
+      paragraphs={[
+        `L'hébergement web est un élément essentiel pour rendre votre
+            site web accessible sur Internet. C'est le service qui permet de
+            stocker Les fichiers et les bases de données associés de votre
+            projet en ligne.`,
+        ` Le choix de votre hébergement est stratégique, car il impacte
+            directement l'expérience utilisateur. Un hébergement performant
+            garantit une navigation fluide, tandis qu'un hébergement
+            sécurisé protège vos données 
+            <b>
+              contre les 
+              <a
+                href="https://about.google/intl/ALL_fr/stories/notin-interview/"
+                rel="noopener"
+              >
+                cyberattaques.
+              </a>
+            </b>
+          `,
+          `Le service d'hébergement web, offert par des entreprises
+            spécialisées appelées 'hébergeurs web', consiste à mettre
+            l'infrastructure nécessaire pour rendre votre site accessible en
+            ligne.
+          `
+      ]}
+      imageSrc="/images/01/hebergement-web.jpg"
+      imageAlt="What is Web Hosting?"
+      href="#plans"
+    />
+
+	  <DomainSearchSection id="ma" />
+	  <WhyChooseSection />
+
+    <FastestHostingSection />
+    <EasyHebergementSection />
+	<BenefitsSection />
+	<BenchmarkHostingMorocco />
+  <FaqSection />
+  </main>
+</Layout>
+
