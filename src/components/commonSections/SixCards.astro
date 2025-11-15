@@ -15,14 +15,6 @@ interface Props {
   classNameImageCard?: string;
 }
 
-const {
-  className = "",
-  title,
-  alignment = "center",
-  features = [],
-  classNameTitleCard,
-  classNameImageCard,
-} = Astro.props;
 
 const hostingFeatures: Feature[] = [
   {
@@ -69,6 +61,17 @@ const hostingFeatures: Feature[] = [
     description: `Un service de support technique et commercial disponible 24h/24, par téléphone, e-mail et <b><a style='text-decoration:underline;' href="https://my.hostino.com/submitticket.php">ticket de support</a></b>.`,
   },
 ];
+
+const {
+  className = "",
+  title,
+  alignment = "center",
+  features = [],
+  classNameTitleCard,
+  classNameImageCard,
+  cardsImporter = hostingFeatures
+} = Astro.props;
+
 
 const usedFeatures = features.length > 0 ? features : hostingFeatures;
 ---

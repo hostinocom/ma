@@ -3,14 +3,13 @@ interface Props {
   classNameImage?: string;
 }
 
-const { classNameImage = "" , className="" } = Astro.props;
+const { classNameImage = "" , className="" , text =
+`<b>Hostino®</b>, partenaire de confiance d'un vaste réseau d'entreprises et d'institutions au Maroc.` } = Astro.props;
 ---
 
 <section class={`${className} bg-white`}>
   <div class="container text-center">
-    <p class="text-title font-normal text-[17px] mb-[20px]">
-      <b>Hostino®</b>, partenaire de confiance d'un vaste réseau d'entreprises et d'institutions au Maroc.
-    </p>
+    <p class="text-title font-normal text-[17px] mb-[20px]" set:html={text} />
     <div class="flex justify-center">
       <img
         src="/images/01/references-hebergement-maroc.png"

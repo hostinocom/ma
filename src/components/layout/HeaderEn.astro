@@ -26,6 +26,20 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
               class="animated-link hover:text-primary link_header text-title flex items-center gap-2 font-[600] border-none p-0"
             >
               Web Hosting
+
+                <svg
+            class="w-5 h-5 transition-transform duration-300 mobile-arrow"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
       
             </a>
 
@@ -33,7 +47,7 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
               <ul class="dropDown-menu top-full left-0 w-56 bg-white py-2">
                 <li>
                   <a
-                    href="/en/starty/"
+                    href="en/cheap-web-hosting/"
                     class="block animated-link link_header ml-6 my-3 text-title font-[600]"
                   >
                     Starty
@@ -41,10 +55,10 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
                 </li>
                 <li>
                   <a
-                    href="/business/en"
+                    href="/en/business-web-hosting"
                     class="block animated-link link_header ml-6 my-3 text-title font-[600]"
                   >
-                    @Emails
+                    Business
                   </a>
                 </li>
                
@@ -55,7 +69,7 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
 
           <li>
             <a
-              href="/email-professionnel/en"
+              href="/en/business-email"
               class="font-poppins hover:text-primary link_header animated-link flex items-center gap-2 text-title font-[600] border-none p-0"
             >
                @Emails
@@ -145,116 +159,54 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
 
           <ul class="mobile-submenu pl-4 space-y-2 mt-2 hidden">
             <li>
-              <a href="/starty/en" class="link_header block py-2 text-title font-[600]">
+              <a href="en/cheap-web-hosting" class="link_header block py-2 text-title font-[600]">
                 Starty
               </a>
             </li>
             <li>
-              <a href="/business/en" class="link_header block py-2 text-title font-[600]">
+              <a href="/en/business-web-hosting/" class="link_header block py-2 text-title font-[600]">
                 Business
               </a>
             </li>
-            <li>
-              <a href="/cloud-maroc/en" class="link_header block py-2 text-title font-[600]">
-                Cloud Morocco
-              </a>
-            </li>
           </ul>
         </li>
 
         <li>
           <a
-            href="/email-professionnel/en"
+            href="/en/business-email/"
             class="block text-title link_header cursor-pointer hover:text-primary py-2 font-[600]"
           >
-            Professional Email
+            @Emails
           </a>
         </li>
 
         <li>
           <a
-            href="/nom-de-domaine-ma/en"
+            href="en/cloud-morocco"
             class="block text-title link_header cursor-pointer hover:text-primary font-[600] py-2"
           >
-            Domain Name
+            Cloud Morocco
           </a>
         </li>
 
-        <li class="mobile-dropdown-seo">
+        <li>
           <a
-            href="#"
-            class="flex button link_header items-center justify-between w-full py-2 hover:text-primary text-title font-[600]"
+            href="en/ma-domain-name"
+            class="block text-title link_header cursor-pointer hover:text-primary font-[600] py-2"
           >
-            <div class="flex items-center gap-2">
-              <img
-                src="/images/google-svg.svg"
-                alt="Google"
-                loading="eager"
-                width={20}
-                height={20}
-              />
-              SEO/SEA
-            </div>
-            <svg
-              class="w-5 h-5 transition-transform duration-300 mobile-arrow"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+            Domains
           </a>
-
-          <ul class="mobile-submenu pl-4 space-y-2 mt-2 hidden">
-            <li>
-              <a
-                href="/agence-seo-maroc/en"
-                class="block link_header max-w-max py-[12px] text-title font-[600] animated-link"
-              >
-                SEO Agency
-              </a>
-            </li>
-            <li>
-              <a
-                href="/google-my-business-maroc/en"
-                class="block link_header max-w-max py-[12px] text-title font-[600] animated-link"
-              >
-                GMB Agency
-              </a>
-            </li>
-            <li>
-              <a
-                href="/google-ads-maroc/en"
-                class="block link_header max-w-max py-[12px] text-title font-[600] animated-link"
-              >
-                Google Ads
-              </a>
-            </li>
-            <li>
-              <a
-                href="/creation-site-web-maroc/en"
-                class="block link_header max-w-max py-[12px] text-title font-[600] animated-link"
-              >
-                Website
-              </a>
-            </li>
-          </ul>
         </li>
       </ul>
 
       <div class="pt-1 space-y-3">
         <a
           href="https://my.hostino.com/index.php?rp=/login"
-          class="block w-full py-3 text-center text-white bg-primary font-[600] rounded-lg hover:text-primary transition-colors"
+          class="block w-full py-3 text-center text-white bg-primary font-[600] rounded-lg  transition-colors"
         >
           Login
         </a>
-        <button class="lang-switch-fr-mobile w-full border border-primary text-title rounded-lg font-[600] px-4 py-1 hover:bg-[#00a84e] transition-colors">
+        <button class="lang-switch-fr-mobile w-full border border-primary text-title rounded-lg font-[600] px-4 py-1 ">
           FR
         </button>
       </div>

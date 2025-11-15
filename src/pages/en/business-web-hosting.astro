@@ -1,0 +1,369 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StartyComparison from "../../components/sectionsStartyPage/StartyComparison.astro";
+import TextLeftImageRight from "../../components/commonSections/TextLeftImageRight.astro";
+import SixCards from "../../components/commonSections/SixCards.astro";
+import FAQSection from "../../components/commonSections/FaqSection.astro";
+import PlansEn from "../../components/commonSections/PlansEn.astro";
+import HeroHeadingPages from "../../components/ui/heroHeadingPages.astro";
+import TrustedBySection from "../../components/commonSections/TrustedBySection.astro";
+import PromoBanner from "../../components/ui/PromoBanner.astro";
+import { main_schema } from "../../mainSchema.ts";
+import type { Plan } from "../../components/commonSections/Plans.astro";
+
+const title ="Business Web Hosting Morocco | Fast, Secure & 1-Click Setup";
+const description ="Business Web Hosting Morocco. Fast, reliable business web hosting with 24/7 support, free SSL & .ma domain for your company in Morocco"
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/en/business-web-hosting/";
+const ogAlt = "Cheap Web Hosting Morocco";
+
+interface Plan {
+  id: number;
+  name: string;
+  subtext: string;
+  price_original: string;
+  price_discounted: string;
+  save: string;
+  price_ttc: string;
+  performance_stars: number;
+  more_performance: {
+    text: string;
+    href: string;
+    exists: boolean;
+  };
+  order: {
+    text: string;
+    href: string;
+  };
+  features: {
+    seo_optimized: boolean;
+    free_domain: boolean;
+    wordpress_preinstalled: boolean;
+    control_panel: string;
+    ssl: string;
+    disk_space: string;
+    bandwidth: string;
+    databases: string | number;
+    email_accounts: string | number;
+    subdomains: string | number;
+    backups: string;
+  };
+  most_popular: {
+    text: string;
+    is_most_popular: boolean;
+  };
+}
+
+const hostingPlans: Plan[] = [
+  {
+    id: 1,
+    name: "Business",
+    subtext: "",
+    price_original: "1199 DH/yr",
+    price_discounted: "999 DH/yr",
+    save: "33%",
+    price_ttc: "For 1 year, you pay <b>1198.8 DH</b> (incl. tax).",
+    performance_stars: 4,
+    more_performance: {
+      text: "More performance?",
+      href: "",
+      exists: false,
+    },
+    order: {
+      text: "Order Now",
+      href: "https://my.hostino.com/order.php?pid=42&language=english&country=MA&currency=1&promocode=UI12B",
+    },
+    features: {
+      seo_optimized: true,
+      free_domain: true,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Free and unlimited",
+      disk_space: "50 GB NVMe",
+      bandwidth: "Unlimited",
+      databases: "Unlimited",
+      email_accounts: 10,
+      subdomains: 10,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "MOST POPULAR",
+      is_most_popular: true,
+    },
+  },
+  {
+    id: 2,
+    name: "Business Plus",
+    subtext: "",
+    price_original: "",
+    price_discounted: "1800 DH/yr",
+    price_ttc: "For 1 year, you pay <b>2160 DH</b> (incl. tax).",
+    save: "",
+    performance_stars: 5,
+    more_performance: {
+      text: "More performance?",
+      href: "",
+      exists: false,
+    },
+    order: {
+      text: "Order Now",
+      href: "https://my.hostino.com/order.php?pid=43&language=english&country=MA&currency=1&promocode=UI12B",
+    },
+    features: {
+      seo_optimized: true,
+      free_domain: true,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Free and unlimited",
+      disk_space: "100 GB NVMe",
+      bandwidth: "Unlimited",
+      databases: "Unlimited",
+      email_accounts: 10,
+      subdomains: 10,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "",
+      is_most_popular: false,
+    },
+  },
+  {
+    id: 3,
+    name: "Business <i>Pro</i>",
+    subtext: "",
+    price_original: "",
+    price_discounted: "3000 DH/yr",
+    price_ttc: "For 1 year, you pay <b>3600 DH</b> (incl. tax).",
+    performance_stars: 5,
+    save: "",
+    more_performance: {
+      text: "More performance?",
+      href: "",
+      exists: false,
+    },
+    order: {
+      text: "Order Now",
+      href: "https://my.hostino.com/order.php?pid=44&language=english&country=MA&currency=1&promocode=UI12B",
+    },
+    features: {
+      seo_optimized: true,
+      free_domain: true,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Free and unlimited",
+      disk_space: "200 GB NVMe",
+      bandwidth: "Unlimited",
+      databases: "Unlimited",
+      email_accounts: 10,
+      subdomains: 10,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "",
+      is_most_popular: false,
+    },
+  },
+];
+
+const hostingFeatures: Feature[] = [
+     {
+    image: "hebergeur-marocain.jpg",
+    alt: "Moroccan Web Hosting company",
+    title: "<span>Moroccan</span> <br>Web Hosting company",
+    description: `Hostino® — a leading <a style='text-decoration:underline;' href="https://www.hostino.ma/en">web hosting</a> provider in Morocco, with a <b>local presence in Tangier</b>, Rabat, and Casablanca. Our high-performance servers are located in Morocco, Spain, the Netherlands, and the United States.`,
+  },
+  {
+    image: "securite.jpg",
+    alt: "Top-notch security",
+    title: "<span>Top-notch</span><br> security",
+    description:
+      "Top-notch security with AI-powered malware detection, built-in <b>Anti-DDoS protection</b>, integrated Zero Trust architecture, and certified partnerships with leading international security solutions like <b>Cloudflare</b> and Imunify.",
+  },
+  {
+    image: "accelerateur-web.jpg",
+    alt: "Web accelerator",
+    title: "Web<br> <span>accelerator</span>",
+    description:
+      "Our web hosting Morocco plans are optimized for ultra-fast page loading, fully compliant with Google <b>PageSpeed Insights</b> performance standards: LCP (Largest Contentful Paint) ≤ 2.5 seconds.",
+  },
+  {
+    image: "wordpress.jpg",
+    alt: "WordPress hosting optimized",
+    title: "WordPress <br>in <span>1-click</span>",
+    description:
+      "With Hostino, create your WordPress website in <b>just a few clicks</b>—no installation hassles or technical skills required.",
+  },
+  {
+    image: "migration-hostino.jpg",
+    alt: "Free Hostino web hosting migration",
+    title: "<span>Free</span> <br>migration",
+    description:
+      "Switch to Hostino® with complete peace of mind thanks to a <b>smooth migration process</b> and zero service downtime.",
+  },
+  {
+    image: "support-maroc.jpg",
+    alt: "Expert support",
+    title: "<span>Expert</span> <br>support",
+    description: `24/7 technical and sales support available via phone, email, and <b><a style='text-decoration:underline;' href="https://my.hostino.com/submitticket.php" rel="noopener">support ticket</a></b>.`,
+  },
+];
+
+
+const faqData: FAQItem[] = [
+  {
+    question: "Does your Business web hosting plan meet my needs?",
+    answers: [
+      "Our Business plans are specifically designed for company websites, whether it's a showcase site or a full e-commerce platform. Business web hosting provides your website with security, reliability, and total flexibility.",
+      "You can upgrade at any time with no service interruption — easily move from Business to Business Plus, and then to Business Pro as your business grows.",
+    ],
+  },
+  {
+    question: "How long does it take to activate my web hosting account?",
+    answers: [
+      "Your web hosting order will be activated once your payment is confirmed.",
+      "If you pay using a Moroccan bank card (CMI) or an international card (via Stripe), activation is almost instant. For bank transfer payments, you'll need to send proof of transfer to <strong>sales@hostino.com</strong>.",
+    ],
+  },
+  {
+    question: "Are there any limits on how many emails I can send?",
+    answers: [
+      "To prevent any misuse of mass mailing, the number of emails you can send per hour is limited based on the email quota included in your hosting plan.",
+    ],
+  },
+  {
+    question: "Is it possible to change the domain linked to my hosting plan?",
+    answers: [
+      "Yes, domain changes are allowed within 30 days of your purchase. After this period, domain changes are no longer possible. Please contact our support team to request the update within the allowed timeframe.",
+    ],
+  },
+  {
+    question: "My Starty® hosting has expired — are my data lost?",
+    answers: [
+      "Your data remain stored on our servers for 30 days after your hosting plan expires. You can instantly recover everything by paying the renewal fee during this period. After the initial 30 days, your data are moved to our backup servers and kept for an additional 30 days.",
+      "During this extended period, restoration is still possible, but a recovery fee of 499 MAD (excl. tax) will apply.",
+      "Once the full 60-day period has passed, data recovery is no longer possible, and all files are permanently deleted.",
+    ],
+  },
+  {
+    question: "Can I change my hosting plan at any time?",
+    answers: [
+      "Yes, you can upgrade or downgrade your hosting plan at any time. If you choose to upgrade, you'll only need to pay the price difference on a pro-rata basis.",
+      "Our support team is here to help you with the process whenever you're ready.",
+    ],
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+---
+
+<Layout 
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+  lang="en"
+>
+
+  <main>
+     <HeroHeadingPages
+      smallTitle="Business Web Hosting"
+      bigTitle="Business Web Hosting in Morocco"
+      classTitle="2xl:px-[350px] xl:px-[300px] md:px-[100px] px-[50px]"
+      lineGreen={true}
+    />
+
+    <PlansEn
+      title="Starty®, Hébergement web pas cher"
+      smallTitle="Hébergement web pas cher"
+      plans={hostingPlans}
+      heroHeading={true}
+      namePlaneBold={true}
+    />
+
+
+    <TrustedBySection
+      classNameImage="md:w-[65%] w-[100%] mx-auto h-auto"
+      className="mt-[60px]"
+    />
+   
+   
+<TextLeftImageRight
+  title="What is Business Web hosting ?"
+  paragraphs={[
+    `Business web hosting is a type of web hosting made for companies, organizations, and startups that need a reliable and professional online presence. It's perfect for corporate websites, online businesses, and even NGOs that want something stronger than <span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/cheap-web-hosting/">cheap hosting</a></span>.`,
+    `It's designed to handle more traffic, offer better performance, and support business tools like email, e-commerce, or internal systems. Whether you're a small startup or a growing company, it gives you the stability and speed you need. Business hosting also includes strong security features to protect your website and data — like SSL certificates, backups, and protection against cyber attacks.`,
+    `It's a smart choice for anyone who wants to build trust and grow online with confidence.`,
+  ]}
+  imageSrc="/images/02/cheap-web-hosting.jpg"
+  imageAlt="Cheap Web Hosting in Morocco"
+  consultButtonTextExiste={false}
+  
+/>
+
+
+    <SixCards
+      title=`Why choose our <br>Business Web Hosting ?`
+      alignment="left"
+      features={hostingFeatures}
+    />
+
+     <FAQSection
+      faqData={faqData}
+      title="FAQ sur l'hébergement web Business"
+    />
+    
+
+    
+
+  </main>
+</Layout>
+

@@ -1,0 +1,48 @@
+---
+import ConsultButton from '../ui/ConsultButton.astro';
+---
+
+<section class="bg-gray-200">
+  <div class="container grid-cols-1 md:pt-[130px] md:pb-[130px] pb-[55px]  pt-[80px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
+    <!-- Text Content -->
+    <div class="col-span-1 flex sm:px-[0] px-[30px] flex-col custom-row-gap mb-5 md:mb-0 md:pr-10 text-center md:text-left">
+      <h1 class="md:text-[19px] text-[18px] font-[600] tracking-[-0.5px] text-title">
+        Web Hosting Morocco
+      </h1>
+      <h2 class="big-title leading-[49px] font-[600] text-title">
+        Web Hosting in Morocco
+      </h2>
+
+     
+       <ConsultButton href="#plans" />
+      
+     
+             <div class="flex flex-col md:items-start items-center">
+        <p class="text-title text-[13px] font-[500] py-[5px] mb-[10px] tracking-[1.2px]">
+          NEED SUPPORT?
+        </p>
+        <p class="border-bottom text-[31px] font-[600] text-title">
+          info@hostino.com
+        </p>
+      </div>
+      
+     
+    </div>
+
+    <!-- Hero Image -->
+    <div class="col-span-1 flex z-10 justify-center">
+      <div class="relative w-full">
+        <img
+          src="https://www.hostino.ma/en/wp-content/uploads/2025/04/web-hosting-morocco.jpg"
+          alt="Web Hosting in Morocco"
+          fetchpriority="high"
+          width={1300}
+          height={977}
+          loading="eager"
+          class="w-full h-full  p-[25px] md:scale-100 lg:scale-100 rounded-lg"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+

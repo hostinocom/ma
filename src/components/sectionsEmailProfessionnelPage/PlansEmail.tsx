@@ -383,7 +383,7 @@ const PlanCard = ({
             className="flex items-center lg:justify-start justify-center"
           >
             {typeof feature == "object" ? (
-              <>{feature as React.ReactNode}</>
+              <span dangerouslySetInnerHTML={{__html : feature}} />
             ) : (
               <span
                 className="text-title"
@@ -403,16 +403,16 @@ export default function PlansEmail({
   plans = hostingPlans,
   namePlaneBold,
   id,
-  ville = "Maroc"
+  ville = "Maroc",
+  title = `Choisissez votre plan email<br className="sm:block hidden"/> professionnel {ville}`
 }: Props) {
   return (
     <section id={id} className={`${className} overflow-hidden  relative`}>
       <div className="container">
         {!heroHeading && (
           <div className="text-center">
-            <h2 className="title-section text-title">
-              Choisissez votre plan email<br className="sm:block hidden"/> professionnel {ville}
-            </h2>
+            <h2 className="title-section text-title" dangerouslySetInnerHTML={{__html : title}} />
+            
           </div>
         )}
 

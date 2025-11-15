@@ -177,7 +177,7 @@ const hostingPlans: Plan[] = [
 
 const {
   className = "",
-  title,
+  title = `Choisissez votre plan email<br class="sm:block hidden" /> professionnel Ville`,
   heroHeading = false,
   plans = hostingPlans,
   namePlaneBold = false,
@@ -206,9 +206,7 @@ const getWidthClass = (totalPlans: number) => {
   <div class="container">
     {!heroHeading && (
       <div class="text-center">
-        <h2 class="title-section text-title">
-          Choisissez votre plan email<br class="sm:block hidden" /> professionnel {ville}
-        </h2>
+        <h2 class="title-section text-title" set:html={title} />
       </div>
     )}
 

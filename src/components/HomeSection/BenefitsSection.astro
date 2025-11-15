@@ -18,11 +18,14 @@ const benefits = [
     text: "Un temps de réponse rapide améliore non seulement l'expérience utilisateur et la conversion, mais aussi votre classement dans les résultats des moteurs de recherche. Nos solutions d'hébergement web sont optimisées pour garantir un <b>chargement ultra rapide</b>, contribuant ainsi à un meilleur score sur des outils tels que PageSpeed Insights."
   }
 ];
+
+
+const {benefitsImporter = benefits} = Astro.props
 ---
 
 <section class="lg:my-[150px] my-[80px] bg-white">
   <div class="container grid gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    {benefits.map((benefit) => (
+    {benefitsImporter.map((benefit) => (
       <div
         class="flex flex-col gap-[20px] col-span-1"
       >

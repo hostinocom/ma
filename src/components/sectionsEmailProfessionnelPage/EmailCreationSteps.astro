@@ -12,6 +12,8 @@ interface Step {
   };
 }
 
+
+
 const steps: Step[] = [
   {
     number: "01",
@@ -35,19 +37,23 @@ const steps: Step[] = [
     content: `Enfin, c'est très simple : <b>nous prenons en charge</b> la configuration des paramètres de vos e-mails et vous communiquons les <b>identifiants</b> ainsi que les <b>instructions</b>.`,
   },
 ];
+
+const {
+  stepsImporter = steps ,
+  title = `Quelques clics suffisent pour créer <br class="md:block hidden" /> vos emails nom@entreprise.ma`
+} = Astro.props
+
 ---
 
 <section class="lg:my-[150px] my-[80px]">
   <div class="container">
     <!-- Section Header -->
-    <h2 class="font-[600] sm:text-left text-center title-section">
-      Quelques clics suffisent pour créer
-      <br class="md:block hidden" /> vos emails nom@entreprise.ma
-    </h2>
+    <h2 class="font-[600] sm:text-left text-center title-section" set:html={title} />
+ 
 
     <!-- Steps Container - Responsive layout -->
     <div class="flex mt-[40px] flex-col lg:flex-row gap-8 lg:gap-5">
-      {steps.map((step) => (
+      {stepsImporter.map((step) => (
         <div class="flex-1">
           <!-- Step Number/Icon -->
           <div
@@ -86,7 +92,7 @@ const steps: Step[] = [
                 bgColor={"bg-transparent"}
                 textColor={"text-title"}
                 hoverBgColor={"bg-transparent"}
-                class="text-title border-3 border-primary rounded-sm px-[40px] font-[600] py-[10px]"
+                class="text-title border-3 border-primary rounded-md px-[50px] font-[600] py-[10px]"
                 arrowButton={true}
                 colorArrow={"#022545"}
               />

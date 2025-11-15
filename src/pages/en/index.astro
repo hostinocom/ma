@@ -1,35 +1,187 @@
 ---
-// src/pages/index.astro
+// src/pages/en/index.astro
 import Layout from '../../layouts/Layout.astro';
-import HeroSection from '../../components/HomeSection/HeroSection.astro';
+import HeroSectionEn from '../../components/HomeSectionEn/HeroSectionEn.astro';
 import TrustedBySection from '../../components/commonSections/TrustedBySection.astro';
-import FastestHostingSection from '../../components/HomeSection/FastestHostingSection.astro';
-import DomainSearchSection from "../../components/HomeSection/DomainSearchSection.tsx";
-import EasyHebergementSection from "../../components/HomeSection/EasyHebergementSection.astro"
-import BenefitsSection from "../../components/HomeSection/BenefitsSection.astro"
-import WhyChooseSection from "../../components/HomeSection/WhyChooseSection.astro"
-import BenchmarkHostingMorocco from "../../components/HomeSection/BenchmarkHostingMorocco.astro"
-import PlansSection from "../../components/HomeSection/PlansSection.astro"
-import SixCards from '../../components/HomeSection/SixCards.astro';
-import FaqSection from '../../components/HomeSection/FaqSection.astro';
-import TextLeftImageRight from "../../components/commonSections/TextLeftImageRight.astro"
+import TextLeftImageRight from '../../components/commonSections/TextLeftImageRight.astro';
+
+import FastestHostingSectionEn from '../../components/HomeSectionEn/FastestHostingSectionEn.astro';
+import DomainSearchSectionEn from "../../components/HomeSectionEn/DomainSearchSectionEn.tsx";
+import WhatIsWebHostingSectionEn from "../../components/HomeSectionEn/WhatIsWebHostingSectionEn.astro"
+import WhyChooseSectionEn from "../../components/HomeSectionEn/WhyChooseSectionEn.astro"
+import PlansSectionEn from "../../components/HomeSectionEn/PlansSectionEn.astro"
+import FaqSection from '../../components/commonSections/FaqSection.astro';
 import { main_schema } from '../../mainSchema.ts';
+import SixCards from "../../components/commonSections/SixCards.astro";
+import BenefitsSection from "../../components/HomeSection/BenefitsSection.astro"
 
 
 
 
 
-const title = "Hébergement Web Maroc - Hébergeur web 100% marocain";
+
+
+
+const title = "Web Hosting Morocco | Secure, Fast & instant activation";
 const description =
-  "Hébergement Web Maroc. Hostino™️ Hébergeur recommandé par les développeurs, les agences web et les professionnels du numérique au Maroc";
+  "Web Hosting Morocco. Hostino™️ Web hosting recommended by developers, web agencies and digital professionals in Morocco";
 const imageUrl =
-  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
-const canonical_url = "https://www.hostino.ma/";
-const ogAlt = "Hébergement Web Maroc";
+  "https://www.hostino.ma/en/wp-content/uploads/2025/04/web-hosting-morocco.jpg";
+const canonical_url = "https://www.hostino.ma/en/";
+const ogAlt = "Web Hosting Morocco";
+
+const benefits = [
+  {
+    image: "hebergement-web-securise.jpg",
+    title: "Secure web hosting",
+    text: "Choosing a secure web hosting in Morocco means opting for 24/7 monitoring by experts who constantly ensure the security of your websites. The integration of advanced technologies like AI allows for real-time detection of attacks and anomalies, providing enhanced protection against potential threats." },
+  {
+    image: "hebergement-web-evolutive.jpg",
+    title: "Flexible web hosting",
+    text:`With our Moroccan web hosting packages: <a href="/en/cheap-web-hosting/"><span style="text-decoration: underline;">Starty</span></a>, <a href="/en/business-web-hosting/"><span style="text-decoration: underline;">Business</span></a>, and <span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/wordpress-hosting">Wordy</a></span>, you benefit from flexible solutions that allow for an easy transition without any service interruption. Start with Starty for a cost-effective solution and scale up to Business or Cloudy as your needs grow, without having to reconfigure or transfer your services.`
+     },
+  {
+    image: "hebergement-web-rapide.jpg",
+    title: "Fast Web Hosting",
+    text: "A fast response time not only improves user experience and conversion rates but also boosts your search engine ranking. Our web hosting solutions are optimized to ensure ultra-fast loading, contributing to a better score on tools like PageSpeed Insights." 
+  }
+];
+
+const faqData = [
+  {
+    question: "What is Web Hosting Morocco and do i need It?",
+    answer: `<p>Web hosting in Morocco simply means renting digital space on a server located or managed in Morocco to store your website's files. This allows visitors to access your site from anywhere in the world.</p>`,
+  },
+  {
+    question: "Why Choose Hostino as Your Moroccan Web Hosting Provider?",
+    answer: `
+      <p class="mb-4">Hostino offers a robust and reliable web hosting solution tailored specifically for Moroccan businesses. Here's why you should choose us:</p>
+      <ul class="space-y-3 mb-4">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Local Expertise:</strong> As a Moroccan company, we understand the unique needs and challenges of businesses operating in the country.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>High Performance:</strong> Our state-of-the-art infrastructure ensures lightning-fast load times for your website, enhancing user experience and SEO.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Security:</strong> Your website's data is our priority. We employ top-tier security measures to protect your information.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Comprehensive Services:</strong> We offer a wide range of services beyond hosting, including domain registration, email, and website development.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Excellent Support:</strong> Our dedicated support team is available to assist you with any questions or issues you may encounter.</span>
+        </li>
+      </ul>
+      <p>By choosing Hostino, you're not just selecting a hosting provider; you're partnering with a committed ally in your digital success.</p>
+    `,
+  },
+  {
+    question: "Which TLD is better, .com, .net, or .ma domain name ?",
+    answers: [
+      "Choosing the right TLD (Top-Level Domain) for your website hinges on your target audience and business goals, especially within the dynamic Moroccan market.",
+      "For businesses prioritizing a strong local presence in the Kingdom of Morocco, the .ma domain name is undeniably the superior choice. It fosters trust and credibility with Moroccan consumers, boosts visibility in local search results, and aligns perfectly with the \"digital Morocco 2030\" initiative, which aims to amplify the nation's digital footprint.",
+      "While .com remains the global standard, offering broad recognition, its competitive landscape can be challenging. For businesses with an international scope, .com is often the primary TLD, but registering a .ma domain alongside it is a strategic move to establish a dedicated local presence.",
+      "Given Morocco's strategic position as a bridge between Africa and Europe, \"Morocco pond Africa and Europe,\" a .ma domain reinforces a commitment to this key regional market.",
+      "The .net TLD, while still in use, is less common and primarily serves as an alternative when desired .com or .ma options are unavailable. Ultimately, the best TLD depends on your specific business model.",
+      "If your focus is primarily serving the Moroccan market, a .ma domain is essential. If you have a broader, international business, .com is generally preferred, but securing a <a href=\"https://www.hostino.ma/en/ma-domain-name\">.ma domain name</a> will significantly enhance your reach within the Kingdom of Morocco. The \"<span style=\"text-decoration: underline;\"><a href=\"https://www.mmsp.gov.ma/sites/default/files/2024-09/PlaquetteInstitutionnel_18092024_Ang.pdf\" rel=\"noopener\">Digital Morocco 2030</a></span>\" plan emphasizes the growth of the digital economy, and a .ma domain contributes directly to this vision.",
+    ],
+  },
+  {
+    question: "What are the different Web Hosting packages offered by Hostino?",
+    answer: `
+      <p class="mb-4">It depends on the nature and scope of your web project.</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>For personal projects and small sites like blogs, you can choose <a href="https://www.hostino.ma/en/cheap-web-hosting/">Starty®</a> web hosting.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>For business projects, we recommend <a href="https://www.hostino.ma/en/business-web-hosting/">Business®</a> web hosting.</span>
+        </li>
+      </ul>
+    `,
+  },
+  {
+    question: "Web Hosting Morocco is Secure ?",
+    answer: "Yes, we provide high security! We use firewalls, DDoS protection, and SSL certificates to keep your website safe. Additionally, we leverage AI for real-time malware detection, providing extra layers of confidence.",
+  },
+  {
+    question: "Is there a money-back guarantee?",
+    answer: "Yes, Hostino offers a 30-day money-back guarantee on our Web Hosting packages. If you're not satisfied with our service, you can request a refund within the first 30 days.",
+  },
+];
 
 
+interface HostingFeature {
+  image: string;
+  alt: string;
+  title: string;
+  description: string;
+}
 
-
+const hostingFeatures: HostingFeature[] = [
+  {
+    image: "hebergeur-marocain.jpg",
+    alt: "Moroccan Web Hosting company",
+    title: "<span>Moroccan</span> <br/>Web Hosting company",
+    description: `Hostino® — a leading <a style='text-decoration:underline;' href="https://www.hostino.ma/en">web hosting</a> provider in Morocco, with a <b>local presence in Tangier</b>, Rabat, and Casablanca. Our high-performance servers are located in Morocco, Spain, the Netherlands, and the United States.`,
+  },
+  {
+    image: "securite.jpg",
+    alt: "Top-notch security",
+    title: "<span>Top-notch</span><br/> security",
+    description:
+      "Top-notch security with AI-powered malware detection, built-in <b>Anti-DDoS protection</b>, integrated Zero Trust architecture, and certified partnerships with leading international security solutions like <b>Cloudflare</b> and Imunify.",
+  },
+  {
+    image: "accelerateur-web.jpg",
+    alt: "Web accelerator",
+    title: "Web<br/> <span>accelerator</span>",
+    description:
+      "Our web hosting Morocco plans are optimized for ultra-fast page loading, fully compliant with Google <b>PageSpeed Insights</b> performance standards: LCP (Largest Contentful Paint) ≤ 2.5 seconds.",
+  },
+  {
+    image: "wordpress.jpg",
+    alt: "WordPress in 1-click",
+    title: "WordPress <br/>in <span>1-click</span>",
+    description:
+      "With Hostino, create your WordPress website in <b>just a few clicks</b>—no installation hassles or technical skills required.",
+  },
+  {
+    image: "migration-hostino.jpg",
+    alt: "Free migration",
+    title: "<span>Free</span> <br/>migration",
+    description:
+      "Switch to Hostino® with complete peace of mind thanks to a <strong>smooth migration process</strong> and zero service downtime.",
+  },
+  {
+    image: "support-maroc.jpg",
+    alt: "Expert support",
+    title: "<span>Expert</span> <br/>support",
+    description: `24/7 technical and sales support available via phone, email, and <b><a style='text-decoration:underline;' href="https://my.hostino.com/submitticket.php" rel="noopener">support ticket</a></b>.`,
+  },
+];
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -44,7 +196,7 @@ const articleSchema = {
           position: "1",
           item: {
             "@id": "https://www.hostino.ma",
-            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+            name: "Hostino - Domain names and web hosting in Morocco",
           },
         },
         {
@@ -84,7 +236,7 @@ const articleSchema = {
 
 
 
-<Layout 
+<Layout
   title={title}
   description={description}
   canonical_url={canonical_url}
@@ -95,50 +247,40 @@ const articleSchema = {
 >
 
   <main>
-    <HeroSection consultButton={true}/>
-	<PlansSection  />
-    <TrustedBySection classNameImage="md:w-[80%] w-[100%] mx-auto h-auto brightness" />
-
-    <TextLeftImageRight
-      title="Hébergement web : qu'est-ce que c'est ?"
-      paragraphs={[
-        `L'hébergement web est un élément essentiel pour rendre votre
-            site web accessible sur Internet. C'est le service qui permet de
-            stocker Les fichiers et les bases de données associés de votre
-            projet en ligne.`,
-        ` Le choix de votre hébergement est stratégique, car il impacte
-            directement l'expérience utilisateur. Un hébergement performant
-            garantit une navigation fluide, tandis qu'un hébergement
-            sécurisé protège vos données 
-            <b>
-              contre les 
-              <a
-                href="https://about.google/intl/ALL_fr/stories/notin-interview/"
-                rel="noopener"
-              >
-                cyberattaques.
-              </a>
-            </b>
-          `,
-          `Le service d'hébergement web, offert par des entreprises
-            spécialisées appelées 'hébergeurs web', consiste à mettre
-            l'infrastructure nécessaire pour rendre votre site accessible en
-            ligne.
-          `
-      ]}
-      imageSrc="/images/01/hebergement-web.jpg"
-      imageAlt="What is Web Hosting?"
-      href="#plans"
+    <HeroSectionEn />
+	  <PlansSectionEn />
+    <TrustedBySection 
+      classNameImage="md:w-[80%] w-[100%] mx-auto h-auto brightness" 
+      text="<b>Hostino®</b>, a trusted partner for a vast network of businesses and institutions in Morocco and around the world."
     />
 
-	  <DomainSearchSection id="ma" />
-	  <WhyChooseSection />
+    <WhatIsWebHostingSectionEn />
 
-    <FastestHostingSection />
-    <EasyHebergementSection />
-	<BenefitsSection />
-	<BenchmarkHostingMorocco />
-  <FaqSection />
+	  <DomainSearchSectionEn id="ma" />
+	  <SixCards features={hostingFeatures} title=`Why choose <br/> Web Hosting Morocco ?` />
+
+    <FastestHostingSectionEn />
+    <BenefitsSection benefitsImporter={benefits}/>
+
+
+<TextLeftImageRight
+  title="Fastest Web Hosting Provider in Morocco"
+  paragraphs={[
+    `Regardless of your legal status, your industry, or the size of your company, whether you are based in Tangier, Rabat, Casablanca, or any other region of Morocco, we offer you a full range of tools and the expertise needed to ensure the success of your digital transformation. Whether you are a self-employed individual, the head of a very small enterprise, an SME, or a large company, our solutions are designed to meet your specific needs.`,
+    `Aligned with the national strategy "<span style="text-decoration: underline;"><a href="https://www.mmsp.gov.ma/sites/default/files/2024-09/PlaquetteInstitutionnel_18092024_Ang.pdf" rel="noopener">Digital Morocco 2030</a></span>" initiated by the Ministry of Digital Transition and Administrative Reform, which aims to position Morocco as a regional digital hub, we are here to support you in exploiting the opportunities offered by this growing sector.`,
+    `Join the community of Moroccan companies that trust Hostino® to accelerate their digital growth.`,
+  ]}
+  imageSrc="/images/01/moroccan-web-hosting.jpg"
+  imageAlt="Moroccan Web Hosting company"
+  consultButtonTextExiste={false}
+/>
+
+
+
+
+
+
+    <FaqSection faqData={faqData} title="FAQ - Web Hosting Morocco"/>
   </main>
 </Layout>
 

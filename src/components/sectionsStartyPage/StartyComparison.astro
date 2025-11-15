@@ -94,6 +94,14 @@ const comparisonData: ComparisonRow[] = [
     startyPlus_bold: false,
   },
 ];
+
+const {
+  comparisonDataImporter = comparisonData,
+  title = "Comparer les plans Starty®",
+  subTitle = "Tarification transparente pour chaque étape.",
+  item1="Starty®",
+  item2="Starty® Plus"
+  } = Astro.props
 ---
 
 <section class="my-[80px] relative md:my-[150px]">
@@ -104,26 +112,26 @@ const comparisonData: ComparisonRow[] = [
           class="font-[600] lg:text-[49px] md:text-[39px] lg:trancking-[-2.1px] tracking-[-0.9px] lg:leading-[57px] md:leading-[46px] leading-[41px] text-[35px] md:pr-[50px] mb-0 text-title"
           style="margin-bottom: 0 !important"
         >
-          Comparer les plans Starty®
+          {title}
         </h3>
         <p class="paragraph text-title">
-          Tarification transparente pour chaque étape.
+          {subTitle}
         </p>
       </div>
       <div class="text-center lg:w-[25%] md:md:w-[21%] w-[22%]">
         <h3 class="font-[600] lg:text-[34px] sm:text-[31px] text-[15px] sm:leading-[1.3em] leading-[1.2em] lg:leading-[35px] text-title italic">
-          Starty
+          {item1}
         </h3>
       </div>
       <div class="text-center lg:w-[25%] md:md:w-[21%] w-[22%]">
         <h3 class="font-[600] lg:text-[34px] sm:text-[31px] text-[15px] sm:leading-[1.4em] leading-[1.2em] lg:leading-[35px] text-title">
-          Starty Plus
+         {item2}
         </h3>
       </div>
     </div>
 
     <div>
-      {comparisonData.map((row, index) => (
+      {comparisonDataImporter.map((row, index) => (
         <div
           key={index}
           class={`flex items-center p-4 gap-[10px] ${
@@ -195,8 +203,8 @@ const comparisonData: ComparisonRow[] = [
           class="text-white lg:w-[25%] md:md:w-[21%] w-[48%]"
         >
           <AnimatedButton
-            text="Starty®"
-            hoverText="Starty®"
+            text={item1}
+            hoverText={item1}
             bgColor="bg-primary"
             hoverBgColor="bg-title"
             textColor="text-white"
@@ -208,8 +216,8 @@ const comparisonData: ComparisonRow[] = [
           class="text-white lg:w-[25%] md:md:w-[21%] w-[48%]"
         >
           <AnimatedButton
-            text="Starty® Plus"
-            hoverText="Starty® Plus"
+            text={item2}
+            hoverText={item2}
             bgColor="bg-title"
             textColor="text-white"
             class="btn-10-20 w-full"

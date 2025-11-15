@@ -1,13 +1,7 @@
 ---
 import AnimatedButton from "../ui/AnimatedButton.astro";
 
-interface MorePerformance {
-  text: string;
-  href?: string;
-  exists: boolean;
-}
-
-export type Plan = {
+interface Plan {
   id: number;
   name: string;
   subtext?: string;
@@ -16,7 +10,11 @@ export type Plan = {
   save: string;
   price_ttc: string;
   performance_stars: number;
-  more_performance: MorePerformance;
+  more_performance?: {
+    text: string;
+    href: string;
+    exists: boolean;
+  };
   order: {
     text: string;
     href: string;
@@ -27,157 +25,34 @@ export type Plan = {
     wordpress_preinstalled: boolean;
     control_panel: string;
     ssl: string;
-    disk_space: string | number;
+    disk_space: string;
     bandwidth: string;
-    databases: number | string;
-    email_accounts: number | string;
-    subdomains: number | string;
-    backups: string | number;
+    databases: string | number;
+    email_accounts: string | number;
+    subdomains: string | number;
+    backups: string;
   };
   most_popular: {
     text: string;
     is_most_popular: boolean;
   };
-};
-
-interface Props {
-  className?: string;
-  title?: string;
-  smallTitle?: string;
-  plans?: Plan[];
-  heroHeading?: boolean;
-  bigTitle?: string;
-  namePlaneBold?: boolean;
-  titleExiste?: boolean;
 }
 
-const hostingPlans: Plan[] = [
-  {
-    id: 1,
-    name: "Hébergement <br/>web <i>Eco</i>",
-    subtext:
-      "Offre d'hébergement web économique pour sites personnels et blogs.",
-    price_original: "299 DH/an",
-    price_discounted: "199 DH/an",
-    save: "33%",
-    price_ttc: "Pour 1 an, vous payez <b> 238,8 DH TTC.</b>",
-    performance_stars: 1,
-    more_performance: {
-      text: "Plus de performances ?",
-      href: "/business/",
-      exists: false,
-    },
-    order: {
-      text: "Commander",
-      href: "https://my.hostino.com/order.php?pid=70&amp;language=french&amp;country=MA&amp;promocode=UI12E&amp;1=USD",
-    },
-    features: {
-      seo_optimized: false,
-      free_domain: false,
-      wordpress_preinstalled: true,
-      control_panel: "cPanel®",
-      ssl: "Gratuit et illimité",
-      disk_space: "10 GB NVMe",
-      bandwidth: "100 GB",
-      databases: 1,
-      email_accounts: 1,
-      subdomains: 1,
-      backups: "JetBackup",
-    },
-    most_popular: {
-      text: "Le plus populaire",
-      is_most_popular: false,
-    },
-  },
-  {
-    id: 2,
-    name: "Hébergement <br/>web <i>Starty</i>",
-    subtext:
-      "Hébergement idéal pour les petits sites à faible consommation de ressources.",
-    price_original: "499 DH/an",
-    price_discounted: "399 DH/an",
-    price_ttc: "Pour 1 an, vous payez <b>478,8 DH TTC.</b>",
-    save: "20%",
-    performance_stars: 4,
-    more_performance: {
-      text: "Plus de performances ?",
-      href: "/business/",
-      exists: false,
-    },
-    order: {
-      text: "Commander",
-      href: "https://my.hostino.com/order.php?pid=36&amp;language=french&amp;country=MA&amp;promocode=UI12S&amp;1=USD",
-    },
-    features: {
-      seo_optimized: false,
-      free_domain: true,
-      wordpress_preinstalled: true,
-      control_panel: "cPanel®",
-      ssl: "Gratuit et illimité",
-      disk_space: "25 GB NVMe",
-      bandwidth: "250 GB",
-      databases: 5,
-      email_accounts: 5,
-      subdomains: 5,
-      backups: "JetBackup",
-    },
-    most_popular: {
-      text: "Le plus populaire",
-      is_most_popular: true,
-    },
-  },
-  {
-    id: 3,
-    name: "Hébergement <br/>web <i>Business</i>",
-    subtext:
-      "Spécialement conçu pour répondre aux besoins des sites web d'entreprise.",
-    price_original: "1199 DH/an",
-    price_discounted: "999 DH/an",
-    save: "20%",
-    price_ttc: "Pour 1 an, vous payez <b>1198,8 DH TTC.</b>",
-    performance_stars: 5,
-    more_performance: {
-      text: "Plus de performances ?",
-      href: "/business/",
-      exists: false,
-    },
-    order: {
-      text: "Commander",
-      href: "https://my.hostino.com/order.php?pid=42&amp;language=french&amp;country=MA&amp;promocode=UI12B&amp;1=USD",
-    },
-    features: {
-      seo_optimized: true,
-      free_domain: true,
-      wordpress_preinstalled: true,
-      control_panel: "cPanel®",
-      ssl: "Gratuit et illimité",
-      disk_space: "50 GB NVMe",
-      bandwidth: "Illimitée",
-      databases: "Illimitées",
-      email_accounts: 10,
-      subdomains: 10,
-      backups: "JetBackup",
-    },
-    most_popular: {
-      text: "Le plus populaire",
-      is_most_popular: false,
-    },
-  },
-];
+interface Props {
+  plans: Plan[];
+  title?: string;
+  smallTitle?: string;
+  className?: string;
+  heroHeading?: boolean;
+  namePlaneBold?: boolean;
+}
 
-const {
-  className,
-  title,
-  heroHeading,
-  plans = hostingPlans,
-  namePlaneBold,
-} = Astro.props;
+const { plans, title, smallTitle, className, heroHeading, namePlaneBold } = Astro.props;
 
-const getWidthClass = (totalPlans: number) => {
-  if (totalPlans === 2) {
-    return "w-full md:w-[100%] lg:mx-[0] md:mx-[150px] lg:mb-[35px] md:mb-[50px] mb-[35px] lg:w-[38%]";
-  }
-  return "w-full md:w-[100%] lg:mx-[0] md:mx-[150px] lg:mb-[35px] md:mb-[50px] mb-[35px] lg:w-[32%]";
+const getWidthClass = (length: number) => {
+  if (length === 2) return "lg:w-[47.5%] w-full";
+  if (length === 3) return "lg:w-[32%] md:w-[49%] w-full";
+  return "lg:w-[24%] md:w-[49%] w-full";
 };
 ---
 
@@ -187,14 +62,17 @@ const getWidthClass = (totalPlans: number) => {
 >
   <div class="container">
     {!heroHeading && title && (
-      <div class="text-c enter">
+      <div class="text-center">
         <h2 class="title-section text-title">{title}</h2>
+        {smallTitle && (
+          <p class="paragraph text-title mt-2">{smallTitle}</p>
+        )}
       </div>
     )}
 
     <div
       class={`${
-        hostingPlans.length > 2
+        plans.length > 2
           ? "lg:gap-x-[1.33%] gap-y-[1.33%] lg:justify-self-start justify-center"
           : "gap-x-[5%] justify-center"
       } flex flex-wrap py-[30px] w-full`}
@@ -245,16 +123,16 @@ const getWidthClass = (totalPlans: number) => {
             <div class="h-[40px]">
               {plan.price_original && (
                 <div class="flex items-center lg:justify-start justify-center gap-2 mb-2">
-                  <span class="text-primary  numbers font-medium line-through text-lg">
+                  <span class="text-primary numbers font-medium line-through text-lg">
                     {plan.price_original}
                   </span>
                   <span class="bg-primary numbers py-[8px] text-white text-[15px] font-[600] px-[10px] rounded-[8px]">
-                    Economisez {plan.save}
+                    Save {plan.save}
                   </span>
                 </div>
               )}
             </div>
-            <p class="text-base text-title font-[600] mb-1">À seulement</p>
+            <p class="text-base text-title font-[600] mb-1">For only</p>
             <p class="text-[45px] numbers font-[600] leading-[54px] text-title">
               {plan.price_discounted}
             </p>
@@ -290,25 +168,7 @@ const getWidthClass = (totalPlans: number) => {
 
           <div class="border-t border-gray-200 sm:my-[40px] my-[30px]"></div>
 
-          <div class="flex items-center lg:justify-start justify-center gap-2 mb-6">
-            <span class="text-sm font-[600] text-gray-700 mr-2">Performances</span>
-            <div class="flex">
-              {[...Array(5)].map((_, i) => (
-                <svg
-                  key={i}
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill={i < plan.performance_stars ? "#FFA500" : "none"}
-                  stroke="#FFA500"
-                  stroke-width="2"
-                  class="mr-1"
-                >
-                  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.857 1.524 8.276L12 18.897l-7.46 4.542 1.524-8.276L.001 9.306l8.331-1.151z" />
-                </svg>
-              ))}
-            </div>
-          </div>
+          
 
           <ul class="text-title text-sm space-y-2 flex-grow">
             <li class="flex items-center lg:justify-start justify-center">
@@ -322,7 +182,7 @@ const getWidthClass = (totalPlans: number) => {
                     class="mr-1"
                   />
                   <span class="text-title">
-                    Optimisé <b>SEO</b>
+                    <b>SEO</b> Optimized
                   </span>
                 </>
               ) : (
@@ -335,7 +195,7 @@ const getWidthClass = (totalPlans: number) => {
                     class="mr-1"
                   />
                   <span class="text-shadow-gray-200 opacity-20">
-                    Optimisé SEO
+                    SEO Optimized
                   </span>
                 </>
               )}
@@ -343,11 +203,11 @@ const getWidthClass = (totalPlans: number) => {
             <li>
               {plan.features.free_domain ? (
                 <p>
-                  Nom de domaine <b>gratuit</b>
+                  Free <b>domain name</b>
                 </p>
               ) : (
                 <p class="text-shadow-gray-200 opacity-20">
-                  Nom de domaine gratuit
+                  Free domain name
                 </p>
               )}
             </li>
@@ -356,47 +216,47 @@ const getWidthClass = (totalPlans: number) => {
                 <div class="flex items-center gap-1 lg:justify-start justify-center gap-2">
                   <img
                     src="/images/wp.svg"
-                    alt="WordPress préinstallé"
+                    alt="Pre-installed WordPress"
                     width={16}
                     height={16}
                     class="mr-1"
                   />
                   <p>
-                    WordPress <b>préinstallé</b>
+                    <b>Pre-installed</b> WordPress
                   </p>
                 </div>
               ) : (
                 <p class="text-shadow-gray-200 opacity-20">
-                  WordPress préinstallé
+                  Pre-installed WordPress
                 </p>
               )}
             </li>
             <li>
-              Panneau de contrôle
+              Control Panel
               <b>
                 <i>{plan.features.control_panel}</i>
               </b>
             </li>
             <li>
-              SSL : <b>{plan.features.ssl}</b>
+              SSL: <b>{plan.features.ssl}</b>
             </li>
             <li>
-              Espace disque : <b>{plan.features.disk_space}</b>
+              Disk Space: <b>{plan.features.disk_space}</b>
             </li>
             <li>
-              Bande passante : <b>{plan.features.bandwidth}</b>
+              Bandwidth: <b>{plan.features.bandwidth}</b>
             </li>
             <li>
-              Bases de données : <b>{plan.features.databases}</b>
+              Databases: <b>{plan.features.databases}</b>
             </li>
             <li>
-              Comptes email : <b>{plan.features.email_accounts}</b>
+              Email Accounts: <b>{plan.features.email_accounts}</b>
             </li>
             <li>
-              Sous-domaines : <b>{plan.features.subdomains}</b>
+              Subdomains: <b>{plan.features.subdomains}</b>
             </li>
             <li>
-              Sauvegardes : <b>{plan.features.backups}</b>
+              Backups: <b>{plan.features.backups}</b>
             </li>
           </ul>
 
@@ -421,4 +281,3 @@ const getWidthClass = (totalPlans: number) => {
    
   </div>
 </section>
-

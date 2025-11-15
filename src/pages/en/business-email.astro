@@ -1,0 +1,523 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TextLeftImageRight from "../../components/commonSections/TextLeftImageRight.astro";
+import SixCards from "../../components/commonSections/SixCards.astro";
+import FAQSection from "../../components/commonSections/FaqSection.astro";
+import HeroHeadingPages from "../../components/ui/heroHeadingPages.astro";
+import TrustedBySection from "../../components/commonSections/TrustedBySection.astro";
+import AnimatedButton from "../../components/ui/AnimatedButton.astro";
+import ContactForm from "../../components/commonSections/ContactForm.astro";
+import EmailCreationSteps from "../../components/sectionsEmailProfessionnelPage/EmailCreationSteps.astro";
+import PlansEmail from "../../components/sectionsEmailProfessionnelPage/PlansEmail.tsx";
+import ServiceProximite from "../../components/commonSections/ServiceProximite.astro";
+import StartsRatingYellowFooter from "../../components/ui/StartsRatingYellowFooter.astro";
+import { main_schema } from "../../mainSchema.ts";
+
+const title = "Email professionnel - Solution Mail Pro rapide et chiffrée";
+const description =
+  "Email professionnel Maroc. Créer votre email Pro avec Hostino. Solution de messagerie d'entreprise nom@entreprise.ma ✉️ dès 25 DH/mois";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/email-professionnel";
+const ogAlt = "Email professionnel";
+
+interface FAQItem {
+  question: string;
+  answer?: string;
+  answers?: string[];
+}
+
+const faqData: FAQItem[] = [
+  {
+    question: "What are the advantages of using Maily®?",
+    answer: `A professional email address (e.g., your.name@yourcompany.ma) allows you to communicate efficiently with your clients, suppliers, and team members — both in Morocco and internationally.<br><br>It strengthens your company's credibility, builds trust, secures your communications, and reflects a serious and well-organized brand image.`,
+  },
+  {
+    question:
+      "What's the difference between Maily® and the email accounts included with web hosting?",
+    answers: [
+      "Maily® is a premium cloud email solution, designed for businesses seeking performance, security, and reliability. Hosted on a dedicated infrastructure, Maily adheres to the highest security standards, ensures optimal speed, and delivers a seamless collaboration experience — with no issues in sending or receiving emails.",
+      "In contrast, email addresses included with standard web hosting packages (such as Webmail via cPanel) are often limited in terms of performance, storage space, deliverability, and support. While suitable for basic use, they are not built to meet the demands of modern professional communication.",
+      "With Maily®, you get a reliable, modern, and scalable email solution, tailored to support your business growth.",
+    ],
+  },
+  {
+    question: "Are Maily® plans compatible with Outlook?",
+    answers: [
+      "Maily® is compatible with all email clients (Outlook, Thunderbird, Apple Mail) across all platforms — Windows, macOS, and Linux.",
+    ],
+  },
+  {
+    question: "Can I use Maily® on my smartphone?",
+    answers: [
+      "Yes. Maily® is compatible with all major email apps on Android and Apple smartphones, such as Outlook, Apple Mail, BlueMail, and Spark.",
+    ],
+  },
+  {
+    question: "Can I change my plan at any time?",
+    answers: [
+      "Yes. At Hostino, we understand that your needs may evolve, so we've made it easy to upgrade your plan without any service interruption.",
+      "Our system automatically calculates the prorated amount and applies the upgrade as soon as your order is confirmed.",
+    ],
+  },
+  {
+    question:
+      "What security measures do you take to protect my email?",
+    answers: [
+      `All Maily email plans include a multi-layered security system, featuring antivirus, antispam, antimalware, and anti-phishing protection.`,
+      `In addition to these safeguards, we offer several protocols to strengthen the security of your email and your team's communications:`,
+      `<ul class="space-y-3 mb-4">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Mandatory password change after first login</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Required activation of two-factor authentication (2FA)</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>IP-based access restrictions to limit access to trusted locations only</span>
+        </li>
+      </ul>`,
+      `If any suspicious or abusive activity is detected, our protection system will automatically flag it, and the account administrator will be immediately notified.`,
+    ],
+  },
+];
+
+const hostingFeatures: HostingFeature[] = [
+  {
+    image: "05/email-professionnel-outlook.jpg",
+    alt: "Compatible with all software",
+    title: "Compatible with all </br><span>software</span>",
+    description: `
+      The Maily® solution is compatible with all email software,
+      such as <b>Outlook</b> or <a href="https://www.thunderbird.net/en-US/" rel="noopener"><b class="underline">Thunderbird</b></a>, with quick and easy setup.
+    `,
+  },
+  {
+    image: "05/email-pro-compatible-apple.jpg",
+    alt: "Compatible with all devices",
+    title: "Compatible with all </br><span>devices</span>",
+    description: `
+      Set up your professional email easily on any mobile device — whether it's
+      <b>Android, iPhone</b> (iOS), Huawei, or any other system.
+    `,
+  },
+  {
+    image: "05/hebergeur-marocain.jpg",
+    alt: "Business Email @company.ma",
+    title: "Business Email </br>@company<span>.ma</span>",
+    description: `
+      Create professional email addresses for your <b>Moroccan business</b>
+      using a <a href="https://www.hostino.ma/en/ma-domain-name/"><span class="underline">.ma domain name</span></a>.
+    `,
+  },
+  {
+    image: "05/email-professionnel-stockage.jpg",
+    alt: "Storage Up to 100GB",
+    title: "Storage </br>Up to <span>100GB</span>",
+    description: `
+      With secure, scalable storage, Maily® adapts to your needs — offering between
+      8GB and 100GB per account.
+    `,
+  },
+  {
+    image: "05/email-professionnel-securite.jpg",
+    alt: "Antivirus & Antispam Filtering",
+    title: "Antivirus & </br><span>Antispam</span> Filtering",
+    description: `
+      With advanced security, Maily® offers continuous <b>monitoring and real-time protection</b>
+      against spam and viruses.
+    `,
+  },
+  {
+    image: "05/support-maroc.jpg",
+    alt: "Expert Support",
+    title: "Expert </br><span>Support</span>",
+    description: `
+      24/7 technical and sales support — available by phone, email, or
+      <b><a href="https://my.hostino.com/submitticket.php?language=english" rel="noopener"><span class="underline">support ticket</span></a></b>.
+    `,
+  },
+];
+
+const hostingPlans: Plan[] = [
+  {
+    id: 1,
+    name: "Maily®",
+    gbOptions: [
+      {
+        gb: "8GB",
+        price: "25 Dhs/mo",
+      },
+      {
+        gb: "25GB",
+        price: "45 Dhs/mo",
+      },
+    ],
+    defaultGb: "8GB",
+    performance_stars: 1,
+    order: {
+      text: "Order now",
+      href: "https://my.hostino.com/order.php?pid=65&language=english&country=MA&currency=1",
+    },
+    features: [
+      "Webmail",
+      "POP/IMAP/SMTP",
+      "Compatibility with <b>Outlook</b>",
+      "Compatibility with <b>iOS / Android</b>",
+      "Contact management",
+      "DNS Security <b>SPF, DKIM, DMARC</b>",
+      `<span class="opacity-[20%]">ZOOM integration</span>`,
+      `<span class="opacity-[20%]">
+        Centralized signature management
+      </span>`,
+      `<span class="opacity-[20%]">Task management</span>`,
+      `<span class="opacity-[20%]">Custom logo</span>`,
+      `<span class="opacity-[20%]">Calendar</span>`,
+      `<span class="opacity-[20%]">Exchange ActiveSync</span>`,
+      "<br />",
+      "<b>Security</b>",
+      "Antispam",
+      "Antivirus",
+      "Automatic backup",
+      `<span class="opacity-[20%]">Two-factor authentication</span>`,
+      `<span class="opacity-[20%]">IP address restriction</span>`,
+      `<span class="opacity-[20%]">Forced access with OTP</span>`,
+      "<br />",
+      "<b>30 days</b> money-back guarantee",
+      "Support by <b>phone and ticket</b>",
+    ],
+    most_popular: {
+      text: "MOST POPULAR",
+      is_most_popular: false,
+    },
+    countUser: "per user / per month",
+  },
+  {
+    id: 2,
+    name: "Maily® Plus",
+    gbOptions: [
+      {
+        gb: "8GB",
+        price: "35 Dhs/mo",
+      },
+      {
+        gb: "25GB",
+        price: "50 Dhs/mo",
+      },
+      {
+        gb: "50GB",
+        price: "65 Dhs/mo",
+      },
+    ],
+    defaultGb: "8GB",
+    performance_stars: 4,
+    order: {
+      text: "Order now",
+      href: "https://my.hostino.com/order.php?pid=66&language=english&currency=1&country=MA",
+    },
+    features: [
+      "Webmail",
+      "POP/IMAP/SMTP",
+      "Compatibility with <b>Outlook</b>",
+      "Compatibility with <b>iOS / Android</b>",
+      "Contact management",
+      "DNS Security <b>SPF, DKIM, DMARC</b>",
+      "ZOOM integration",
+      "Centralized signature management",
+      "Task management",
+      "Custom logo",
+      "Calendar",
+      `<span class="opacity-[20%]" >Exchange ActiveSync</span>`,
+      "<br />",
+      "<b>Security</b>",
+      "Antispam",
+      "Antivirus",
+      "Automatic backup",
+      "Two-factor authentication",
+      "IP address restriction",
+      "Forced access with OTP",
+      "<br />",
+      "<b>30-day</b> money-back guarantee",
+      "Support via <b>phone and ticket</b>",
+    ],
+    most_popular: {
+      text: "MOST POPULAR",
+      is_most_popular: true,
+      mostPopularGb: "25GB",
+    },
+    countUser: "per user / per month",
+  },
+  {
+    id: 3,
+    name: "Maily® Pro",
+    gbOptions: [
+      {
+        gb: "8GB",
+        price: "45 Dhs/mo",
+      },
+      {
+        gb: "50GB",
+        price: "75 Dhs/mo",
+      },
+      {
+        gb: "100GB",
+        price: "130 Dhs/mo",
+      },
+    ],
+    defaultGb: "8GB",
+    performance_stars: 5,
+    order: {
+      text: "Order now",
+      href: "https://my.hostino.com/order.php?pid=68&language=english&currency=1&country=MA",
+    },
+    features: [
+      "Webmail",
+      "POP/IMAP/SMTP",
+      "<b>Outlook</b> Compatibility",
+      "<b>iOS</b> / <b>Android</b> Compatibility",
+      "Contact Management",
+      "DNS Security <b>SPF, DKIM, DMARC</b>",
+      "ZOOM Integration",
+      "Centralized Signature Management",
+      "Task Management",
+      "Custom Logo",
+      "Calendar",
+      "Exchange ActiveSync",
+      "<br />",
+      "<b>Security</b>",
+      "Antispam",
+      "Antivirus",
+      "Automatic Backup",
+      "Two-Factor Authentication",
+      "IP Address Restriction",
+      "Forced OTP Access",
+      "<br />",
+      "<b>30-day</b> Money-Back Guarantee",
+      "Support via <b>Phone and Ticket</b>",
+    ],
+    most_popular: {
+      text: "MOST POPULAR",
+      is_most_popular: false,
+    },
+    countUser: "per user / per month",
+  },
+];
+
+
+const steps: Step[] = [
+  {
+    number: "01",
+    title: `Select your<br  /> <span class="border-bottom">Maily®</span> plan`,
+    content: `The first step is to <strong class="font-[600] text-[#0d1b32]">choose the plan</strong> that best suits your needs in terms of storage, number of users, and more.`,
+    button: {
+      text: "Start now",
+      href: "#plans",
+    },
+  },
+  {
+    number: "02",
+    title: `Proceed<br  />to <span class="border-bottom">checkout</span>`,
+    content: `Select the <strong class="font-[600] text-[#0d1b32]">number of Maily® users</strong>. Once the payment is completed, you can manage your emails from your Maily® account dashboard.`,
+  },
+  {
+    icon: `<svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="10" height="10">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path>
+    </svg>`,
+    title: `<span class="border-bottom">Configure</span><br  />your emails`,
+    content: `Finally, it's very simple: <b>we take care</b> of configuring your email settings and provide you with the <b>login details</b> and <b>instructions</b>.`,
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+  lang="en"
+>
+  <main>
+    <HeroHeadingPages
+      smallTitle="Business Email"
+      bigTitle="Secure Business Email Hosting for your Organization"
+      lineGreen={true}
+      classTitle="2xl:px-[350px] xl:px-[300px] lg:px-[150px] px-[35px]"
+
+    />
+    <div class="bg-gray-200 md:pb-[100px] pb-[80px]">
+      <div class="container">
+        <div class="text-center">
+          <p class="paragraph">
+           Create a professional email using your domain name.
+          </p>
+          <a href="#plans">
+            <AnimatedButton
+              text={"Start Now"}
+              hoverText="Start Now"
+              bgColor={"bg-transparent"}
+              textColor={"text-title"}
+              hoverBgColor={"bg-transparent"}
+              class="text-title border-3 border-primary rounded-sm px-[40px] text-[18px] font-[600] py-[10px]"
+              arrowButton={true}
+              colorArrow={"#022545"}
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+   
+
+     <TextLeftImageRight
+      title="Business Email Hosting in Morocco"
+      paragraphs={[
+        "Host your professional email on a <b>secure, encrypted Cloud</b> service that ensures the confidentiality of your data and provides fast, reliable communication. Forget the sending and receiving issues commonly associated with low-cost email solutions bundled with cPanel web hosting packages (such as Roundcube Webmail), which often suffer from reliability problems—undelivered messages, spam, or frequent \"<b>max defers and failures</b>\" errors.",
+        "Maily® is much more than just an email inbox: it's a complete solution that combines security, productivity, and efficiency for an unparalleled <b>collaborative experience</b>.",
+        "Need help setting up your business email accounts? Our experts <b>are here to assist you</b>. Call us at +212 (0)5 31 03 11 86."
+      ]}
+      imageSrc="/images/02/email-professionnel-maroc.jpg"
+      imageAlt="Business Email Morocco"
+      consultButtonTextExiste={false}
+    />
+    
+
+    <EmailCreationSteps
+            title="Set Up your Email Hosting in a few clicks"
+            stepsImporter={steps}
+     />
+
+    <PlansEmail
+      titleExiste={true}
+      title={"Choose Your Maily® Plan"}
+      id="offres"
+      client:load
+      plans={hostingPlans}
+    />
+
+    <TrustedBySection 
+        text=`<b>Hostino®</b>, a trusted partner for a vast network of businesses and institutions in Morocco and around the world.`
+        classNameImage="md:w-[65%] w-[100%] mx-auto h-auto" />
+
+  
+<TextLeftImageRight
+  title="Business Email Hosting: What Is It?"
+  paragraphs={[
+    `A professional email is a personalized email address that uses a company's domain name — for example, <b>contact@yourcompany.ma</b> — instead of a free service like Gmail,Hotmail, or Yahoo. This strengthens the company's credibility with clients and partners, while projecting a more serious and professional image.`,
+    `Today, in Morocco as elsewhere, having a professional email address has become an essential standard for businesses that want to <b>communicate professionally</b> with their clients, partners, and team members — both nationally and internationally.`,
+    `Low-cost offers from some providers may come with significant risks: <b>security vulnerabilities, poor deliverability</b>, or even data loss. <b>Take the time to carefully evaluate</b> your options and choose a professional email solution that meets your company's needs and expectations.`,
+  ]}
+  imageSrc="/images/05/messagerie-professionnelle.jpg"
+  imageAlt="Professional email address"
+  consultButtonTextExiste={false}
+/>
+
+<SixCards
+      title="Pourquoi choisir Maily® pour votre<br /> adresse email professionnelle ?"
+      alignment="left"
+      features={hostingFeatures}
+    />
+
+
+      <TextLeftImageRight
+      title="Secure business email for your organization"
+      paragraphs={[
+        "Tired of spam, undeliverability, failures, and maximum delivery delays with free emails included in your shared web hosting plans? Maily®, powered by Hostino, offers a premium email solution designed specifically for businesses seeking a robust email service to support their growth. Our cloud-based email service delivers exceptional security, productivity, and collaboration features, all without the hassle of spam or technical issues.",
+        "Ready to get started with Maily®? Simply select the number of users you need. Not sure which plan is right for you? Give us a call at +212 (05) 31 03 11 86. Our team is happy to help you choose the perfect plan and even set up your email addresses for free."
+       ]}
+      imageSrc="/images/05/secure-business-mail.jpg"
+      imageAlt="Secure Business Email Morocco"
+      consultButtonTextExiste={false}
+    />
+
+    
+
+    
+
+   <TextLeftImageRight
+  title="Enhanced Security and Privacy"
+  paragraphs={[
+    `Maily, the solution designed by Hostino, is the ideal choice for Moroccan businesses seeking a collaboration platform that is <b>standards-compliant</b>, equipped with advanced security features, and easy to use.`,
+    `In addition, we implement well-established authentication protocols such as <span style="text-decoration: underline;"><a href="https://fr.wikipedia.org/wiki/DomainKeys_Identified_Mail" rel="noopener">DKIM</a></span>, SPF, and DMARC. These technologies help protect your domain's identity, prevent email spoofing, and ensure better <b>email deliverability</b>.`,
+    `We also offer several advanced options to further strengthen the security of your email accounts, including:`,
+    `<ul class="pl-[30px] list-dots-paragraph flex flex-col gap-5">
+      <li class="flex items-start gap-3">
+        <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
+        <span>Mandatory two-factor authentication (2FA)</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
+        <span>IP address access restrictions, allowing, for example, email access only from within the company's premises.</span>
+      </li>
+    </ul>`,
+  ]}
+  imageSrc="/images/05/email-professionnel-securise.jpg"
+  imageAlt="Secure professional email Hostino in Morocco"
+  consultButtonTextExiste={false}
+/>
+    
+
+    <FAQSection faqData={faqData} title={"FAQ - Business Email"} />
+
+
+  </main>
+</Layout>
+

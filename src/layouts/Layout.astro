@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/layout/Header.astro";
 import HeaderEn from "../components/layout/HeaderEn.astro";
-
+import FooterEn from "../components/layout/FooterEn.astro";
 import Footer from "../components/layout/Footer.astro";
 import { AstroFont } from "astro-font";
 import Unfont from 'unplugin-fonts/astro/component.astro';
@@ -111,9 +111,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	  {lang !== "en" ? <Header />  : <HeaderEn />}
 		<slot />
-    <Footer />
 
-    <CrispChat />  {/* ADD THIS - at the end before closing body */}
+    {lang !== "en" ? <Footer />  : <FooterEn />}
+
+  
 
 	</body>
 </html>

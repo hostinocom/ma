@@ -1,0 +1,430 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StartyComparison from "../../components/sectionsStartyPage/StartyComparison.astro";
+import TextLeftImageRight from "../../components/commonSections/TextLeftImageRight.astro";
+import SixCards from "../../components/commonSections/SixCards.astro";
+import FAQSection from "../../components/commonSections/FaqSection.astro";
+import Plans from "../../components/commonSections/Plans.astro";
+import HeroHeadingPages from "../../components/ui/heroHeadingPages.astro";
+import TrustedBySection from "../../components/commonSections/TrustedBySection.astro";
+import PromoBanner from "../../components/ui/PromoBanner.astro";
+import { main_schema } from "../../mainSchema.ts";
+import type { Plan } from "../../components/commonSections/Plans.astro";
+
+const title = "Cheap Web Hosting Morocco | Hostino®";
+const description =
+  "Cheap web hosting Morocco. Starty® lets you host your websites at low cost to start your online business";
+const imageUrl =
+  "https://www.hostino.ma/en/wp-content/uploads/2025/04/cheap-web-hosting-1024x984.jpg";
+const canonical_url = "https://www.hostino.ma/en/cheap-web-hosting";
+const ogAlt = "Cheap Web Hosting Morocco";
+
+const hostingFeatures: Feature[] = [
+     {
+    image: "hebergeur-marocain.jpg",
+    alt: "Moroccan Web Hosting company",
+    title: "<span>Moroccan</span> <br>Web Hosting company",
+    description: `Hostino® — a leading <a style='text-decoration:underline;' href="https://www.hostino.ma/en">web hosting</a> provider in Morocco, with a <b>local presence in Tangier</b>, Rabat, and Casablanca. Our high-performance servers are located in Morocco, Spain, the Netherlands, and the United States.`,
+  },
+  {
+    image: "securite.jpg",
+    alt: "Top-notch security",
+    title: "<span>Top-notch</span><br> security",
+    description:
+      "Top-notch security with AI-powered malware detection, built-in <b>Anti-DDoS protection</b>, integrated Zero Trust architecture, and certified partnerships with leading international security solutions like <b>Cloudflare</b> and Imunify.",
+  },
+  {
+    image: "accelerateur-web.jpg",
+    alt: "Web accelerator",
+    title: "Web<br> <span>accelerator</span>",
+    description:
+      "Our web hosting Morocco plans are optimized for ultra-fast page loading, fully compliant with Google <b>PageSpeed Insights</b> performance standards: LCP (Largest Contentful Paint) ≤ 2.5 seconds.",
+  },
+  {
+    image: "wordpress.jpg",
+    alt: "WordPress hosting optimized",
+    title: "WordPress <br>in <span>1-click</span>",
+    description:
+      "With Hostino, create your WordPress website in <b>just a few clicks</b>—no installation hassles or technical skills required.",
+  },
+  {
+    image: "migration-hostino.jpg",
+    alt: "Free Hostino web hosting migration",
+    title: "<span>Free</span> <br>migration",
+    description:
+      "Switch to Hostino® with complete peace of mind thanks to a <b>smooth migration process</b> and zero service downtime.",
+  },
+  {
+    image: "support-maroc.jpg",
+    alt: "Expert support",
+    title: "<span>Expert</span> <br>support",
+    description: `24/7 technical and sales support available via phone, email, and <b><a style='text-decoration:underline;' href="https://my.hostino.com/submitticket.php" rel="noopener">support ticket</a></b>.`,
+  },
+];
+
+const faqData: FAQItem[] = [
+  {
+    question: "Does your Starty web hosting plan meet my needs?",
+    answer: `
+      <p class="mb-4">
+        If you're just starting your online presence or running a personal website with low to moderate traffic, the Starty® web hosting plan is a perfect fit for your needs, offering three different options:
+      </p>
+      <ul class="space-y-3 mb-4">
+        <li class="flex items-start gap-2">
+          <svg
+            class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>Eco® – Ideal for testing a new project.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg
+            class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>Starty® – A budget-friendly option to get started.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg
+            class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>Starty® Pro – Start like a pro, ready to take things to the next level.</span>
+        </li>
+      </ul>
+    `
+  },
+  {
+    question: "How long does it take to activate my Starty® web hosting account?",
+    answers: [
+      "Your Starty web hosting order will be activated once your payment is confirmed.",
+      "If you pay using a Moroccan bank card (CMI) or an international card (via Stripe), activation is almost instant. For bank transfer payments, you'll need to send proof of transfer to <strong>sales@hostino.com</strong>.",
+    ],
+  },
+  {
+    question: "Are there any limits on how many emails I can send?",
+    answers: [
+      "To prevent any misuse of mass mailing, the number of emails you can send per hour is limited based on the email quota included in your hosting plan.",
+    ],
+  },
+  {
+    question: "Is it possible to change the domain linked to my hosting plan?",
+    answers: [
+      "Yes, domain changes are allowed within 30 days of your purchase. After this period, domain changes are no longer possible. Please contact our support team to request the update within the allowed timeframe.",
+    ],
+  },
+  {
+    question: "My Starty® hosting has expired — are my data lost?",
+    answers: [
+      "Your data remain stored on our servers for 30 days after your hosting plan expires. You can instantly recover everything by paying the renewal fee during this period. After the initial 30 days, your data are moved to our backup servers and kept for an additional 30 days.",
+      "During this extended period, restoration is still possible, but a recovery fee of 499 MAD (excl. tax) will apply.",
+      "Once the full 60-day period has passed, data recovery is no longer possible, and all files are permanently deleted.",
+    ],
+  },
+  {
+    question: "Can I change my hosting plan at any time?",
+    answers: [
+      "Yes, you can upgrade or downgrade your hosting plan at any time. If you choose to upgrade, you'll only need to pay the price difference on a pro-rata basis.",
+      "Our support team is here to help you with the process whenever you're ready.",
+    ],
+  }
+]
+
+
+const hostingPlans: Plan[] = [
+  {
+    id: 1,
+    name: "Web Hosting<br> <i>Eco</i>",
+    subtext:
+      "Low-cost package to launch and test your website.",
+    price_original: "299 DH/yr",
+    price_discounted: "199 DH/yr",
+    save: "33%",
+    price_ttc: "For 1 year, you pay <b>238.8 DH</b> (incl. tax).",
+    performance_stars: 1,
+    more_performance: {
+      text: "More performance?",
+      href: "/en/business-web-hosting/",
+      exists: true,
+    },
+    order: {
+      text: "Order Now",
+      href: "https://my.hostino.com/order.php?pid=70&language=english&country=MA&promocode=UI12E&1=USD",
+    },
+    features: {
+      seo_optimized: true,
+      free_domain: true,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Free and unlimited",
+      disk_space: "10 GB NVMe",
+      bandwidth: "100 GB",
+      databases: 1,
+      email_accounts: 1,
+      subdomains: 1,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "MOST POPULAR",
+      is_most_popular: false,
+    },
+  },
+  {
+    id: 2,
+    name: "Web Hosting<br><i>Starty</i>",
+    subtext:
+      "Everything you need to launch and publish a <b>small website</b>.",
+    price_original: "499 DH/yr",
+    price_discounted: "399 DH/yr",
+    price_ttc: "For 1 year, you pay <b>478.8 DH</b> (incl. tax).",
+    save: "20%",
+    performance_stars: 2,
+    more_performance: {
+      text: "More performance?",
+      href: "https://www.hostino.ma/en/starty",
+      exists: true,
+    },
+    order: {
+      text: "Order Now",
+      href: "https://my.hostino.com/order.php?pid=36&language=english&country=MA&currency=1&promocode=UI12S&1=USD",
+    },
+    features: {
+      seo_optimized: true,
+      free_domain: true,
+      wordpress_preinstalled: true,
+      control_panel: "cPanel®",
+      ssl: "Free and unlimited",
+      disk_space: "25 GB NVMe",
+      bandwidth: "250 GB",
+      databases: 5,
+      email_accounts: 5,
+      subdomains: 5,
+      backups: "JetBackup",
+    },
+    most_popular: {
+      text: "MOST POPULAR",
+      is_most_popular: true,
+    },
+  },
+];
+
+const comparisonDataImporter: ComparisonRow[] = [
+  {
+    feature: "Number of email accounts",
+    starty: "5",
+    startyPlus: "10",
+    bgTransparent: false,
+    title_bold: false,
+    starty_bold: true,
+    startyPlus_bold: true,
+  },
+  {
+    feature: "Storage space per address",
+    starty: "1 Go",
+    startyPlus: "5 Go",
+    bgTransparent: false,
+    title_bold: false,
+    starty_bold: true,
+    startyPlus_bold: true,
+  },
+  {
+    feature: "Sending limit per hour",
+    starty: "50",
+    startyPlus: "100",
+    bgTransparent: false,
+    title_bold: false,
+    starty_bold: true,
+    startyPlus_bold: true,
+  },
+  {
+    feature: "Email forwarder",
+    starty: "check",
+    startyPlus: "check",
+    bgTransparent: true,
+    title_bold: false,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "Auto-responder",
+    starty: "check",
+    startyPlus: "check",
+    bgTransparent: true,
+    title_bold: false,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "CPU Limit",
+    starty: "100%",
+    startyPlus: "100%",
+    bgTransparent: true,
+    title_bold: true,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "I/O Limit(IO)",
+    starty: "2MB/s",
+    startyPlus: "3MB/s",
+    bgTransparent: true,
+    title_bold: true,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "Memory Limit",
+    starty: "512 MB",
+    startyPlus: "1 Go",
+    bgTransparent: true,
+    title_bold: true,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+  {
+    feature: "Simultaneous processes",
+    starty: "20",
+    startyPlus: "50",
+    bgTransparent: true,
+    title_bold: true,
+    starty_bold: false,
+    startyPlus_bold: false,
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/en/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma/en",
+            name: "Hostino - Domain Names and Web Hosting in Morocco",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "199",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+
+
+---
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+  lang="en"
+>
+
+  <main>
+    <HeroHeadingPages
+      smallTitle="Cheap Web Hosting"
+      bigTitle="Cheap Web Hosting<br />in Morocco"
+      lineGreen="true"
+    />
+    <Plans
+      title="Cheap Web Hosting plans"
+      smallTitle="Transparent pricing for every step."
+      plans={hostingPlans}
+      heroHeading={true}
+    />
+    <PromoBanner
+      icon="⚠️"
+      text="Launch your website at a low cost with our <b><i>Eco</i></b> and <b><i>Starty</i></b> hosting plans. As your business grows, upgrade to our <b><a style='text-decoration:underline' href='/en/business-web-hosting/'>Business</a></b> packs for pro-level performance."
+    />
+
+    <TrustedBySection
+      classNameImage="md:w-[65%] w-[100%] mx-auto h-auto"
+      className="mt-[60px]"
+      text =`<b>Hostino®</b>, a trusted partner for a vast network of businesses and institutions in Morocco and around the world.`
+
+    />
+
+    <StartyComparison 
+        comparisonDataImporter={comparisonDataImporter}
+        title="Cheap Web Hosting plans",
+        subTitle="Transparent pricing for every step."
+        item1="Starty"
+        item2="Starty® Pro"
+        
+    />
+
+    <TextLeftImageRight
+      title="What is Cheap Web hosting ?"
+      paragraphs={[
+        "Cheap web hosting refers to affordable hosting solutions that provide the essential features needed to run a website without the high costs typically associated with premium services. At Hostino®, we offer budget-friendly web hosting plans specifically designed to <b>empower entrepreneurs, startups</b>, and small businesses to establish and grow their online presence. We believe that low-cost hosting should still deliver great value.",
+        "That's why our plans are optimized for fast loading times, robust security, and ease of use—ensuring that even with a <b>limited budget</b>, you can launch and manage a reliable, professional website.",
+        "Hostino® makes high-quality web hosting accessible to everyone, without compromising performance or support."
+      ]}
+      imageSrc="/images/02/cheap-web-hosting.jpg"
+      imageAlt="Cheap Web Hosting Morocco"
+     consultButtonTextExiste = {false}
+
+    />
+    <SixCards
+      title="Why choose our <br>Cheap Web Hosting ?"
+      alignment="left"
+      features={hostingFeatures}
+    />
+
+    <FAQSection title="FAQ - Cheap Web Hosting Morocco" faqData={faqData} />
+  </main>
+
+</Layout>

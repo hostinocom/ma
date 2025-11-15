@@ -178,7 +178,8 @@ const { lang } = Astro.props
         </a>
 
         <!-- Language Selector -->
-        <AnimatedButton
+        <a href="en">
+         <AnimatedButton
           text="EN"
           hoverText="EN"
           bgColor="bg-primary"
@@ -186,6 +187,7 @@ const { lang } = Astro.props
           textColor="text-white"
           class="lang-switch-en hidden lg:block text-white bg-primary font-bold px-2 py-1"
         />
+        </a>
 
         <!-- Mobile Menu Button -->
         <button class="lg:hidden text-title burger-button" aria-label="Toggle menu">
@@ -330,13 +332,15 @@ const { lang } = Astro.props
       <div class="pt-1 space-y-3 ">
         <a
           href="https://my.hostino.com/index.php?rp=/login"
-          class="block w-full py-3 text-center text-white  bg-primary  font-[600] rounded-lg  hover:text-primary transition-colors"
+          class="block w-full py-3 text-center text-white  bg-primary  font-[600] rounded-lg"
         >
           Connexion
         </a>
-        <button class="lang-switch-en-mobile w-full border border-primary text-title rounded-lg font-[600] px-4 py-1 hover:bg-[#00a84e] transition-colors">
+       <a href="/en/">
+         <button class="lang-switch-en-mobile w-full border border-primary text-title rounded-lg font-[600] px-4 py-1">
           EN
         </button>
+       </a>
       </div>
     </nav>
   </div>
