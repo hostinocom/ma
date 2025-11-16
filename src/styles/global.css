@@ -668,16 +668,12 @@ li{
 }
 
 
-.pm__title , .cm__title , .pm__section-title , .pm__section-desc , .cm__desc{
+.pm__title , .cm__title , .cm__btn--secondary[data-role="show"] , .pm__section-title , .pm__section-desc , .cm__desc{
   color : #022545 !important;
 }
 
 .cm__desc{
   font-size: 0.85em !important;
-}
-
-.cm__btn .cm__btn--secondary[data-role ="show"]{
-  color : #022545 !important
 }
 
 .cm__link-group{
