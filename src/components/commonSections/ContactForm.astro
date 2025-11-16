@@ -67,53 +67,55 @@ const { title } = Astro.props;
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
-  const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
-  const messageDiv = document.getElementById('form-message') as HTMLDivElement;
+const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+const messageDiv = document.getElementById('form-message') as HTMLDivElement;
 
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-    // Disable button and show loading state
-    submitButton.disabled = true;
-    submitButton.textContent = 'Envoi en cours...';
-    messageDiv.classList.add('hidden');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Envoi en cours...';
+  messageDiv.classList.add('hidden');
 
-    const formData = new FormData(form);
-    const data = {
-      fullName: formData.get('fullName') as string,
-      phone: formData.get('phone') as string,
-      email: formData.get('email') as string,
-      page: window.location.href
-    };
+  const formData = new FormData(form);
+  const data = {
+    fullName: formData.get('fullName') as string,
+    phone: formData.get('phone') as string,
+    email: formData.get('email') as string,
+    page: window.location.href
+  };
 
-    try {
-      // Utilise une URL relative - fonctionnera sur n'importe quel domaine
+  try {
+    const response = await fetch('/send-email', {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+    });
 
-      const response = await fetch('/send-email', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
-      });
+    const result = await response.json();
 
-      const result = await response.json();
-      console.log(result)
-
-      
-    } catch (error) {
-      // Network error
-      console.error('Erreur réseau:', error);
-      messageDiv.textContent = '❌ Erreur de connexion. Veuillez vérifier votre connexion internet et réessayer.';
+    if (result.success) {
+      messageDiv.textContent = '✅ Message envoyé avec succès!';
+      messageDiv.className = 'mt-4 text-sm text-green-400 font-semibold';
+      form.reset(); // Clear the form
+    } else {
+      messageDiv.textContent = `❌ ${result.message}`;
       messageDiv.className = 'mt-4 text-sm text-red-400 font-semibold';
-      messageDiv.classList.remove('hidden');
-    } finally {
-      // Re-enable button
-      submitButton.disabled = false;
-      submitButton.textContent = 'Envoyer';
     }
+    messageDiv.classList.remove('hidden');
     
-  });
+  } catch (error) {
+    console.error('Erreur réseau:', error);
+    messageDiv.textContent = '❌ Erreur de connexion. Veuillez réessayer.';
+    messageDiv.className = 'mt-4 text-sm text-red-400 font-semibold';
+    messageDiv.classList.remove('hidden');
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Envoyer';
+  }
+});
 </script>
 
 <style>
