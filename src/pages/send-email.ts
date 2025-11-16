@@ -1,8 +1,6 @@
 import type { APIRoute } from 'astro';
-import * as SibApiV3Sdk from '@sendinblue/client';
 
-
-export const prerender = false; // Important for Cloudflare
+export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -21,29 +19,48 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Initialize Brevo client
-    const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
-    apiInstance.setApiKey(
-      SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,
-      import.meta.env.BREVO_API_KEY
-    );
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          message: 'Email invalide' 
+        }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
 
-    // Prepare email
-    const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-    
-    sendSmtpEmail.sender = {
-      email: import.meta.env.BREVO_SENDER_EMAIL,
-      name: import.meta.env.BREVO_SENDER_NAME
-    };
-    
-    sendSmtpEmail.to = [
-      { email: import.meta.env.BREVO_RECIPIENT_EMAIL }
-    ];
-    
-    sendSmtpEmail.subject = `Hostino MA - Demande de rappel client`;
-    
-    sendSmtpEmail.htmlContent = `
-    <div style="
+    // Get environment variables
+    const BREVO_API_KEY = import.meta.env.BREVO_API_KEY;
+    const BREVO_SENDER_EMAIL = import.meta.env.BREVO_SENDER_EMAIL;
+    const BREVO_SENDER_NAME = import.meta.env.BREVO_SENDER_NAME || 'Contact Form';
+    const BREVO_RECIPIENT_EMAIL = import.meta.env.BREVO_RECIPIENT_EMAIL;
+
+    // Check if environment variables are set
+    if (!BREVO_API_KEY || !BREVO_SENDER_EMAIL || !BREVO_RECIPIENT_EMAIL) {
+      console.error('Missing environment variables');
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          message: 'Configuration du serveur incorrecte' 
+        }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Prepare email payload for Brevo API
+    const emailPayload = {
+      sender: {
+        email: BREVO_SENDER_EMAIL,
+        name: BREVO_SENDER_NAME
+      },
+      to: [
+        { email: BREVO_RECIPIENT_EMAIL }
+      ],
+      subject: `Hostino MA - Demande de rappel client`,
+      htmlContent: `
+       <div style="
       font-family: Arial, Helvetica, sans-serif;
       font-size: 14px;
       color: #333;
@@ -95,11 +112,50 @@ export const POST: APIRoute = async ({ request }) => {
         — Message automatique de votre site <strong>Hostino.ma</strong>
       </p>
     </div>
-  `;
+      `,
+      textContent: `
+          Bonjour,
   
+  Voici les informations de la demande de rappel client
+  
+  Nom complet: ${fullName}
+  Numéro de téléphone: ${phone}
+  Adresse email: ${email}
+  Page: ${page}
+  Date et heure: ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablanca' })}
+  
+  — Message automatique de votre site Hostino.ma
+     
+      `
+    };
 
-    // Send email
-    await apiInstance.sendTransacEmail(sendSmtpEmail);
+    // Send email via Brevo API
+    const brevoResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'api-key': BREVO_API_KEY
+      },
+      body: JSON.stringify(emailPayload)
+    });
+
+    // Check if request was successful
+    if (!brevoResponse.ok) {
+      const errorData = await brevoResponse.json();
+      console.error('Brevo API Error:', errorData);
+      
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          message: 'Erreur lors de l\'envoi de l\'email' 
+        }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const result = await brevoResponse.json();
+    console.log('Email sent successfully:', result);
 
     return new Response(
       JSON.stringify({ 
@@ -110,7 +166,7 @@ export const POST: APIRoute = async ({ request }) => {
     );
 
   } catch (error) {
-    console.error('Erreur Brevo:', error);
+    console.error('Error sending email:', error);
     
     return new Response(
       JSON.stringify({ 
@@ -121,3 +177,5 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 };
+
+

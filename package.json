@@ -16,7 +16,6 @@
     "@fontsource/montserrat": "^5.2.8",
     "@fontsource/poppins": "^5.2.7",
     "@getbrevo/brevo": "^3.0.1",
-    "@sendinblue/client": "^3.3.1",
     "@tailwindcss/vite": "^4.1.16",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
