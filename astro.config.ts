@@ -39,7 +39,7 @@ export default defineConfig({
             return font
           }
         }],
-        display: 'auto',
+        display: 'swap',
         preload: true,
         prefetch: false,
         injectTo: 'head-prepend',
