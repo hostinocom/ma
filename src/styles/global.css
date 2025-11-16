@@ -235,14 +235,14 @@ select {
 
 .list-paragraph{
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   @apply text-[17px] text-title;
 }
 
 .list-dots-paragraph{
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--text);
 }
@@ -326,7 +326,7 @@ span {
 
 .paragraph {
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   color: var(--text);
   line-height: 29px;
@@ -337,7 +337,7 @@ span {
 .paragraph-mb-0 {
   color: var(--text);
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   line-height: 1.7rem;
   letter-spacing: 0.2px;
@@ -355,14 +355,14 @@ span {
 .title-15 {
   color: var(--text);
   line-height: 1.7rem;
-  font-weight: 300;
+  font-weight: 400;
   @apply md:text-[18px] text-[17px];
 }
 
 
 .paragraph:not(:last-child) {
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   margin-bottom: 1.5rem;
 }
@@ -374,7 +374,7 @@ span {
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -385,7 +385,7 @@ span {
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
 
 }
@@ -397,14 +397,14 @@ span {
   margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
 
 }
 
 .paragraph-16.mb-0 {
   font-family: "Poppins", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   margin-bottom: 0 !important;
 }
