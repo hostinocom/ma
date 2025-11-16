@@ -7,6 +7,8 @@ import Footer from "../components/layout/Footer.astro";
 import { AstroFont } from "astro-font";
 import Unfont from 'unplugin-fonts/astro/component.astro';
 import CrispChat from "../components/CrispChat.astro";  // ADD THIS
+import CookieConsent from '../components/CookieConsent.astro';
+
 
 
 interface Props {
@@ -113,6 +115,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<slot />
 
     {lang !== "en" ? <Footer />  : <FooterEn />}
+
+    <CookieConsent/>
+
 
   
 
