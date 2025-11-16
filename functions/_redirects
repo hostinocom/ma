@@ -1,5 +1,5 @@
 # Redirect non-www to www
-https://hostino.nl https://www.hostino.nl 301
+https://hostino.nl/* https://www.hostino.nl/:spal 301
 
 
 # Redirect old paths
