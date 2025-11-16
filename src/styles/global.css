@@ -687,3 +687,25 @@ li{
 .pm__btn .pm__btn--secondary{
   background-color: #eaeff2 !important;
 }
+
+.dropdown-menu{
+    display: none;
+}
+
+.dropdown-hebergement:hover .dropdown-menu{ 
+    display : block
+}
+
+.dropdown-seo:hover .dropdown-menu{ 
+  display : block
+}
+
+.dropdown-seo:hover .dropdown-arrow{ 
+  transform : rotate(-180deg)
+}
+
+.dropdown-hebergement:hover .dropdown-arrow{ 
+  transform : rotate(-180deg)
+}
+
+

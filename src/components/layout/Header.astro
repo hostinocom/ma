@@ -21,144 +21,90 @@ const { lang } = Astro.props
       </a>
 
       <!-- Desktop Navigation -->
-      <nav >
-        <!-- Hébergement web Dropdown -->
-        <ul class="hidden lg:flex items-center sm:gap-[12px] xl:gap-[20px]">
-          <li class="relative dropdown-hebergement">
-           <a class=" animated-link hover:text-primary link_header text-title flex items-center gap-2 font-[600] border-none p-0">
-              Hébergement web
-            <svg
-              class="w-4 h-4 transition-transform duration-300 dropdown-arrow"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
-          <!-- Dropdown Menu -->
-            <div class="pt-[35px] absolute dropdown-menu hidden">
-                  <ul class="dropDown-menu top-full left-0 w-56 bg-white py-2">
-              <li>
-                    <a
-                href="/starty"
-                class="block animated-link link_header ml-6 my-3 text-title font-[600]"
-              >
-                Starty
-              </a>
-              </li>
-              <li>
-                    <a
-                      href="/business"
-                      class="block animated-link link_header ml-6 my-3 text-title font-[600]"
-                      >
-                      Business
-                  </a>
-              </li>
-              <li>
-                    <a
-                      href="/cloud-maroc"
-                      class="block animated-link link_header ml-6 my-3 text-title font-[600]"
-                     >
-                  Cloud Maroc
-              </a>
-              </li>
-              </li>
-            </ul>
-            </div>
-        </li>
-
-        <!-- @Email Pro -->
+    <!-- Desktop Navigation -->
+<nav>
+  <ul class="hidden lg:flex items-center sm:gap-[12px] xl:gap-[20px]">
+    <!-- Hébergement web Dropdown -->
+    <li class="relative dropdown-hebergement">
+      <a class="animated-link hover:text-primary link_header text-title flex items-center gap-2 font-[600] border-none p-0">
+        Hébergement web
+        <svg class="w-4 h-4 transition-transform duration-300 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+      
+      <div class="pt-[35px] absolute dropdown-menu hidden">
+        <ul class="dropDown-menu top-full left-0 w-56 bg-white py-2">
           <li>
-              <a
-                href="/email-professionnel/"
-                class="font-poppins hover:text-primary link_header animated-link  flex items-center gap-2 text-title font-[600] border-none p-0"
-              >
-            @Email Pro
-          </a>
+            <a href="/starty" class="block animated-link link_header ml-6 my-3 text-title font-[600]">
+              Starty
+            </a>
           </li>
-
-        <!-- Nom de domaine -->
           <li>
-                <a
-                  href="/nom-de-domaine-ma"
-                  class="text-title animated-link link_header font-[600] hover:text-primary transition-colors"
-                  >
-                  Nom de domaine
-                </a>
+            <a href="/business" class="block animated-link link_header ml-6 my-3 text-title font-[600]">
+              Business
+            </a>
           </li>
+          <li>
+            <a href="/cloud-maroc" class="block animated-link link_header ml-6 my-3 text-title font-[600]">
+              Cloud Maroc
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
 
-        <!-- SEO/SEA Dropdown -->
-        
-        <div class="relative dropdown-seo">
-          <a class="flex items-center animated-link link_header gap-2 text-title font-[600] hover:text-primary transition-colors">
-            <img
-              src='..//images/google-svg.svg'
-              alt="Google"
-              width={20}
-              height={20}
-              loading="eager"
-            />
-            SEO/SEA
-            <svg
-              class="w-4 h-4 transition-transform duration-300 dropdown-arrow"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
+    <!-- @Email Pro -->
+    <li>
+      <a href="/email-professionnel/" class="font-poppins hover:text-primary link_header animated-link flex items-center gap-2 text-title font-[600] border-none p-0">
+        @Email Pro
+      </a>
+    </li>
 
-          <!-- Dropdown Menu -->
-          <div class="pt-[35px] absolute dropdown-menu hidden">
-            <ul class="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
-              <li>
-                    <a
-                      href="/agence-seo-maroc/"
-                      class="block font-[600] ml-6 my-3 link_header animated-link text-title transition-colors"
-                    >
-                      Agence SEO
-              </a>
-              </li>
-              <li>
-                    <a
-                      href="/google-my-business-maroc/"
-                      class="block font-[600] ml-6 my-3 link_header animated-link text-title transition-colors"
-                      >
-                  Agence GMB
-              </a>
-              </li>
-              <li>
-                  <a
-                      href="/google-ads-maroc/"
-                      class="block font-[600] ml-6 my-3 animated-link link_header text-title hover:bg-gray-50 transition-colors"
-                    >
-                    Google Ads
-                   </a>
-              </li>
-              <li>
-                    <a
-                       href="/creation-site-web-maroc/"
-                       class="block font-[600] ml-6 my-3 link_header animated-link text-title hover:bg-gray-50 transition-colors"
-                       >
-                         Site web
-              </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <!-- Nom de domaine -->
+    <li>
+      <a href="/nom-de-domaine-ma" class="text-title animated-link link_header font-[600] hover:text-primary transition-colors">
+        Nom de domaine
+      </a>
+    </li>
+
+    <!-- SEO/SEA Dropdown -->
+    <li class="relative dropdown-seo">
+      <a class="flex items-center animated-link link_header gap-2 text-title font-[600] hover:text-primary transition-colors">
+        <img src="/images/google-svg.svg" alt="Google" width={20} height={20} loading="eager" />
+        SEO/SEA
+        <svg class="w-4 h-4 transition-transform duration-300 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+
+      <div class="pt-[35px] absolute dropdown-menu hidden">
+        <ul class="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
+          <li>
+            <a href="/agence-seo-maroc/" class="block font-[600] ml-6 my-3 link_header animated-link text-title transition-colors">
+              Agence SEO
+            </a>
+          </li>
+          <li>
+            <a href="/google-my-business-maroc/" class="block font-[600] ml-6 my-3 link_header animated-link text-title transition-colors">
+              Agence GMB
+            </a>
+          </li>
+          <li>
+            <a href="/google-ads-maroc/" class="block font-[600] ml-6 my-3 animated-link link_header text-title hover:bg-gray-50 transition-colors">
+              Google Ads
+            </a>
+          </li>
+          <li>
+            <a href="/creation-site-web-maroc/" class="block font-[600] ml-6 my-3 link_header animated-link text-title hover:bg-gray-50 transition-colors">
+              Site web
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
 
       <!-- Right Side Actions -->
       <div class="flex items-center gap-4">
@@ -208,7 +154,7 @@ const { lang } = Astro.props
       <ul >
 
         <li class="mobile-dropdown-hebergement">
-        <a href="#"
+        <a
           class="w-full link_header
            hover:text-primary button cursor-pointer flex items-center justify-between py-2 text-title font-[600]"
         >
@@ -228,7 +174,7 @@ const { lang } = Astro.props
           </svg>
         </a>
 
-        <ul class="mobile-submenu pl-4 space-y-2 mt-2 hidden">
+        <ul class="mobile-submenu pl-4 hidden">
           <li>
                  <a href="/starty" class="link_header block py-2 text-title font-[600]">
                     Starty
@@ -269,7 +215,7 @@ const { lang } = Astro.props
 
       <!-- SEO/SEA Mobile -->
       <li class="mobile-dropdown-seo">
-        <a href="#"
+        <a 
           class="flex button link_header items-center justify-between w-full py-2 hover:text-primary text-title font-[600]"
         >
           <div class="flex items-center gap-2">
@@ -291,11 +237,11 @@ const { lang } = Astro.props
           </svg>
         </a>
 
-        <ul class="mobile-submenu pl-4 space-y-2 mt-2 hidden">
+        <ul class="mobile-submenu pl-4 hidden">
           <li>
               <a
                 href="/agence-seo-maroc/"
-                class="block link_header max-w-max py-[12px] text-title font-[600] animated-link"
+                class="block link_header max-w-max py-[8px] text-title font-[600] animated-link"
               >
             Agence SEO
           </a>
@@ -303,7 +249,7 @@ const { lang } = Astro.props
           <li>
                 <a
                    href="/google-my-business-maroc/"
-                    class="block link_header max-w-max py-[12px] text-title font-[600] animated-link"
+                    class="block link_header max-w-max py-[8px] text-title font-[600] animated-link"
           >
             Agence GMB
           </a>
@@ -311,7 +257,7 @@ const { lang } = Astro.props
           <li>
               <a
                   href="/google-ads-maroc/"
-                  class="block link_header max-w-max py-[12px] text-title font-[600] animated-link"
+                  class="block link_header max-w-max py-[8px] text-title font-[600] animated-link"
                 >
                  Google Ads
               </a>
@@ -319,7 +265,7 @@ const { lang } = Astro.props
           <li>
               <a
                 href="/creation-site-web-maroc/"
-                class="block link_header max-w-max py-[12px] text-title font-[600] animated-link"
+                class="block link_header max-w-max py-[8px] text-title font-[600] animated-link"
               >
                 Site web
           </a>
@@ -360,14 +306,11 @@ const { lang } = Astro.props
     
     hebergementDropdown.addEventListener('mouseenter', () => {
       menu?.classList.remove('hidden');
-      arrow?.classList.add('rotate-180');
       seoDropdown?.querySelector('.dropdown-menu')?.classList.add('hidden');
-      seoDropdown?.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
     });
     
     hebergementDropdown.addEventListener('mouseleave', () => {
       menu?.classList.add('hidden');
-      arrow?.classList.remove('rotate-180');
     });
   }
 
@@ -379,12 +322,10 @@ const { lang } = Astro.props
       menu?.classList.remove('hidden');
       arrow?.classList.add('rotate-180');
       hebergementDropdown?.querySelector('.dropdown-menu')?.classList.add('hidden');
-      hebergementDropdown?.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
     });
     
     seoDropdown.addEventListener('mouseleave', () => {
       menu?.classList.add('hidden');
-      arrow?.classList.remove('rotate-180');
     });
   }
 
