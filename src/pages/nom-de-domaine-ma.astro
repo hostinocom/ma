@@ -5,6 +5,7 @@ import ServiceProximite from "../components/commonSections/ServiceProximite.astr
 import SixCards from "../components/commonSections/SixCards.astro";
 import TextLeftImageRight from "../components/commonSections/TextLeftImageRight.astro";
 import TitleParagraphButton from "../components/commonSections/TitleParagraphButton.astro";
+import InputSearchDoamain from "../components/commonSections/InputSearchDoamain.tsx";
 import DomainSearchSection from "../components/HomeSection/DomainSearchSection.tsx";
 import TrustedBySection from "../components/commonSections/TrustedBySection.astro";
 import DomainPricingSection from "../components/sectionsNomDeDomaineMa/DomainPricingSection.astro";
@@ -245,36 +246,7 @@ const articleSchema = {
           Un nom de domaine Maroc (.MA) indique que votre entreprise est <b class="text-title">fièrement marocaine.</b>
         </p>
 
-        <form class="lg:w-[60%] md:w-[90%] w-[100%] bg-gray-100">
-          <div class="flex rounded-lg bg-white overflow-hidden sm:border-0 border-1 border-primary flex-col sm:flex-row">
-            <input
-              type="text"
-              placeholder="Entrer un nom de domaine"
-              class="flex-1 px-8 sm:py-6 py-8 text-title font-[20px] rounded-l-lg focus:outline-none"
-              required
-            />
-
-            <div class="mr-[20px] flex items-center">
-              <select
-                name="domain_tld"
-                defaultValue=".ma"
-                class="sm:block hidden text-right text-[20px] text-title font-[600]"
-              >
-                {domainOptions.map((domain) => (
-                  <option key={domain} class="font-[600]" value={domain}>
-                    {domain}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <button
-              type="submit"
-              class="bg-primary sm:py-0 py-6 text-white font-[600] px-8 sm:text-lg text-xl transition whitespace-nowrap"
-            >
-              Rechercher
-            </button>
-          </div>
-        </form>
+        <InputSearchDoamain  client:load id="ma" />
 
         <div class="grid mt-[10px] grid-cols-4 lg:gap-22 md:gap-20 gap-10 items-center">
           {/* Domain pricing cards */}
@@ -331,7 +303,7 @@ const articleSchema = {
       classNameTitleCard="xl:pr-[120px] lg:pr-[40px]"
     />
 
-    <DomainSearchSection />
+    <DomainSearchSection client:load id="ma" />
 
     <TextLeftImageRight
       title="Qu'est-ce qu'un nom de domaine Maroc ?"

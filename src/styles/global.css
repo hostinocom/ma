@@ -641,3 +641,26 @@ li{
 .list-disc li{
   list-style: disc !important;
 }
+
+
+.cm{
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1),
+    0 0px 2px 0px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.cm #cm__title, .cm #cm__desc{
+  color: #022545;
+}
+
+.cm__btn[data-role = "all"] {
+  background-color: #00CC61 !important;
+  color : white;
+  border : none !important
+}
+
+
+.cm__btn[data-role = "necessary"] {
+  background-color: #022545 !important;
+  color : white;
+  border : none !important
+}

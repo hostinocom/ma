@@ -1,59 +1,41 @@
-"use client";
+import { useState, type FormEvent } from "react";
+import InputSearchDoamain from "../commonSections/InputSearchDoamain";
 
-import { useState } from "react";
 
-const domainOptions = [
-  ".ma",
-  ".com",
-  ".net",
-  ".info",
-  ".org",
-  ".co.ma",
-  ".org.ma",
-  ".net.ma",
-  ".edu.ma",
-  ".press.ma",
-  ".gov.ma",
-  ".ac.ma",
-  ".us",
-  ".es",
-  ".fr",
-  ".be",
-  ".nl",
-  ".it",
-  ".de",
-  ".ch",
-  ".eu",
-  ".ca",
-  ".uk",
-  ".co.uk",
-  ".tv",
-  ".biz",
-  ".co",
-  ".tech",
-  ".cloud",
-  ".store",
-  ".shop",
-  ".ai",
-];
 
 export default function DomainSearchSection({ id }: { id: string }) {
   const [domain, setDomain] = useState("");
-
+  const [selectedTld, setSelectedTld] = useState(".ma");
 
   const handleSubmit = () => {
-    console.log(domain);
+    // Nettoyer le nom de domaine (enlever espaces et caractères spéciaux)
+    const cleanDomain = domain.trim().toLowerCase();
     
+    // Validation
+    if (!cleanDomain) {
+      alert("Veuillez entrer un nom de domaine");
+      return;
+    }
+
+    // Construire le domaine complet
+    const fullDomain = cleanDomain + selectedTld;
+    
+    // Construire l'URL complète
+    const url = `https://my.hostino.com/order.php?spage=domain&action=register&a=add&query=${encodeURIComponent(fullDomain)}&language=french&country=MA&currency=1`;
+    
+    console.log("Redirection vers:", url);
+    
+    // Rediriger vers la page
+    window.location.href = url;
   };
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   const tld = (e.target as any).domain_tld.value;
-  //   const fullDomain = domain.trim() + tld;
-  //   console.log(fullDomain);
-  //   window.location.href = `https://my.hostino.com/order.php?spage=domain&action=register&a=add&query=${
-  //     fullDomain
-  //   }&language=french&country=MA&currency=1`
-  // };
+
+  // Gérer la soumission avec la touche Entrée
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
   
   return (
     <section
@@ -67,7 +49,7 @@ export default function DomainSearchSection({ id }: { id: string }) {
         <h2 className="title-section-white max-big-title text-white font-[600] mb-4">
           Enregistrer votre nom de domaine
         </h2>
-        <p className="mb-8 paragraph-white ">
+        <p className="mb-8 paragraph-white">
           Achetez dès maintenant votre
           <a
             href="/nom-de-domaine-ma/"
@@ -75,46 +57,10 @@ export default function DomainSearchSection({ id }: { id: string }) {
           >
             .ma domain name
           </a>
-          à partir de 118 DH/an..
+          à partir de 118 DH/an.
         </p>
 
-        <form
-         
-          className="md:max-w-2xl w-full mx-auto mb-8"
-        >
-          <div className="flex rounded-lg overflow-hidden sm:border-0 border border-primary bg-white flex-col sm:flex-row">
-            <input
-              type="text"
-              value={domain}
-              onChange={(e) => setDomain(e.target.value)}
-              placeholder="Entrer un nom de domaine"
-              className="flex-1 px-8 sm:py-6 py-8 text-title font-[20px] rounded-l-lg focus:outline-none"
-              required
-            />
-
-            <div className="mr-[20px] flex items-center">
-              <select
-                name="domain_tld"
-                defaultValue=".ma"
-                className="sm:block hidden text-right text-[20px] text-title font-[600]"
-              >
-                {domainOptions.map((domain) => (
-                  <option key={domain} className="font-[600]" value={domain}>
-                    {domain}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <button
-               onClick={()=>{
-                console.log("clicked");
-              }}
-              className="bg-primary sm:py-0 py-6 text-white font-semibold px-8 sm:text-lg text-xl transition whitespace-nowrap"
-            >
-              Rechercher
-            </button>
-          </div>
-        </form>
+        <InputSearchDoamain id="ma" />
 
         <img
           src="/images/01/nav-domaines.png"
@@ -123,10 +69,8 @@ export default function DomainSearchSection({ id }: { id: string }) {
           loading="eager"
           width={1300}
           height={900}
-      
         />
       </div>
     </section>
   );
 }
-

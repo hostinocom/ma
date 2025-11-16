@@ -1,48 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
-const domainOptions = [
-  ".ma",
-  ".com",
-  ".net",
-  ".info",
-  ".org",
-  ".co.ma",
-  ".org.ma",
-  ".net.ma",
-  ".edu.ma",
-  ".press.ma",
-  ".gov.ma",
-  ".ac.ma",
-  ".us",
-  ".es",
-  ".fr",
-  ".be",
-  ".nl",
-  ".it",
-  ".de",
-  ".ch",
-  ".eu",
-  ".ca",
-  ".uk",
-  ".co.uk",
-  ".tv",
-  ".biz",
-  ".co",
-  ".tech",
-  ".cloud",
-  ".store",
-  ".shop",
-  ".ai",
-];
+import InputSearchDoamain from "../commonSections/InputSearchDoamain";
 
 export default function DomainSearchSectionEn({ id }: { id: string }) {
-  const [domain, setDomain] = useState("");
-
-  const handleSubmit = () => {
-    console.log(domain);
-  };
+  
 
   return (
     <section
@@ -67,40 +29,7 @@ export default function DomainSearchSectionEn({ id }: { id: string }) {
           . Choose yours today.
         </p>
 
-        <form className="md:max-w-2xl w-full mx-auto mb-8">
-          <div className="flex rounded-lg overflow-hidden sm:border-0 border border-primary bg-white flex-col sm:flex-row">
-            <input
-              type="text"
-              value={domain}
-              onChange={(e) => setDomain(e.target.value)}
-              placeholder="Search for a domain name"
-              className="flex-1 px-8 sm:py-6 py-8 text-title font-[20px] rounded-l-lg focus:outline-none"
-              required
-            />
-
-            <div className="mr-[20px] flex items-center">
-              <select
-                name="domain_tld"
-                defaultValue=".ma"
-                className="sm:block hidden text-right text-[20px] text-title font-[600]"
-              >
-                {domainOptions.map((domain) => (
-                  <option key={domain} className="font-[600]" value={domain}>
-                    {domain}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <button
-              onClick={() => {
-                console.log("clicked");
-              }}
-              className="bg-primary sm:py-0 py-6 text-white font-semibold px-8 sm:text-lg text-xl transition whitespace-nowrap"
-            >
-              Search
-            </button>
-          </div>
-        </form>
+        <InputSearchDoamain id="mn" />
 
         <img
           src="https://www.hostino.ma/en/wp-content/uploads/2025/04/nav-domains.png"
