@@ -1,8 +1,16 @@
 # Redirect non-www to www
-https://hostino.nl https://www.hostino.nl 301
-
 https://hostino.nl/* https://www.hostino.nl/:splat 301
 
-
-# Redirect old paths
+# Redirect old paths to new paths
+/old-page /new-page 301
 /contact-us /contact 301
+/about-us /about 301
+
+# Redirect to external URL
+/blog https://blog.hostino.nl 301
+
+# Redirect with wildcard
+/old-blog/* /news/:splat 301
+
+# Language redirects (if needed)
+/fr/* /fr/:splat 301
