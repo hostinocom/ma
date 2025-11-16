@@ -19,7 +19,7 @@ export default defineConfig({
     },
     '/*': {
       status: 301,
-      destination: 'https://domain.com/*'
+      destination: 'https://www.hostino.nl/*'
     }
   },
   integrations: [
