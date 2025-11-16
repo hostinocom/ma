@@ -8,6 +8,7 @@ import { AstroFont } from "astro-font";
 import Unfont from 'unplugin-fonts/astro/component.astro';
 import CrispChat from "../components/CrispChat.astro";  // ADD THIS
 import CookieConsent from '../components/CookieConsent.astro';
+import CookieConsentEn from '../components/CookieConsentEn.astro';
 import { ViewTransitions } from "astro:transitions";
 
 
@@ -39,13 +40,7 @@ const {
     <head>
         <Unfont />
 
-        <link rel='dns-prefetch' href='//client.crisp.chat' />
-        <link rel='dns-prefetch' href='//client.relay.crisp.chat' />
-        <link rel='dns-prefetch' href='//www.googletagmanager.com' />
-        <link rel='preconnect' href='https://client.crisp.chat' crossorigin />
-        <link rel='preconnect' href='https://client.relay.crisp.chat' crossorigin />
-    
-	      	<link rel="icon" type="image/ico" href="/favicon.ico" />
+        
 
 		 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   		<meta charset="UTF-8" />
@@ -72,6 +67,14 @@ const {
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={imageUrl} />
   <meta name="twitter:creator" content="@admin" />
+
+  <link rel='dns-prefetch' href='//client.crisp.chat' />
+    <link rel='dns-prefetch' href='//client.relay.crisp.chat' />
+    <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+    <link rel='preconnect' href='https://client.crisp.chat' crossorigin />
+    <link rel='preconnect' href='https://client.relay.crisp.chat' crossorigin />
+    
+	      	<link rel="icon" type="image/ico" href="/favicon.ico" />
 
     {articleSchema && (
       <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -118,7 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {lang !== "en" ? <Footer />  : <FooterEn />}
 
-   <CookieConsent/> 
+   { lang !== "en" ?  <CookieConsent/> : <CookieConsentEn/> }
 
 
     <CrispChat />

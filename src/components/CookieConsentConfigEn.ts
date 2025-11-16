@@ -45,7 +45,7 @@ export const config: CookieConsentConfig = {
     },
   },
   language: {
-    default: 'fr',
+    default: 'en',
     autoDetect: 'browser',
     translations: {
       en: {

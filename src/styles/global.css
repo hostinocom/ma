@@ -664,3 +664,12 @@ li{
   color : white;
   border : none !important
 }
+
+
+.cm__link-group{
+  justify-content: center !important;
+}
+
+.pm__btn{
+  background-color:#022545;
+}

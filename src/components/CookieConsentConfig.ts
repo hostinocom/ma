@@ -45,25 +45,24 @@ export const config: CookieConsentConfig = {
     },
   },
   language: {
-    default: 'fr',
+    default: 'fr-MA',
     autoDetect: 'browser',
     translations: {
       fr: {
         consentModal: {
-          title: 'Nous utilisons des cookies',
-          description: 
-            'Ce site web utilise des cookies pour améliorer votre expérience de navigation et analyser notre trafic. En cliquant sur "Tout accepter", vous consentez à notre utilisation des cookies.',
+          title: 'Le respect de votre vie privée, notre priorité',
+          description: "Ce site utilise des cookies essentiels à son bon fonctionnement et pour collecter des données sur la façon dont vous interagissez avec, ainsi qu'à des fins marketing.",
           acceptAllBtn: 'Tout accepter',
           acceptNecessaryBtn: 'Tout refuser',
-          showPreferencesBtn: 'Gérer les préférences',
+          showPreferencesBtn: 'Paramètres des cookies',
           footer:
-            '<a href="/politique-cookies">Politique de cookies</a>\n<a href="/politique-de-confidentialite">Politique de confidentialité</a>\n<a href="/conditions-generales">Conditions générales</a>',
+            '<a href="/politique-cookies">Politique de cookies</a>\n<a href="/conditions-generales">Conditions générales</a>',
         },
         preferencesModal: {
           title: 'Centre de préférences des cookies',
           acceptAllBtn: 'Tout accepter',
           acceptNecessaryBtn: 'Tout refuser',
-          savePreferencesBtn: 'Enregistrer les préférences',
+          savePreferencesBtn: 'Paramètres des cookies',
           closeIconLabel: 'Fermer',
           serviceCounterLabel: 'Service|Services',
           sections: [
@@ -95,57 +94,6 @@ export const config: CookieConsentConfig = {
               title: 'Plus d\'informations',
               description:
                 'Pour toute question concernant notre politique relative aux cookies et vos choix, veuillez <a class="cc__link" href="/contact">nous contacter</a>.',
-            },
-          ],
-        },
-      },
-      en: {
-        consentModal: {
-          title: 'We use cookies',
-          description:
-            'This website uses cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept all", you consent to our use of cookies.',
-          acceptAllBtn: 'Accept all',
-          acceptNecessaryBtn: 'Reject all',
-          showPreferencesBtn: 'Manage preferences',
-          footer:
-            '<a href="/en/cookie-policy">Cookie Policy</a>\n<a href="/en/privacy-policy">Privacy Policy</a>\n<a href="/en/terms-conditions">Terms & Conditions</a>',
-        },
-        preferencesModal: {
-          title: 'Cookie Preferences Center',
-          acceptAllBtn: 'Accept all',
-          acceptNecessaryBtn: 'Reject all',
-          savePreferencesBtn: 'Save preferences',
-          closeIconLabel: 'Close',
-          serviceCounterLabel: 'Service|Services',
-          sections: [
-            {
-              title: 'Cookie Usage',
-              description:
-                'We use cookies to personalize content and ads, to provide social media features and to analyze our traffic. We also share information about your use of our site with our social media, advertising and analytics partners.',
-            },
-            {
-              title:
-                'Strictly Necessary Cookies <span class="pm__badge">Always Enabled</span>',
-              description:
-                'These cookies are essential for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.',
-              linkedCategory: 'necessary',
-            },
-            {
-              title: 'Functionality Cookies',
-              description:
-                'These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly.',
-              linkedCategory: 'functionality',
-            },
-            {
-              title: 'Analytics Cookies',
-              description:
-                'These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous.',
-              linkedCategory: 'analytics',
-            },
-            {
-              title: 'More information',
-              description:
-                'For any questions regarding our cookie policy and your choices, please <a class="cc__link" href="/en/contact">contact us</a>.',
             },
           ],
         },
