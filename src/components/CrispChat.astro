@@ -1,6 +1,6 @@
 ---
 // src/components/CrispChat.astro
-const crispId = env.CRISP_WEBSITE_ID || "fb2f1b57-6d80-40f5-ade7-52e4637dc0c5";
+const crispId = import.meta.env.CRISP_WEBSITE_ID || "fb2f1b57-6d80-40f5-ade7-52e4637dc0c5";
 ---
 
 <script define:vars={{ crispId }}>
