@@ -24,39 +24,78 @@ export const POST: APIRoute = async ({ request }) => {
     const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
     apiInstance.setApiKey(
       SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,
-      "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"
+      import.meta.env.BREVO_API_KEY
     );
 
     // Prepare email
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
     
     sendSmtpEmail.sender = {
-      email: "chroudiimran@gmail.com",
-      name: "Imran Cheroud"
+      email: import.meta.env.BREVO_SENDER_EMAIL,
+      name: import.meta.env.BREVO_SENDER_NAME
     };
     
     sendSmtpEmail.to = [
-      { email: "chroudiimran1@gmail.com" }
+      { email: import.meta.env.BREVO_RECIPIENT_EMAIL }
     ];
     
     sendSmtpEmail.subject = `Nouveau contact: ${fullName}`;
     
     sendSmtpEmail.htmlContent = `
-      <html>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-          <h2 style="color: #2563eb;">Nouveau message de contact</h2>
-          <div style="background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Nom complet:</strong> ${fullName}</p>
-            <p><strong>Téléphone:</strong> ${phone}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Page:</strong> <a href="${page}">${page}</a></p>
-          </div>
-          <p style="color: #6b7280; font-size: 12px;">
-            Message reçu le ${new Date().toLocaleString('fr-FR')}
-          </p>
-        </body>
-      </html>
-    `;
+    <div style="
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #333;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+    ">
+      <h2 style="
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #222;
+      ">
+        Bonjour,
+      </h2>
+  
+      <p style="margin: 0 0 15px;">
+        Voici les informations de la demande de rappel client :
+      </p>
+  
+      <div style="
+        background-color: #fff;
+        padding: 15px 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+      ">
+        <p style="margin: 8px 0;">
+          <strong>Nom complet :</strong> ${fullName}
+        </p>
+        <p style="margin: 8px 0;">
+          <strong>Numéro de téléphone :</strong> ${phone}
+        </p>
+        <p style="margin: 8px 0;">
+          <strong>Adresse email :</strong> ${email}
+        </p>
+        <p style="margin: 8px 0;">
+          <strong>Page :</strong> 
+          <a href="${page}" target="_blank" style="color: #007BFF; text-decoration: none;">
+            ${page}
+          </a>
+        </p>
+        <p style="margin: 8px 0; font-size: 12px; color: #666;">
+          <strong>Date et heure :</strong> ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Casablanca' })}
+        </p>
+      </div>
+  
+      <p style="margin-top: 20px; font-size: 12px; color: #777;">
+        — Message automatique de votre site <strong>Hostino.ma</strong>
+      </p>
+    </div>
+  `;
+  
 
     // Send email
     await apiInstance.sendTransacEmail(sendSmtpEmail);
