@@ -1,4 +1,8 @@
 ---
+
+import MapEmbed from './MapEmbed.astro';
+
+
 interface City {
   name: string;
   href: string;
@@ -11,7 +15,14 @@ interface Props {
   href? : string 
 }
 
-const { title, text, topic , href } = Astro.props;
+const { 
+    title, 
+    text, 
+    topic , 
+    href , 
+    src = ""https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441728.5579234385!2d-9.998168768750002!3d31.791702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b265f3c7b1ab5%3A0x99f83ab3e9b22e25!2sMorocco!5e0!3m2!1sen!2sma!4v1234567890123!5m2!1sen!2sma"" , 
+    titleMap
+    } = Astro.props;
 
 const moroccanCities: City[] = [
   { name: "Tanger", href: "https://www.hostino.ma/agence-seo-tanger/" },
@@ -78,6 +89,11 @@ const moroccanCities: City[] = [
           referrerpolicy="no-referrer-when-downgrade"
           class="w-full"
         ></iframe>
+
+        <MapEmbed
+            src=src
+            title={titleMap}
+         />
       </div>
     </div>
   </div>

@@ -12,6 +12,16 @@ import sitemap  from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://www.hostino.nl",
   publicDir: './public',
+  // redirects: {
+  //   '/': {
+  //     status: 301,
+  //     destination: 'https://www.hostino.nl'
+  //   },
+  //   '/*': {
+  //     status: 301,
+  //     destination: 'https://www.hostino.nl/*'
+  //   }
+  // },
   integrations: [
     react(), 
     compress(),
@@ -118,6 +128,7 @@ export default defineConfig({
       ],
     })
   ],
+
   output: 'server',
   
   adapter: cloudflare({
