@@ -24,19 +24,19 @@ export const POST: APIRoute = async ({ request }) => {
     const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
     apiInstance.setApiKey(
       SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,
-      import.meta.env.BREVO_API_KEY
+      "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"
     );
 
     // Prepare email
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
     
     sendSmtpEmail.sender = {
-      email: import.meta.env.BREVO_SENDER_EMAIL,
-      name: import.meta.env.BREVO_SENDER_NAME
+      email: email,
+      name: "Imran Cheroud"
     };
     
     sendSmtpEmail.to = [
-      { email: import.meta.env.BREVO_RECIPIENT_EMAIL }
+      { email: "chroudiimran1@gmail.com" }
     ];
     
     sendSmtpEmail.subject = `Nouveau contact: ${fullName}`;
