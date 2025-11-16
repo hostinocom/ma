@@ -11,15 +11,6 @@
   @import '@fontsource/montserrat/700.css';
 
 
-
-
-
-
-
-
-
-
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -868,10 +859,10 @@ li{
 
 
 
-#cc-main{
-  z-index : 212 !important
+
+
+#cc-main .cm__link-group {
+  font-size: 0.7em !important;
 }
 
-.crisp-client .cc-yv368[data-full-view="true"] .cc-1kr6o .cc-18ov6 {
-  bottom : 32px !important;
-}
+
