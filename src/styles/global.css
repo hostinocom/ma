@@ -5,7 +5,6 @@
 
 
 
-  @import '@fontsource/montserrat/300.css';
   @import '@fontsource/montserrat/400.css';
   @import '@fontsource/montserrat/500.css';
   @import '@fontsource/montserrat/600.css';
@@ -217,19 +216,31 @@ select {
 }
 
 .big-title {
-  @apply lg:text-[56px] md:text-[45px] text-[43px] leading-[49px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[64px] font-[600] text-title;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  @apply lg:text-[56px] md:text-[45px] text-[43px] leading-[49px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[64px] text-title;
 }
 
-.title-hero-section{
+.title-hero-section{  
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
   @apply lg:text-[63px] md:text-[45px] text-[43px] leading-[50px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[70px] font-[600] text-title;
 
 }
 
 .list-paragraph{
-  @apply text-[17px] font-normal text-title;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  @apply text-[17px] text-title;
 }
 
 .list-dots-paragraph{
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   color: var(--text);
 }
 
@@ -239,7 +250,10 @@ select {
 
 
 .max-big-title {
-  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[52px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[59px] font-[600] text-title;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[52px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[59px] text-title;
 }
 
 span {
@@ -288,8 +302,9 @@ span {
 }
 
 .title-section {
-  letter-spacing: -2.5px;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
+  font-style: normal;
   @apply text-[35px]  md:text-[44px] leading-[40px] md:tracking-[-2.5px] tracking-[-1.5px] md:leading-[50px] text-title mb-[10px];
 }
 
@@ -300,23 +315,30 @@ span {
 }
 
 .title-section-white {
-  letter-spacing: -2.5px;
-  font-weight: 600;
-  @apply text-[35px] md:text-[44px] leading-[40px] md:tracking-[-2.5px] tracking-[-1.5px] md:leading-[50px] text-white mb-6;
+  letter-spacing: -2.3px;
+  @apply text-[35px] md:text-[49px] leading-[40px] md:tracking-[-2.3px] tracking-[-1.5px] md:leading-[50px] text-white mb-6;
 }
 
 
 
 .paragraph {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   color: var(--text);
-  line-height: 1.7rem;
+  line-height: 29px;
+  letter-spacing: 0.2px;
   @apply md:text-[17px] text-[16px] ;
 }
 
 .paragraph-mb-0 {
   color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   line-height: 1.7rem;
-  @apply md:text-[17px] text-[16px] font-normal;
+  letter-spacing: 0.2px;
+  @apply md:text-[17px] text-[16px];
 }
 
 

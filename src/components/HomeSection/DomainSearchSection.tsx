@@ -46,7 +46,7 @@ export default function DomainSearchSection({ id }: { id: string }) {
       className="lg:mt-[150px] mt-[60px] bg-gradient-to-r from-[#1b083b] to-[#7e5eba] text-white"
     >
       <div className="container py-[120px] text-center">
-        <h2 className="title-section-white max-big-title text-white font-[600] mb-4">
+        <h2 className="title-section-white max-big-title text-white poppins-semibold mb-4">
           Enregistrer votre nom de domaine
         </h2>
         <p className="mb-8 paragraph-white">
