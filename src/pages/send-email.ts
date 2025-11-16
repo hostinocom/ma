@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import * as SibApiV3Sdk from '@sendinblue/client';
 
+
 export const prerender = false; // Important for Cloudflare
 
 export const POST: APIRoute = async ({ request }) => {
@@ -24,22 +25,22 @@ export const POST: APIRoute = async ({ request }) => {
     const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
     apiInstance.setApiKey(
       SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,
-      "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"
+      import.meta.env.BREVO_API_KEY
     );
 
     // Prepare email
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
     
     sendSmtpEmail.sender = {
-      email: email,
-      name: "Imran Cheroud"
+      email: import.meta.env.BREVO_SENDER_EMAIL,
+      name: import.meta.env.BREVO_SENDER_NAME
     };
     
     sendSmtpEmail.to = [
-      { email: "chroudiimran1@gmail.com" }
+      { email: import.meta.env.BREVO_RECIPIENT_EMAIL }
     ];
     
-    sendSmtpEmail.subject = `Nouveau contact: ${fullName}`;
+    sendSmtpEmail.subject = `Hostino MA - Demande de rappel client`;
     
     sendSmtpEmail.htmlContent = `
     <div style="
