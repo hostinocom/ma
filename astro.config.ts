@@ -11,7 +11,7 @@ import sitemap  from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.hostino.nl",
-  
+  publicDir: './public',
   integrations: [
     react(), 
     compress(),
