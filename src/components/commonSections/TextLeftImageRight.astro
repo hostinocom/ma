@@ -42,11 +42,11 @@ const {
         )}
         {paragraphs.map((paragraph, index) =>
           typeof paragraph === "object" ? (
-            <Fragment key={index}>{paragraph}</Fragment>
+            <Fragment class="paragraph poppins-light" key={index}>{paragraph}</Fragment>
           ) : (
             <p
               key={index}
-              class="paragraph"
+              class="paragraph poppins-light"
               set:html={paragraph as string}
             ></p>
           )
