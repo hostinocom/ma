@@ -6,10 +6,10 @@ export const GET: APIRoute = async () => {
   const envCheck = {
     hasApiKey: !!process.env.BREVO_API_KEY,
     hasSender: !!process.env.BREVO_SENDER_EMAIL,
-    hasRecipient: !!import.meta.env.BREVO_RECIPIENT_EMAIL,
-    hasSenderName: !!import.meta.env.BREVO_SENDER_NAME,
-    apiKeyLength: import.meta.env.BREVO_API_KEY?.length || 0,
-    apiKeyPrefix: import.meta.env.BREVO_API_KEY?.substring(0, 10) || 'none',
+    hasRecipient: !!process.env.BREVO_RECIPIENT_EMAIL,
+    hasSenderName: !!process.env.BREVO_SENDER_NAME,
+    apiKeyLength: process.env.BREVO_API_KEY?.length || 0,
+    apiKeyPrefix: process.env.BREVO_API_KEY?.substring(0, 10) || 'none',
   };
   
   return new Response(
