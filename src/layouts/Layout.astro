@@ -35,7 +35,7 @@ const {
 
 ---
 <!doctype html>
-<html lang="fr-MA">
+<html lang={lang == "en" ? "en-US" : "FR-MA"}>
     <head>
         <Unfont />
 
@@ -70,6 +70,7 @@ const {
   <link rel='dns-prefetch' href='//client.crisp.chat' />
     <link rel='dns-prefetch' href='//client.relay.crisp.chat' />
     <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+
     <link rel='preconnect' href='https://client.crisp.chat' crossorigin />
     <link rel='preconnect' href='https://client.relay.crisp.chat' crossorigin />
     
