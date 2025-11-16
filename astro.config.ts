@@ -131,6 +131,7 @@ export default defineConfig({
   compressHTML: true,
   
   vite: {
+    define: { "process.env" : process.env },
     plugins: [tailwindcss()],
     ssr: {
       external: ["node:buffer"],

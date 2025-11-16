@@ -4,8 +4,8 @@ export const prerender = false;
 
 export const GET: APIRoute = async () => {
   const envCheck = {
-    hasApiKey: !!import.meta.env.BREVO_API_KEY,
-    hasSender: !!import.meta.env.BREVO_SENDER_EMAIL,
+    hasApiKey: !!process.env.BREVO_API_KEY,
+    hasSender: !!process.env.BREVO_SENDER_EMAIL,
     hasRecipient: !!import.meta.env.BREVO_RECIPIENT_EMAIL,
     hasSenderName: !!import.meta.env.BREVO_SENDER_NAME,
     apiKeyLength: import.meta.env.BREVO_API_KEY?.length || 0,
