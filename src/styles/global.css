@@ -35,9 +35,6 @@
 }
 
 
-body{
-  font-family: "Poppins" , ""sans-serif;
-}
 
 
 @theme inline {
@@ -851,4 +848,9 @@ li{
   transform : rotate(-180deg)
 }
 
+
+
+#cc-main{
+  z-index : 212 !important
+}
 
