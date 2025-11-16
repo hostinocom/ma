@@ -55,8 +55,6 @@ export const config: CookieConsentConfig = {
           acceptAllBtn: 'Tout accepter',
           acceptNecessaryBtn: 'Tout refuser',
           showPreferencesBtn: 'Paramètres des cookies',
-          footer:
-            '<a href="/politique-cookies">Politique de cookies</a>\n<a href="/conditions-generales">Conditions générales</a>',
         },
         preferencesModal: {
           title: 'Cookie Preferences Center',
