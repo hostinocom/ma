@@ -50,12 +50,11 @@ export const config: CookieConsentConfig = {
     translations: {
       en: {
         consentModal: {
-          title: "Hello traveller, it's cookie time!",
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+          title: "We care about your privacy",
+          description:'This website uses cookies that are needed for the site to work properly and to get data on how you interact with it, as well as for marketing purposes.',
           acceptAllBtn: 'Accept all',
           acceptNecessaryBtn: 'Reject all',
-          showPreferencesBtn: 'Manage preferences',
+          showPreferencesBtn: 'Cookie settings',
           footer:
             '<a href="#link">Privacy Policy</a>\n<a href="#link">Terms and conditions</a>',
         },
