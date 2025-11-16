@@ -11,10 +11,7 @@ import sitemap  from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.hostino.nl",
-  redirects: {
-    from: "https://hostino.nl",
-    to: "https://www.hostino.nl"
-  },
+  
   integrations: [
     react(), 
     compress(),
