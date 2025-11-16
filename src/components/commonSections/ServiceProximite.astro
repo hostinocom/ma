@@ -35,6 +35,37 @@ const moroccanCities = [
   "Essaouira",
   "Benguerir",
 ];
+
+const moroccanCitiesLinks = [
+  "Tanger",
+  "Tetouan",
+  "Larache",
+  "Asilah",
+  "Chefchaouen",
+  "Ksar El Kebir",
+  "Ouezzane",
+  "Al Hoceïma",
+  "Fes",
+  "Meknes",
+  "Sefrou",
+  "Taza",
+  "Taounate",
+  "Khemisset",
+  "Rabat",
+  "Kenitra",
+  "Sidi Kacem",
+  "Sidi Slimane",
+  "Casablanca",
+  "Mohammedia",
+  "El Jadida",
+  "Khenifra",
+  "Beni Mellal",
+  "Khouribga",
+  "Ifrane",
+  "Marrakech",
+  "Essaouira",
+  "Benguerir",
+];
 ---
 
 <section class="lg:my-[150px] my-[80px] ">
@@ -54,7 +85,7 @@ const moroccanCities = [
    }
    
     <div class="flex flex-wrap gap-1">
-      {moroccanCities.map((city) => {
+      {moroccanCitiesLinks.map((city , index) => {
         const formattedCity = city.toLowerCase().replace(/\s+/g, "-");
         return (
           <a
@@ -62,7 +93,7 @@ const moroccanCities = [
             href={`/${page}-${formattedCity}`}
             class="py-[2.5px] px-[4px] border border-gray-400 text-[16px] text-title"
           >
-            {city}
+            {moroccanCities[index]}
           </a>
         );
       })}
