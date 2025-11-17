@@ -42,7 +42,7 @@ const { rankingsData, title, subtitle } = Astro.props;
                   <polyline points="15 3 21 3 21 9" />
                   <line x1="10" y1="14" x2="21" y2="3" />
                 </svg>
-                <span class="font-medium text-[16px]">{item.url}</span>
+                <span class="poppins-medium text-[16px]">{item.url}</span>
               </a>
               <div class="flex items-center gap-1">
                 <span class="poppins-semibold  xl:text-[13px] lg:text-[11px] text-[13px] text-title">{item.country}</span>
@@ -63,7 +63,7 @@ const { rankingsData, title, subtitle } = Astro.props;
 
               {item.keywords.map((keyword, keywordIndex) => (
                 <div key={keywordIndex} class="flex justify-between items-center">
-                  <span class="text-gray-700">{keyword.term}</span>
+                  <span class="text-title poppins-regular">{keyword.term}</span>
                   <div class="flex items-center justify-center w-9 h-9 rounded-full bg-green-500 text-white poppins-semibold  text-sm">
                     {keyword.position}
                   </div>
