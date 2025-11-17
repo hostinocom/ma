@@ -7,7 +7,7 @@
 #/about-us /about 301
 
 # Redirect to external URL
-/#blog https://blog.hostino.nl 301
+#/#blog https://blog.hostino.nl 301
 
 # Redirect with wildcard
 #/old-blog/* /news/:splat 301

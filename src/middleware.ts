@@ -5,7 +5,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   
   // Redirect all requests to hostino.nl
   if (url.hostname !== 'www.hostino.nl') {
-    return Response.redirect(`https://www.hostino.nl${url.pathname}${url.search}`, 301);
+    return Response.redirect(`https://www.hostino.nl${url.pathname.toLocaleLowerCase()}${url.search.toLocaleLowerCase()}`, 301);
   }
   
   return next();
