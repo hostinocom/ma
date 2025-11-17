@@ -1,8 +1,8 @@
 # Redirect non-www to www
-https://hostino.nl https://www.hostino.nl 301
+#https://hostino.nl https://www.hostino.nl 301
 
-https://hostino.nl/* https://www.hostino.nl/:splat 301
+#https://hostino.nl/* https://www.hostino.nl/:splat 301
 
 
 # Redirect old paths
-/contact-us /contact 301
+#/contact-us /contact 301
