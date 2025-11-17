@@ -1,37 +1,46 @@
 ---
-// src/pages/404.astro
 import Layout from "../../layouts/Layout.astro";
 
+const title = "Page Not Found | Hostino";
+const description =
+  "Sorry, the page you are looking for doesn't exist or was moved. Head back to our English homepage to continue browsing our services.";
+const canonical_url = "https://www.hostino.ma/en/404";
+const imageUrl = "https://maroc-1hp.pages.dev/images/hostino-og-image.jpg";
+const ogAlt = "Hostino 404 page";
+const lang = "en";
 ---
 
- 
-
-
-
-<Layout >
-
-
-<main>
-  <section class="bg-gray-200">
-    <div class="container flex justify-center items-center h-[600px] ">
-       <div class="text-center sm:px-[0] px-[30px]">
-                <h1 class=" sm:text-[120px]  sm:leading-[0.875em] leading-[85px] text-[90px]  font-bold text-primary"
-                        style={{
-                            lineHeight: "initial"
-                        }}
-                >404</h1>
-                <h3 class="text-[27px] leading-[1.25em] font-semibold text-title">Page Not Found.</h3>
-   
-    <a
-      href="/en"
-      class="inline-flex items-center gap-2 mt-[20px] px-4 py-2 text-white bg-primary rounded-lg hover:bg-primary/90 transition"
-    >
-        Back To Home
-    </a>
-       </div>
-    </div>
-  </section>
-</main>
-
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  lang={lang}
+>
+  <main>
+    <section class="bg-gray-200">
+      <div class="container flex justify-center items-center h-[600px]">
+        <div class="text-center sm:px-0 px-[30px]">
+          <h1
+            class="sm:text-[120px] sm:leading-[0.875em] leading-[85px] text-[90px] font-bold text-primary"
+            style={{ lineHeight: "initial" }}
+          >
+            404
+          </h1>
+          <h2 class="text-[27px] leading-[1.25em] font-semibold text-title">Page not found</h2>
+          <p class="mt-4 text-base text-gray-600">
+            The link you followed may be broken or the page may have been removed.
+          </p>
+          <a
+            href="/en"
+            class="inline-flex items-center gap-2 mt-[20px] px-4 py-2 text-white bg-primary rounded-lg hover:bg-primary/90 transition"
+          >
+            Back to home
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
 

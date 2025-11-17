@@ -236,7 +236,7 @@ const getWidthClass = (totalPlans: number) => {
             )}
 
             <h3
-              class={`${namePlaneBold ? "lg:text-[34px]" : "lg:text-[26px]"} md:text-left text-center md:text-[31px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4`}
+              class={`${namePlaneBold ? "lg:text-[34px]" : "lg:text-[26px]"} md:text-left text-center md:text-[31px] text-[28px] text-title font-semibold md:leading-[33px] leading-[1.3em] mb-4`}
               set:html={plan.name}
             />
 
@@ -248,7 +248,7 @@ const getWidthClass = (totalPlans: number) => {
                   type="button"
                   data-gb={option.gb}
                   data-plan-id={plan.id}
-                  class={`gb-selector py-[10px] px-[24px]  font-[600] text-[16px] transition ${
+                  class={`gb-selector py-[10px] px-[24px]  font-semibold text-[16px] transition ${
                     option.gb === plan.defaultGb
                       ? "bg-primary text-white"
                       : "bg-title py-[10px] text-white hover:bg-primary"
@@ -261,9 +261,9 @@ const getWidthClass = (totalPlans: number) => {
 
             <!-- Pricing -->
             <div class="mb-6">
-              <p class="text-base text-title font-[600] mb-1">À seulement</p>
+              <p class="text-base text-title font-semibold mb-1">À seulement</p>
               <p
-                class="text-[40px] font-[600] leading-[54px] text-title"
+                class="text-[40px] font-semibold leading-[54px] text-title"
                 style="font-family: 'Montserrat', sans-serif;"
                 data-price-display={plan.id}
               >
@@ -277,7 +277,7 @@ const getWidthClass = (totalPlans: number) => {
                 plan.most_popular.is_most_popular
                   ? "bg-primary"
                   : "bg-title hover:bg-primary transition"
-              } text-white flex items-center mt-[18px] gap-3 justify-center font-[600] py-[16px] rounded-[10px] text-center mb-4 transition`}
+              } text-white flex items-center mt-[18px] gap-3 justify-center font-semibold py-[16px] rounded-[10px] text-center mb-4 transition`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -287,7 +287,7 @@ const getWidthClass = (totalPlans: number) => {
                 viewBox="0 0 24 24"
                 stroke-width="4"
                 stroke="currentColor"
-                class="size-3 font-[600]"
+                class="size-3 font-semibold"
               >
                 <path
                   stroke-linecap="round"

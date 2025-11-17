@@ -187,7 +187,7 @@ const montserratClassName = "font-montserrat";
   <div class="container">
     <div class="text-center">
       {smallTitle && (
-        <h1 class="md:text-[19px] text-[18px] font-[600] tracking-[-0.5px] text-title">
+        <h1 class="md:text-[19px] text-[18px] font-semibold tracking-[-0.5px] text-title">
           {smallTitle}
         </h1>
       )}
@@ -229,7 +229,7 @@ const montserratClassName = "font-montserrat";
           )}
 
           <h3
-            class="lg:text-[26px] lg:text-left text-center md:text-[30px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+            class="lg:text-[26px] lg:text-left text-center md:text-[30px] text-[28px] text-title font-semibold md:leading-[33px] leading-[1.3em] mb-4"
             set:html={plan.name}
           />
           <p class="text-[#022545BD] md:text-left text-center text-[15px] font-normal leading-[21px] tracking-[0.3px]">
@@ -247,14 +247,14 @@ const montserratClassName = "font-montserrat";
                 {plan.price_original}
               </span>
               <span
-                class={`numbers bg-primary py-[8px] text-white text-[15px] font-[600] px-[10px] rounded-[8px]`}
+                class={`numbers bg-primary py-[8px] text-white text-[15px] font-semibold px-[10px] rounded-[8px]`}
               >
                 Economisez {plan.save}
               </span>
             </div>
-            <p class="text-base text-title font-[600] mb-1">À seulement</p>
+            <p class="text-base text-title font-semibold mb-1">À seulement</p>
             <p
-              class={`numbers  text-[45px] font-[600] leading-[54px] text-title`}
+              class={`numbers  text-[45px] font-semibold leading-[54px] text-title`}
             >
               {plan.price_discounted}
             </p>
@@ -265,7 +265,7 @@ const montserratClassName = "font-montserrat";
               plan.most_popular.is_most_popular
                 ? "bg-primary"
                 : "bg-title hover:bg-primary transition"
-            } text-white flex items-center mt-[18px] gap-3 justify-center font-[600] py-[16px] rounded-[10px] text-center mb-4 transition`}
+            } text-white flex items-center mt-[18px] gap-3 justify-center font-semibold py-[16px] rounded-[10px] text-center mb-4 transition`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -275,7 +275,7 @@ const montserratClassName = "font-montserrat";
               viewBox="0 0 24 24"
               stroke-width={4}
               stroke="currentColor"
-              class="size-3 font-[600]"
+              class="size-3 font-semibold"
             >
               <path
                 stroke-linecap="round"
@@ -294,7 +294,7 @@ const montserratClassName = "font-montserrat";
 
           <!-- Star Rating -->
           <div class="flex items-center lg:justify-start justify-center gap-2 mb-6">
-            <span class="text-sm font-[600] text-title mr-2">Performances</span>
+            <span class="text-sm font-semibold text-title mr-2">Performances</span>
             <div class="flex">
               {[...Array(5)].map((_, i) => (
                 <svg
@@ -325,7 +325,7 @@ const montserratClassName = "font-montserrat";
                     loading="eager"
                   />
                   <span class="text-title">
-                    Optimisé <b class="font-[600]">SEO</b>
+                    Optimisé <b class="font-semibold">SEO</b>
                   </span>
                 </>
               ) : (
@@ -409,7 +409,7 @@ const montserratClassName = "font-montserrat";
             {plan.more_performance.exists && (
               <a
                 href={plan.more_performance?.href}
-                class="text-title text-[14px] font-[600] underline inline-flex items-center"
+                class="text-title text-[14px] font-semibold underline inline-flex items-center"
               >
                 {plan.more_performance.text}
               </a>

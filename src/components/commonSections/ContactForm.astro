@@ -10,7 +10,7 @@ const { title , classNameTitle = ""} = Astro.props;
   <div class="container text-center">
    <div class={classNameTitle}>
        <h1
-      class="text-white lg:text-[40px] md:text-[40px] font-[600] text-[36px] mb-6 pb-2 leading-relaxed"
+      class="text-white lg:text-[40px] md:text-[40px] font-semibold text-[36px] mb-6 pb-2 leading-relaxed"
       set:html={title}
     />
    </div>
@@ -47,7 +47,7 @@ const { title , classNameTitle = ""} = Astro.props;
 
       <button
         type="submit"
-        class="bg-primary hover:bg-primary/90 text-white rounded-[26px] sm:px-[150px] mt-12 sm:w-auto w-full font-[600] py-3 text-center disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+        class="bg-primary hover:bg-primary/90 text-white rounded-[26px] sm:px-[150px] mt-12 sm:w-auto w-full font-semibold py-3 text-center disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
       >
         Envoyer
       </button>

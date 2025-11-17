@@ -220,7 +220,7 @@ select {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
-  @apply lg:text-[63px] md:text-[45px] text-[43px] leading-[50px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[70px] font-[600] text-title;
+  @apply lg:text-[63px] md:text-[45px] text-[43px] leading-[50px] tracking-[-1.5px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[70px] font-semibold text-title;
 
 }
 
@@ -503,11 +503,11 @@ span {
 }
 
 .text-legal-documents h3 {
-  @apply text-title text-[27px] font-[600] mb-[20px]
+  @apply text-title text-[27px] font-semibold mb-[20px]
 }
 
 .text-legal-documents h2 {
-  @apply text-title text-[24px] font-[600]
+  @apply text-title text-[24px] font-semibold
 }
 
 .text-legal-documents ul {
@@ -833,8 +833,18 @@ li{
   background-color:#022545 !important;
 }
 
+#cc-main .pm__btn-group .pm__btn[data-role="all"]{
+  background-color: #00CC61 !important;
+  border: 0px solid black !important;
+  outline : none !important;
+  border-color : transparent !important
+}
+
 .pm__btn .pm__btn--secondary{
   background-color: #eaeff2 !important;
+  border: 0px solid black !important;
+  outline : none !important;
+  border-color : transparent !important
 }
 
 .dropdown-menu{
@@ -869,4 +879,15 @@ li{
   font-size: 0.7em !important;
 }
 
+.section-plans p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} 
 
+.features-plans li{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size : 15px;
+}

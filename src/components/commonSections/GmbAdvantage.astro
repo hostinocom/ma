@@ -15,7 +15,7 @@ const { advantages = [], title } = Astro.props;
 
 <section class="lg:my-[150px] my-[80px]">
   <div class="container">
-    <h2 class="big-title font-[600] mb-[30px] text-title" set:html={title}></h2>
+    <h2 class="big-title font-semibold mb-[30px] text-title" set:html={title}></h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-16">
       {advantages.map((advantage, index) => (
@@ -39,7 +39,7 @@ const { advantages = [], title } = Astro.props;
             </svg>
           </div>
 
-          <h3 class="md:text-[28px] text-[22px] text-title md:leading-[36px] tracking-[-0.8px] font-[600] mb-[20px]">
+          <h3 class="md:text-[28px] text-[22px] text-title md:leading-[36px] tracking-[-0.8px] font-semibold mb-[20px]">
             {advantage.title}
           </h3>
 

@@ -85,7 +85,7 @@ const {seoServiceCardsAdsDataImporter = seoServiceCardsData , title="  Les prest
         <div class="rounded-3xl p-8 flex flex-col justify-between">
           <div>
             <h3
-              class="md:text-[34px] text-title md:leading-[39px] tracking-[-1.1px] font-[600] text-[24px] mb-[20px]"
+              class="md:text-[34px] text-title md:leading-[39px] tracking-[-1.1px] font-semibold text-[24px] mb-[20px]"
               set:html={card.title}
             />
 
@@ -101,7 +101,7 @@ const {seoServiceCardsAdsDataImporter = seoServiceCardsData , title="  Les prest
           {card.buttonLink && (
             <a
               href={card.buttonLink}
-              class="inline-block text-white font-[600] rounded-lg transition-colors mt-6"
+              class="inline-block text-white font-semibold rounded-lg transition-colors mt-6"
             >
               <AnimatedButton
                 text={card.buttonText}

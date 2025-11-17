@@ -94,11 +94,11 @@ export default function InputSearchDomain({ id }: { id: string }) {
             name="domain_tld"
             value={selectedTld}
             onChange={(e) => setSelectedTld(e.target.value)}
-            className="sm:block hidden text-right text-[20px] text-title font-[600] focus:outline-none bg-white cursor-pointer"
+            className="sm:block hidden text-right text-[20px] text-title font-semibold focus:outline-none bg-white cursor-pointer"
             disabled={isLoading}
           >
             {domainOptions.map((tld) => (
-              <option key={tld} className="font-[600]" value={tld}>
+              <option key={tld} className="font-semibold" value={tld}>
                 {tld}
               </option>
             ))}

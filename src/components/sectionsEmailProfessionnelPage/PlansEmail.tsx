@@ -23,6 +23,7 @@ export type Plan = {
   gbOptions: {
     gb: string;
     price: string;
+    href: string
   }[];
   defaultGb: string;
   performance_stars: number;
@@ -60,17 +61,19 @@ const hostingPlans: Plan[] = [
       {
         gb: "8GB",
         price: "25 Dhs/mois",
+        href: "https://my.hostino.com/order.php?pid=65&language=french&country=MA&currency=1"
       },
       {
         gb: "25GB",
         price: "45 Dhs/mois",
+        href :"https://my.hostino.com/order.php?pid=75&language=french&country=MA&currency=1"
       },
     ],
     defaultGb: "8GB",
     performance_stars: 1,
     order: {
       text: "Commander",
-      href: "https://my.hostino.com/order.php?pid=75&language=french&country=MA&currency=1",
+      href: "https://my.hostino.com/order.php?pid=65&language=french&country=MA&currency=1"
     },
     features: [
       "Webmail",
@@ -114,21 +117,24 @@ const hostingPlans: Plan[] = [
       {
         gb: "8GB",
         price: "35 Dhs/mois",
+        href : "https://my.hostino.com/order.php?pid=66&language=french&currency=1&country=MA&currency="
       },
       {
         gb: "25GB",
         price: "50 Dhs/mois",
+        href : "https://my.hostino.com/order.php?pid=76&language=french&currency=1&country=MA&currency="
       },
       {
         gb: "50GB",
         price: "65 Dhs/mois",
+        href: "https://my.hostino.com/order.php?pid=78&language=french&currency=1&country=MA&currency="
       },
     ],
     defaultGb: "25GB",
     performance_stars: 4,
     order: {
       text: "Commander",
-      href: "https://my.hostino.com/order.php?pid=76&language=french&currency=1&country=MA&currency=",
+      href : "https://my.hostino.com/order.php?pid=76&language=french&currency=1&country=MA&currency="
     },
     features: [
       "Webmail",
@@ -169,21 +175,24 @@ const hostingPlans: Plan[] = [
       {
         gb: "8GB",
         price: "45 Dhs/mois",
+        href : "https://my.hostino.com/order.php?pid=68&language=french&currency=1&country=MA&currency="
       },
       {
         gb: "50GB",
         price: "75 Dhs/mois",
+        href : "https://my.hostino.com/order.php?pid=79&language=french&currency=1&country=MA&currency="
       },
       {
         gb: "100GB",
         price: "130 Dhs/mois",
+        href: "https://my.hostino.com/order.php?pid=80&language=french&currency=1&country=MA&currency="
       },
     ],
     defaultGb: "8GB",
     performance_stars: 5,
     order: {
       text: "Commander",
-      href: "https://my.hostino.com/order.php?pid=80&language=french&currency=1&country=MA&currency=",
+      href : "https://my.hostino.com/order.php?pid=68&language=french&currency=1&country=MA&currency="
     },
     features: [
       "Webmail",
@@ -308,24 +317,25 @@ const PlanCard = ({
 
       {namePlaneBold ? (
         <h3
-          className="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+          className="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title poppins-semibold md:leading-[33px] leading-[1.3em] mb-4"
           dangerouslySetInnerHTML={{ __html: plan.name }}
         />
       ) : (
         <h3
-          className="lg:text-[26px] md:text-left text-center md:text-[30px] text-[28px] text-title md:leading-[33px] leading-[1.3em] "
+          className="lg:text-[26px] sm:text-left text-center md:text-[30px] text-[28px] text-title md:leading-[33px] poppins-semibold leading-[1.3em] "
           dangerouslySetInnerHTML={{ __html: plan.name }}
         />
       )}
 
       <div className="border-t  border-gray-200 my-[40px]"></div>
 
-      <div className="flex rounded-[6px]  max-w-max overflow-hidden items-center lg:justify-start justify-center mb-6 flex-wrap">
+      <div className="w-full flex sm:justify-start justify-center">
+      <div className="flex rounded-[6px]  max-w-max overflow-hidden items-center  mb-6 flex-wrap">
         {plan.gbOptions.map((option) => (
           <button
             key={option.gb}
             onClick={() => setSelectedGb(option.gb)}
-            className={`py-[10px] px-[24px]  font-[600] text-[16px] transition ${
+            className={`py-[10px] px-[24px]  font-semibold text-[16px] transition ${
               selectedGb === option.gb
                 ? "bg-primary text-white"
                 : "bg-title text-white hover:bg-primary"
@@ -335,10 +345,11 @@ const PlanCard = ({
           </button>
         ))}
       </div>
+      </div>
 
       {/* Pricing */}
       <div className="mb-6">
-        <p className="text-base text-title font-semibold mb-1">À seulement</p>
+        <p className="text-[18px] text-title font-semibold mb-1">{plan.order.text === "Order now" ? "Starting at" : "À seulement"}</p>
         <p
           className="font-[Montserrat] text-[40px] font-semibold leading-[54px] text-title"
         >
@@ -352,7 +363,7 @@ const PlanCard = ({
           plan.most_popular.is_most_popular
             ? "bg-primary"
             : "bg-title hover:bg-primary transition"
-        } text-white flex items-center mt-[18px] gap-3 justify-center  py-[20px] rounded-[10px] text-center mb-4 transition`}
+        } text-white flex text-[18px] poppins-semibold items-center mt-[18px] gap-3 justify-center  py-[20px] rounded-[10px] text-center mb-4 transition`}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -362,7 +373,7 @@ const PlanCard = ({
           viewBox="0 0 24 24"
           strokeWidth={4}
           stroke="currentColor"
-          className="size-3 font-[600]"
+          className="size-3 font-semibold"
         >
           <path
             strokeLinecap="round"
@@ -376,7 +387,7 @@ const PlanCard = ({
 
       <div className="border-t  border-gray-200 my-[40px]"></div>
 
-      <ul className="text-gray-700 text-sm space-y-2 flex-grow">
+      <ul className="text-gray-700 features-plans text-sm space-y-2 flex-grow">
         {plan.features.map((feature : any, index : number)  => (
           <li
             key={index}

@@ -124,7 +124,7 @@ const {
           } bg-white relative lg:text-left text-center rounded-[10px] lg:w-full md:w-[70vw] w-full mx-auto mb-4 md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px] border border-gray-300 h-full`}
         >
           <h3
-            class="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+            class="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title font-semibold md:leading-[33px] leading-[1.3em] mb-4"
             set:html={plan.name}
           />
           <p class="text-[#022545BD] md:text-left text-center text-[14px] font-normal leading-[21px] tracking-[0.3px]">
@@ -135,7 +135,7 @@ const {
 
           {/* Pricing */}
           <div class="mb-6">
-            <p class="text-[45px] font-[600] leading-[54px] text-title numbers">
+            <p class="text-[45px] font-semibold leading-[54px] text-title numbers">
               {plan.price}
             </p>
           </div>
@@ -147,7 +147,7 @@ const {
               bgColor={plan.is_most_popular ? "bg-primary" : "bg-title"}
               textColor="text-white"
               hoverBgColor={plan.is_most_popular ? "hover:bg-title" : ""}
-              class="text-white px-[40px] font-[600] py-[10px] rounded-[10px]"
+              class="text-white px-[40px] font-semibold py-[10px] rounded-[10px]"
               arrowButton={true}
             />
           </a>

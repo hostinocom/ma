@@ -51,47 +51,47 @@ export const config: CookieConsentConfig = {
       en: {
         consentModal: {
           title: "We care about your privacy",
-          description:'This website uses cookies that are needed for the site to work properly and to get data on how you interact with it, as well as for marketing purposes.',
+          description:"This website uses cookies to enhance your experience.",
           acceptAllBtn: 'Accept all',
           acceptNecessaryBtn: 'Reject all',
           showPreferencesBtn: 'Cookie settings',
         },
         preferencesModal: {
-          title: 'Consent Preferences Center',
-          acceptAllBtn: 'Accept all',
-          acceptNecessaryBtn: 'Reject all',
-          savePreferencesBtn: 'Save preferences',
-          closeIconLabel: 'Close modal',
+          title: 'Cookie Preferences Center',
+          acceptAllBtn: 'Accept All',
+          acceptNecessaryBtn: 'Reject All',
+          savePreferencesBtn: 'Cookie Settings',
+          closeIconLabel: 'Close',
           serviceCounterLabel: 'Service|Services',
           sections: [
             {
-              title: 'Cookie Usage',
+              title: 'Use of Cookies',
               description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                'We use cookies to personalize content and ads, to provide social media features and to analyze our traffic. We also share information about your use of our site with our social media, advertising and analytics partners.',
             },
             {
               title:
                 'Strictly Necessary Cookies <span class="pm__badge">Always Enabled</span>',
               description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                'These cookies are essential for the website to function and cannot be disabled in our systems. They are usually set in response to actions you take that correspond to a service request, such as setting your privacy preferences, logging in, or filling out forms.',
               linkedCategory: 'necessary',
             },
             {
               title: 'Functionality Cookies',
               description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                'These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages. If you do not allow these cookies, some or all of these services may not function properly.',
               linkedCategory: 'functionality',
             },
             {
               title: 'Analytics Cookies',
               description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                'These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us know which pages are the most and least popular and see how visitors move around the site. All information collected by these cookies is aggregated and therefore anonymous.',
               linkedCategory: 'analytics',
             },
             {
-              title: 'More information',
+              title: 'More Information',
               description:
-                'For any query in relation to my policy on cookies and your choices, please <a class="cc__link" href="#yourdomain.com">contact me</a>.',
+                'For any questions regarding our cookie policy and your choices, please <a class="cc__link" href="/contact">contact us</a>.',
             },
           ],
         },

@@ -169,10 +169,10 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
 
 <section id="plans" class=" lg:mb-[150px] plans-section mb-[80px]" id="plans">
   <div class="container mx-auto">
-    <h2 class="title-section text-center pb-[30px] font-[600] text-title" set:html={title}></h2>
+    <h2 class="title-section text-center pb-[30px] font-semibold text-title" set:html={title}></h2>
     
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid section-plans md:grid-cols-3 gap-8">
       {plans.map((plan) => (
         <div
           class={`${
@@ -191,29 +191,29 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
           )}
           
           <h3 class="text-2xl font-bold text-title text-title mb-[20px]" set:html={plan.name}></h3>
-          <p class="text-title mb-4" set:html={plan.subtext}></p>
+          <p class="text-title text-[14px] mb-4" set:html={plan.subtext}></p>
           
           <div class="border-t border-gray-200 my-[40px]"></div>
           
           <div class="mb-4">
            <div class="flex items-center lg:justify-start justify-center gap-2 mb-2">
               <span
-                class={`numbers text-primary font-medium line-through text-lg`}
+                class={`numbers text-primary  line-through text-lg`}
               >
                 {plan.price_original}
               </span>
               <span
-                class={`numbers bg-primary py-[8px] text-white text-[15px] font-[600] px-[10px] rounded-[8px]`}
+                class={`numbers bg-primary py-[8px] text-white text-[15px] font-semibold px-[10px] rounded-[8px]`}
               >
-                Economisez {plan.save}
+                Save {plan.save}
               </span>
             </div>
-            <div class="text-sm text-gray-600 mb-1">For only</div>
-            <p
-              class={`numbers  text-[45px] font-[600] leading-[54px] text-title`}
+            <div class="text-[16px] text-title poppins-semibold mb-1">For only</div>
+            <span
+              class={`numbers text-[45px] font-semibold leading-[54px] text-title`}
             >
               {plan.price_discounted}
-            </p>
+            </span>
           </div>
           
             <a
@@ -222,7 +222,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
               plan.most_popular.is_most_popular
                 ? "bg-primary"
                 : "bg-title hover:bg-primary transition"
-            } text-white flex items-center mt-[18px] gap-3 justify-center font-[600] py-[16px] rounded-[10px] text-center mb-4 transition`}
+            } text-white flex items-center mt-[18px] gap-3 justify-center poppins-semibold  py-[16px] rounded-[10px] text-center mb-4 transition`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -232,7 +232,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
               viewBox="0 0 24 24"
               stroke-width={4}
               stroke="currentColor"
-              class="size-3 font-[600]"
+              class="size-3 font-semibold"
             >
               <path
                 stroke-linecap="round"
@@ -242,7 +242,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
             </svg>
           </a>
           
-          <p class="text-sm text-gray-600 mb-4" set:html={plan.price_ttc}></p>
+          <p class="text-sm text-title mb-4" set:html={plan.price_ttc}></p>
           
           <div class="border-t border-gray-200 my-[40px]"></div>
           
@@ -271,13 +271,25 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
               <p>
                 <img src="/images/google-svg-dark.svg" alt="SEO" class="inline w-4 h-4 mr-1" />
                 <span class={plan.id === 3 ? "" : "text-gray-400"}>
-                  {plan.id === 3 ? "<b>SEO</b> Optimized" : "SEO Optimized"}
+                  {
+                    plan.id === 3 ? (
+                        <><b>SEO</b> Optimized</>
+                    ) : (
+                      <>"SEO Optimized"</>
+                    )
+                  }
                 </span>
               </p>
             )}
-            {plan.features.free_domain && (
+            {plan.features.free_domain ? (
               <p>
-                <span class={plan.id === 2 ? "" : "text-gray-400"}>
+                <span class={"text-title"}>
+                  Free <b><i>domain name</i></b>
+                </span>
+              </p>
+            ) : (
+              <p>
+                <span class={"text-gray-400"}>
                   Free <b><i>domain name</i></b>
                 </span>
               </p>
@@ -316,7 +328,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
             <div class="mt-4">
               <a
                 href={plan.more_performance.href}
-                class="text-primary hover:underline text-sm font-semibold"
+                class="text-title underline text-[14px] font-semibold"
               >
                 {plan.more_performance.text}
               </a>

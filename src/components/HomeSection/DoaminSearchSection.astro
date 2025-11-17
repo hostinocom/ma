@@ -15,7 +15,7 @@ const { id } = Astro.props;
   class="lg:mt-[150px] mt-[60px] bg-gradient-to-r from-[#1b083b] to-[#7e5eba] text-white"
 >
   <div class="container py-[120px] text-center">
-    <h2 class="title-section-white max-big-title text-white font-[600] mb-4">
+    <h2 class="title-section-white max-big-title text-white font-semibold mb-4">
       Enregistrer votre nom de domaine
     </h2>
     <p class="mb-8 paragraph-white">
@@ -37,7 +37,7 @@ const { id } = Astro.props;
         <div class="mr-[20px] flex items-center">
           <select
             id="domainTld"
-            class="sm:block hidden text-right text-[20px] text-title font-[600]"
+            class="sm:block hidden text-right text-[20px] text-title font-semibold"
           >
             {domainOptions.map((tld) => (
               <option value={tld}>{tld}</option>

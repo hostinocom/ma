@@ -100,12 +100,12 @@ const getWidthClass = (length: number) => {
         <div>
           {namePlaneBold ? (
             <h3
-              class="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+              class="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title font-semibold md:leading-[33px] leading-[1.3em] mb-4"
               set:html={plan.name}
             ></h3>
           ) : (
             <h3
-              class="lg:text-[26px] md:text-left text-center md:text-[30px] text-[28px] text-title font-[600] md:leading-[33px] leading-[1.3em] mb-4"
+              class="lg:text-[26px] md:text-left text-center md:text-[30px] text-[28px] text-title font-semibold md:leading-[33px] leading-[1.3em] mb-4"
               set:html={plan.name}
             ></h3>
           )}
@@ -126,14 +126,14 @@ const getWidthClass = (length: number) => {
                   <span class="text-primary numbers font-medium line-through text-lg">
                     {plan.price_original}
                   </span>
-                  <span class="bg-primary numbers py-[8px] text-white text-[15px] font-[600] px-[10px] rounded-[8px]">
+                  <span class="bg-primary numbers py-[8px] text-white text-[15px] font-semibold px-[10px] rounded-[8px]">
                     Save {plan.save}
                   </span>
                 </div>
               )}
             </div>
-            <p class="text-base text-title font-[600] mb-1">For only</p>
-            <p class="text-[45px] numbers font-[600] leading-[54px] text-title">
+            <p class="text-[16px] text-title poppins-semibold mb-1">For only</p>
+            <p class="text-[45px] numbers font-semibold leading-[54px] text-title">
               {plan.price_discounted}
             </p>
           </div>
@@ -144,7 +144,7 @@ const getWidthClass = (length: number) => {
               plan.most_popular.is_most_popular
                 ? "bg-primary"
                 : "bg-title hover:bg-primary transition"
-            } text-white flex items-center mt-[18px] gap-3 justify-center font-[600] py-[16px] rounded-[10px] text-center mb-4 transition`}
+            } text-white flex items-center mt-[18px] gap-3 justify-center font-semibold py-[16px] rounded-[10px] text-center mb-4 transition`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -154,7 +154,7 @@ const getWidthClass = (length: number) => {
               viewBox="0 0 24 24"
               stroke-width="4"
               stroke="currentColor"
-              class="size-3 font-[600]"
+              class="size-3 font-semibold"
             >
               <path
                 stroke-linecap="round"
@@ -266,7 +266,7 @@ const getWidthClass = (length: number) => {
               <div class="mt-6">
                 <a
                   href={plan.more_performance.href}
-                  class="text-title text-base font-[600] underline inline-flex items-center"
+                  class="text-title text-base font-semibold underline inline-flex items-center"
                 >
                   {plan.more_performance.text}
                 </a>

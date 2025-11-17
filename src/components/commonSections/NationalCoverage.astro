@@ -24,31 +24,116 @@ const {
     titleMap
     } = Astro.props;
 
+interface City {
+  name: string;
+  href: string;
+  nameCityLink: string;
+}
+
 const moroccanCities: City[] = [
-  { name: "Tanger", href: "https://www.hostino.ma/agence-seo-tanger/" },
-  { name: "Rabat", href: "https://www.hostino.ma/agence-seo-rabat/" },
-  { name: "Kénitra", href: "https://www.hostino.ma/agence-seo-kenitra/" },
-  { name: "Tétouan", href: "https://www.hostino.ma/agence-seo-tetouan/" },
-  { name: "Larache", href: "https://www.hostino.ma/agence-seo-larache/" },
-  { name: "Asilah", href: "https://www.hostino.ma/agence-seo-asilah/" },
+  { 
+    name: "Tanger", 
+    href: "https://www.hostino.ma/agence-seo-tanger/",
+    nameCityLink: "tanger"
+  },
+  { 
+    name: "Rabat", 
+    href: "https://www.hostino.ma/agence-seo-rabat/",
+    nameCityLink: "rabat"
+  },
+  { 
+    name: "Kénitra", 
+    href: "https://www.hostino.ma/agence-seo-kenitra/",
+    nameCityLink: "kenitra"
+  },
+  { 
+    name: "Tétouan", 
+    href: "https://www.hostino.ma/agence-seo-tetouan/",
+    nameCityLink: "tetouan"
+  },
+  { 
+    name: "Larache", 
+    href: "https://www.hostino.ma/agence-seo-larache/",
+    nameCityLink: "larache"
+  },
+  { 
+    name: "Asilah", 
+    href: "https://www.hostino.ma/agence-seo-asilah/",
+    nameCityLink: "asilah"
+  },
   {
     name: "Chefchaouen",
     href: "https://www.hostino.ma/agence-seo-chefchaouen/",
+    nameCityLink: "chefchaouen"
   },
-  { name: "Al hoceima", href: "https://www.hostino.ma/agence-seo-al-hoceima/" },
-  { name: "Nador", href: "https://www.hostino.ma/agence-seo-nador/" },
-  { name: "Casablanca", href: "https://www.hostino.ma/agence-seo-casablanca/" },
-  { name: "Khouribga", href: "https://www.hostino.ma/agence-seo-khouribga/" },
-  { name: "Fes", href: "https://www.hostino.ma/agence-seo-fes/" },
-  { name: "Meknès", href: "https://www.hostino.ma/agence-seo-meknes/" },
-  { name: "Ifrane", href: "https://www.hostino.ma/agence-seo-ifrane/" },
-  { name: "Marrakech", href: "https://www.hostino.ma/agence-seo-marrakech/" },
-  { name: "Essaouira", href: "https://www.hostino.ma/agence-seo-essaouira/" },
-  { name: "Benguerir", href: "https://www.hostino.ma/agence-seo-benguerir/" },
-  { name: "Agadir", href: "https://www.hostino.ma/agence-seo-agadir/" },
-  { name: "Laayoune", href: "https://www.hostino.ma/agence-seo-laayoune/" },
-  { name: "Dakhla", href: "https://www.hostino.ma/agence-seo-dakhla/" },
+  { 
+    name: "Al hoceima", 
+    href: "https://www.hostino.ma/agence-seo-al-hoceima/",
+    nameCityLink: "al-hoceima"
+  },
+  { 
+    name: "Nador", 
+    href: "https://www.hostino.ma/agence-seo-nador/",
+    nameCityLink: "nador"
+  },
+  { 
+    name: "Casablanca", 
+    href: "https://www.hostino.ma/agence-seo-casablanca/",
+    nameCityLink: "casablanca"
+  },
+  { 
+    name: "Khouribga", 
+    href: "https://www.hostino.ma/agence-seo-khouribga/",
+    nameCityLink: "khouribga"
+  },
+  { 
+    name: "Fes", 
+    href: "https://www.hostino.ma/agence-seo-fes/",
+    nameCityLink: "fes"
+  },
+  { 
+    name: "Meknès", 
+    href: "https://www.hostino.ma/agence-seo-meknes/",
+    nameCityLink: "meknes"
+  },
+  { 
+    name: "Ifrane", 
+    href: "https://www.hostino.ma/agence-seo-ifrane/",
+    nameCityLink: "ifrane"
+  },
+  { 
+    name: "Marrakech", 
+    href: "https://www.hostino.ma/agence-seo-marrakech/",
+    nameCityLink: "marrakech"
+  },
+  { 
+    name: "Essaouira", 
+    href: "https://www.hostino.ma/agence-seo-essaouira/",
+    nameCityLink: "essaouira"
+  },
+  { 
+    name: "Benguerir", 
+    href: "https://www.hostino.ma/agence-seo-benguerir/",
+    nameCityLink: "benguerir"
+  },
+  { 
+    name: "Agadir", 
+    href: "https://www.hostino.ma/agence-seo-agadir/",
+    nameCityLink: "agadir"
+  },
+  { 
+    name: "Laayoune", 
+    href: "https://www.hostino.ma/agence-seo-laayoune/",
+    nameCityLink: "laayoune"
+  },
+  { 
+    name: "Dakhla", 
+    href: "https://www.hostino.ma/agence-seo-dakhla/",
+    nameCityLink: "dakhla"
+  },
 ];
+
+
 ---
 
 <section class="lg:my-[150px] my-[80px]">
@@ -69,7 +154,7 @@ const moroccanCities: City[] = [
           {moroccanCities.map((city, index) => (
             <a
               key={index}
-              href={`/${href}-${city.name.toLowerCase()}`}
+              href={`/${href}-${city.nameCityLink}`}
               class="text-title mb-[5px] transition-colors font-normal"
             >
               {topic} {city.name}

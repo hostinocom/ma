@@ -103,7 +103,7 @@ function getStatusIcon(status: "success" | "warning" | "error") {
           <tr class="bg-[#f8f8f8]">
             {seoImpactContent.performanceTable.headers.map((header, index) => (
               <th
-                class={`p-4 text-left font-[600] ${
+                class={`p-4 text-left font-semibold ${
                   index === 2
                     ? "text-[#0A2540] bg-[#E8F5E9]"
                     : index === 3
@@ -124,7 +124,7 @@ function getStatusIcon(status: "success" | "warning" | "error") {
               <td class="p-4 bg-green-50">
                 <div class="flex items-center gap-2">
                   <span set:html={getStatusIcon(metric.hostinoStatus)} />
-                  <span class="font-[600] text-green-600">
+                  <span class="font-semibold text-green-600">
                     {metric.hostinoValue}
                   </span>
                 </div>
@@ -141,7 +141,7 @@ function getStatusIcon(status: "success" | "warning" | "error") {
                 <div class="flex items-center gap-2">
                   <span set:html={getStatusIcon(metric.classicStatus)} />
                   <span
-                    class={`font-[600] ${
+                    class={`font-semibold ${
                       metric.classicStatus === "success"
                         ? "text-green-600"
                         : metric.classicStatus === "warning"
