@@ -94,11 +94,11 @@ export default function InputSearchDomain({ id }: { id: string }) {
             name="domain_tld"
             value={selectedTld}
             onChange={(e) => setSelectedTld(e.target.value)}
-            className="sm:block hidden text-right text-[20px] text-title font-semibold focus:outline-none bg-white cursor-pointer"
+            className="sm:block hidden text-right text-[20px] text-title poppins-semibold  focus:outline-none bg-white cursor-pointer"
             disabled={isLoading}
           >
             {domainOptions.map((tld) => (
-              <option key={tld} className="font-semibold" value={tld}>
+              <option key={tld} className="poppins-semibold " value={tld}>
                 {tld}
               </option>
             ))}
@@ -109,7 +109,7 @@ export default function InputSearchDomain({ id }: { id: string }) {
           onClick={handleSubmit}
           type="button"
           disabled={isLoading}
-          className="bg-primary hover:bg-primary/90 sm:py-0 py-6 text-white font-semibold px-8 sm:text-lg text-xl transition whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="bg-primary hover:bg-primary/90 sm:py-0 py-6 text-white poppins-semibold  px-8 sm:text-lg text-xl transition whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isLoading ? (
             <>

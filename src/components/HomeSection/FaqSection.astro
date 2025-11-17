@@ -96,7 +96,7 @@ const faqData = [
               class="w-full bg-white rounded-lg px-6 py-5 flex items-center justify-between text-left group"
               aria-expanded="false"
             >
-              <span class="text-[16px] font-semibold text-title pr-4 transition-colors duration-300">
+              <span class="text-[19px] poppins-semibold  text-title pr-4 transition-colors duration-300">
                 {item.question}
               </span>
               <svg
@@ -121,12 +121,12 @@ const faqData = [
             >
               <div class="px-6 pb-6 text-[#022545] leading-relaxed">
                 {item.answer && (
-                  <div class="font-normal" set:html={item.answer} />
+                  <div class="poppins-regular" set:html={item.answer} />
                 )}
                 {item.answers && (
                   <>
                     {item.answers.map((phrase, idx) => (
-                      <p class={idx < item.answers.length - 1 ? "mb-6 font-normal" : "font-normal"}>
+                      <p class={idx < item.answers.length - 1 ? "mb-6 poppins-regular" : "poppins-regular"}>
                         {phrase}
                       </p>
                     ))}
@@ -148,7 +148,7 @@ const faqData = [
               class="w-full bg-white rounded-lg px-6 py-5 flex items-center justify-between text-left group"
               aria-expanded="false"
             >
-              <span class="text-[16px] font-semibold text-title pr-4 transition-colors duration-300">
+              <span class="text-[19px] poppins-semibold  text-title pr-4 transition-colors duration-300">
                 {item.question}
               </span>
               <svg

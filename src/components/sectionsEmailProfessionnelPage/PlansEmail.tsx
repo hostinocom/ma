@@ -1,7 +1,7 @@
 "use client";
 
 
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 
 
 type AnimatedButtonProps = {
@@ -287,6 +287,14 @@ const PlanCard = ({
 }) => {
   const [selectedGb, setSelectedGb] = useState(plan.defaultGb);
   const currentOption = plan.gbOptions.find((opt) => opt.gb === selectedGb);
+  const  [hrefOrder , setHrefOrder ] = useState(currentOption?.href)
+
+
+  useEffect(() => {
+    const selectedOption = plan.gbOptions.find((opt) => opt.gb === selectedGb);
+    console.log(selectedOption)
+    setHrefOrder(selectedOption?.href);
+  }, [selectedGb]);
 
   const getWidthClass = () => {
     console.log(totalPlans);
@@ -302,7 +310,7 @@ const PlanCard = ({
         plan.most_popular.is_most_popular && "border-3 border-primary"
       } bg-white relative lg:text-left text-center rounded-[10px] 
       ${getWidthClass()}
-       lg:pt-[55px] lg:px-[50px] lg:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px] border border-gray-300 h-full`}
+       lg:pt-[55px] xl:px-[50px] lg:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[35px] pt-[45px] px-[25px] pb-[35px] border border-gray-300 h-full`}
     >
       {plan.most_popular.is_most_popular && (
         <div className="absolute py-[8px] bg-primary px-[20px] text-[16px] sm:left-1/3 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-white text-center font-meduim inline-block">
@@ -317,12 +325,12 @@ const PlanCard = ({
 
       {namePlaneBold ? (
         <h3
-          className="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title poppins-semibold md:leading-[33px] leading-[1.3em] mb-4"
+          className="lg:text-[34px] md:text-left text-center md:text-[31px] text-[28px] text-title poppins-semibold  md:leading-[33px] leading-[1.3em] mb-4"
           dangerouslySetInnerHTML={{ __html: plan.name }}
         />
       ) : (
         <h3
-          className="lg:text-[26px] sm:text-left text-center md:text-[30px] text-[28px] text-title md:leading-[33px] poppins-semibold leading-[1.3em] "
+          className="lg:text-[26px] sm:text-left text-center md:text-[30px] text-[28px] text-title md:leading-[33px] poppins-semibold  leading-[1.3em] "
           dangerouslySetInnerHTML={{ __html: plan.name }}
         />
       )}
@@ -330,12 +338,12 @@ const PlanCard = ({
       <div className="border-t  border-gray-200 my-[40px]"></div>
 
       <div className="w-full flex sm:justify-start justify-center">
-      <div className="flex rounded-[6px]  max-w-max overflow-hidden items-center  mb-6 flex-wrap">
+      <div className="flex rounded-[6px] gap-[1px]  w-full overflow-hidden items-center  mb-6 flex-wrap">
         {plan.gbOptions.map((option) => (
           <button
             key={option.gb}
             onClick={() => setSelectedGb(option.gb)}
-            className={`py-[10px] px-[24px]  font-semibold text-[16px] transition ${
+            className={`py-[8px] lg:px-[18px] w-[33%] px-[18px] poppins-semibold  text-[16px] transition ${
               selectedGb === option.gb
                 ? "bg-primary text-white"
                 : "bg-title text-white hover:bg-primary"
@@ -349,21 +357,21 @@ const PlanCard = ({
 
       {/* Pricing */}
       <div className="mb-6">
-        <p className="text-[18px] text-title font-semibold mb-1">{plan.order.text === "Order now" ? "Starting at" : "À seulement"}</p>
+        <p className="text-[18px] text-title poppins-semibold  mb-1">{plan.order.text === "Order now" ? "Starting at" : "À seulement"}</p>
         <p
-          className="font-[Montserrat] text-[40px] font-semibold leading-[54px] text-title"
+          className="font-[Montserrat] text-[40px] poppins-semibold  leading-[54px] text-title"
         >
           {currentOption?.price}
         </p>
       </div>
 
       <a
-        href={plan.order.href}
+        href={hrefOrder}
         className={`w-full ${
           plan.most_popular.is_most_popular
             ? "bg-primary"
             : "bg-title hover:bg-primary transition"
-        } text-white flex text-[18px] poppins-semibold items-center mt-[18px] gap-3 justify-center  py-[20px] rounded-[10px] text-center mb-4 transition`}
+        } text-white flex text-[18px] poppins-semibold  items-center mt-[18px] gap-3 justify-center  py-[20px] rounded-[10px] text-center mb-4 transition`}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -373,7 +381,7 @@ const PlanCard = ({
           viewBox="0 0 24 24"
           strokeWidth={4}
           stroke="currentColor"
-          className="size-3 font-semibold"
+          className="size-3 poppins-semibold "
         >
           <path
             strokeLinecap="round"
@@ -418,7 +426,7 @@ export default function PlansEmail({
   title = `Choisissez votre plan email<br className="sm:block hidden"/> professionnel {ville}`
 }: Props) {
   return (
-    <section id={id} className={`${className} overflow-hidden  relative`}>
+    <section id={"plans"} className={`${className} overflow-hidden  relative`}>
       <div className="container">
         {!heroHeading && (
           <div className="text-center">

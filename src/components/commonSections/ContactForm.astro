@@ -10,7 +10,7 @@ const { title , classNameTitle = ""} = Astro.props;
   <div class="container text-center">
    <div class={classNameTitle}>
        <h1
-      class="text-white lg:text-[40px] md:text-[40px] font-semibold text-[36px] mb-6 pb-2 leading-relaxed"
+      class="text-white lg:text-[40px] md:text-[40px] poppins-semibold  text-[36px] mb-6 pb-2 leading-relaxed"
       set:html={title}
     />
    </div>
@@ -47,7 +47,7 @@ const { title , classNameTitle = ""} = Astro.props;
 
       <button
         type="submit"
-        class="bg-primary hover:bg-primary/90 text-white rounded-[26px] sm:px-[150px] mt-12 sm:w-auto w-full font-semibold py-3 text-center disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+        class="bg-primary hover:bg-primary/90 text-white rounded-[26px] sm:px-[150px] mt-12 sm:w-auto w-full poppins-semibold  py-3 text-center disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
       >
         Envoyer
       </button>
@@ -100,18 +100,18 @@ form?.addEventListener('submit', async (e) => {
 
     if (result.success) {
       messageDiv.textContent = '✅ Message envoyé avec succès!';
-      messageDiv.className = 'mt-4 text-sm text-green-400 font-semibold';
+      messageDiv.className = 'mt-4 text-sm text-green-400 poppins-semibold ';
       form.reset(); // Clear the form
     } else {
       messageDiv.textContent = `❌ ${result.message}`;
-      messageDiv.className = 'mt-4 text-sm text-red-400 font-semibold';
+      messageDiv.className = 'mt-4 text-sm text-red-400 poppins-semibold ';
     }
     messageDiv.classList.remove('hidden');
     
   } catch (error) {
     console.error('Erreur réseau:', error);
     messageDiv.textContent = '❌ Erreur de connexion. Veuillez réessayer.';
-    messageDiv.className = 'mt-4 text-sm text-red-400 font-semibold';
+    messageDiv.className = 'mt-4 text-sm text-red-400 poppins-semibold ';
     messageDiv.classList.remove('hidden');
   } finally {
     submitButton.disabled = false;

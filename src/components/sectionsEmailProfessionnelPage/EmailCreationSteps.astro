@@ -18,7 +18,7 @@ const steps: Step[] = [
   {
     number: "01",
     title: `Choisir un plan<br  /> <span class="border-bottom">Maily®</span>`,
-    content: `La première étape consiste à <strong class="font-semibold text-[#0d1b32]">choisir l'offre</strong> la plus adaptée à vos besoins en matière de stockage, de nombre d'utilisateurs, etc.`,
+    content: `La première étape consiste à <strong class="poppins-semibold  text-[#0d1b32]">choisir l'offre</strong> la plus adaptée à vos besoins en matière de stockage, de nombre d'utilisateurs, etc.`,
     button: {
       text: "Voir nos offres",
       href: "#offers",
@@ -27,7 +27,7 @@ const steps: Step[] = [
   {
     number: "02",
     title: `Passer au <br  /> <span class="border-bottom">paiement</span>`,
-    content: `Sélectionnez le <strong class="font-semibold text-[#0d1b32]">nombre d'utilisateurs</strong> Maily®. Une fois le paiement effectué, vous pouvez gérer vos emails depuis la gestion de votre compte Maily®.`,
+    content: `Sélectionnez le <strong class="poppins-semibold  text-[#0d1b32]">nombre d'utilisateurs</strong> Maily®. Une fois le paiement effectué, vous pouvez gérer vos emails depuis la gestion de votre compte Maily®.`,
   },
   {
     icon: `<svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="10" height="10">
@@ -48,7 +48,7 @@ const {
 <section class="lg:my-[150px] my-[80px]">
   <div class="container">
     <!-- Section Header -->
-    <h2 class="font-semibold sm:text-left text-center title-section" set:html={title} />
+    <h2 class="poppins-semibold  sm:text-left text-center title-section" set:html={title} />
  
 
     <!-- Steps Container - Responsive layout -->
@@ -58,8 +58,8 @@ const {
           <!-- Step Number/Icon -->
           <div
             class={`
-              font-semibold leading-[1] lg:mb-[20px]
-              ${step.number ? "text-primary text-[58px] font-semibold" : ""}
+              poppins-semibold  leading-[1] lg:mb-[20px]
+              ${step.number ? "text-primary text-[58px] poppins-semibold " : ""}
               ${
                 step.icon
                   ? "bg-primary rounded-full py-[10px] mb-[20px] w-12 h-12 flex items-center justify-center"
@@ -76,7 +76,7 @@ const {
 
           <!-- Title -->
           <h3
-            class="text-[28px] md:text-[27px]  font-semibold text-title lg:mb-[15px] mb-[5px] inline-block"
+            class="text-[28px] md:text-[27px]  poppins-semibold  text-title lg:mb-[15px] mb-[5px] inline-block"
             set:html={step.title}
           />
 
@@ -92,7 +92,7 @@ const {
                 bgColor={"bg-transparent"}
                 textColor={"text-title"}
                 hoverBgColor={"bg-transparent"}
-                class="text-title border-3 border-primary rounded-md px-[50px] font-semibold py-[10px]"
+                class="text-title border-3 border-primary rounded-md px-[50px] poppins-semibold  py-[10px]"
                 arrowButton={true}
                 colorArrow={"#022545"}
               />

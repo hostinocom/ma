@@ -22,7 +22,7 @@ export default defineConfig({
           local: 'Poppins',
           src: '/Poppins/*.ttf',
           transform(font) {
-            if (font.basename === 'Poppins-SemiBold') {
+            if (font.basename === 'poppins-semibold ') {
               font.weight = 600
             } else if (font.basename === 'Poppins-Regular') {
               font.weight = 400
