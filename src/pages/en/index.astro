@@ -1,7 +1,7 @@
 ---
 // src/pages/en/index.astro
 import Layout from '../../layouts/Layout.astro';
-import HeroSectionEn from '../../components/HomeSectionEn/HeroSectionEn.astro';
+import HeroSection from '../../components/HomeSection/HeroSection.astro';
 import TrustedBySection from '../../components/commonSections/TrustedBySection.astro';
 import TextLeftImageRight from '../../components/commonSections/TextLeftImageRight.astro';
 
@@ -247,7 +247,13 @@ const articleSchema = {
 >
 
   <main>
-    <HeroSectionEn />
+    <HeroSection
+          subtitle = "Web Hosting Morocco",
+          title="Web Hosting in Morocco",
+          question="NEED SUPPORT?",
+          altImage="Web Hosting Morocco"
+    />
+
 	  <PlansSectionEn />
     <TrustedBySection 
       classNameImage="md:w-[80%] w-[100%] mx-auto h-auto brightness" 

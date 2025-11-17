@@ -289,7 +289,6 @@ const articleSchema = {
     allInputs.forEach((input) => clearError(input as HTMLElement));
 
     // Get form data
-    const formData = new FormData(form);
     const fullName = formData.get('fullName') as string;
     const company = formData.get('company') as string;
     const phone = formData.get('phone') as string;

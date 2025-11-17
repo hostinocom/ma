@@ -5,7 +5,11 @@
 import ConsultButton from '../ui/ConsultButton.astro';
 
 const {
-  email
+  email , 
+  subtitle = "Hébergement web Maroc",
+  title="Hébergement web depuis le Maroc",
+  question="CONSULTATION PAR EMAIL ?",
+  altImage="Hébergement web Maroc"
 } = Astro.props;
 ---
 
@@ -16,19 +20,17 @@ const {
     <!-- Text Content -->
     <div class="col-span-1 flex sm:px-[0] px-[30px] flex-col custom-row-gap mb-5 md:mb-0 md:pr-10 text-center md:text-left">
       <h1 class="md:text-[19px] text-[18px] font-[600] tracking-[-0.5px] text-title">
-        Hébergement web Maroc
+        {subtitle}
       </h1>
       <h2 class="big-title leading-[49px] font-[600] text-title">
-        Hébergement web depuis le Maroc
+        {title}
       </h2>
 
-     
        <ConsultButton href="#plans" />
-      
-     
+    
              <div class="flex flex-col md:items-start items-center">
         <p class="text-title text-[13px] font-[500] py-[5px] mb-[10px] tracking-[1.2px]">
-          CONSULTATION PAR EMAIL ?
+          {question}
         </p>
         <p class="border-bottom text-[31px] font-[600] text-title">
           info@hostino.com
@@ -43,7 +45,7 @@ const {
       <div class="relative w-full">
         <img
           src="/images/01/hebergement-web-maroc.webp"
-          alt="Hébergement web Maroc"
+          alt={altImage}
           fetchpriority=high
           width={1300}
           height={977}
