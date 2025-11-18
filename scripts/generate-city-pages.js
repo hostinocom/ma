@@ -301,6 +301,18 @@ moroccanCitiesMaps.forEach((city) => {
     `src="${city.src}"`
   );
   
+  // Replace WhyChooseSection title - replace "Ville" with city name (first letter capitalized)
+  const cityNameCapitalized = cityName.charAt(0).toUpperCase() + cityName.slice(1);
+  content = content.replace(
+    /<WhyChooseSection title=`Pourquoi choisir <br \/> Hébergement <i>web Ville<\/i> \?`\/>/g,
+    `<WhyChooseSection title=\`Pourquoi choisir <br /> Hébergement <i>web ${cityNameCapitalized}</i> ?\`/>`
+  );
+  // Also handle if it's already been replaced or has different format
+  content = content.replace(
+    /<WhyChooseSection title=`Pourquoi choisir <br \/> Hébergement <i>web [^<]+<\/i> \?`\/>/g,
+    `<WhyChooseSection title=\`Pourquoi choisir <br /> Hébergement <i>web ${cityNameCapitalized}</i> ?\`/>`
+  );
+  
   // Replace all remaining instances
   content = replaceVilleWithCity(content, cityName);
   
