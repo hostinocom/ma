@@ -6,7 +6,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // Skip redirect for API routes and static assets
   if (
     url.pathname.startsWith('/api/') ||
-    url.pathname.match(x/\.(jpg|jpeg|png|gif|svg|ico|css|js|woff|woff2|ttf|eot|webp|pdf|json|xml)$/i)
+    url.pathname.match(/\.(jpg|jpeg|png|gif|svg|ico|css|js|woff|woff2|ttf|eot|webp|pdf|json|xml)$/i)
   ) {
     return next();
   }
