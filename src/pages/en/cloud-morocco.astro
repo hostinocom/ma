@@ -124,6 +124,34 @@ const hostingFeatures = [
   },
 ];
 
+
+const hostingPlans = [
+  {
+    id: 1,
+    title: "VPS Cloud Morocco",
+    description: "Get reliable VPS Cloud Morocco with high-speed performance, full root access, and 24/7 support — ideal for businesses that need secure, fast, and <b>fully compliant hosting</b> with Moroccan data <b>sovereignty laws</b>.",
+    buttonText: "More information",
+    buttonBgColor: "bg-[#0A2540]", // Dark blue
+    buttonHoverBgColor: "bg-[#0A2540]",
+    buttonTextColor: "text-white",
+    cardBgColor: "bg-white",
+    borderColor: "",
+    link: "#vps-info"
+  },
+  {
+    id: 2,
+    title: "Shared Hosting Morocco",
+    description: "An <b>affordable solution</b> to host your website on a shared server <b>located in Morocco</b>, ensuring data sovereignty, confidentiality of sensitive information, and the best pricing on the market.",
+    buttonText: "Buy Now",
+    buttonBgColor: "bg-[#00D66A]", // Green
+    buttonHoverBgColor: "bg-[#00C05E]",
+    buttonTextColor: "text-white",
+    cardBgColor: "bg-white",
+    borderColor: "border-2 border-[#00D66A]",
+    link: "#buy-shared"
+  }
+];
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -188,7 +216,7 @@ const articleSchema = {
       smallTitle="Cloud Morocco"
       bigTitle="Cloud Hosting & Data sovereignty"
       lineGreen="true"
-      classTitle={"sm:px-[0] px-[30px]"}
+      classTitle={"sm:px-[0] px-[30px] md:w-[60%] w-[95%] mx-auto"}
     />
 
     <div class="bg-gray-200 lg:pb-[100px] pb-[80px]">
@@ -207,13 +235,13 @@ const articleSchema = {
      />
 
     <HostingSolutionsCards  
-        
+          hostingPlansImporter={hostingPlans}
     />
 
     <PromoBanner
       icon="⚠️"
       text=` Nos offres Cloud Maroc sont destinées aux clients qui souhaitent que leurs données <b>soient hébergées sur le territoire marocain</b>. Si vous ne faites pas partie de cette catégorie, découvrez nos offres <span style="text-decoration: underline;"><a href="https://www.hostino.ma/">d’hébergement web</a></span> situées dans des <b>datacenters internationaux</b>.`
-      className="lg:w-[70%] lg:mb-[150px] mb-[60px]"
+      className="lg:w-[75%] lg:mb-[150px] mb-[60px]"
     />
 
      <TextLeftImageRight

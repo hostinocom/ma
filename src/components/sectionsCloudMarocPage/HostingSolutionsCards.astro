@@ -2,25 +2,50 @@
 import AnimatedButton from "../ui/AnimatedButton.astro";
 
 
+const hostingPlans = [
+  {
+    id: 1,
+    title: "Cloud VPS Maroc",
+    description: "Solution de <b>Cloud VPS souverain,</b> ultra-performante et évolutive, pour héberger vos données, sites, applications et autres systèmes nécessitant des ressources importantes.",
+    buttonText: "Découvrir nos offres",
+    link: "#vps",
+    bgColor: "bg-white",
+    borderColor: "shadow_main",
+    buttonBgColor: "bg-title",
+    buttonHoverBgColor: "bg-title",
+    buttonTextColor: "text-white"
+  },
+  {
+    id: 2,
+    title: "Hébergement Mutualisé Maroc",
+    description: "Solution <b>économique</b> pour héberger votre site web sur un serveur mutualisé <b>dans un datacenter au Maroc</b>, garantissant la souveraineté et la confidentialité des données sensibles.",
+    buttonText: "Découvrir nos offres",
+    link: "#plans",
+    bgColor: "bg-white",
+    borderColor: "border border-primary",
+    buttonBgColor: "bg-primary",
+    buttonHoverBgColor: "bg-title",
+    buttonTextColor: "text-white"
+  }
+];
+
+const {hostingPlansImporter=hostingPlans } = Astro.props
+
 ---
 
 <div class="flex w-full relative lg:mt-[150px] mt-[60px] mb-[20px]">
   <div class="container">
     <div class="lg:w-[75%] w-[100%] mx-auto flex gap-[20px] justify-center md:flex-row flex-col">
      <div class="md:w-[50%] w-[100%] bg-white shadow_main flex flex-col justify-center text-center rounded-[10px]  py-[40px] px-[30px]">
-      <h3 class="md:text-[29px] sm:text-[33px] text-[35px] text-title mb-[20px] poppins-semibold  sm:leading-[33px] tracking-[-1.8px] sm:tracking-[-1.5px]">
-        Cloud
-        <br /> VPS Maroc
+      <h3 class="md:text-[29px] sm:text-[33px] text-[35px] px-[120px] text-title mb-[20px] poppins-semibold  sm:leading-[33px] tracking-[-1.8px] sm:tracking-[-1.5px]">
+        {hostingPlansImporter[0].title}
       </h3>
-      <p class="paragraph-15 mb-[20px]">
-        Solution de <b>Cloud VPS souverain,</b> ultra-performante et
-        évolutive, pour héberger vos données, sites, applications et autres
-        systèmes nécessitant des ressources importantes.
-      </p>
+      <p class="paragraph-15 mb-[20px]"  set:html={hostingPlansImporter[0].description} />
+        
       <a href="#vps" class="text-white bg-title">
         <AnimatedButton
-          text="Découvrir nos offres"
-          hoverText="Découvrir nos offres"
+          text={hostingPlansImporter[0].buttonText}
+          hoverText={hostingPlansImporter[0].buttonText}
           bgColor="bg-title"
           hoverBgColor="bg-title"
           textColor="text-white"
@@ -30,19 +55,15 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
       </div>
 
      <div class="md:w-[50%] w-[100%] bg-white border border-primary flex flex-col justify-center text-center rounded-[10px]  py-[40px] px-[30px]">
-      <h3 class="md:text-[29px] sm:text-[33px] text-[35px] text-title mb-[20px] poppins-semibold  sm:leading-[33px] tracking-[-1.8px] sm:tracking-[-1.5px]">
-        Hébergement
-        <br /> Mutualisé Maroc
+       <h3 class="md:text-[29px] sm:text-[33px] text-[35px] px-[80px] text-title mb-[20px] poppins-semibold  sm:leading-[33px] tracking-[-1.8px] sm:tracking-[-1.5px]">
+        {hostingPlansImporter[1].title}
       </h3>
-      <p class="paragraph-15 mb-[20px]">
-        Solution <b>économique</b> pour héberger votre site web sur un
-        serveur mutualisé <b>dans un datacenter au Maroc</b>, garantissant
-        la souveraineté et la confidentialité des données sensibles.
-      </p>
+      <p class="paragraph-15 mb-[20px]"  set:html={hostingPlansImporter[1].description} />
+
       <a href="#plans" class="text-white bg-primary">
         <AnimatedButton
-          text="Découvrir nos offres"
-          hoverText="Découvrir nos offres"
+           text={hostingPlansImporter[1].buttonText}
+          hoverText={hostingPlansImporter[1].buttonText}
           bgColor="bg-primary"
           hoverBgColor="bg-title"
           textColor="text-white"

@@ -172,7 +172,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
     <h2 class="title-section text-center pb-[30px] poppins-semibold  text-title" set:html={title}></h2>
     
 
-    <div class="grid section-plans text-title md:grid-cols-3 gap-8">
+    <div class="grid section-plans text-title lg:grid-cols-3 gap-8">
       {plans.map((plan) => (
         <div
           class={`${
@@ -190,7 +190,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
             </div>
           )}
           
-          <h3 class="text-[27px] poppins-semibold text-title text-title mb-[20px]" set:html={plan.name}></h3>
+          <h3 class="text-[27px] poppins-semibold leading-[35px] text-title text-title mb-[20px]" set:html={plan.name}></h3>
           <p class="text-title text-[14px] mb-4" set:html={plan.subtext}></p>
           
           <div class="border-t border-gray-200 my-[40px]"></div>
@@ -247,7 +247,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
           <div class="border-t border-gray-200 my-[40px]"></div>
           
           <div class="mb-4">
-            <div class="flex items-center gap-2 mb-4">
+            <div class="flex lg:justify-start justify-center items-center gap-2 mb-4">
               <span class="poppins-semibold  text-title">Performances</span>
               {Array.from({ length: 5 }).map((_, i) => (
                 <svg

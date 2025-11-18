@@ -3,6 +3,10 @@ import MapEmbedProximite from "./MapEmbedProximite.astro";
 
 interface Props {
   page: string;
+  map?: boolean;
+  title?: string;
+  titleMap?: string;
+  src?: string;
 }
 
 const { 
@@ -109,6 +113,7 @@ const moroccanCitiesLinks = [
         );
       })}
     </div>
+
 
   
   </div>
