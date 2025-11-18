@@ -50,14 +50,6 @@ html, body {
   font-smooth: always;
 }
 
-html {
-  visibility: hidden;
-}
-
-html.fonts-loaded {
-  visibility: visible;
-}
-
 
 html{
   line-height: 1.5;

@@ -4,6 +4,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const url = new URL(context.request.url);
   
   // Skip redirect for API routes and static assets
+
+  
   if (
     url.pathname.startsWith('/api/') ||
     url.pathname.match(/\.(jpg|jpeg|png|gif|svg|ico|css|js|woff|woff2|ttf|eot|webp|pdf|json|xml)$/i)

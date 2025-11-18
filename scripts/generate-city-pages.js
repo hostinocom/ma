@@ -248,11 +248,7 @@ moroccanCitiesMaps.forEach((city) => {
   const fileName = `hebergement-web-${cityUrlName}.astro`;
   const filePath = path.join(pagesDir, fileName);
   
-  // Skip if file already exists (like tanger)
-  if (fs.existsSync(filePath) && cityUrlName !== 'tanger') {
-    console.log(`Skipping ${fileName} (already exists)`);
-    return;
-  }
+  // Always regenerate to update image paths
   
   // Replace all instances of Ville/ville with city name
   let content = template;
@@ -276,6 +272,23 @@ moroccanCitiesMaps.forEach((city) => {
   content = content.replace(
     /const canonical_url = "https:\/\/www\.hostino\.ma\/hebergement-web-ville";/g,
     `const canonical_url = "https://www.hostino.ma/hebergement-web-${cityUrlName}";`
+  );
+  
+  // Replace image paths with normalized city name
+  // Handle /images/20/hebergement-web-{anything}.png
+  content = content.replace(
+    /\/images\/20\/hebergement-web-[^"]+\.png/g,
+    `/images/20/hebergement-web-${cityUrlName}.png`
+  );
+  // Handle /images/19/hebrgeur-web-{anything}.png (correct spelling)
+  content = content.replace(
+    /\/images\/19\/hebergeur-web-[^"]+\.png/g,
+    `/images/19/hebrgeur-web-${cityUrlName}.png`
+  );
+  // Handle /images/19/hebrgeur-web-{anything}.png (typo - missing 'e')
+  content = content.replace(
+    /\/images\/19\/hebrgeur-web-[^"]+\.png/g,
+    `/images/19/hebrgeur-web-${cityUrlName}.png`
   );
   
   // Replace ServiceProximite props
