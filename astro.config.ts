@@ -22,25 +22,29 @@ export default defineConfig({
           local: 'Poppins',
           src: '/Poppins/*.ttf',
           transform(font) {
-            if (font.basename === 'poppins-semibold ') {
+            if (font.basename === 'poppins-semibold') {
               font.weight = 600
-            } else if (font.basename === 'Poppins-Regular') {
+            } else if (font.basename === 'poppins-regular') {
               font.weight = 400
-            } else if (font.basename === 'Poppins-Light') {
+            } else if (font.basename === 'poppins-light') {
               font.weight = 300
-            } else if (font.basename === 'Poppins-Medium') {
+            } else if (font.basename === 'poppins-medium') {
               font.weight = 500
-            } else if (font.basename === 'Poppins-Bold') {
+            } else if (font.basename === 'poppins-bold') {
               font.weight = 700
-            } else if (font.basename === 'Poppins-ExtraBold') {
+            } else if (font.basename === 'poppins-extrabold') {
               font.weight = 800
-            } else if (font.basename === 'Poppins-Black') {
+            } else if (font.basename === 'poppins-black') {
               font.weight = 900
+            } else if (font.basename === 'poppins-thin') {
+              font.weight = 100
+            } else if (font.basename === 'poppins-extralight') {
+              font.weight = 200
             }
             return font
           }
         }],
-        display: 'auto',
+        display: 'swap',
         preload: true,
         prefetch: false,
         injectTo: 'head-prepend',
