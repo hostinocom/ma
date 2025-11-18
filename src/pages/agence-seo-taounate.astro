@@ -1,0 +1,484 @@
+---
+
+import AnimatedButton from "../components/ui/AnimatedButton.astro";
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/commonSections/HeroSection.astro";
+import ContactForm from "../components/commonSections/ContactForm.astro";
+import TextLeftImageRight from "../components/commonSections/TextLeftImageRight.astro";
+import BigTitleTextButton from "../components/commonSections/BigTitleTextButton.astro";
+import SeoImpactSection from "../components/sectionsAgenceSeoMaroc/SeoImpactContent.astro";
+import SeoServiceCards from "../components/commonSections/SeoServiceCards.astro";
+import NationalCoverage from "../components/commonSections/NationalCoverage.astro";
+import FAQSection from "../components/commonSections/FaqSection.astro";
+import GooglePositioning from "../components/commonSections/GooglePositioning.astro";
+import { main_schema } from "../mainSchema.ts";
+
+const title = "Agence SEO Taounate | Référencement Google et moteurs d'IA";
+const description =
+  "Agence SEO Taounate. Agence de référencement Google et moteurs de recherche IA : Ventes, trafic, notoriété. SEO Taounate ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://www.hostino.ma/images/06/agence-seo-maroc.png";
+const canonical_url = "https://www.hostino.ma/agence-seo-taounate";
+const ogAlt = "Agence SEO taounate";
+
+const faqData = [
+  {
+    question:
+      "Qu'est-ce que le SEO et pourquoi est-il important pour mon entreprise à Taounate ?",
+    answers: [
+      `Le SEO (Search Engine Optimization), ou optimisation pour les moteurs de recherche, regroupe l’ensemble des stratégies et techniques — telles que la rapidité de <strong><span style="text-decoration: underline"><a href="https://pagespeed.web.dev/?hl=fr" rel="noopener">chargement des pages</a></span></strong>, le respect des normes de sécurité, l’originalité du contenu, les relations publiques numériques (PR) ou encore l’achat de backlinks — visant à améliorer le positionnement de votre site web dans les résultats organiques des moteurs de recherche.`,
+      `Avec le SEO, il ne s’agit pas seulement de positionner votre entreprise dans les premières places sur Google. C’est aussi bénéficier d’un flux continu de publications presse autour de votre société, d’une augmentation régulière du trafic qualifié, et d’une visibilité renforcée auprès de vos clients potentiels. Et désormais, le SEO ouvre la porte à une nouvelle dimension : la présence dans les réponses des moteurs de recherche basés sur l’IA tels que ChatGPT ou Gemini, qui deviennent des canaux incontournables pour capter l’attention de vos prospects.`
+     ],
+  },
+  {
+    question:
+      "Combien de temps faut-il pour voir des résultats avec une stratégie SEO ?",
+    answers: [
+      "La mise en place d'une stratégie SEO demande du temps avant de produire des résultats visibles. En général, il faut compter entre 3 et 9 mois pour commencer à observer des améliorations notables dans le positionnement et le trafic organique.",
+      "Le délai varie fortement selon le niveau de concurrence dans votre secteur d'activité. Dans des marchés très compétitifs (immobilier, juridique, santé…), il peut falloir plus de temps pour dépasser des concurrents déjà bien établis.",
+      "À l'inverse, dans des secteurs de niche ou localisés, les résultats peuvent apparaître plus rapidement, car la concurrence est moins intense.",
+    ],
+  },
+  {
+    question:
+      "Quelles sont les étapes si je souhaite collaborer avec votre agence SEO ?",
+    answer: `<p class="paragraph">Chez Hostino, le référencement SEO d'un site internet à Taounate  se déroule en deux étapes principales.</p><p class="paragraph"><b>La première est le setup SEO :</b></p><ul class="flex flex-col gap-[10px] mb-[20px]"><li class="flex gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Si vous disposez déjà d'un site web, nous l'optimisons afin qu'il devienne pleinement Google-friendly : mise en place des normes de sécurité (intégration <a href="/cloudflare-Taounate" target="_blank">Cloudflare</a>), amélioration de la structure et du contenu, accélération du temps de chargement des pages, ainsi que la création de landing pages dédiées pour chaque service et chaque taounate.</span></li><li class="flex gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Si vous n'avez pas encore de site internet, nous créons pour vous un site 100 % optimisé SEO dès le départ. C'est l'option la plus rapide pour obtenir des résultats, car améliorer le scoring et la visibilité d'un site déjà existant sur Google demande généralement plus de temps.</span></li></ul><p><b>La phase de setup est facturée une seule fois, au démarrage du projet.</b></p></br><p><b>La deuxième étape</b> correspond à la mensualité SEO, sans engagement, avec un budget défini selon la concurrence des mots-clés choisis.</p>`,
+  },
+  {
+    question:
+      "Pourquoi choisir Hostino plutôt qu'une autre agence SEO à Taounate  ?",
+    answers: [
+      "La plus grande partie de notre clientèle est constituée <b>d'entreprises qui ont été déçues par des agences incapables de leur fournir des résultats concrets.</b> Nous connaissons parfaitement le marché du SEO marocain et nous avons les compétences pour transformer ces mauvaises expériences en succès.",
+      "Chez Hostino, nous ne vendons pas de promesses, nous livrons des résultats. Chaque projet est une chance de démontrer notre supériorité.",
+      "Depuis plusieurs années, nous aidons des entreprises à dominer leurs marchés et à générer une croissance exponentielle. Nos succès parlent pour nous et montrent que nous avons plusieurs longueurs d'avance sur les tendances du marché marocain.",
+    ],
+  },
+  {
+    question: "Quel est le prix d'une agence SEO à Taounate  comme Hostino ?",
+    answers: [
+      "Le coût d'une agence SEO à Taounate , comme Hostino, dépend avant tout des objectifs de chaque entreprise et du niveau de concurrence dans son secteur. Il n'existe pas de tarif unique, car les besoins ne sont pas les mêmes selon qu'il s'agisse d'améliorer sa visibilité locale dans une taounate ou de se positionner à l'échelle nationale, voire internationale.",
+      "Chez Hostino, nous proposons des plans personnalisés et sans engagement, afin que nos clients ne paient que pour les services réellement utiles à leur croissance. Notre approche repose sur la transparence : <b>chaque dirham investi est expliqué et justifié</b>, et la stratégie est ajustée en fonction des résultats obtenus. Cela garantit un suivi clair et une maîtrise totale du budget.",
+      "Nos prestations SEO débutent à 2900 DH H.T. par mois, incluant un accompagnement complet : audit initial, optimisation technique, création de contenu, acquisition de liens et rapports mensuels détaillés. Le tarif peut évoluer en fonction de l'ampleur du projet, de vos objectifs de visibilité et de la compétitivité de votre marché.",
+    ],
+  },
+  {
+    question:
+      "J'ai déjà fait du SEO avec une agence, mais ça n'a pas marché. Pourquoi ?",
+    answer: `<p class="paragraph">De nombreuses entreprises marocaines ont déjà tenté le référencement naturel avec une agence ou un freelance, mais sans véritable succès.</p><p class="paragraph"><b>La raison est souvent la même</b> : un manque de maîtrise. Presque toutes les agences web prétendent faire du SEO, mais très peu en possèdent l'expertise réelle.</p><p class="paragraph">Dans bien des cas, elles se limitent à des actions superficielles comme l'ajout de balises ou l'installation de plugins, sans mettre en place une véritable stratégie de contenu, de netlinking ou de suivi de performance.</p><p class="paragraph">Or, un bon référencement ne s'improvise pas : il exige une méthode rigoureuse, adaptée à votre secteur et à vos objectifs, afin de générer des résultats concrets et mesurables.</p><p class="paragraph">Avant de choisir une agence SEO, prenez le temps de vérifier ses éléments :</p><ul class="flex flex-col gap-[10px] mb-[20px]"><li class="flex gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Assurez-vous que les références présentées sont bien réelles, que le travail cité a bien été réalisé par l'agence, et que son nom figure clairement sur les sites ou projets mis en avant.</span></li><li class="flex gap-2"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Vérifiez le positionnement de l'agence SEO sur Google</span></li></ul><p class="paragraph">Par exemple, une agence qui se présente comme "agence SEO au Maroc " doit logiquement apparaître sur des mots-clés pertinents tels que "agence SEO Maroc".</p><p class="paragraph">Si elle n'arrive pas à se positionner elle-même, comment pourrait-elle positionner efficacement votre site ?</p>`,
+  },
+  {
+    question: "Proposez-vous du SEO local pour Google Maps à Taounate  ?",
+    answers: [
+      'Oui. Nous optimisons votre profil <a href="/google-my-business-maroc/" class="underline" target="_blank"><b>Google Business</b></a>, gérons vos avis clients et renforçons votre visibilité locale pour que votre entreprise apparaisse parmi les premières positions sur Google Maps.',
+    ],
+  },
+  {
+    question:
+      "Votre agence SEO peut-elle référencer mon entreprise dans ChatGPT et Gemini ?",
+    answer: `<p class="paragraph">Oui, notre agence SEO travaille déjà sur ce qu'on appelle le Generative Engine Optimization (<a href="https://www.hostino.ma/agence-geo-Taounate" class="underline" target="_blank"><b>Agence GEO</b></a>), c'est-à-dire l'optimisation de la visibilité des entreprises dans les moteurs d'IA comme ChatGPT et Gemini. L'objectif n'est pas seulement d'apparaître sur Google, mais aussi d'être mentionné dans les réponses générées par l'intelligence artificielle.</p><p class="paragraph">Nous avons déjà des références concrètes dans ce domaine. Par exemple, si vous demandez à ChatGPT : "<b>Une société de GPS à Taounate</b> ?", la première réponse qui apparaît est <b>Sendatrack</b>, l'un de nos clients fidèles. Ce résultat est le fruit de plusieurs mois de travail sur leur site web, leur profil Google Business et leur présence dans des sources fiables que les moteurs d'IA consultent.</p><p class="paragraph">C'est la preuve que notre approche fonctionne : en combinant SEO classique, notoriété en ligne, contenus de qualité et un paramétrage d'indexation adapté aux robots d'IA, nous augmentons significativement vos chances d'être cités par ChatGPT, Gemini et les autres moteurs d'IA.</p><p class="paragraph">Avec Hostino, votre entreprise ne se limite pas à Google, elle gagne en visibilité sur la nouvelle génération de moteurs de recherche.</p><div class="mt-4 w-full"><iframe src="https://www.youtube.com/embed/Bqn3SNyjsSE" width="1108" height="623" frameborder="0"></iframe></div>`,
+  },
+];
+
+
+const seoServiceCardsData: SEOServiceCard[] = [
+  {
+    title:
+      "Agence SEO pour médecins,  cabinets médicaux et laboratoires",
+    paragraphs: [
+      "Le digital est aujourd'hui un levier essentiel pour les professionnels de santé à Taounate. Notre agence SEO accompagne les <strong>médecins, cabinets médicaux, laboratoires</strong> et l'ensemble des acteurs du secteur de la santé afin de renforcer leur visibilité sur Google ainsi que dans les moteurs de recherche IA.",
+      `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Nous mettons en place des stratégies de référencement local et organique, conçues dans </span><b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">les règles de l'art et en parfaite conformité avec les <u>régulations marocaines</u></b><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">.&nbsp;</span>`,
+      "Imaginez l'impact d'avoir votre <strong>site web</strong> en première position sur des recherches comme « <strong>Gynécologue Taounate</strong> » ou « <strong>Cabinet dentaire Taounate</strong> ». Ces mots-clés peuvent générer chaque mois des centaines de demandes de consultations et de rendez-vous.",
+      "De plus, les usages évoluent rapidement. Demain, un patient posera directement sa question à ChatGPT : « <strong>Quel est le meilleur dentiste à Taounate ?</strong> » Notre mission est de faire en sorte que votre cabinet soit la réponse.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "/agence-marketing-medical",
+    bgColor: "bg-[#FEF6F3]",
+  },
+  {
+    title: "Agence SEO pour sites d'actualités, radios et chaînes TV",
+    paragraphs: [
+      "Nous accompagnons les radios, magazines, journaux en ligne et <strong>chaînes de télévision</strong> dans l'optimisation de leur <strong>visibilité sur Google</strong>, afin de générer un maximum de trafic organique aussi bien au niveau <strong>local qu'international</strong>.",
+      `Nous proposons des <b>formations dédiées aux journalistes</b> afin de leur transmettre les meilleures pratiques <b>éditoriales orientées SEO</b>. Nous mettons l'accent sur la rédaction de contenus optimisés pour Google et les réseaux sociaux, la structuration des articles avec des éléments enrichis, ainsi que l'adaptation des stratégies de diffusion afin de garantir leur validation <span style="text-decoration: underline;"><a href="https://support.google.com/news/publisher-center/answer/10598355?hl=fr" rel="noopener"><b>Google Actualités</b></a></span> et leur visibilité sur <b>Google Discover</b>`,
+      "Déjà, plusieurs médias de référence nous font confiance, tels que <strong>Medi1TV, Medi1News</strong> et <strong>Maroc24.com</strong>. Ces collaborations constituent pour nous de véritables success stories, démontrant notre capacité à accompagner efficacement les acteurs médiatiques de toute taille, et à transformer leur présence digitale en un puissant levier de croissance et d'influence.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "/agence-marketing-news",
+    bgColor: "bg-[#0C10DA0D]",
+  },
+  {
+    title: "Agence SEO BTP et Promotion Immobilière",
+    paragraphs: [
+      `Hostino est l’agence SEO qui accompagne les entreprises du BTP — <b>bureaux d’études</b>, <b>architectes</b>, notaires, agences immobilières et <b>promoteurs</b> — dans leur visibilité sur Google et les moteurs de recherche IA. Grâce à des stratégies SEO locales et ciblées, nous positionnons votre entreprise sur les <b>premiers résultats</b> pour des recherches stratégiques telles que « <b>Architecte d’intérieur Taounate</b>&nbsp;», « <b>Appartement à vendre</b> Taounate » ou « notaire Taounate ».`,
+      `En retour, vous recevez des <b>consultations</b> et des <b>appels téléphoniques</b> de prospects qualifiés, réellement intéressés par vos services et déjà <b>prêts à acheter</b>.`
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "/agence-marketing-immobilier",
+    bgColor: "bg-[#E7F3ED]",
+  },
+  {
+    title: "Agence SEO pour hôtels, riads et palaces",
+    paragraphs: [
+      `Dépasser les grandes plateformes de réservation sur des mots-clés stratégiques comme « <b>Riad Taounate</b> », « <strong>Best Hotel</strong><b> Taounate</b>&nbsp;» ou « <b>Luxury Hotel Morocco</b> » est possible avec notre agence SEO.&nbsp;`,
+      `râce à une stratégie de référencement avancée, nous <b>positionnons votre établissement</b> sur Google et sur les moteurs IA afin d’attirer directement les voyageurs sur votre site web et de générer des <b>réservations directes</b>. Vous devenez visible face aux grandes agences de voyages internationales pour les <b>réservations de groupes</b>, tout en réduisant votre dépendance aux commissions des OTA (Booking, Expedia, etc.).`
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "/agence-marketing-hotel",
+    bgColor: "bg-[#00B9FF1F]",
+  },
+  {
+    title:
+      "Agence SEO pour comptables, cabinets de recrutement, de conseil et de certification",
+    paragraphs: [
+      "Un cabinet bien positionné en N°1 sur Google au Maroc peut recevoir chaque jour une dizaine d'appels : des clients à la recherche d'un accompagnement fiscal, de la <strong>création d'entreprise</strong>, d'une <strong>formation professionnelle</strong>, d'une société cherchant une agence de <strong>recrutement</strong>, ou encore d'un accompagnement pour la <strong>certification ISO 9001</strong>.",
+      "Tous ces exemples peuvent être le vôtre. L'agence SEO Hostino vous aide à <strong>dominer votre secteur d'activité</strong> grâce à des stratégies de référencement locales et ciblées, qui vous placent en <strong>première ligne face à vos concurrents</strong> et transforment chaque recherche sur Google en nouvelle opportunité pour votre cabinet.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#FAE0E0]",
+  },
+  {
+    title:
+      "Agence SEO pour écoles, universités et centres de formation",
+    paragraphs: [
+      "Imaginez qu'une <strong>crèche</strong> apparaisse en première position sur Google lorsqu'un parent recherche « <strong>Crèche Taounate</strong> ».",
+      "De la même façon, une <strong>école primaire</strong> à Casablanca peut apparaître en tête des résultats pour « <strong>Meilleure école privée Taounate</strong> » et générer en continu de nouvelles demandes d'inscription.",
+      "Plus haut encore dans le parcours académique, notre agence SEO peut positionner le site d'une université en tête des résultats pour des requêtes telles que « <strong>Executive MBA Taounate</strong> » ou « <strong>École de Management Taounate</strong> ».",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#D3D3D345]",
+  },
+  {
+    title:
+      "Agence SEO pour prestataires de services (plombiers, électriciens et serruriers ...)",
+    paragraphs: [
+      "Pour un <strong>plombier</strong>, un <strong>chauffagiste</strong>, un <strong>électricien</strong> ou un <strong>serrurier</strong>, être visible sur Google est devenu indispensable. Lorsqu'un client a besoin d'une intervention en urgence, il ne perd pas de temps : il choisit l'un des premiers résultats.",
+      "<strong>Se positionner en tête</strong>, c'est donc s'assurer davantage d'appels, de demandes de devis et de chantiers chaque jour, sans dépendre uniquement du bouche-à-oreille ou du marketing traditionnel.",
+      "Grâce à des stratégies sur mesure — <strong>mots-clés locaux</strong>, optimisation du profil Google Business Profile, création de contenu pertinent — notre agence vous aide à devancer vos concurrents et à transformer les recherches en <strong>nouveaux clients réguliers</strong>.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#EDFF2829]",
+  },
+  {
+    title:
+      "Agence SEO pour agences de voyages, guides et transport touristique",
+    paragraphs: [
+      "Dans le secteur du tourisme, être bien référencé sur Google est essentiel pour attirer davantage de voyageurs. Qu'il s'agisse d'une <strong>agence de voyages</strong>, d'un <strong>guide local</strong> ou d'une <strong>société de transport</strong> touristique, la recherche des clients commence presque toujours en ligne.",
+      "Être visible en première page permet non seulement de générer plus de réservations, mais aussi d'accroître sa notoriété et de se démarquer de la concurrence.",
+      "Notre agence SEO vous aide à positionner votre site en première page sur des mots-clés stratégiques tels que « <strong>Transfer airport Marrakech</strong> », « <strong>Location de voiture Taounate</strong> » ou encore « <strong>Private tours Fez</strong> », afin de transformer les recherches en réservations concrètes.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#FE56FF26]",
+  },
+  {
+    title: "Agence SEO pour marques et e-commerce",
+    paragraphs: [
+      "Pour <strong>une marque</strong> ou une <strong>boutique en ligne</strong>, apparaître en première page de Google est une opportunité en or pour attirer des clients qualifiés. Dans le secteur du e-commerce, une simple recherche peut se transformer en vente. Imaginez ces scénarios où le référencement est crucial :",
+      `<ul class="paragraph space-y-2 list-disc pl-[30px]">
+        <li>
+          Un professionnel à Rabat a besoin d'un
+          <strong>toner en urgence</strong>.
+        </li>
+        <li>
+          Quelqu'un souhaite faire livrer un <strong>bouquet de fleurs</strong>.
+          Un invité de mariage cherche un <strong>cadeau original</strong>.
+        </li>
+        <li>Un passionné de décoration est en quête d'un tableau unique.</li>
+      </ul>`,
+      "Pour ces entreprises, être bien référencé, c'est l'assurance d'être trouvé au moment précis où le client est prêt à acheter.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#005CEE30]",
+  },
+  {
+    title: "Agence SEO pour startups et SaaS",
+    paragraphs: [
+      "Une startup ou un SaaS doit être visible non seulement auprès des clients, mais aussi des investisseurs pour réussir sa croissance et ses levées de fonds. Être en première page de Google <strong>accélère l'acquisition d'utilisateurs</strong>, renforce la crédibilité et ouvre des opportunités stratégiques lors des <strong>levées de fonds</strong>.",
+      "Notre agence SEO accompagne les startups et SaaS avec des stratégies sur mesure pour attirer des utilisateurs, <strong>convaincre les investisseurs</strong> et transformer cette visibilité en croissance durable.",
+      "Qu'il s'agisse de SaaS B2B, de solutions <strong>FinTech</strong>, de plateformes <strong>EdTech</strong>, de startups en <strong>GreenTech</strong> ou encore de projets HealthTech, Hostino est là pour assurer la visibilité de votre solution sur <strong>Google et les moteurs de recherche IA</strong>.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#46FF0426]",
+  },
+];
+
+const rankingsData = [
+  {
+    url: "serrurierpro.ma",
+    country: "Maroc",
+    keywords: [
+      { term: "Serrurier Maroc", position: 1 },
+      { term: "Ouverture Coffre-fort rabat", position: 1 },
+      { term: "Serrurier Taounate", position: 1 },
+      { term: "Serrurier Tétouan", position: 1 },
+    ],
+  },
+  {
+    url: "sendatrack.ma",
+    country: "Maroc",
+    keywords: [
+      { term: "GPS Taounate", position: 1 },
+      { term: "Société de GPS Taounate", position: 1 },
+      { term: "Installation GPS Taounate", position: 1 },
+      { term: "Société de Géolocalisation Taounate", position: 1 },
+    ],
+  },
+  {
+    url: "medilpodcast.com",
+    country: "Maroc",
+    keywords: [
+      { term: "Podcast", position: 2 },
+      { term: "Podcast Maroc", position: 2 },
+      { term: "Plateforme Podcast Maroc", position: 1 },
+      { term: "بودكاست المغرب", position: 1 },
+    ],
+  },
+  {
+    url: "lyonparebrise.fr",
+    country: "France",
+    keywords: [
+      { term: "Réparation Pare Brise Lyon", position: 1 },
+      { term: "Remplacement Pare Brise Lyon", position: 2 },
+      { term: "Changement Pare Brise Lyon", position: 2 },
+      { term: "Pare Brise Lyon", position: 3 },
+    ],
+  },
+  {
+    url: "pcreparatieamsterdam.nl",
+    country: "Pays-Bas",
+    keywords: [
+      { term: "PC reparatie Amsterdam", position: 1 },
+      { term: "Laptopreparatie Amsterdam", position: 2 },
+      { term: "Laptop reparatie Amstedam", position: 1 },
+      { term: "Computer reparatie Amsterdam", position: 1 },
+    ],
+  },
+  {
+    url: "prestigecolor.be",
+    country: "Belgique",
+    keywords: [
+      { term: "Peintre Arlon", position: 1 },
+      { term: "Peinture résidentielle Arlon", position: 1 },
+      { term: "Peinture en Batiment à Arlon", position: 1 },
+      { term: "Expert Peintre Arlon", position: 2 },
+    ],
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hébergement web Maroc ",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "1900",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "788",
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+>
+  
+  
+
+  <main>
+     <HeroSection
+      subtitle="Agence SEO Taounate"
+      title="Agence SEO à Taounate"
+      text="Votre agence SEO Taounate pour une visibilité maximale sur <b>Google</b> et les <b>moteurs d'IA</b>"
+      emailLabel={{
+        textEmail: " Support 24/7 et stratégies réellement efficaces ",
+        color: "text-primary",
+      }}
+      email="info@hostino.com"
+      imageSrc="/images/06/agence-seo-maroc.png"
+      imageAlt="Agence SEO à Taounate "
+      classH2="lg:pr-[100px] md:pr-[50px] pr-[0px]"
+    />
+     <ContactForm
+      title=`Votre stratégie SEO Taounate, <br class="lg:hidden md:block hidden" /> <span class="border-bottom">commence ici !</span>` 
+    />
+
+
+    <TextLeftImageRight
+      title="Agence de référencement SEO Taounate"
+      paragraphs={[
+        "Hostino™ est une agence SEO à taounate  dont l'objectif est de booster la visibilité en ligne des professionnels et des entreprises, quels que soient leur taille ou leur secteur, en positionnant leurs sites web parmi les <b>premiers résultats sur Google</b>",
+        "Nous déployons des stratégies SEO avancées pour vous aider à atteindre vos objectifs commerciaux — <b>trafic, leads et ventes</b> — tout en consolidant durablement votre notoriété.",
+        "En plus du SEO classique, notre agence vous accompagne également dans le référencement sur les nouveaux <b>moteurs d'IA</b> (ChatGPT, Gemini, etc.), afin de vous aider à profiter pleinement de ce nouveau canal d'acquisition.",
+        '<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Appelez le +212 663 75 09 08 et confiez votre stratégie SEO à des experts reconnus dans le domaine.</span>',
+      ]}
+      imageSrc="/images/06/agence-seo-maroc.jpg"
+      imageAlt="Vendez plus grâce à l'agence SEO Taounate"
+      consultButtonTextExiste={true}
+      textButton="Contactez-nous"
+      href="/contact"
+    />
+
+     <GooglePositioning
+      title="Cas clients de <br/>notre agence SEO Taounate"
+      rankingsData={rankingsData}
+      subtitle="Marre de payer des agences&nbsp;<b>sans résultats ? </b>Il est temps de passer à une <b>solution qui fonctionne</b>."
+    />
+
+    <TextLeftImageRight
+      title="Agence SEO Taounate : qu'est-ce que c'est ?"
+      paragraphs={[
+        "Une agence SEO Taounate est une société spécialisée dont la mission est d'accompagner les startups, les PME/PMI, les marques, les médias, ainsi que les ONG et les institutions publiques dans l'amélioration du classement de leurs sites web, que ce soit à  Taounate<b> niveau local, national ou international.</b>",
+        `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">La nouveauté aujourd’hui est que les agences SEO ne se limitent plus aux moteurs de recherche traditionnels. Elles interviennent désormais aussi sur les nouveaux moteurs d’intelligence artificielle. C’est ce que l’on appelle une <strong><span style="text-decoration: underline;"><a href="https://www.hostino.ma/agence-geo-maroc">Agence GEO</a></span></strong> (</span><span style="text-decoration: underline;"><a href="https://ahrefs.com/blog/geo-generative-engine-optimization/" rel="noopener"><b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Generative Engine Optimization</b></a></span><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">), une évolution du SEO qui représente une opportunité unique pour exploiter des canaux encore peu saturés, renforcer sa présence digitale et toucher un public beaucoup plus large.</span>`,
+        "Appelez le +212 663 75 09 08et confiez votre stratégie de visibilité SEO et GEO à une <b>agence innovante</b>, toujours à la pointe des tendances technologiques internationales.",
+      ]}
+      imageSrc="/images/06/quoi-agence-seo-maroc.jpg"
+      imageAlt="Agence SEO Taounate"
+      consultButtonTextExiste={true}
+      textButton="Contactez-nous"
+      href="/contact"
+    />
+
+    <BigTitleTextButton />
+
+
+        <TextLeftImageRight
+      title="Une agence SEO qui vous aide à être trouvé sur ChatGPT à Taounate"
+      paragraphs={[
+        `Le SEO évolue rapidement, et aujourd’hui il ne se limite plus à Google. Les moteurs de recherche basés sur l’intelligence artificielle, comme ChatGPT ou Gemini, ouvrent un <b>nouveau canal d’acquisition</b> encore très peu exploité au Maroc. En vous positionnant dès maintenant, vous profitez d’une avance stratégique pour capter l’attention de vos futurs clients.`,
+        `<b>Être visible sur ChatGPT</b>, c’est apparaître directement dans les réponses que les utilisateurs consultent chaque jour. Là où vos concurrents n’ont pas encore investi, vous pouvez placer vos services et vos solutions au cœur des recommandations de l’IA et ainsi créer un avantage compétitif décisif.`,
+        `Notre agence SEO vous accompagne dans cette transition. Grâce à une méthodologie avancée — analyse des requêtes, optimisation des contenus et intégration des <b>signaux adaptés à l’IA</b> — nous transformons cette opportunité en croissance durable. Selon nos experts seniors, ChatGPT deviendra le nouveau SEO d’ici les deux prochaines années.&nbsp;<b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Agir dès aujourd’hui, c’est s’assurer une place de leader demain.</b>`
+       ]}
+      imageSrc="/images/06/agence-seo-chatgpt.jpg"
+      imageAlt="Expert SEO au Maroc"
+      consultButtonTextExiste={true}
+      textButton="Contactez-nous"
+      href="/contact"
+    />
+
+    
+
+     <TextLeftImageRight
+      title="Expert SEO Taounate : Le meilleur en 2026 ! 🏆"
+      paragraphs={[
+        `Nos experts SEO, piliers de notre agence, maîtrisent tous les aspects du référencement — optimisation de contenu, technique, <b>relations presse (PR)</b>, stratégie de <b>netlinking</b>, IA et automatisation — afin de mettre leur expertise au service de votre visibilité digitale.`,
+        `L’agence Hostino est la seule au Maroc à avoir mis en place une cellule de <b>recherche et développement (R&amp;D)</b> dédiée exclusivement au SEO, afin de rester à l’avant-garde des innovations et des futures mises à jour de Google.&nbsp;<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Grâce à cette veille proactive, nous optimisons en continu nos performances et garantissons à nos clients la stabilité de leurs positions, tout en restant pleinement conformes aux normes et recommandations de Google.</span>`,
+        `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Ce groupe de consultants SEO est dirigé par&nbsp;<span style="text-decoration: underline;"><strong><a href="https://www.linkedin.com/in/aniss-kiassi" rel="noopener">Aniss Kiassi</a></strong></span>, CEO – expert international réputé en SEO, lauréat du prestigieux programme d’innovation <span style="text-decoration: underline;"><strong><a href="https://www.investinspain.org/content/icex-invest/en/rising-up-in-spain.html" rel="noopener">Rising UP Spain</a></strong></span> et vainqueur de plusieurs prix nationaux et internationaux.</span>`
+      ]}
+      imageSrc="/images/06/expert-seo-maroc.jpg"
+      imageAlt="Expert SEO au Taounate"
+      consultButtonTextExiste={true}
+      textButton="Contactez-nous"
+      href="/contact"
+    />
+
+
+    <section class="lg:my-[150px] my-[80px]">
+  <div class="container">
+    <h2 class="big-title mb-[40px] text-center">
+      Secteurs accompagnés
+      <br />
+      par notre agence SEO
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {seoServiceCardsData.map((card, index) => (
+        <div
+          key={index}
+          class={`${card.bgColor} rounded-[36px] md:px-[50px] py-[40px] px-[20px]  md:py-[50px] flex flex-col justify-between`}
+        >
+          <div>
+            <h3
+              class="md:text-[34px] md:pr-[70px] pr-[0] text-title md:leading-[39px] tracking-[-1.1px] poppins-semibold  text-[24px] mb-[20px]"
+              set:html={card.title}
+            ></h3>
+
+            {card.paragraphs.map((paragraph, idx) => {
+              if (typeof paragraph === "string") {
+                return <p key={idx} class="paragraph" set:html={paragraph}></p>;
+              } else {
+                return <div key={idx} set:html={paragraph}></div>;
+              }
+            })}
+          </div>
+
+          {card.buttonLink && (
+            <a
+              href={card.buttonLink}
+              class="inline-block text-white poppins-semibold  rounded-lg transition-colors mt-6"
+            >
+              <AnimatedButton
+                text={card.buttonText}
+                hoverText={"Plus d'informations"}
+                bgColor={"bg-primary"}
+                hoverBgColor="bg-title"
+                class="btn-10-40"
+              />
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+    <NationalCoverage
+      topic="Agence SEO"
+      text="Chez Hostino™, nous accompagnons des clients de tous niveaux et de tous secteurs d'activité, partout à Taounate , dans leur stratégie de référencement Google et IA."
+      title=`Agence SEO, une <br /> couverture <span class="underline">nationale</span>`
+      href="agence-seo"
+      titleMap="Google map of Taounate"
+      src="https://www.google.com/maps/embed/v1/place?q=Taounate&zoom=14&maptype=roadmap&key=AIzaSyCNTEOso0tZG6YMSJFoaJEY5Th1stEWrJI"  />
+
+
+
+    <FAQSection faqData={faqData} title="FAQ - Agence SEO Taounate" />
+
+  </main>
+</Layout>
+

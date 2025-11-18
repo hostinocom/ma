@@ -68,15 +68,14 @@ const {
   <meta name="twitter:image" content={imageUrl} />
   <meta name="twitter:creator" content="@admin" />
 
-      <link rel='dns-prefetch' href='//client.crisp.chat' />
-    <link rel='dns-prefetch' href='//client.relay.crisp.chat' />
-    <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+    
     <link rel='preconnect' href='https://client.crisp.chat' crossorigin />
-    <link rel='preconnect' href='https://client.relay.crisp.chat' crossorigin />
-    <link rel="dns-prefetch" href="//client.crisp.chat">
-    <link rel="preconnect" href="https://my.hostino.com” crossorigin>
+    
     <link rel="profile" href="https://gmpg.org/xfn/11">
-	  <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="dns-prefetch" href="//client.crisp.chat">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://my.hostino.com” crossorigin>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
 
     {articleSchema && (
       <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -109,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
 
 	  {lang !== "en" ? <Header />  : <HeaderEn />}
-    
+
 		<slot />
 
     {lang !== "en" ? <Footer />  : <FooterEn />}
