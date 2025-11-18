@@ -172,7 +172,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
     <h2 class="title-section text-center pb-[30px] poppins-semibold  text-title" set:html={title}></h2>
     
 
-    <div class="grid section-plans md:grid-cols-3 gap-8">
+    <div class="grid section-plans text-title md:grid-cols-3 gap-8">
       {plans.map((plan) => (
         <div
           class={`${
@@ -190,7 +190,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
             </div>
           )}
           
-          <h3 class="text-2xl font-bold text-title text-title mb-[20px]" set:html={plan.name}></h3>
+          <h3 class="text-[27px] poppins-semibold text-title text-title mb-[20px]" set:html={plan.name}></h3>
           <p class="text-title text-[14px] mb-4" set:html={plan.subtext}></p>
           
           <div class="border-t border-gray-200 my-[40px]"></div>
@@ -210,7 +210,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
             </div>
             <div class="text-[16px] text-title poppins-semibold  mb-1">For only</div>
             <span
-              class={`numbers text-[45px] font-bold leading-[54px] text-title`}
+              class={`numbers text-[45px] poppins-semibold leading-[54px] text-title`}
             >
               {plan.price_discounted}
             </span>
@@ -266,9 +266,9 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
             </div>
           </div>
           
-          <div class="space-y-1 text-[15px] text-gray-700">
+          <div class="space-y-1 text-[15px] text-title">
             {plan.features.seo_optimized && (
-              <p>
+              <p class="text-title">
 
               {
                     plan.id === 3 ? (
@@ -291,44 +291,44 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
               </p>
             )}
             {plan.features.free_domain ? (
-              <p>
+              <p class="text-title">
                 <span class={"text-title"}>
                   Free <b><i>domain name</i></b>
                 </span>
               </p>
             ) : (
-              <p>
+              <p class="text-title">
                 <span class={"text-gray-400"}>
                   Free <b><i>domain name</i></b>
                 </span>
               </p>
             )}
             {plan.features.wordpress_preinstalled && (
-              <p>
+              <p class="text-title">
                 <img src="/images/wp.svg" alt="WordPress" class="inline w-4 h-4 mr-1" />
                 <b>Pre-installed WordPress</b>
               </p>
             )}
-            <p>
+            <p class="text-title">
               Control panel <b><i>{plan.features.control_panel}</i></b>
             </p>
-            <p>{plan.features.ssl}</p>
-            <p>
+            <p class="text-title">{plan.features.ssl}</p>
+            <p class="text-title">
               Disk Space: <b>{plan.features.disk_space}</b>
             </p>
-            <p>
+            <p class="text-title">
               Bandwidth: <b>{plan.features.bandwidth}</b>
             </p>
-            <p>
+            <p class="text-title">
               Databases: <b>{plan.features.databases}</b>
             </p>
-            <p>
+            <p class="text-title">
               Email Accounts: <b>{plan.features.email_accounts}</b>
             </p>
-            <p>
+            <p class="text-title">
               Subdomains: <b>{plan.features.subdomains}</b>
             </p>
-            <p>
+            <p class="text-title">
               Backups: <b>{plan.features.backups}</b>
             </p>
           </div>
@@ -337,7 +337,7 @@ const { title = "Chose your perfect<br>Web hosting plan", plans = hostingPlans }
             <div class="mt-4">
               <a
                 href={plan.more_performance.href}
-                class="text-title underline text-[15px] poppins-bold"
+                class="text-title underline text-[15px] poppins-semibold"
               >
                 {plan.more_performance.text}
               </a>

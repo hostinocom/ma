@@ -117,11 +117,11 @@ const faqData = [
             <div
               data-faq-content
               data-index={index}
-              class="overflow-hidden max-h-0 opacity-0 transition-all duration-300"
+              class="overflow-hidden poppins-regular max-h-0 opacity-0 transition-all duration-300"
             >
               <div class="px-6 pb-6 text-[#022545] leading-relaxed">
                 {item.answer && (
-                  <div class="poppins-regular" set:html={item.answer} />
+                  <div class="poppins-regular text-[17px]" set:html={item.answer} />
                 )}
                 {item.answers && (
                   <>
@@ -169,14 +169,14 @@ const faqData = [
             <div
               data-faq-content
               data-index={index + 3}
-              class="overflow-hidden max-h-0 opacity-0 transition-all duration-300"
+              class="overflow-hidden max-h-0 opacity-0 poppins-regular transition-all duration-300"
             >
               <div class="px-6 pb-6  text-[#022545] leading-relaxed">
-                {item.answer && <p>{item.answer}</p>}
+                {item.answer && <p class="poppins-regular" >{item.answer}</p>}
                 {item.answers && (
                   <>
                     {item.answers.map((phrase, idx) => (
-                      <p class={idx < item.answers.length - 1 ? "mb-6" : ""}>
+                      <p class={idx < item.answers.length - 1 ? "mb-6 poppins-regular" : " poppins-regular"}>
                         {phrase}
                       </p>
                     ))}

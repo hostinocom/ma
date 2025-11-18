@@ -131,7 +131,7 @@ const { lang } = Astro.props
           bgColor="bg-primary"
           hoverBgColor="bg-title"
           textColor="text-white"
-          class="lang-switch-en hidden lg:block text-white bg-primary font-bold px-2 py-1"
+          class="lang-switch-en hidden lg:block text-white bg-primary poppins-bold px-2 py-1"
         />
         </a>
 
@@ -299,40 +299,72 @@ const { lang } = Astro.props
 </header>
 
 
-<script>
-    // Desktop dropdown functionality
-  const hebergementDropdown = document.querySelector('.dropdown-hebergement');
-  const header = document.querySelector('.dropdown-hebergement');
 
-  const seoDropdown = document.querySelector('.dropdown-seo');
 
-  if (hebergementDropdown) {
-    const menu = hebergementDropdown.querySelector('.dropdown-menu');
-    const arrow = hebergementDropdown.querySelector('.dropdown-arrow');
-    
-    hebergementDropdown.addEventListener('mouseenter', () => {
-      menu?.classList.remove('hidden');
-      seoDropdown?.querySelector('.dropdown-menu')?.classList.add('hidden');
-    });
-    
-    hebergementDropdown.addEventListener('mouseleave', () => {
-      menu?.classList.add('hidden');
-    });
+
+
+
+<script >
+  // Select dropdowns
+const hebergementDropdown = document.querySelector('.dropdown-hebergement');
+const seoDropdown = document.querySelector('.dropdown-seo');
+
+// GLOBAL CLICK → close all dropdowns except when clicking inside one of them
+document.addEventListener("click", (e) => {
+  // If the click is inside hébergement or SEO dropdown ➜ do nothing
+  if (
+    hebergementDropdown?.contains(e.target) ||
+    seoDropdown?.contains(e.target)
+  ) {
+    return; // stop here
   }
+
+  // Otherwise ➜ close all dropdowns
+  const menuHebergement = hebergementDropdown?.querySelector('.dropdown-menu');
+  const arrowHebergement = hebergementDropdown?.querySelector('.dropdown-arrow');
+
+  const menuSeo = seoDropdown?.querySelector('.dropdown-menu');
+  const arrowSeo = seoDropdown?.querySelector('.dropdown-arrow');
+
+  menuHebergement?.classList.add("hidden");
+  arrowHebergement?.classList.remove("rotate-180");
+
+  menuSeo?.classList.add("hidden");
+  arrowSeo?.classList.remove("rotate-180");
+});
+
+// OPEN/CLOSE for Hébergement
+if (hebergementDropdown) {
+  hebergementDropdown.addEventListener("click", () => {
+    const menu = hebergementDropdown.querySelector(".dropdown-menu");
+    const arrow = hebergementDropdown.querySelector(".dropdown-arrow");
+
+    // Toggle hébergement
+    menu?.classList.toggle("hidden");
+    arrow?.classList.toggle("rotate-180");
+
+    // Always close SEO when opening hébergement
+    const menuSeo = seoDropdown?.querySelector(".dropdown-menu");
+    const arrowSeo = seoDropdown?.querySelector(".dropdown-arrow");
+    menuSeo?.classList.add("hidden");
+    arrowSeo?.classList.remove("rotate-180");
+  });
+}
+
 
   if (seoDropdown) {
     const menu = seoDropdown.querySelector('.dropdown-menu');
     const arrow = seoDropdown.querySelector('.dropdown-arrow');
+
+
     
-    seoDropdown.addEventListener('mouseenter', () => {
-      menu?.classList.remove('hidden');
-      arrow?.classList.add('rotate-180');
+    seoDropdown.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+      arrow?.classList.toggle('rotate-180');
       hebergementDropdown?.querySelector('.dropdown-menu')?.classList.add('hidden');
     });
     
-    seoDropdown.addEventListener('mouseleave', () => {
-      menu?.classList.add('hidden');
-    });
+    
   }
 
   // Mobile menu functionality
@@ -377,3 +409,6 @@ const { lang } = Astro.props
   );
 </script>
 
+
+
+ 

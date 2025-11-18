@@ -849,23 +849,23 @@ li{
   border-color : transparent !important
 }
 
-.dropdown-menu{
+/* .dropdown-menu{
     display: none;
-}
+} */
 
-.dropdown-hebergement:hover .dropdown-menu{ 
+/* .dropdown-hebergement:hover .dropdown-menu{ 
     display : block
 }
 
 .dropdown-seo:hover .dropdown-menu{ 
   display : block
-}
+} */
 
-.dropdown-seo:hover .dropdown-arrow{ 
+.dropdown-seo .dropdown-arrow.active{ 
   transform : rotate(-180deg)
 }
 
-.dropdown-hebergement:hover .dropdown-arrow{ 
+.dropdown-hebergement .dropdown-arrow.active{ 
   transform : rotate(-180deg)
 }
 

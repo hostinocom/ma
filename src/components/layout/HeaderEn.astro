@@ -120,7 +120,7 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
           bgColor="bg-primary"
           hoverBgColor="bg-title"
           textColor="text-white"
-          class="lang-switch-fr hidden lg:block text-white bg-primary font-bold px-2 py-1"
+          class="lang-switch-fr hidden lg:block text-white bg-primary poppins-bold px-2 py-1"
         />
         </a>
 
@@ -224,40 +224,70 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
   </div>
 </header>
 
-<script>
-  const hebergementDropdown = document.querySelector('.dropdown-hebergement');
-  const seoDropdown = document.querySelector('.dropdown-seo');
+<script >
+  // Select dropdowns
+const hebergementDropdown = document.querySelector('.dropdown-hebergement');
+const seoDropdown = document.querySelector('.dropdown-seo');
 
-  if (hebergementDropdown) {
-    const menu = hebergementDropdown.querySelector('.dropdown-menu');
-    const arrow = hebergementDropdown.querySelector('.dropdown-arrow');
-    hebergementDropdown.addEventListener('mouseenter', () => {
-      menu?.classList.remove('hidden');
-      arrow?.classList.add('rotate-180');
-      seoDropdown?.querySelector('.dropdown-menu')?.classList.add('hidden');
-      seoDropdown?.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
-    });
-    hebergementDropdown.addEventListener('mouseleave', () => {
-      menu?.classList.add('hidden');
-      arrow?.classList.remove('rotate-180');
-    });
+// GLOBAL CLICK → close all dropdowns except when clicking inside one of them
+document.addEventListener("click", (e) => {
+  // If the click is inside hébergement or SEO dropdown ➜ do nothing
+  if (
+    hebergementDropdown?.contains(e.target) ||
+    seoDropdown?.contains(e.target)
+  ) {
+    return; // stop here
   }
+
+  // Otherwise ➜ close all dropdowns
+  const menuHebergement = hebergementDropdown?.querySelector('.dropdown-menu');
+  const arrowHebergement = hebergementDropdown?.querySelector('.dropdown-arrow');
+
+  const menuSeo = seoDropdown?.querySelector('.dropdown-menu');
+  const arrowSeo = seoDropdown?.querySelector('.dropdown-arrow');
+
+  menuHebergement?.classList.add("hidden");
+  arrowHebergement?.classList.remove("rotate-180");
+
+  menuSeo?.classList.add("hidden");
+  arrowSeo?.classList.remove("rotate-180");
+});
+
+// OPEN/CLOSE for Hébergement
+if (hebergementDropdown) {
+  hebergementDropdown.addEventListener("click", () => {
+    const menu = hebergementDropdown.querySelector(".dropdown-menu");
+    const arrow = hebergementDropdown.querySelector(".dropdown-arrow");
+
+    // Toggle hébergement
+    menu?.classList.toggle("hidden");
+    arrow?.classList.toggle("rotate-180");
+
+    // Always close SEO when opening hébergement
+    const menuSeo = seoDropdown?.querySelector(".dropdown-menu");
+    const arrowSeo = seoDropdown?.querySelector(".dropdown-arrow");
+    menuSeo?.classList.add("hidden");
+    arrowSeo?.classList.remove("rotate-180");
+  });
+}
+
 
   if (seoDropdown) {
     const menu = seoDropdown.querySelector('.dropdown-menu');
     const arrow = seoDropdown.querySelector('.dropdown-arrow');
-    seoDropdown.addEventListener('mouseenter', () => {
-      menu?.classList.remove('hidden');
-      arrow?.classList.add('rotate-180');
+
+
+    
+    seoDropdown.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+      arrow?.classList.toggle('rotate-180');
       hebergementDropdown?.querySelector('.dropdown-menu')?.classList.add('hidden');
-      hebergementDropdown?.querySelector('.dropdown-arrow')?.classList.remove('rotate-180');
     });
-    seoDropdown.addEventListener('mouseleave', () => {
-      menu?.classList.add('hidden');
-      arrow?.classList.remove('rotate-180');
-    });
+    
+    
   }
 
+  // Mobile menu functionality
   const burgerButton = document.querySelector('.burger-button');
   const mobileMenu = document.querySelector('.mobile-menu');
   const burgerIcon = document.querySelector('.burger-icon');
@@ -267,6 +297,7 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
     burgerIcon?.classList.toggle('open');
   });
 
+  // Mobile dropdowns
   const mobileHebergement = document.querySelector('.mobile-dropdown-hebergement');
   const mobileSeo = document.querySelector('.mobile-dropdown-seo');
 
@@ -284,16 +315,16 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
     arrow?.classList.toggle('rotate-180');
   });
 
-  const langButtons = document.querySelectorAll('.lang-switch-fr');
-  const langButtonsMobile = document.querySelectorAll('.lang-switch-fr-mobile');
-  const goToFrench = () => {
+  // Language switcher (FR -> EN)
+  const langButtons = document.querySelectorAll('.lang-switch-en');
+  const langButtonsMobile = document.querySelectorAll('.lang-switch-en-mobile');
+  const goToEnglish = () => {
     const { pathname, search, hash } = window.location;
-    if (!pathname.endsWith('/en')) return;
-    const basePath = pathname.slice(0, -3) || "/";
-    window.location.href = `${basePath}${search}${hash}`;
+    if (pathname.endsWith('/en')) return;
+    const basePath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+    window.location.href = `${basePath}en${search}${hash}`;
   };
   [...langButtons, ...langButtonsMobile].forEach((btn) =>
-    btn?.addEventListener('click', goToFrench)
+    btn?.addEventListener('click', goToEnglish)
   );
 </script>
-
