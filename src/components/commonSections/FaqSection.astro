@@ -126,7 +126,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
               data-faq-button={index}
               aria-expanded="false"
             >
-              <span class="text-[19px] poppins-semibold  text-title pr-4 transition-colors duration-300">
+              <span class="text-[18px] poppins-semibold  text-title pr-4 transition-colors duration-300">
                 {item.question}
               </span>
               <svg
@@ -178,7 +178,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
                 data-faq-button={adjustedIndex}
                 aria-expanded="false"
               >
-                <span class="text-[19px] poppins-semibold  text-title pr-4 transition-colors duration-300">
+                <span class="text-[18px] poppins-semibold  text-title pr-4 transition-colors duration-300">
                   {item.question}
                 </span>
                 <svg
@@ -205,7 +205,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
                   {(() => {
                     const answer = renderAnswer(item);
                     if (typeof answer === "string") {
-                      return <p set:html={answer}></p>;
+                      return <p set:html={answer} />;
                     } else if (Array.isArray(answer)) {
                       return answer.map((phrase: string, idx: number) => (
                         <p key={idx} class="paragraph" set:html={phrase}></p>

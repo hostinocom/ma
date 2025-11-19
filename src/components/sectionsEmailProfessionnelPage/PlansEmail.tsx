@@ -357,7 +357,7 @@ const PlanCard = ({
 
       {/* Pricing */}
       <div className="mb-6">
-        <p className="text-[18px] text-title poppins-semibold  mb-1">{plan.order.text === "Order now" ? "Starting at" : "À seulement"}</p>
+        <p className="text-[18px] text-title poppins-semibold   mb-1">{plan.order.text === "Order now" ? "Starting at" : "À seulement"}</p>
         <p
           className="font-[Montserrat] text-[40px] poppins-semibold  leading-[54px] text-title"
         >
@@ -402,10 +402,10 @@ const PlanCard = ({
             className="flex items-center lg:justify-start justify-center"
           >
             {typeof feature == "object" ? (
-              <span dangerouslySetInnerHTML={{__html : feature}} />
+              <>{feature}</>
             ) : (
               <span
-                className="text-title"
+                className="text-title "
                 dangerouslySetInnerHTML={{ __html: feature }}
               />
             )}

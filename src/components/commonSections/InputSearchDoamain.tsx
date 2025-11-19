@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const domainOptions = [
   ".ma",
@@ -35,39 +35,42 @@ const domainOptions = [
   ".ai",
 ];
 
-export default function InputSearchDomain({ id }: { id: string }) {
+export default function InputSearchDomain({ id, placeholder, nameButton }: { 
+  id: string,
+  placeholder: string,
+  nameButton: string,
+ }) {
   const [domain, setDomain] = useState("");
   const [selectedTld, setSelectedTld] = useState(".ma");
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+      setDomain("")
+      setSelectedTld(".ma")
+  }, []);
+
   const handleSubmit = () => {
-    // Nettoyer le nom de domaine
     const cleanDomain = domain.trim().toLowerCase();
+
+    console.log(cleanDomain);
     
-    // Validation
     if (!cleanDomain) {
       alert("Veuillez entrer un nom de domaine");
       return;
     }
 
-    // Activer le chargement
     setIsLoading(true);
 
-    // Construire le domaine complet
     const fullDomain = cleanDomain + selectedTld;
     
-    // Construire l'URL complète
     const url = `https://my.hostino.com/order.php?spage=domain&action=register&a=add&query=${encodeURIComponent(fullDomain)}&language=french&country=MA&currency=1`;
     
-    console.log("Redirection vers:", url);
     
-    // Petit délai pour montrer l'indicateur avant la redirection
     setTimeout(() => {
       window.location.href = url;
     }, 10);
   };
 
-  // Gérer la soumission avec la touche Entrée
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -77,14 +80,14 @@ export default function InputSearchDomain({ id }: { id: string }) {
   
   return (
     <div className="md:max-w-2xl w-full mx-auto mb-8">
-      <div className="flex rounded-lg overflow-hidden sm:border-0 border border-primary bg-white flex-col sm:flex-row">
+      <div className="flex rounded-lg overflow-hidden  border border-primary bg-white flex-col sm:flex-row">
         <input
           type="text"
           value={domain}
           onChange={(e) => setDomain(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Entrer un nom de domaine"
-          className="flex-1 px-8 sm:py-6 py-8 text-title font-[20px] rounded-l-lg focus:outline-none text-gray-800"
+          placeholder={placeholder || "Entrer un nom de domaine"}
+          className="flex-1 px-8 sm:py-6 py-8  font-[20px] search-input-doamin rounded-l-lg focus:outline-none text-gray-800"
           disabled={isLoading}
           required
         />
@@ -133,10 +136,10 @@ export default function InputSearchDomain({ id }: { id: string }) {
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 />
               </svg>
-              <span>Recherche...</span>
+              <span>{nameButton || "Rechercher"}...</span>
             </>
           ) : (
-            <span>Rechercher</span>
+            <span>{nameButton || "Rechercher"}</span>
           )}
         </button>
       </div>

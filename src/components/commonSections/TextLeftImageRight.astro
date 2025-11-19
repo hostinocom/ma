@@ -40,7 +40,8 @@ const {
             {title}
           </h2>
         )}
-        {paragraphs.map((paragraph, index) =>
+        <div>
+            {paragraphs.map((paragraph, index) =>
           typeof paragraph === "object" ? (
             <Fragment class="paragraph poppins-light" key={index}>{paragraph}</Fragment>
           ) : (
@@ -51,6 +52,7 @@ const {
             ></p>
           )
         )}
+        </div>
         {consultButtonTextExiste && (
           <ConsultButton arrowButton={arrowButton} href={href} text={textButton} />
         )}

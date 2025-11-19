@@ -3,7 +3,7 @@
 import { useState } from "react";
 import InputSearchDoamain from "../commonSections/InputSearchDoamain";
 
-export default function DomainSearchSectionEn({ id }: { id: string }) {
+export default function DomainSearchSectionEn({ id , placeholder, nameButton }: { id: string, placeholder: string, nameButton: string }) {
   
 
   return (
@@ -29,7 +29,7 @@ export default function DomainSearchSectionEn({ id }: { id: string }) {
           . Choose yours today.
         </p>
 
-        <InputSearchDoamain id="mn" />
+        <InputSearchDoamain id="ma" placeholder={placeholder} nameButton={nameButton} />
 
         <img
           src="https://www.hostino.ma/en/wp-content/uploads/2025/04/nav-domains.png"

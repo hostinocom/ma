@@ -1,0 +1,377 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/commonSections/HeroSection.astro";
+import ContactForm from "../components/commonSections/ContactForm.astro";
+import TextLeftImageRight from "../components/commonSections/TextLeftImageRight.astro";
+import NationalCoverage from "../components/commonSections/NationalCoverage.astro";
+import FAQSection from "../components/commonSections/FaqSection.astro";
+import SeoServiceCards from "../components/commonSections/SeoServiceCards.astro";
+import GmbServices from "../components/commonSections/GmbServices.astro";
+import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter.astro";
+import CaseStudyPalaisFajar from "../components/sectionsAgenceSeoMaroc/CaseStudyPalaisFajar.astro";
+import { main_schema } from "../mainSchema";
+
+const title = "Agence Marketing Hôtel Larache| SEO &amp; Google Ads pour Hôtels Larache";
+const description =
+  "Agence de marketing hôtelier Larache. Publicité Google Ads et SEO pour augmenter vos réservations directes depuis votre site web ☎️ 0663 75 09 08";
+const imageUrl =
+  "https://www.hostino.ma/images/agence-marketing-hotel.png";
+const canonical_url = "https://www.hostino.ma/agence-marketing-hotel-larache";
+const ogAlt = "Agence Marketing Hôtel Larache";
+
+const faqData = [
+  {
+    question:
+      "Pourquoi un hôtel ou un riad à Larache a-t-il besoin d'une stratégie marketing digitale ?",
+    answers: [
+      'Au Maroc, la concurrence entre hôtels et riads est forte, notamment dans les médinas de Marrakech, Fès ou Essaouira. Sans stratégie marketing, même les plus beaux établissements restent invisibles aux yeux des voyageurs. Une présence optimisée sur Google, des avis clients positifs et un site qui convertit sont essentiels pour exister face aux OTA (Booking, <span style="text-decoration: underline"><strong><a href="https://www.expedia.fr/Destinations-En-Maroc.d122.Destinations-hotels" rel="noopener">Expedia</a></strong></span>).',
+      "Le marketing digital permet de transformer une simple visibilité en réservations directes, ce qui améliore la rentabilité et renforce la notoriété de l'établissement.",
+    ],
+  },
+  {
+    question:
+      "Comment le storytelling peut valoriser un hôtel ou riad marocain ?",
+    answers: [
+      "Au Maroc, chaque établissement a une histoire à raconter : un riad restauré par une famille locale, une kasbah nichée dans les montagnes, un hôtel moderne avec une touche artisanale. Le storytelling transforme ces éléments en expériences émotionnelles qui séduisent les voyageurs.",
+      "Une agence spécialisée peut traduire cette authenticité en articles, vidéos ou posts sociaux.",
+      "Résultat : un hôtel ou un riad devient non seulement un lieu de séjour, mais une aventure marocaine en soi.",
+    ],
+  },
+  {
+    question:
+      "Quelle est l'importance des avis clients pour un hôtel à Larache ?",
+    answers: [
+      "Les avis clients influencent directement la décision des voyageurs. Un hôtel ou riad avec une note supérieure à 4,0/5 inspire confiance et attire davantage de réservations. Au Maroc, où l'hospitalité est une valeur culturelle forte, capitaliser sur la satisfaction client est un atout majeur.",
+      "Une bonne gestion des avis en ligne, associée à des réponses professionnelles, permet de bâtir une e-réputation solide et de transformer chaque séjour réussi en levier marketing.",
+    ],
+  },
+  {
+    question:
+      "Comment Hostino aide les hôtels de luxe à séduire une clientèle internationale ?",
+    answers: [
+      "Les hôtels de luxe marocains doivent mettre en avant bien plus que leurs chambres : spa, gastronomie marocaine raffinée, excursions exclusives. Hostino valorise ces expériences à travers des campagnes digitales premium, un référencement multilingue et des visuels de haute qualité.",
+      "Cette approche attire les voyageurs à fort pouvoir d'achat et augmente la part de réservations directes, en réduisant la dépendance aux commissions des plateformes de réservation.",
+    ],
+  },
+  {
+    question: "Le marketing digital peut-il vraiment aider un petit riad ?",
+    answers: [
+      "Absolument. Un petit riad, avec son charme traditionnel et son hospitalité, a un énorme potentiel d'attraction, notamment auprès des voyageurs étrangers. Pourtant, beaucoup restent invisibles par manque de stratégie digitale.",
+      "Avec un site web optimisé, des contenus inspirants et une présence active sur Instagram ou TikTok, un riad peut rapidement se démarquer et séduire une clientèle fidèle, tout en conservant son authenticité.",
+    ],
+  },
+  {
+    question: "Quelles stratégies pour séduire différents marchés étrangers ?",
+    answers: [
+      "La clientèle internationale est diverse : les voyageurs français recherchent souvent des riads authentiques, les Américains veulent une expérience immersive, et les visiteurs du Golfe privilégient les hôtels de luxe avec spa et suites. Adapter sa communication à chaque cible est donc essentiel.",
+      "Hostino met en place des campagnes multilingues et segmentées : SEO en français, Google Ads ciblés sur l'Espagne, contenus en anglais ou en arabe selon le marché. Cette approche sur-mesure maximise l'attractivité de l'établissement auprès de chaque profil de voyageur.",
+    ],
+  },
+];
+
+const seoServiceCardsDataImporter: SEOServiceCard[] = [
+  {
+    title:
+      "Agence SEO pour médecins,  cabinets médicaux et laboratoires",
+    paragraphs: [
+      "Le digital est aujourd'hui un levier essentiel pour les professionnels de santé à Larache. Notre agence SEO accompagne les <strong>médecins, cabinets médicaux, laboratoires</strong> et l'ensemble des acteurs du secteur de la santé afin de renforcer leur visibilité sur Google ainsi que dans les moteurs de recherche IA.",
+      `<span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">Nous mettons en place des stratégies de référencement local et organique, conçues dans </span><b style="font-family: inherit; font-size: inherit; font-style: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">les règles de l'art et en parfaite conformité avec les <u>régulations marocaines</u></b><span style="color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: inherit;">.&nbsp;</span>`,
+      "Imaginez l'impact d'avoir votre <strong>site web</strong> en première position sur des recherches comme « <strong>Gynécologue Larache</strong> » ou « <strong>Cabinet dentaire Ville</strong> ». Ces mots-clés peuvent générer chaque mois des centaines de demandes de consultations et de rendez-vous.",
+      "De plus, les usages évoluent rapidement. Demain, un patient posera directement sa question à ChatGPT : « <strong>Quel est le meilleur dentiste à Larache ?</strong> » Notre mission est de faire en sorte que votre cabinet soit la réponse.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "/agence-marketing-medical",
+    bgColor: "bg-[#FEF6F3]",
+  },
+  {
+    title: "Agence SEO pour sites d'actualités, radios et chaînes TV",
+    paragraphs: [
+      "Nous accompagnons les radios, magazines, journaux en ligne et <strong>chaînes de télévision</strong> dans l'optimisation de leur <strong>visibilité sur Google</strong>, afin de générer un maximum de trafic organique aussi bien au niveau <strong>local qu'international</strong>.",
+      `Nous proposons des <b>formations dédiées aux journalistes</b> afin de leur transmettre les meilleures pratiques <b>éditoriales orientées SEO</b>. Nous mettons l'accent sur la rédaction de contenus optimisés pour Google et les réseaux sociaux, la structuration des articles avec des éléments enrichis, ainsi que l'adaptation des stratégies de diffusion afin de garantir leur validation <span style="text-decoration: underline;"><a href="https://support.google.com/news/publisher-center/answer/10598355?hl=fr" rel="noopener"><b>Google Actualités</b></a></span> et leur visibilité sur <b>Google Discover</b>`,
+      "Déjà, plusieurs médias de référence nous font confiance, tels que <strong>Medi1TV, Medi1News</strong> et <strong>Maroc24.com</strong>. Ces collaborations constituent pour nous de véritables success stories, démontrant notre capacité à accompagner efficacement les acteurs médiatiques de toute taille, et à transformer leur présence digitale en un puissant levier de croissance et d'influence.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "/agence-marketing-news",
+    bgColor: "bg-[#0C10DA0D]",
+  },
+  {
+    title: "Agence SEO BTP et Promotion Immobilière",
+    paragraphs: [
+      `Hostino est l'agence SEO qui accompagne les entreprises du BTP — <b>bureaux d'études</b>, <b>architectes</b>, notaires, agences immobilières et <b>promoteurs</b> — dans leur visibilité sur Google et les moteurs de recherche IA. Grâce à des stratégies SEO locales et ciblées, nous positionnons votre entreprise sur les <b>premiers résultats</b> pour des recherches stratégiques telles que « <b>Architecte d'intérieur Ville</b>&nbsp;», « <b>Appartement à vendre</b> Ville » ou « notaire Ville ».`,
+      `En retour, vous recevez des <b>consultations</b> et des <b>appels téléphoniques</b> de prospects qualifiés, réellement intéressés par vos services et déjà <b>prêts à acheter</b>.`
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "/agence-marketing-immobilier",
+    bgColor: "bg-[#E7F3ED]",
+  },
+  {
+    title: "Agence SEO pour hôtels, riads et palaces",
+    paragraphs: [
+      `Dépasser les grandes plateformes de réservation sur des mots-clés stratégiques comme « <b>Riad Larache</b> », « <strong>Best Hotel</strong><b> Larache</b>&nbsp;» ou « <b>Luxury Hotel Morocco</b> » est possible avec notre agence SEO.&nbsp;`,
+      `Grâce à une stratégie de référencement avancée, nous <b>positionnons votre établissement</b> sur Google et sur les moteurs IA afin d'attirer directement les voyageurs sur votre site web et de générer des <b>réservations directes</b>. Vous devenez visible face aux grandes agences de voyages internationales pour les <b>réservations de groupes</b>, tout en réduisant votre dépendance aux commissions des OTA (Booking, Expedia, etc.).`
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "/agence-marketing-hotel",
+    bgColor: "bg-[#00B9FF1F]",
+  },
+  {
+    title:
+      "Agence SEO pour comptables, cabinets de recrutement, de conseil et de certification",
+    paragraphs: [
+      "Un cabinet bien positionné en N°1 sur Google au Maroc peut recevoir chaque jour une dizaine d'appels : des clients à la recherche d'un accompagnement fiscal, de la <strong>création d'entreprise</strong>, d'une <strong>formation professionnelle</strong>, d'une société cherchant une agence de <strong>recrutement</strong>, ou encore d'un accompagnement pour la <strong>certification ISO 9001</strong>.",
+      "Tous ces exemples peuvent être le vôtre. L'agence SEO Hostino vous aide à <strong>dominer votre secteur d'activité</strong> grâce à des stratégies de référencement locales et ciblées, qui vous placent en <strong>première ligne face à vos concurrents</strong> et transforment chaque recherche sur Google en nouvelle opportunité pour votre cabinet.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#FAE0E0]",
+  },
+  {
+    title:
+      "Agence SEO pour écoles, universités et centres de formation",
+    paragraphs: [
+      "Imaginez qu'une <strong>crèche</strong> apparaisse en première position sur Google lorsqu'un parent recherche « <strong>Crèche Larache</strong> ».",
+      "De la même façon, une <strong>école primaire</strong> à Casablanca peut apparaître en tête des résultats pour « <strong>Meilleure école privée Larache</strong> » et générer en continu de nouvelles demandes d'inscription.",
+      "Plus haut encore dans le parcours académique, notre agence SEO peut positionner le site d'une université en tête des résultats pour des requêtes telles que « <strong>Executive MBA Ville</strong> » ou « <strong>École de Management Ville</strong> ».",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#D3D3D345]",
+  },
+  {
+    title:
+      "Agence SEO pour prestataires de services (plombiers, électriciens et serruriers ...)",
+    paragraphs: [
+      "Pour un <strong>plombier</strong>, un <strong>chauffagiste</strong>, un <strong>électricien</strong> ou un <strong>serrurier</strong>, être visible sur Google est devenu indispensable. Lorsqu'un client a besoin d'une intervention en urgence, il ne perd pas de temps : il choisit l'un des premiers résultats.",
+      "<strong>Se positionner en tête</strong>, c'est donc s'assurer davantage d'appels, de demandes de devis et de chantiers chaque jour, sans dépendre uniquement du bouche-à-oreille ou du marketing traditionnel.",
+      "Grâce à des stratégies sur mesure — <strong>mots-clés locaux</strong>, optimisation du profil Google Business Profile, création de contenu pertinent — notre agence vous aide à devancer vos concurrents et à transformer les recherches en <strong>nouveaux clients réguliers</strong>.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#EDFF2829]",
+  },
+  {
+    title:
+      "Agence SEO pour agences de voyages, guides et transport touristique",
+    paragraphs: [
+      "Dans le secteur du tourisme, être bien référencé sur Google est essentiel pour attirer davantage de voyageurs. Qu'il s'agisse d'une <strong>agence de voyages</strong>, d'un <strong>guide local</strong> ou d'une <strong>société de transport</strong> touristique, la recherche des clients commence presque toujours en ligne.",
+      "Être visible en première page permet non seulement de générer plus de réservations, mais aussi d'accroître sa notoriété et de se démarquer de la concurrence.",
+      "Notre agence SEO vous aide à positionner votre site en première page sur des mots-clés stratégiques tels que « <strong>Transfer airport Marrakech</strong> », « <strong>Location de voiture Ville</strong> » ou encore « <strong>Private tours Fez</strong> », afin de transformer les recherches en réservations concrètes.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#FE56FF26]",
+  },
+  {
+    title: "Agence SEO pour marques et e-commerce",
+    paragraphs: [
+      "Pour <strong>une marque</strong> ou une <strong>boutique en ligne</strong>, apparaître en première page de Google est une opportunité en or pour attirer des clients qualifiés. Dans le secteur du e-commerce, une simple recherche peut se transformer en vente. Imaginez ces scénarios où le référencement est crucial :",
+      `<ul class="paragraph space-y-2 list-disc pl-[30px]">
+        <li>
+          Un professionnel à Rabat a besoin d'un
+          <strong>toner en urgence</strong>.
+        </li>
+        <li>
+          Quelqu'un souhaite faire livrer un <strong>bouquet de fleurs</strong>.
+          Un invité de mariage cherche un <strong>cadeau original</strong>.
+        </li>
+        <li>Un passionné de décoration est en quête d'un tableau unique.</li>
+      </ul>`,
+      "Pour ces entreprises, être bien référencé, c'est l'assurance d'être trouvé au moment précis où le client est prêt à acheter.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#005CEE30]",
+  },
+  {
+    title: "Agence SEO pour startups et SaaS",
+    paragraphs: [
+      "Une startup ou un SaaS doit être visible non seulement auprès des clients, mais aussi des investisseurs pour réussir sa croissance et ses levées de fonds. Être en première page de Google <strong>accélère l'acquisition d'utilisateurs</strong>, renforce la crédibilité et ouvre des opportunités stratégiques lors des <strong>levées de fonds</strong>.",
+      "Notre agence SEO accompagne les startups et SaaS avec des stratégies sur mesure pour attirer des utilisateurs, <strong>convaincre les investisseurs</strong> et transformer cette visibilité en croissance durable.",
+      "Qu'il s'agisse de SaaS B2B, de solutions <strong>FinTech</strong>, de plateformes <strong>EdTech</strong>, de startups en <strong>GreenTech</strong> ou encore de projets HealthTech, Hostino est là pour assurer la visibilité de votre solution sur <strong>Google et les moteurs de recherche IA</strong>.",
+    ],
+    buttonText: "Plus d'informations",
+    buttonLink: "",
+    bgColor: "bg-[#46FF0426]",
+  },
+];
+
+
+const prestations = [
+  {
+    title: "Référencement<br>Google (SEO)",
+    description:
+      'Nous optimisons votre site hôtelier pour un positionnement durable en première page de Google sur des mots-clés tels que : "Meilleur hôtel à Larache", "Riad Larache", ou <b>"Luxury Hotel Ville"</b>.<br/><br/>Résultat : <b>plus de trafic qualifié</b> et davantage de <b>réservations directes</b>.',
+    link: "/contact",
+    textButton: "Contactez-nous",
+  },
+  {
+    title: "Fiches<br>d'établissement Google",
+    description:
+      "Optimisez la visibilité de votre hôtel à Larache grâce à une fiche d'établissement Google optimisée. Cela facilite le <b>partage de l'itinéraire</b> et attire <b>davantage de clients.</b><br/><br/>En 2025, la réputation d'un hôtel au Maroc dépend largement du volume et de la qualité des avis. Votre établissement doit maintenir une <b>note supérieure à 4,0/5</b> — et nous vous aidons à atteindre et préserver ce niveau.",
+    link: "/contact",
+    textButton: "Contactez-nous",
+  },
+  {
+    title: "Sponsoring & campagnes<br>Google Ads Hotels",
+    description:
+      'Boostez la <b>visibilité de votre hôtel sur Google</b> avec des campagnes ciblées sur vos mots-clés stratégiques. Attirez plus de voyageurs, réduisez votre <b>dépendance aux <span style="text-decoration: underline;"><a href="https://fr.wikipedia.org/wiki/Channel_manager" rel="noopener">OTA</a></span></b> et augmentez vos réservations directes.<br/><br/>Notre agence gère vos annonces <span style="text-decoration: underline;"><a href="https://www.hostino.ma/google-ads-maroc/"><strong>Google Ads</strong></a></span> de A à Z : choix des mots-clés, création des campagnes, suivi et optimisation continue pour garantir le <b>meilleur retour sur investissement</b>.',
+    link: "/contact",
+    textButton: "Contactez-nous",
+  },
+  {
+    title: "Storytelling et rédaction<br>de contenus",
+    description:
+      "Nous créons des contenus uniques et engageants qui racontent <b>l'histoire de votre hôtel</b> tout en valorisant l'expérience locale.<br/><br/>Articles sur la culture, mise en avant des meilleurs restaurants de la ville, suggestions de lieux à visiter… nous produisons <b>des textes qui inspirent vos clients</b> et leur donnent envie de réserver.",
+    link: "/maintenance-site-web-maroc",
+    textButton: "Contactez-nous",
+  },
+  {
+    title: "Création de sites web et<br>d'applications mobiles",
+    description:
+      'Nous <strong><span style="text-decoration: underline;"><a href="https://www.hostino.ma/creation-site-web-maroc/">créons des sites web</a></span></strong> modernes et optimisés pour les hôtels, riads et palaces, multilingues et adaptés aux besoins du marché international. Chaque site intègre un <b>module de réservation en ligne</b> ainsi que la connexion à votre channel manager (ex. <b>HotelRunner</b>), afin de synchroniser vos disponibilités et tarifs.<br/><br/>En complément, nous développons des applications mobiles intuitives qui permettent à vos clients de <b>réserver en quelques clics</b> et de découvrir les meilleures expériences autour de votre établissement.',
+    link: "/contact",
+    textButton: "Contactez-nous",
+  },
+  {
+    title: "Gestion des<br>réseaux sociaux",
+    description:
+      "Nous gérons vos réseaux sociaux pour faire rayonner l'image de votre hôtel auprès d'une audience ciblée et qualifiée. Création de contenus visuels attractifs, <b>rédaction de publications engageantes</b>, planification et animation quotidienne : nous transformons vos comptes en véritables vitrines digitales.<br/><br/>Notre objectif est de développer votre communauté, <b>valoriser vos services</b> (chambres, restaurant, spa…), mettre en avant la culture locale et générer plus de réservations directes grâce à une présence sociale cohérente et professionnelle.",
+    link: "/maintenance-site-web-maroc",
+    textButton: "Lire la suite",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hébergement web Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "1900",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "842",
+      },
+    },
+  ],
+};
+---
+
+<Layout 
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+>
+  <main>
+    <HeroSection
+      subtitle="Agence Marketing Hôtel Larache"
+      title="Agence marketing hôtelier à Larache"
+      text="Boostez réservations directes <strong>depuis votre site web</strong> avec notre agence marketing hôtelier !"
+      emailLabel={{
+        textEmail: "Consultation par Email ?",
+        color: "text-primary",
+      }}
+      email="info@hostino.com"
+      imageSrc="/images/11/agence-marketing-hotel-maroc.png"
+      imageAlt="Agence Marketing Hotel au Maroc"
+    />
+
+    <ContactForm
+      title=`
+          Marketing hôtelier Larache : un conseiller
+          <br class="lg:hidden block " />
+          <span class="border-bottom">vous rappelle !</span>
+        `
+    />
+
+    <TextLeftImageRight
+      title="Agence marketing dédiée à l'hôtellerie"
+      paragraphs={[
+        `Hostino, agence de marketing hôtelier à Larache, accompagne les riads, <b>les chaînes hôtelières</b>, les <b>groupements d'hôtels</b> et les <b>établissements de luxe</b> en leur offrant un éventail complet de services destinés à renforcer la visibilité de leur marque et à accroître leurs <b>revenus directs</b>.`,
+        `Nous aidons les professionnels de l'hôtellerie au Maroc à maîtriser leur stratégie digitale. Notre expertise couvre <b>l'intégralité du parcours client</b>, de l'accroissement de la visibilité de leur marque à l'optimisation de leurs réservations directes.`,
+        `Nous mettons à votre disposition une équipe d'experts prête à vous guider dans la <b>conception, l'exécution, le suivi et l'optimisation</b> de votre stratégie de marketing digital.`,
+        `Appelez le +212 663 75 09 08 et confiez votre marketing hôtelier à des experts reconnus au Maroc.`,
+      ]}
+      imageSrc="/images/11/agence-marketing-hotel-maroc.jpg"
+      imageAlt="Agence Marketing pour les hôtels au Maroc"
+      consultButtonTextExiste={true}
+      textButton="Contactez-nous"
+      href="/contact"
+    />
+    
+
+    <GmbServices
+      data={prestations}
+      title="Prestations de notre agence<br />de marketing hôtelier Larache"
+    />
+
+    <TextLeftImageRight
+      title="Référencement Google pour votre Hôtel à Larache"
+      paragraphs={[
+        `Le référencement Google pour votre hôtel à  Larache est un levier incontournable pour <b>attirer plus de voyageurs</b> et augmenter vos réservations directes. Grâce à une stratégie SEO adaptée, votre établissement peut apparaître parmi les premiers résultats lorsqu'un client potentiel recherche un hôtel à Marrakech, Casablanca, Ville ou toute autre ville touristique du pays.`,
+        `Cela passe par l'optimisation technique de votre site, la création de contenus pertinents, et une gestion efficace de votre fiche d'établissement Google afin de renforcer la visibilité locale. Être bien référencé vous permet également d'être plus <b>visible auprès des agences de voyages</b>, un atout majeur pour capter des réservations de groupe.`,
+        `Appelez le +212 663 75 09 08 et confiez le référencement SEO de votre hôtel ou riad à des experts reconnus au Maroc.`,
+      ]}
+      imageSrc="/images/11/agence-marketing-hotel-maroc.png"
+      imageAlt="Agence de référencement SEO Hôtel au Maroc"
+      consultButtonTextExiste={true}
+      textButton="Contactez-nous"
+      href="/contact"
+    />
+
+    <CaseStudyPalaisFajar />
+
+    <SeoServiceCards seoServiceCardsDataImporter={seoServiceCardsDataImporter}/>
+
+    <NationalCoverage
+      title="Agence marketing hôtelier à vos côtés partout <span class='underline'>nationale</span>"
+      topic="Marketing hôtelier "
+      href="agence-marketing-hotel"
+      text="Chez Hostino™, nous accompagnons les hôtels, riads, maisons d'hôtes et acteurs du secteur touristique dans la mise en place de stratégies marketing et SEO efficaces."
+      titleMap={"Larache"}
+      src="https://www.google.com/maps/embed/v1/place?q=Larache&amp;zoom=14&amp;maptype=roadmap&amp;key=AIzaSyCNTEOso0tZG6YMSJFoaJEY5Th1stEWrJI"      
+    />
+
+    <FAQSection
+      faqData={faqData}
+      title="FAQ - Agence Marketing Hôtel Larache"
+    />
+    
+  </main>
+</Layout>

@@ -254,8 +254,10 @@ select {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
-  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[52px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[59px] text-title;
+  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[52px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[65px] text-title;
 }
+
+
 
 span {
   line-height: inherit;
@@ -293,9 +295,12 @@ span {
 
 }
 
-.border-bottom {
-  @apply border-b-4 border-primary max-w-max;
+.border-bottom{
+  border-bottom: 5px solid var(--color-primary);
+  
 }
+
+
 
 .title {
   color: var(--title);
@@ -903,3 +908,16 @@ li{
 input::placeholder {
   font-size: 14px;
  }
+
+
+.btn-order-plan{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+   @apply text-white flex text-[17px]  items-center mt-[18px] gap-3 justify-center   py-[16px] rounded-[10px] text-center mb-4 transition
+  }
+
+
+  .search-input-doamin::placeholder {
+    font-size: 18px !important;
+  }

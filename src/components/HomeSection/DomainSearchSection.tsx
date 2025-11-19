@@ -3,7 +3,7 @@ import InputSearchDoamain from "../commonSections/InputSearchDoamain";
 
 
 
-export default function DomainSearchSection({ id }: { id: string }) {
+export default function DomainSearchSection({ id , placeholder, nameButton }: { id: string, placeholder: string, nameButton: string }) {
   const [domain, setDomain] = useState("");
   const [selectedTld, setSelectedTld] = useState(".ma");
 
@@ -60,7 +60,7 @@ export default function DomainSearchSection({ id }: { id: string }) {
           à partir de 118 DH/an.
         </p>
 
-        <InputSearchDoamain id="ma" />
+        <InputSearchDoamain id="ma" placeholder={placeholder} nameButton={nameButton} />
 
         <img
           src="/images/01/nav-domaines.png"

@@ -11,7 +11,7 @@ import WhyChooseSection from "../components/HomeSection/WhyChooseSection.astro"
 import BenchmarkHostingMorocco from "../components/HomeSection/BenchmarkHostingMorocco.astro"
 import PlansSection from "../components/HomeSection/PlansSection.astro"
 import SixCards from '../components/HomeSection/SixCards.astro';
-import FaqSection from '../components/HomeSection/FaqSection.astro';
+import FaqSection from '../components/commonSections/FaqSection.astro';
 import TextLeftImageRight from "../components/commonSections/TextLeftImageRight.astro"
 import { main_schema } from '../mainSchema.ts';
 
@@ -29,7 +29,84 @@ const ogAlt = "Hébergement Web Maroc";
 
 
 
-
+const faqData = [
+  {
+    question: "C'est quoi l'hébergement d'un site web ?",
+    answer: `
+      <p class="mb-4">
+        Imaginez votre site web comme une maison. Pour qu'elle soit visible
+        sur internet, il lui faut un terrain. C'est là qu'intervient
+        l'hébergement web.
+      </p>
+      <ul class="space-y-3 mb-4">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>
+            L'hébergement web, c'est la location d'un espace sur un serveur
+            puissant, connecté à internet.
+          </span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>
+            C'est sur cet espace que seront stockés tous les fichiers de
+            votre site web (textes, images, vidéos...).
+          </span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>
+            L'hébergeur web, c'est le propriétaire du terrain. Il vous
+            fournit l'espace et s'occupe de tout pour que votre site web
+            soit accessible 24/24h et 7/7j.
+          </span>
+        </li>
+      </ul>
+      <p>
+        Pour que votre site web soit accessible, il vous faut un nom de
+        domaine, que la plupart des hébergeurs web vous permettent d'acheter
+        en même temps que votre pack d'hébergement, et ils peuvent vous
+        aider à en choisir et à l'enregistrer si vous n'en avez pas encore.
+      </p>
+    `,
+  },
+  {
+    question: "Quel est le meilleur hébergeur web ?",
+    answer:
+      "Que vous soyez un particulier, une petite entreprise ou une grande organisation, Hostino™ a la solution d'hébergement web qu'il vous faut. Avec ses performances, sa fiabilité, ses fonctionnalités complètes et ses prix abordables, Hostino™ est le choix idéal pour héberger votre site web au Maroc.",
+  },
+  {
+    question:
+      "Est-il possible de modifier le pack d'hébergement web après souscription ?",
+    answers: [
+      "Bien sûr ! Toutes nos offres d'hébergement sont flexibles et ajustables selon vos exigences. Vous avez la possibilité de passer de l'hébergement web Starty® à l'hébergement Business® ou à Cloudy® à tout moment via votre espace client.",
+      "Cette mise à niveau s'effectue automatiquement et sans aucune interruption de service.",
+    ],
+  },
+  {
+    question: "Quels sont les délais d'activation de ma commande ?",
+    answers: [
+      "L'activation de votre hébergement web est quasi instantanée. Dès validation de votre paiement, votre espace d'hébergement est configuré et accessible dans les minutes qui suivent.",
+      "Vous recevrez vos identifiants de connexion par email immédiatement.",
+    ],
+  },
+  {
+    question: "Pourquoi héberger votre site au Maroc ?",
+    answer:
+      "Héberger votre site au Maroc offre plusieurs avantages : des temps de chargement plus rapides pour vos visiteurs marocains, une conformité avec la réglementation locale, la souveraineté de vos données sur le territoire national, et un support technique qui comprend parfaitement le contexte local.",
+  },
+  {
+    question: "Quelle pack d'hébergement web conviendra à votre projet web ?",
+    answer:
+      "Le choix du pack dépend de plusieurs facteurs : le trafic attendu, le type de site (vitrine, e-commerce, blog), les ressources nécessaires (stockage, bande passante), et votre budget. Notre équipe peut vous conseiller gratuitement pour choisir le pack le plus adapté à votre projet.",
+  },
+];
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -139,7 +216,12 @@ const articleSchema = {
     <EasyHebergementSection />
 	<BenefitsSection />
 	<BenchmarkHostingMorocco />
-  <FaqSection />
+
+
+  <FaqSection 
+      title="FAQ – Hébergement web"
+      faqData={faqData}
+  />
   </main>
 </Layout>
 
