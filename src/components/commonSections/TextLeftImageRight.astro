@@ -28,7 +28,7 @@ const {
 
 <section class={`${className ? className : "lg:my-[150px] my-[80px]"}`}>
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
       <div class="col-span-1">
         {typeof title === "string" ? (
           <h2
@@ -53,9 +53,12 @@ const {
           )
         )}
         </div>
-        {consultButtonTextExiste && (
-          <ConsultButton arrowButton={arrowButton} href={href} text={textButton} />
-        )}
+
+        <div class="mt-[25px]">
+           {consultButtonTextExiste && (
+                  <ConsultButton  arrowButton={arrowButton} href={href} text={textButton} />
+             )}
+        </div>
       </div>
 
       <div class="col-span-1 flex justify-end">

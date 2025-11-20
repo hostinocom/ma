@@ -3,7 +3,12 @@ import InputSearchDoamain from "../commonSections/InputSearchDoamain";
 
 
 
-export default function DomainSearchSection({ id , placeholder, nameButton }: { id: string, placeholder: string, nameButton: string }) {
+export default function DomainSearchSection({ 
+  id , 
+  placeholder, 
+  nameButton,
+  
+ }: { id: string, placeholder: string, nameButton: string }) {
   const [domain, setDomain] = useState("");
   const [selectedTld, setSelectedTld] = useState(".ma");
 

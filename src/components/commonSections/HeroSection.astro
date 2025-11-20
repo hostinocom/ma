@@ -25,6 +25,7 @@ const {
   imageAlt,
   sectionBg = "bg-gray-200",
   text = "",
+  textButton,
   consultButton,
   classH2
 } = Astro.props;
@@ -45,7 +46,7 @@ const {
         <p class="paragraph" style="margin-bottom:0 !important" set:html={text}></p>
       )}
 
-     {consultButton && <ConsultButton href="#plans" />}
+     {consultButton && <ConsultButton href="#plans" text={textButton}  />}
 
 
       {

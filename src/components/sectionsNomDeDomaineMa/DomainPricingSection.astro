@@ -1,57 +1,123 @@
 ---
+// Main title
+const pricingMainTitle = "Prix nom de domaine <br /> Maroc ?";
+
+// Table 1 - Domain Registration
+const domainRegistrationData = [
+  {
+    label: "Durée de réservation",
+    value: "1 à 5 ans",
+  },
+  {
+    label: "Durée de renouvellement",
+    value: "1 à 5 ans",
+  },
+  {
+    label: "Délai d'obtention",
+    value: "Immédiat",
+    underline: true,
+  },
+  {
+    label: "Longueur du domaine",
+    value: "2 à 63 caractères",
+  },
+  {
+    label: "Prix",
+    value: "118 Dhs HT/an soit 141,6 Dhs TTC/an",
+  },
+];
+
+// Table 2 - Domain Renewal
+const domainRenewalTitle = "Renouvellement de nom de domaine";
+const domainRenewalData = [
+  {
+    label: "Alertes par email : 30, 15, 7 et 3 jours avant l'échéance.",
+    value: "✓",
+    centered: true,
+  },
+  {
+    label: "Email après la Redemption Grace Period pour.",
+    value: "✓",
+    centered: true,
+  },
+  {
+    label: "À partir de votre Espace Client.",
+    value: "✓",
+    centered: true,
+  },
+  {
+    label: "Prix",
+    value: "118 Dhs HT/an soit 141,6 Dhs TTC/an",
+  },
+];
+
+// Table 3 - Domain Transfer
+const domainTransferTitle = "Transfert de nom de domaine";
+const domainTransferData = [
+  {
+    label: "Période pour accomplir la procédure de transfert.",
+    value: "5 – 10 jours",
+  },
+  {
+    label: "Prix",
+    value: "Gratuit",
+  },
+];
+
+// Table 4 - Owner Change
+const ownerChangeTitle = "Changement de propriétaire";
+const ownerChangeData = [
+  {
+    label: "Prix",
+    value: "118 Dhs HT/an soit 141,6 Dhs TTC/an",
+  },
+];
+
+const {
+  pricingMainTitle: propsMainTitle,
+  pricingIntroText : pricingIntroText,
+  domainRegistrationData: propsRegistrationData,
+  domainRenewalTitle: propsRenewalTitle,
+  domainRenewalText : domainRenewalText,
+  domainRenewalData: propsRenewalData,
+  domainTransferTitle: propsTransferTitle,
+  domainTransferData: propsTransferData,
+  ownerChangeTitle: propsOwnerChangeTitle,
+  ownerChangeData: propsOwnerChangeData,
+  
+} = Astro.props;
+
+// Use props if provided, otherwise use default values
+const finalPricingMainTitle = propsMainTitle || pricingMainTitle;
+const finalDomainRegistrationData = propsRegistrationData || domainRegistrationData;
+const finalDomainRenewalTitle = propsRenewalTitle || domainRenewalTitle;
+const finalDomainRenewalData = propsRenewalData || domainRenewalData;
+const finalDomainTransferTitle = propsTransferTitle || domainTransferTitle;
+const finalDomainTransferData = propsTransferData || domainTransferData;
+const finalOwnerChangeTitle = propsOwnerChangeTitle || ownerChangeTitle;
+const finalOwnerChangeData = propsOwnerChangeData || ownerChangeData;
 ---
 
 <section class="lg:mt-[150px] mb-[0px] mt-[80px]">
   <div class="container mx-auto px-4">
     <!-- First Table - Domain Registration -->
-    <div class="mb-16">
-      <h2 class="big-title poppins-semibold  mb-8">
-        Prix nom de domaine <br /> Maroc ?
-      </h2>
+    <div class="mb-6">
+      <h2 class="lg:text-[45px] tracking-[-2.5px] text-[35px] text-title poppins-semibold mb-4" set:html={finalPricingMainTitle}></h2>
 
       <div class="overflow-x-auto">
+       <p class="paragraph-mb-0 tracking-[-2.5px]">{pricingIntroText}</p>
         <table class="w-full border-collapse border border-[#f8f8f8]">
           <tbody>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Durée de réservation
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                1 à 5 ans
-              </td>
-            </tr>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Durée de renouvellement
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                1 à 5 ans
-              </td>
-            </tr>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Délai d'obtention
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8] underline">
-                Immédiat
-              </td>
-            </tr>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Longueur du domaine
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                2 à 63 caractères
-              </td>
-            </tr>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Prix
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                118 Dhs HT/an soit 141,6 Dhs TTC/an
-              </td>
-            </tr>
+            {finalDomainRegistrationData.map((row) => (
+              <tr class="border border-[#f8f8f8]">
+                <td class="px-6 text-[17px] py-4 poppins-regular text-title border border-[#f8f8f8]">
+                  {row.label}
+                </td>
+                <td class={`px-6 py-4 poppins-regular text-title border border-[#f8f8f8] ${row.underline ? 'underline' : ''}`}>
+                  {row.value}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -59,75 +125,53 @@
 
     <!-- Second Table - Domain Renewal -->
     <div>
-      <h3 class="text-[27px] poppins-semibold  text-title mb-8">
-        Renouvellement de nom de domaine
+      <h3 class="text-[27px] tracking-[-1px] poppins-semibold text-title">
+        {finalDomainRenewalTitle}
       </h3>
+      <p class="paragraph mt-[10px] poppins-regular">{domainRenewalText}</p>
 
-      <div class="overflow-x-auto">
+      {
+       finalDomainRenewalData.length > 0 && (
+
+          <div class="overflow-x-auto">
         <table class="w-full border-collapse border border-[#f8f8f8]">
           <tbody>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Alertes par email : 30, 15, 7 et 3 jours avant l'échéance.
-              </td>
-              <td class="px-6 py-4 text-center poppins-regular text-slate-700 border border-[#f8f8f8]">
-                ✓
-              </td>
-            </tr>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Email après la Redemption Grace Period pour.
-              </td>
-              <td class="px-6 py-4 text-center poppins-regular text-slate-700 border border-[#f8f8f8]">
-                ✓
-              </td>
-            </tr>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                À partir de votre Espace Client.
-              </td>
-              <td class="px-6 py-4 text-center poppins-regular text-slate-700 border border-[#f8f8f8]">
-                ✓
-              </td>
-            </tr>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Prix
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                118 Dhs HT/an soit 141,6 Dhs TTC/an
-              </td>
-            </tr>
+            {finalDomainRenewalData.map((row) => (
+              <tr class="border border-[#f8f8f8]">
+                <td class="px-6 text-[17px] py-4 poppins-regular text-title border border-[#f8f8f8]">
+                  {row.label}
+                </td>
+                <td class={`px-6 text-[17px] py-4 poppins-regular text-title text-left border border-[#f8f8f8] ${row.centered ? 'text-center' : ''}`}>
+                  {row.value}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
+        )
+      }
     </div>
 
     <!-- Third Table - Domain Transfer -->
     <div class="mt-16 mb-16">
-      <h3 class="text-[27px] poppins-semibold  text-title mb-8">
-        Transfert de nom de domaine
+      <h3 class="text-[27px] tracking-[-1px] poppins-semibold text-title mb-8">
+        {finalDomainTransferTitle}
       </h3>
 
       <div class="overflow-x-auto">
         <table class="w-full border-collapse border border-[#f8f8f8]">
           <tbody>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Période pour accomplir la procédure de transfert.
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                5 – 10 jours
-              </td>
-            </tr>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Prix
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Gratuit
-              </td>
-            </tr>
+            {finalDomainTransferData.map((row) => (
+              <tr class="border border-[#f8f8f8]">
+                <td class="px-6 text-[17px] py-4 poppins-regular text-title border border-[#f8f8f8]">
+                  {row.label}
+                </td>
+                <td class="px-6 text-[17px] py-4 poppins-regular text-title border border-[#f8f8f8]">
+                  {row.value}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -135,25 +179,26 @@
 
     <!-- Fourth Table - Owner Change -->
     <div>
-      <h3 class="text-[27px] poppins-semibold  text-title mb-8">
-        Changement de propriétaire
+      <h3 class="text-[27px] tracking-[-1px] poppins-semibold text-title mb-8">
+        {finalOwnerChangeTitle}
       </h3>
 
       <div class="overflow-x-auto">
         <table class="w-full border-collapse border border-[#f8f8f8]">
           <tbody>
-            <tr class="border border-[#f8f8f8]">
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                Prix
-              </td>
-              <td class="px-6 py-4 poppins-regular text-slate-700 border border-[#f8f8f8]">
-                118 Dhs HT/an soit 141,6 Dhs TTC/an
-              </td>
-            </tr>
+            {finalOwnerChangeData.map((row) => (
+              <tr class="border border-[#f8f8f8]">
+                <td class="px-6 text-[17px] py-4 poppins-regular text-title border border-[#f8f8f8]">
+                  {row.label}
+                </td>
+                <td class="px-6 text-[17px] py-4 poppins-regular text-title border border-[#f8f8f8]">
+                  {row.value}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     </div>
   </div>
 </section>
-

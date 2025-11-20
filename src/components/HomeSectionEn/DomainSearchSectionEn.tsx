@@ -1,9 +1,41 @@
 "use client";
 
 import { useState } from "react";
-import InputSearchDoamain from "../commonSections/InputSearchDoamain";
+import InputSearchDoamain from "../commonSections/InputSearchDoamain.tsx";
 
 export default function DomainSearchSectionEn({ id , placeholder, nameButton }: { id: string, placeholder: string, nameButton: string }) {
+  const [domain, setDomain] = useState("");
+  const [selectedTld, setSelectedTld] = useState(".ma");
+
+  const handleSubmit = () => {
+    // Nettoyer le nom de domaine (enlever espaces et caractères spéciaux)
+    const cleanDomain = domain.trim().toLowerCase();
+    
+    // Validation
+    if (!cleanDomain) {
+      alert("Veuillez entrer un nom de domaine");
+      return;
+    }
+
+    // Construire le domaine complet
+    const fullDomain = cleanDomain + selectedTld;
+    
+    // Construire l'URL complète
+    const url = `https://my.hostino.com/order.php?spage=domain&action=register&a=add&query=${encodeURIComponent(fullDomain)}&language=french&country=MA&currency=1`;
+    
+    console.log("Redirection vers:", url);
+    
+    // Rediriger vers la page
+    window.location.href = url;
+  };
+
+  // Gérer la soumission avec la touche Entrée
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
   
 
   return (
@@ -29,7 +61,7 @@ export default function DomainSearchSectionEn({ id , placeholder, nameButton }: 
           . Choose yours today.
         </p>
 
-        <InputSearchDoamain id="ma" placeholder={placeholder} nameButton={nameButton} />
+        <InputSearchDoamain  id="ma" placeholder={placeholder} nameButton={nameButton} />
 
         <img
           src="https://www.hostino.ma/en/wp-content/uploads/2025/04/nav-domains.png"

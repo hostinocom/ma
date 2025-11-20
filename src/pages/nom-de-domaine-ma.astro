@@ -293,6 +293,7 @@ const articleSchema = {
       textButton="Commencer maintenant"
       href="/nom-de-domaine-ma/#ma"
       arrowButton={true}
+      className="lg:mt-[150px] lg:mb-[50px]"
     />
 
     <TrustedBySection classNameImage="md:w-[65%] w-[100%]" />
@@ -301,6 +302,7 @@ const articleSchema = {
       features={hostingFeatures}
       title="Que pouvez-vous faire avec un nom <br /> de domaine  Maroc ?"
       classNameTitleCard="xl:pr-[120px] lg:pr-[40px]"
+      alignment="left"
     />
 
     <DomainSearchSection client:load id="ma" />
@@ -426,7 +428,7 @@ const articleSchema = {
       </div>
     </section>
 
-    <DomainPricingSection client:load />
+    <DomainPricingSection  />
 
     <TitleParagraphButton
       title="Nom de domaine .ma gratuit"

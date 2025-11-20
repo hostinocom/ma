@@ -296,6 +296,7 @@ span {
 }
 
 .border-bottom{
+  max-width: max-content;
   border-bottom: 5px solid var(--color-primary);
   
 }
@@ -921,3 +922,9 @@ input::placeholder {
   .search-input-doamin::placeholder {
     font-size: 18px !important;
   }
+
+
+.six-cards h3 span{
+  border-bottom: 3px solid var(--color-primary);
+  line-height: inherit;
+}

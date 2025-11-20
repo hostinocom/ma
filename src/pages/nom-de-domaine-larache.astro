@@ -1,0 +1,382 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FAQSection from "../components/commonSections/FaqSection.astro";
+import ServiceProximite from "../components/commonSections/ServiceProximite.astro";
+import SixCards from "../components/commonSections/SixCards.astro";
+import TextLeftImageRight from "../components/commonSections/TextLeftImageRight.astro";
+import TitleParagraphButton from "../components/commonSections/TitleParagraphButton.astro";
+import DomainSearchSection from "../components/HomeSection/DomainSearchSection.tsx";
+import TrustedBySection from "../components/commonSections/TrustedBySection.astro";
+import DomainPricingSection from "../components/sectionsNomDeDomaineMa/DomainPricingSection.astro";
+import HeroHeadingPages from "../components/ui/heroHeadingPages.astro";
+import StartsRatingYellowFooter from "../components/ui/StartsRatingYellowFooter.astro";
+import { main_schema } from "../mainSchema.ts";
+import InputSearchDoamain from "../components/commonSections/InputSearchDoamain.tsx";
+
+const title = "Nom de domaine Larache - .Ma à seulement 118 DH";
+const description =
+  "Nom de domaine Larache. En quelques clics, enregistrez votre nom de domaine. Sécurisez votre .ma à 118 Dhs/an. Activation instantanée 24h/24.";
+const imageUrl =
+  "https://www.hostino.ma/images/nom-de-domaine.jpg";
+const canonical_url = "https://www.hostino.ma/nom-de-domaine-larache";
+const ogAlt = "Nom de domaine Larache";
+
+const faqData = [
+  {
+    question: "L'activation de mon nom de domaine Larache est-elle instantanée ?",
+    answers: [
+      "L'enregistrement de votre nom de domaine .ma est effectué instantanément après votre paiement. Un email de confirmation vous est automatiquement envoyé pour valider l'opération.",
+      "L'activation se fait généralement en quelques minutes, sauf si le nom de domaine .ma contient un terme réservé, auquel cas une validation manuelle par l'ANRT est nécessaire.",
+    ],
+  },
+  {
+    question:
+      "Est-il possible de modifier ou d'annuler un nom de domaine après le paiement ?",
+    answers: [
+      "Comme chez tous nos confrères locaux et internationaux, il est impossible de modifier ou d'annuler l'enregistrement d'un nom de domaine.",
+      "Une fois enregistré, le nom de domaine reste actif jusqu'à sa date d'expiration. Si vous ne le renouvelez pas, il sera automatiquement supprimé à la fin de cette période.",
+      "De plus, le montant payé pour l'enregistrement n'est pas remboursable.",
+    ],
+  },
+  {
+    question: "Comment acheter un nom de domaine Larache ?",
+    answers: [
+      "La réservation d'un nom de domaine .MA incluant des mots ou expressions réservés, tels que 'maroc', 'morocco', 'gov' (ou leurs traductions), des noms de villes, communes, pays, des acronymes d'organismes publics, des termes techniques spécifiques, etc., ou des noms de domaine sous les extensions restrictives .AC.MA, .PRESS.MA et .GOV.MA, est soumise à des conditions particulières concernant l'identité et les droits du demandeur.",
+    ],
+  },
+  {
+    question: "Comment renouveler mon nom de domaine ?",
+    answers: [
+      "Vous pouvez générer directement une facture de renouvellement de votre nom de domaine .ma depuis votre espace client Hostino.",
+    ],
+  },
+  {
+    question: "Puis-je gérer le DNS de mon nom de domaine ?",
+    answers: [
+      'Oui, vous pouvez gérer le DNS à tout moment depuis votre espace client Hostino, dans la rubrique "Manage DNS", ou directement depuis votre compte cPanel si un hébergement est associé à votre nom de domaine.',
+    ],
+  },
+  {
+    question: "Pourquoi réserver plusieurs extensions en plus du .ma ?",
+    answers: [
+      "Réserver plusieurs extensions de votre nom de domaine (comme .com, .net, .org, etc.) en plus du .ma vous permet de protéger votre marque, éviter les imitations ou le cybersquatting, et renforcer votre présence en ligne à l'international.",
+      "Cela garantit que vos visiteurs vous trouvent facilement, quel que soit l'extension qu'ils tapent, tout en sécurisant votre identité numérique sur différents marchés.",
+    ],
+  },
+];
+
+const domainOptions = [
+  ".ma",
+  ".com",
+  ".net",
+  ".info",
+  ".org",
+  ".co.ma",
+  ".org.ma",
+  ".net.ma",
+  ".edu.ma",
+  ".press.ma",
+  ".gov.ma",
+  ".ac.ma",
+  ".us",
+  ".es",
+  ".fr",
+  ".be",
+  ".nl",
+  ".it",
+  ".de",
+  ".ch",
+  ".eu",
+  ".ca",
+  ".uk",
+  ".co.uk",
+  ".tv",
+  ".biz",
+  ".co",
+  ".tech",
+  ".cloud",
+  ".store",
+  ".shop",
+  ".ai",
+];
+
+const domains = [
+  {
+    extension: "ma",
+    oldPrice: "139 DH/an",
+    newPrice: "118 DH/an",
+  },
+  {
+    extension: "com",
+    oldPrice: "139 DH/an",
+    newPrice: "118 DH/an",
+  },
+  {
+    extension: "net",
+    oldPrice: "180 DH/an",
+    newPrice: "150 DH/an",
+  },
+];
+
+const hostingFeatures = [
+  {
+    image: "08/lancer-domaine.png",
+    title: "Nom de domaine pour lancer un <span>site web</span>",
+    description: `Un nom de domaine .ma, c'est l'assurance d'une identité locale forte pour votre site web. Gagnez la confiance des internautes marocains et renforcez votre crédibilité. Sélectionnez un <b>pack <span style="text-decoration: underline;"><a href="https://www.hostino.ma/">d'hébergement web</a></span></b> et publiez votre site dès <b>maintenant</b> !`,
+  },
+  {
+    image: "08/email-domaine.png",
+    title:
+      "Nom de domaine <br>pour créer des<br> <span><span>e-mails Pro</span></span>",
+    description: `Boostez votre crédibilité et votre communication avec des adresses emails personnalisées <b>@votreentreprise.ma</b>. <span style="text-decoration: underline;"><a href="/email-professionnel/#plans">Sélectionnez le pack</a></span> adapté, confirmez votre domaine .ma et profitez d'une messagerie professionnelle pour votre entreprise.`,
+  },
+  {
+    image: "08/shopify.png",
+    title:
+      "Nom de domaine <br>pour <span><span>Shopify</span></span>, Youcan etc.",
+    description: `Donnez une identité unique à votre boutique en ligne ! Achetez votre nom de domaine et connectez-le à Shopify, Youcan ou toute autre plateforme en quelques clics grâce à notre service <b>DNS gratuit</b>.
+Démarrez votre e-commerce dès maintenant !`,
+  },
+];
+
+const whyChooseNomDomaineHostino = [
+  {
+    image: "08/local.png",
+    title: "100% <span>Marocain</span>",
+    description: "Prestataire local, qui facture en MAD (dirham marocain).",
+  },
+  {
+    image: "08/price.png",
+    title: "Tarifs <span>compétitifs</span>",
+    description:
+      "Économisez jusqu'à 50 % comparé à nos compétiteurs internationaux.",
+  },
+  {
+    image: "08/secure.png",
+    title: "Paiement <span>sécurisé</span>",
+    description:
+      "Paiement sécurisé par carte bancaire pour une mise en service immédiate.",
+  },
+  {
+    image: "08/accredited.png",
+    title: "Entreprise <span>réputée</span>",
+    description: "Accréditée par l'ANRT, avec 5,000+ domaines sous gestion.",
+  },
+  {
+    image: "08/dns.png",
+    title: "Gestion <span>simple</span>",
+    description:
+      "Interface sécurisée, intuitive et facile pour la gestion de vos domaines.",
+  },
+  {
+    image: "08/fast-icon.png",
+    title: "Activation <span>instantanée</span>",
+    description:
+      "Enregistrement rapide, avec une <b>activation instantanée.</b>",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hébergement web Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "536",
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+>
+  <main>
+    <HeroHeadingPages
+      smallTitle="Nom de domaine Larache"
+      bigTitle="Réservez votre <br /> nom de domaine"
+      lineGreen={false}
+    />
+
+    <section class="bg-gray-200  md:pb-[100px] pb-[80px]">
+      <div class="container flex flex-col items-center text-center justify-center">
+        <p class="paragraph text-title">
+          Achetez votre nom de domaine Larache en toute  <b class="text-title">simplicité et sécurité.</b>
+        </p>
+
+       <InputSearchDoamain id="ma" />
+
+        <div class=" items-center">
+           <p class="paragraph mt-[10px]"><a href="https://www.hostino.ma/transferer">Vous avez déjà un nom de domaine ? <u>Transférez-le</u></a></p>
+        </div>
+      </div>
+    </section>
+
+    <TextLeftImageRight
+      title="Nom de domaine à Larache"
+      paragraphs={[
+        `Hostino™ conseille et accompagne ses clients institutionnels, <b>entreprises et particuliers</b>, à Larache ,  au <b>Maroc et à l'international</b>, dans l'enregistrement et la gestion sécurisée de leurs noms de domaine .ma.`,
+        `En tant que bureau d'enregistrement accrédité par l'ANRT, Hostino™ met à votre disposition une équipe d'experts, un <b>service client réactif</b> et une plateforme intuitive, facile à utiliser, vous permettant de gérer tous les aspects de vos noms de domaine en toute simplicité et à tout moment`,
+        `En complément, nous mettons à votre disposition une gamme complète de services associés à votre nom de domaine, incluant la <span style="text-decoration: underline;"><a href="http://www.hostino.ma/email-professionnel">messagerie professionnelle</a></span>, l'<a href="http://www.hostino.ma">hébergement web</a> et l'infogérance.`,
+        `Appelez le (+212) 531 031 186 et confiez la réservation de votre nom de domaine à un prestataire agréé au Maroc`,
+      ]}
+      imageSrc="/images/08/nom-de-domaine-maroc.jpg"
+      imageAlt="Maily - Messagerie professionnelle"
+      consultButtonTextExiste={true}
+      textButton="Commencer maintenant"
+      href="/nom-de-domaine-ma/#ma"
+      arrowButton={true}
+      className="lg:mt-[150px] lg:mb-[50px]"
+    />
+
+    <TrustedBySection classNameImage="md:w-[65%] w-[100%]" />
+
+    <SixCards
+      features={hostingFeatures}
+      title="Que pouvez-vous faire avec un nom <br /> de domaine  Larache ?"
+      classNameTitleCard="xl:pr-[120px] lg:pr-[40px]"
+    />
+
+    <DomainSearchSection client:load />
+
+    <TextLeftImageRight
+      title="Qu'est-ce qu'un nom de domaine Larache ?"
+      paragraphs={[
+        `<span style="color: #022545;">Le .MA est l'extension géographique du Maroc. Elle est l'extension officielle du Royaume du Maroc, un pays considéré comme un pont <b>d'opportunités entre l'Europe et l'Afrique</b>. Les noms de domaine .ma sont administrés et gérés par l'organisme public l'ANRT.`,
+        `<span style="color: #022545;">Un domaine <strong>.MA (<span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/ma-domain-name/">.ma domain name</a></span>)</strong> indique immédiatement à vos clients que votre entreprise est implantée au Maroc et engagée dans son économie locale. Il inspire confiance en montrant que vous êtes un acteur du marché marocain, que vous respectez les réglementations locales et que vous facilitez les transactions en dirhams.</span>`,
+        `<span style="color: #022545; font-weight: var(--e-global-typography-text-font-weight); letter-spacing: 0.2px; text-align: inherit;">Appelez-nous au (+212) 531 031 186 : l'un de nos conseillers vous répondra à toutes vos questions.</span>`,
+      ]}
+      imageSrc="/images/08/nom-de-domaine-maroc-quoi.jpg"
+      imageAlt="Maily - Messagerie professionnelle"
+      textButton="Commancer maintenant"
+      arrowButton={true}
+      href="#ma"
+    />
+
+    <SixCards
+      features={whyChooseNomDomaineHostino}
+      title="Pourquoi acheter un nom de <br />domaine chez Hostino ?"
+      classNameTitleCard="lg:pr-[180px] mb-[30px]"
+      alignment="left"
+    />
+
+    <TextLeftImageRight
+      title="Nom de domaine à terme réservé"
+      paragraphs={[
+        `<span style="color: #022545;">La réservation de noms de domaine .MA incluant des mots ou expressions réservés, tels que 'maroc', 'morocco', 'gov' (ou leurs traductions), des noms de villes, communes, pays, des acronymes d'organismes publics, des termes techniques spécifiques, etc., ou des noms de domaine sous les extensions restrictives .AC.MA, .PRESS.MA et .GOV.MA, est soumise à des conditions particulières concernant l'identité et les droits du demandeur.</span>`,
+        `<span style="color: #022545;">Vous pouvez consulter à la&nbsp;<span style="text-decoration: underline;"><a style="color: #022545; text-decoration: underline;" href="https://www.registre.ma/wp-content/themes/domaine/pdf/Liste_terme_reserves.pdf" rel="noopener"><b>liste des termes</b></a></span> non exhaustive des termes réservés définis par l'agence nationale de réglementation des télécommunications (ANRT).</span>`,
+      ]}
+      imageSrc="/images/08/nom-de-domaine-maroc-terme.jpg"
+      imageAlt="Nom de domaine Maroc à Statut réservé"
+      textButton="Commencer maintenant"
+      href="#ma"
+      arrowButton={true}
+    />
+
+    <TextLeftImageRight
+      title="Procédure d'enregistrement de noms avec termes réservés"
+      paragraphs={[
+        `<span style="color: #022545;">Pour finaliser l'enregistrement d'un nom de domaine Maroc contenant un terme réservé, merci de nous transmettre les informations suivants en ouvrant un <span style="text-decoration: underline;"><a style="color: #022545; text-decoration: underline;" href="https://my.hostino.com/submitticket.php" rel="noopener"><b>ticket de support</b></a></span> :</span>`,
+        `<ul class="flex mt-[30px] list-dots-paragraph mb-[40px] flex-col gap-y-4 pl-[30px]">
+  <li class="flex items-start gap-3">
+    <span class="w-2 h-2 mt-2  bg-primary rounded-full flex-shrink-0"></span>
+    <span>Nom de l'entreprise ou organisme pour lequel ce nom de domaine va être réservé</span>
+  </li>
+
+  <li class="flex items-start gap-3">
+    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
+    <span>Email, adresse postale et N° de téléphone de l'entreprise</span>
+  </li>
+
+  <li class="flex items-start gap-3">
+    <span class="w-2 h-2 mt-2  bg-primary rounded-full flex-shrink-0"></span>
+    <span>La raison pour laquelle ce domaine sera enregistré (avec tous les détails possibles pour convaincre l'ANRT de vous enregistrer ce domaine)</span>
+  </li>
+
+  <li class="flex items-start gap-3">
+    <span class="w-2 h-2 mt-2  bg-primary rounded-full flex-shrink-0"></span>
+    <span>
+      <a style="text-decoration: underline; color: #022545;" href="https://www.hostino.ma/Examen_Prealable_nom_de_domaine_maroc.pdf">Formulaire</a>
+      rempli, signé et cacheté, disponible via ce 
+      <a style="text-decoration: underline; color: #022545;" href="https://www.hostino.ma/Examen_Prealable_nom_de_domaine_maroc.pdf"><u>lien</u></a>.
+    </span>
+  </li>
+</ul>
+`,
+      ]}
+      imageSrc="/images/08/nom-de-domaine-anrt.jpg"
+      imageAlt="Nom de domaine Maroc à Statut réservé"
+      textButton="Commencer maintenant"
+      href="#ma"
+      arrowButton={true}
+    />
+
+   
+
+    
+    <DomainPricingSection  pricingMainTitle="Prix nom de domaine Larache ?"  />
+
+    <TitleParagraphButton
+      subtitle="Nom de domaine .ma gratuit"
+      paragraphs={[
+        `<span style="color: #022545;">Un nom de domaine Larache (.ma) est gratuit la première année avec toutes nos formules <a href="https://www.hostino.ma"><strong class='underline'>d'hébergement web Business</strong></a></span>`,
+      ]}
+      buttonText="Commencer maintenant"
+      arrowButton={true}
+      buttonHref="#ma"
+      className="mt-16 lg:mb-[150px] mb-[80px]"
+    />
+
+    <FAQSection faqData={faqData} title="FAQ - Nom de domaine Larache" />
+    
+    <ServiceProximite 
+        page="nom-de-domaine" 
+        title="Nom de domaine à Larache et partout au Maroc" 
+        map={true} 
+        titleMap="Larache"
+        src="https://www.google.com/maps/embed/v1/place?q=Larache&amp;zoom=14&amp;maptype=roadmap&amp;key=AIzaSyCNTEOso0tZG6YMSJFoaJEY5Th1stEWrJI"
+      />
+  </main>
+</Layout>

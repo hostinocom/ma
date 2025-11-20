@@ -80,14 +80,14 @@ export default function InputSearchDomain({ id, placeholder, nameButton }: {
   
   return (
     <div className="md:max-w-2xl w-full mx-auto mb-8">
-      <div className="flex rounded-lg overflow-hidden  border border-primary bg-white flex-col sm:flex-row">
+      <div className="flex rounded-[10px] overflow-hidden  border border-primary bg-white flex-col sm:flex-row">
         <input
           type="text"
           value={domain}
           onChange={(e) => setDomain(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder={placeholder || "Entrer un nom de domaine"}
-          className="flex-1 px-8 sm:py-6 py-8  font-[20px] search-input-doamin rounded-l-lg focus:outline-none text-gray-800"
+          className="flex-1 px-11 sm:py-7 py-8  font-[20px] search-input-doamin rounded-l-lg focus:outline-none text-gray-800"
           disabled={isLoading}
           required
         />
@@ -136,10 +136,10 @@ export default function InputSearchDomain({ id, placeholder, nameButton }: {
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 />
               </svg>
-              <span>{nameButton || "Rechercher"}...</span>
+              <span className="poppins-semibold">{nameButton || "Rechercher"}...</span>
             </>
           ) : (
-            <span>{nameButton || "Rechercher"}</span>
+            <span className="poppins-semibold">{nameButton || "Rechercher"}</span>
           )}
         </button>
       </div>
