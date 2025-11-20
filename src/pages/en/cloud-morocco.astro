@@ -229,6 +229,17 @@ const hostingPlans = [
   }
 ];
 
+const serverVps = {
+  title : "Best Cloud VPS hosting services in Morocco 🇲🇦",
+  paragraphs : [
+    `<strong data-start="51" data-end="91">Hostino’s Cloud <span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/vps-morocco">VPS Morocco</a></span> solution</strong> offers a high-performance, secure, and sovereign infrastructure, perfectly suited to the needs of government institutions, the healthcare sector, education, and public services.`,
+    `Whether you’re hosting sensitive data, critical applications, or high-traffic websites, our solution ensures confidentiality, stability, and compliance with security standards.`,
+    `With full flexibility, you can scale your resources as needed while enjoying high availability and responsive technical support.`
+  ],
+  nameButton : "Request a quote"
+}
+
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -372,7 +383,7 @@ const articleSchema = {
       consultButtonTextExiste={false}
     />
 
-    <ServerVps />
+    <ServerVps {...serverVps}/>
 
     <FAQSection faqData={faqData} title="FAQ - Cloud Maroc" />
     

@@ -1,12 +1,18 @@
 ---
 import ConsultButton from "../ui/ConsultButton.astro";
 
-const title = "Serveur VPS Cloud situé au Maroc 🇲🇦";
-const paragraphs = [
+const titleServerVps = "Serveur VPS Cloud situé au Maroc 🇲🇦";
+const paragraphsServerVps = [
   `La solution Cloud <a href="/vps-maroc/">VPS Maroc</a> de Hostino vous offre une infrastructure performante, <b>sécurisée et souveraine</b>, parfaitement adaptée aux exigences des institutions gouvernementales, du secteur de la santé, de l'éducation et des services publics.`,
   `Que ce soit pour héberger des données sensibles, des applications critiques ou des sites à fort trafic, notre solution garantit confidentialité, <b>stabilité et conformité</b> aux standards de sécurité.`,
   `Grâce à une flexibilité totale, vous pouvez ajuster vos ressources en fonction de vos besoins, tout en bénéficiant d'une haute disponibilité et d'un support technique réactif.`,
 ];
+
+const {
+  title = titleServerVps ,
+  paragraphs = paragraphsServerVps,
+  nameButton
+} = Astro.props
 ---
 
 <section id="vps" class="lg:my-[150px] my-[80px]">
@@ -25,7 +31,7 @@ const paragraphs = [
             set:html={paragraph}
           />
         ))}
-        <ConsultButton href="/vps-maroc#vps" text="Demander un devis" />
+        <ConsultButton href="/vps-maroc#vps" text={"Demander un devis"} />
       </div>
 
       {/* Image Section */}
