@@ -46,7 +46,8 @@ const hostingPlans: Plan[] = [
       text : "Commender",
       href: "https://my.hostino.com/order.php?pid=27&language=french&currency=1&country=MA",
     },
-    typePrice : "HT/an"
+    typePrice : "HT/an",
+    active :"Activation instantannée"
   },
   {
     id: 2,
@@ -74,7 +75,9 @@ const hostingPlans: Plan[] = [
       text : "Commender",
       href: "https://my.hostino.com/order.php?pid=28&language=french&currency=1&country=MA",
     },
-    typePrice : "HT/an"
+    typePrice : "HT/an",
+    active :"Activation instantannée"
+
   },
   {
     id: 3,
@@ -102,7 +105,9 @@ const hostingPlans: Plan[] = [
       text : "Commender",
       href: "https://my.hostino.com/order.php?pid=29&language=french&currency=1&country=MA",
     },
-    typePrice : "HT/an"
+    typePrice : "HT/an",
+    active :"Activation instantannée"
+
   },
 ];
 
@@ -198,7 +203,7 @@ const {
 
           <div class="mt-6">
             <p class="text-title text-[14px] poppins-regular inline-flex items-center">
-              Activation instantannée
+              <b>{plan.active}</b>
             </p>
           </div>
         </div>

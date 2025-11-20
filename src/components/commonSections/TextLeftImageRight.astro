@@ -15,6 +15,7 @@ interface Props {
 
 const {
   title,
+  subTitle,
   paragraphs,
   imageSrc,
   imageAlt = "Image",
@@ -30,15 +31,22 @@ const {
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
       <div class="col-span-1">
+      {
+        subTitle && (
+          <h2 class="text-title text-[21px] poppins-semibold tracking-[-1px] mb-[20px]">
+              {subTitle}
+          </h2>
+        ) 
+      }
         {typeof title === "string" ? (
-          <h2
+          <h3
             class="big-title xl:pr-[10px] lg:pr-[50px] poppins-semibold  text-title mb-6"
             set:html={title}
-          ></h2>
+          ></h3>
         ) : (
-          <h2 class="big-title xl:pr-[10px] lg:pr-[60px] poppins-semibold  text-title mb-6">
+          <h3 class="big-title xl:pr-[10px] lg:pr-[60px] poppins-semibold  text-title mb-6">
             {title}
-          </h2>
+          </h3>
         )}
         <div>
             {paragraphs.map((paragraph, index) =>

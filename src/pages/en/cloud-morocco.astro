@@ -64,66 +64,143 @@ const faqData = [
 const hostingFeatures = [
   {
     image: "03/hebergeur-marocain.jpg",
-    alt: "Souveraineté numérique",
-    title: "Souveraineté </br><span>numérique</span>",
+    alt: "Data Sovereignty",
+    title: "<span><span>Data</span></span> <br>Sovereignty",
     description: `
-      Nos serveurs Cloud sont hébergés dans un datacenter situé au Maroc,
-      en conformité avec les exigences de souveraineté numérique, les obligations légales d'hébergement local,
-      et les normes internationales de sécurité et de fiabilité (<b>certifiés Tier III</b>).
+      Our Cloud servers are hosted in a data center located in Morocco, in compliance with <b>digital sovereignty requirements</b>, local hosting legal obligations, and international security and reliability standards (<b>certified Tier III</b>).
     `,
   },
   {
     image: "03/adresse-ip-maroc.png",
-    alt: "Adresse IP marocaine",
-    title: "Adresse </br><span>IP marocaine</span>",
+    alt: "Moroccan IP address",
+    title: "Moroccan <br> <span><span>IP address</span></span>",
     description: `
-      Notre solution de cloud souverain vous permet d'obtenir une adresse IP marocaine attribuée à un serveur hébergé
-      dans un datacenter <b>situé sur le territoire marocain</b>, avec un temps de réponse très court
-      et une conformité aux normes de la CNDP.
+      Our sovereign cloud solution allows you to obtain a Moroccan <b>IP address</b> assigned to a VPS server hosted in a data center located on <b>Moroccan territory</b>, with a very short response time and compliance with CNDP standards.
     `,
   },
   {
     image: "03/coonectivite-haut-debit.png",
-    alt: "Connectivité Haut-Débit",
-    title: "Connectivité </br><span>Haut-Débit</span>",
+    alt: "High-Speed Connectivity",
+    title: "High-Speed <br><span><span>Connectivity</span></span>",
     description: `
-      Grâce à nos partenariats avec les <b>opérateurs télécoms</b> locaux au Maroc,
-      nous pouvons proposer une connexion Internet haut débit, avec une faible latence
-      et un débit personnalisable allant de 1 Mbps à 100 Mbps.
+      Through our partnerships with local <strong>telecom operators</strong>, we offer customized high-speed internet connections with low latency and adaptable speeds <strong>from 1 to 100 Mbps</strong> to meet your specific needs.
     `,
   },
   {
     image: "03/services-manages.png",
-    alt: "Services managés",
-    title: "Services </br><span>Managés</span>",
+    alt: "Managed Services",
+    title: "Managed <br><span><span>Services</span></span>",
     description: `
-      Avec nos solutions d'infogérance cloud souverain au Maroc, vous bénéficiez d'une équipe Ops de proximité,
-      <b>experte en technologies Cloud et DevOps</b>, pour assurer la gestion opérationnelle
-      de vos serveurs cloud localisés au Maroc.
+      With our sovereign cloud outsourcing solutions in Morocco, you benefit from a local Ops team that is expert in <b>Cloud and DevOps technologies</b>, ensuring the operational management of your cloud servers located in Morocco.
     `,
   },
   {
     image: "03/securite-monitoring.png",
-    alt: "Monitoring et sécurité",
-    title: "Monitoring et </br><span>Sécurité</span>",
+    alt: "Monitoring & Security",
+    title: "Monitoring <br>&amp; <span><span>Security</span></span>",
     description: `
-      Notre service de sécurité cloud Maroc offre une protection complète contre les menaces internes et externes,
-      assure une gestion rigoureuse des accès, renforce la gouvernance et la conformité des données,
-      tout en garantissant <b>une reprise rapide en cas de sinistre</b>.
+      Our cloud security service in Morocco provides <b>comprehensive protection</b> against internal and external threats, ensures rigorous access management, strengthens governance and data compliance, while <b>guaranteeing rapid recovery</b> in the event of a disaster.
     `,
   },
   {
     image: "03/conformite-anrt.png",
-    alt: "Conformité réglementaire",
-    title: "Conformité </br><span>réglementaire</span>",
+    alt: "Regulatory compliance",
+    title: "Regulatory <br><span><span>compliance</span></span>",
     description: `
-      En optant pour un cloud souverain marocain, vous assurez l'hébergement et la gestion de vos données critiques
-      en toute conformité avec la <b>loi 09-08</b> relative à la protection des données personnelles,
-      tout en respectant les recommandations de la <b>CNDP</b>.
+      By choosing a Moroccan sovereign cloud, you ensure the <strong>hosting and management</strong> of your critical data in full compliance with <strong>Law 09-08</strong> on the protection of personal data, while adhering to the recommendations of the <strong>CNDP</strong>.
     `,
   },
 ];
 
+const hostingPlansShared: Plan[] = [
+  {
+    id: 1,
+    name: "Shared <i>MA1</i>",
+    description: "Perfect plan for a small website.",
+    price: "1399 DH",
+    isHighlighted: false,
+    features: [
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"> Data hosted in Morocco</span></div>` },
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>Moroccan IP address</b></span></div>` },
+      "<b>Free</b> domaine name",
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/wp.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>WordPress</b> pre-installed</span></div>` },
+      "<b>SSL Certificate</b> (https://)",
+      "<b><i>cPanel®</i></b> control panel",
+      "<b>10 Go</b> NVMe SSD storage",
+      "Bandwidth  : <b>50 GB</b>",
+      "Email accounts : <b>5</b>",
+      "Antivirus, Antimalware, and WAF",
+      "TIER III certified datacenter, ISO 27001",
+      "PCI-DSS compliant",
+      "Complies with <b>Moroccan Law 09-08</b>",
+    ],
+    is_most_popular: false,
+    order : {
+      text : "Order Now",
+      href: "https://my.hostino.com/order.php?pid=27&language=french&currency=1&country=MA",
+    },
+    typePrice : "HT/year",
+    active : "Instant activation"
+  },
+  {
+    id: 2,
+    name: "Shared <i>MA2</i>",
+    description: "More power, more resources.",
+    price: "2399 DH",
+    isHighlighted: true,
+    features: [
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"> Data hosted in Morocco</span></div>` },
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>Moroccan IP address</b></span></div>` },
+      "<b>Free</b> domaine name",
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/wp.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>WordPress</b> pre-installed</span></div>` },
+      "<b>SSL Certificate</b> (https://)",
+      "<b><i>cPanel®</i></b> control panel",
+      "<b>25 Go</b> NVMe SSD storage",
+      "Bandwidth  : <b>100 GB</b>",
+      "Email accounts : <b>100</b>",
+      "Antivirus, Antimalware, and WAF",
+      "TIER III certified datacenter, ISO 27001",
+      "PCI-DSS compliant",
+      "Complies with <b>Moroccan Law 09-08</b>",
+    ],
+    is_most_popular: true,
+    order : {
+      text : "Order Now",
+      href: "https://my.hostino.com/order.php?pid=28&language=french&currency=1&country=MA",
+    },
+    typePrice : "HT/year",
+    active : "Instant activation"
+  },
+  {
+    id: 3,
+    name: "Shared <i>MA3</i>",
+    description: "Best choice for corporate websites.",
+    price: "4899 DH",
+    isHighlighted: false,
+    features: [
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"> Data hosted in Morocco</span></div>` },
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/flag-maroc.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>Moroccan IP address</b></span></div>` },
+      "<b>Free</b> domaine name",
+      { html: `<div class="flex items-center lg:justify-start justify-center"><img src="/images/03/wp.svg" alt="SEO Optimized" width="16" height="16" class="mr-1" /><span class="text-title"><b>WordPress</b> pre-installed</span></div>` },
+      "<b>SSL Certificate</b> (https://)",
+      "<b><i>cPanel®</i></b> control panel",
+      "<b>50 Go</b> NVMe SSD storage",
+      "Bandwidth  : <b>250 GB</b>",
+      "Email accounts : <b>illimitées</b>",
+      "Antivirus, Antimalware, and WAF avancés",
+      "TIER III certified datacenter, ISO 27001",
+      "PCI-DSS compliant",
+      "Complies with <b>Moroccan Law 09-08</b>",
+    ],
+    is_most_popular: false,
+    order : {
+      text : "Order Now",
+      href: "https://my.hostino.com/order.php?pid=29&language=french&currency=1&country=MA",
+    },
+    typePrice : "HT/year",
+    active : "Instant activation"
+  },
+];
 
 const hostingPlans = [
   {
@@ -231,7 +308,11 @@ const articleSchema = {
     </div>
 
     <ContactForm
-         title={`Remplissez vos infos, <br class="lg:hidden block" /><span class="border-bottom">on s'occupe du reste !</span>`}
+         placeholderName = "Full name"
+         placeholderPhone = "Phone"
+         placeholderEmail="Email"
+         nameButton="Send"
+         title={`Fill in your information, <br class="lg:hidden block" /><span class="border-bottom">we'll take care of the rest !</span>`}
      />
 
     <HostingSolutionsCards  
@@ -245,11 +326,12 @@ const articleSchema = {
     />
 
      <TextLeftImageRight
-          title="Hébergez vos données sensibles au Maroc"
+          title="Host your sensitive data on a Moroccan sovereign Cloud"
+          subTitle="Cloud Morocco Hosting"
           paragraphs={[
-            "Que vous soyez une entreprise du secteur financier, de la santé, de <b>l’administration publique</b>, ou toute organisation traitant des données sensibles ou soumise à des régulations strictes, choisir un serveur Cloud hébergé au Maroc vous offre une solution conforme aux réglementations locales et permet de réduire significativement les risques liés à la <b>souveraineté des données.</b>",
-            'Cette solution garantit que vos données restent sous la juridiction marocaine, tout en assurant une conformité totale avec la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des" rel="noopener"><b>loi 09-08</b></a></span> relative à la protection des données personnelles, la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-ndeg-0520-relative-la-cybersecurite" rel="noopener"><b>loi 05-20</b></a></span> sur la cybersécurité, ainsi qu’avec les recommandations de la CNDP.',
-            "Appelez le +212 531-031-186 et confiez l’hébergement de vos données sensibles à un prestataire de confiance basé au Maroc.",
+            `Whether you are a company in the financial sector, healthcare, <b>public administration</b>, or any organization handling sensitive data or subject to strict regulations, choosing a Cloud server hosted in Morocco offers a solution that complies with local regulations and significantly reduces data sovereignty risks.`,
+            `This solution ensures that your data remains under Moroccan jurisdiction while maintaining full compliance with <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/en/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des" rel="noopener"><b>Law 09-08</b></a></span> on personal data protection, <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/sites/default/files/legislative/brochure/2022-10/presentation_note_of_the_law_n_deg_05-20_on_cybersecurity_-_english_version.pdf" rel="noopener"><b>Law 05-20</b></a></span> on cybersecurity, as well as the guidelines of the <b>CNDP</b> (National Commission for the Control of Personal Data Protection).`,
+            `<b>A team you can rely</b> <b>on</b>, available 24/7, supports you every step of the way with tailored outsourcing and rapid deployment. Trust Hostino<b>®</b> to simplify the management of your cloud servers in Morocco.`
           ]}
           imageSrc="/images/03/cloud-maroc.jpg"
           imageAlt="Cloud au Maroc"
@@ -257,12 +339,8 @@ const articleSchema = {
           className="lg:mt-[150px] mt-[80px] mb-[70px]"
       />
 
-    <TrustedBySection
-      classNameImage="md:w-[65%] w-[100%] mx-auto h-auto"
-    />
-
     <SixCards
-      title=`Avantages de l'hébergement <br/> Cloud Maroc`
+      title=`Advantages of Our <br/> Cloud Morocco`
       alignment="center"
       features={hostingFeatures}
     />
@@ -270,27 +348,24 @@ const articleSchema = {
     <div class="lg:pt-[120px] bg-gray-200 pt-[50px] pb-[30px]">
       <div class="container text-center flex flex-col gap-7 items-center">
         <h2 class="max-big-title leading-[65px] mb-[20px] tracking-[-3.1px]">
-          Hébergement <br class="md:block hidden" />
-          <span class="border-bottom">Mutualisé</span> au Maroc
+
+          Shared Hosting in<br class="md:block hidden" />
+          <span class="border-bottom">Morocco</span>
         </h2>
         <p class="paragraph lg:px-[200px] pr-[0]">
-          L'hébergement mutualisé de Hostino est une solution économique
-          et performante pour héberger vos sites web en toute simplicité
-          sur un cloud souverain. En partageant les ressources du serveur,
-          vous optimisez vos coûts tout en garantissant la
-          <b>conformité avec la réglementation </b> en vigueur dans le
-          Royaume.
+         Our shared hosting is an affordable and high-performance solution for easily hosting your websites on a sovereign cloud. By <b>sharing server resources</b>, you reduce costs while ensuring <b>compliance with the current regulations</b> in the Kingdom.
         </p>
       </div>
     </div>
 
-    <PlansPack />
+    <PlansPack  plans={hostingPlansShared}/>
 
     <TextLeftImageRight
-      title="Qu'est-ce que le Cloud Maroc ?"
+      title="What is Cloud Morocco ?"
       paragraphs={[
-        `Le Cloud Maroc (<span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/cloud-morocco/">Cloud Morocco</a></span>) désigne l'ensemble des infrastructures, services et solutions de stockage et de traitement de données numériques opérés localement dans des data centers situés au Maroc. Il répond à une ambition stratégique du pays : renforcer sa <span style="text-decoration: underline;"><a href="https://www.ires.ma/iip/souverainete-numerique/" rel="noopener"><b>souveraineté numérique</b></a></span> en développant des capacités technologiques nationales et en réduisant la dépendance vis-à-vis des solutions étrangères.`,
-        `Ce modèle localisé permet une meilleure maîtrise des données sensibles, qu'elles soient <b>d'ordre gouvernemental</b>, industriel ou personnel. Grâce à une approche rigoureuse de la gouvernance des données, les flux numériques sont encadrés de manière transparente, conforme aux exigences de traçabilité, de confidentialité et d'intégrité. Le Cloud Maroc contribue ainsi à renforcer la cybersécurité du pays, en intégrant des protocoles stricts de <b>surveillance et de défense contre les menaces</b> numériques, tout en développant des compétences locales en sécurité informatique.`,
+        `Cloud Morocco refers to the entire infrastructure, services, and solutions for storing and processing digital data that are operated locally in <b>data centers located within the Kingdom of Morocco</b>. It reflects the country’s strategic ambition to strengthen its digital sovereignty by developing national technological capabilities and reducing reliance on foreign solutions.`,
+        `This localized model allows for better control over sensitive data—whether <b>governmental, industrial</b>, or personal. With a rigorous approach to data governance, digital flows are managed transparently and in accordance with requirements for traceability, confidentiality, and integrity.`,
+        `With full flexibility, you can scale your resources as needed while enjoying high availability and responsive technical support.`
       ]}
       imageSrc="/images/10/cloud-souverain-maroc.jpg"
       imageAlt="Cloud souverain au Maroc"

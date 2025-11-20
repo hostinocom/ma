@@ -24,44 +24,29 @@ const ogAlt = "Nom de domaine Maroc";
 
 const faqData = [
   {
-    question: "L'activation de mon nom de domaine Maroc est-elle instantanée ?",
+    question: "Is my .ma domain name activation instant ?",
     answers: [
-      "L'enregistrement de votre nom de domaine .ma est effectué instantanément après votre paiement. Un email de confirmation vous est automatiquement envoyé pour valider l'opération.",
-      "L'activation se fait généralement en quelques minutes, sauf si le nom de domaine .ma contient un terme réservé, auquel cas une validation manuelle par l'ANRT est nécessaire.",
+      "The registration of your .ma domain name is completed instantly after your payment. A confirmation email is automatically sent to you to validate the operation.",
+      "Activation usually occurs within a few minutes, unless the .ma domain name contains a reserved term, in which case manual validation by the ANRT is necessary.",
     ],
   },
   {
-    question:
-      "Est-il possible de modifier ou d'annuler un nom de domaine après le paiement ?",
+    question: "Is it possible to modify or cancel a .ma domain name after payment?",
     answers: [
-      "Comme chez tous nos confrères locaux et internationaux, il est impossible de modifier ou d'annuler l'enregistrement d'un nom de domaine.",
-      "Une fois enregistré, le nom de domaine reste actif jusqu'à sa date d'expiration. Si vous ne le renouvelez pas, il sera automatiquement supprimé à la fin de cette période.",
-      "De plus, le montant payé pour l'enregistrement n'est pas remboursable.",
+      "As with all our local and international competitors, it is impossible to modify or cancel a .ma domain name registration.",
+      "Once registered, the domain name remains active until its expiration date. If you do not renew it, it will be automatically deleted at the end of this period. Furthermore, the amount paid for registration is non-refundable.",
     ],
   },
   {
-    question: "Comment acheter un nom de domaine Maroc ?",
+    question: "I'm not a Moroccan resident. Can I buy a .ma domain name ?",
     answers: [
-      "La réservation d'un nom de domaine .MA est ouverte aussi bien aux particuliers qu'aux entreprises du monde entier. En enregistrant un nom de domaine .MA, vous acceptez les conditions générales de l'ANRT relatives à la réglementation en vigueur pour les noms de domaine .ma.",
+      "Yes, non-Moroccan residents can indeed purchase a .ma domain name. The registration process operates on a first-come, first-served basis, you can successfully acquire a domain regardless of your place of residence.",
     ],
   },
   {
-    question: "Comment renouveler mon nom de domaine ?",
+    question: "Can I manage the DNS of my .ma domain name?",
     answers: [
-      "Vous pouvez générer directement une facture de renouvellement de votre nom de domaine .ma depuis votre espace client Hostino.",
-    ],
-  },
-  {
-    question: "Puis-je gérer le DNS de mon nom de domaine ?",
-    answers: [
-      'Oui, vous pouvez gérer le DNS à tout moment depuis votre espace client Hostino, dans la rubrique "Manage DNS", ou directement depuis votre compte cPanel si un hébergement est associé à votre nom de domaine.',
-    ],
-  },
-  {
-    question: "Pourquoi réserver plusieurs extensions en plus du .ma ?",
-    answers: [
-      "Réserver plusieurs extensions de votre nom de domaine (comme .com, .net, .org, etc.) en plus du .ma vous permet de protéger votre marque, éviter les imitations ou le cybersquatting, et renforcer votre présence en ligne à l'international.",
-      "Cela garantit que vos visiteurs vous trouvent facilement, quel que soit l'extension qu'ils tapent, tout en sécurisant votre identité numérique sur différents marchés.",
+      'Yes, you can manage the DNS at any time from your Hostino <strong><span style="text-decoration: underline;"><a href="https://my.hostino.com/login?language=english" rel="noopener">client area</a></span></strong>, under the "Manage DNS" section, or directly from your cPanel account if hosting is associated with your domain name.',
     ],
   },
 ];
@@ -149,6 +134,7 @@ const domainPricingDataEn = {
   domainRenewalTitle: "Domain name renewal",
   domainRenewalText: "You can renew your .ma domain name for a period of 1 to 5 years at a rate of 118 Dhs/year, excluding VAT.",
   domainTransferTitle: "Domain name transfer",
+  domainRenewalData : [],
   domainTransferData: [
     {
       label: "Period for completing the transfer procedure.",
@@ -174,21 +160,20 @@ const domainPricingDataEn = {
 const hostingFeatures = [
   {
     image: "08/lancer-domaine.png",
-    title: "Nom de domaine pour lancer un <span>site web</span>",
-    description: `Un nom de domaine .ma, c'est l'assurance d'une identité locale forte pour votre site web. Gagnez la confiance des internautes marocains et renforcez votre crédibilité. Sélectionnez un <b>pack <span style="text-decoration: underline;"><a href="https://www.hostino.ma/">d'hébergement web</a></span></b> et publiez votre site dès <b>maintenant</b> !`,
+    title: ".MA Domain name to Launch <span><span>Your Website</span></span>",
+    description: `Secure a strong local identity for your website with a .ma domain. Our high-standard servers, adhering to international security norms and delivering fast performance, are ready for you. Choose a <span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/#cart"><b>web hosting</b></a></span> package and publish your site now!`,
   },
   {
     image: "08/email-domaine.png",
     title:
-      "Nom de domaine <br>pour créer des<br> <span><span>e-mails Pro</span></span>",
-    description: `Boostez votre crédibilité et votre communication avec des adresses emails personnalisées <b>@votreentreprise.ma</b>. <span style="text-decoration: underline;"><a href="/email-professionnel/#plans">Sélectionnez le pack</a></span> adapté, confirmez votre domaine .ma et profitez d'une messagerie professionnelle pour votre entreprise.`,
+      ".MA Domain name to create <span><span>business emails</span></span>",
+    description: `Boost your credibility and communication with personalized email addresses @yourcompany.ma. Select the appropriate <span style="text-decoration: underline;"><a href="https://www.hostino.ma/en/business-email/#cart"><b>Email package</b></a></span>, confirm your .ma domain, and enjoy professional messaging for your business.`,
   },
   {
     image: "08/shopify.png",
     title:
-      "Nom de domaine <br>pour <span><span>Shopify</span></span>, Youcan etc.",
-    description: `Donnez une identité unique à votre boutique en ligne ! Achetez votre nom de domaine et connectez-le à Shopify, Youcan ou toute autre plateforme en quelques clics grâce à notre service <b>DNS gratuit</b>.
-Démarrez votre e-commerce dès maintenant !`,
+      ".MA Domain name for <span><span>Shopify</span></span>, and more",
+    description: `Give your online store a unique Moroccan identity! Buy your MA domain name and connect it to Shopify, Squarespace, or any other platform in just a few clicks with our <b>free DNS service</b>. Start your e-commerce now with Hostino!`,
   },
 ];
 
@@ -359,7 +344,8 @@ const articleSchema = {
     <SixCards
       features={hostingFeatures}
       title="Get more from your <br/> .MA domain name"
-      classNameTitleCard="xl:pr-[120px] lg:pr-[40px]"
+      classNameTitleCard="xl:pr-[120px] lg:pr-[40px]" 
+      
     />
 
     <DomainSearchSectionEn id="ma" placeholder="Search for a domain name" nameButton="Search" />
@@ -455,49 +441,11 @@ const articleSchema = {
       </div>
     </section>
 
-    <DomainPricingSection {...domainPricingDataEn} />
+    <DomainPricingSection {...domainPricingDataEn} className="lg:my-[150px] my-[80px]" />
 
-    <TitleParagraphButton
-      title="Nom de domaine .ma gratuit"
-      paragraphs={[
-        `<span style="color: #022545;">Pour finaliser l'enregistrement d'un nom de domaine Maroc contenant un terme réservé, merci de nous transmettre les informations suivants en ouvrant un <span style="text-decoration: underline;"><a style="color: #022545; text-decoration: underline;" href="https://my.hostino.com/submitticket.php" rel="noopener"><b>ticket de support</b></a></span> :</span>`,
-        `<ul class="flex flex-col list-dots-paragraph gap-y-4 mb-[40px] md:pl-[50px] pl-[30px]">
-  <li class="flex items-start gap-3">
-    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
-    <span>Nom de l'entreprise ou organisme pour lequel ce nom de domaine va être réservé</span>
-  </li>
-
-  <li class="flex items-start gap-3">
-    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
-    <span>Email, adresse postale et N° de téléphone de l'entreprise</span>
-  </li>
-
-  <li class="flex items-start gap-3">
-    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
-    <span>La raison pour laquelle ce domaine sera enregistré (avec tous les détails possibles pour convaincre l'ANRT de vous enregistrer ce domaine)</span>
-  </li>
-
-  <li class="flex items-start gap-3">
-    <span class="w-2 h-2 mt-2 bg-primary rounded-full flex-shrink-0"></span>
-    <span>
-      <a class="underline text-[#022545]" href="https://www.hostino.ma/Examen_Prealable_nom_de_domaine_maroc.pdf">Formulaire</a>
-      rempli, signé et cacheté, disponible via ce 
-      <a class="underline text-[#022545]" href="https://www.hostino.ma/Examen_Prealable_nom_de_domaine_maroc.pdf"><u>lien</u></a>.
-    </span>
-  </li>
-</ul>
-`,
-      ]}
-      buttonText="Commencer maintenant"
-      arrowButton={true}
-      buttonHref="#ma"
-    />
-
-    <FAQSection faqData={faqData} title="FAQ - Nom de domaine Maroc" />
-    <ServiceProximite page="nom-de-domaine"
-      titleMap=""
-      src=""
-     />
+   
+    <FAQSection faqData={faqData} title="FAQ - .MA domain name" />
+    
   </main>
 </Layout>
 

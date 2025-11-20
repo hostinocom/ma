@@ -84,7 +84,9 @@ const {
   domainTransferData: propsTransferData,
   ownerChangeTitle: propsOwnerChangeTitle,
   ownerChangeData: propsOwnerChangeData,
-  
+  className = false,
+  freeDomainTitle,
+  freeDomainText,
 } = Astro.props;
 
 // Use props if provided, otherwise use default values
@@ -96,9 +98,11 @@ const finalDomainTransferTitle = propsTransferTitle || domainTransferTitle;
 const finalDomainTransferData = propsTransferData || domainTransferData;
 const finalOwnerChangeTitle = propsOwnerChangeTitle || ownerChangeTitle;
 const finalOwnerChangeData = propsOwnerChangeData || ownerChangeData;
+
+
 ---
 
-<section class="lg:mt-[150px] mb-[0px] mt-[80px]">
+<section class={`${className ? className : "lg:mt-[150px] mb-[0px] mt-[80px]"}`}>
   <div class="container mx-auto px-4">
     <!-- First Table - Domain Registration -->
     <div class="mb-6">
@@ -125,7 +129,7 @@ const finalOwnerChangeData = propsOwnerChangeData || ownerChangeData;
 
     <!-- Second Table - Domain Renewal -->
     <div>
-      <h3 class="text-[27px] tracking-[-1px] poppins-semibold text-title">
+      <h3 class="text-[21px] tracking-[-1px] poppins-semibold text-title">
         {finalDomainRenewalTitle}
       </h3>
       <p class="paragraph mt-[10px] poppins-regular">{domainRenewalText}</p>
@@ -154,8 +158,8 @@ const finalOwnerChangeData = propsOwnerChangeData || ownerChangeData;
     </div>
 
     <!-- Third Table - Domain Transfer -->
-    <div class="mt-16 mb-16">
-      <h3 class="text-[27px] tracking-[-1px] poppins-semibold text-title mb-8">
+    <div class="my-[20px]">
+      <h3 class="text-[21px] tracking-[-1px] poppins-semibold text-title mb-[15px]">
         {finalDomainTransferTitle}
       </h3>
 
@@ -179,7 +183,7 @@ const finalOwnerChangeData = propsOwnerChangeData || ownerChangeData;
 
     <!-- Fourth Table - Owner Change -->
     <div>
-      <h3 class="text-[27px] tracking-[-1px] poppins-semibold text-title mb-8">
+      <h3 class="text-[21px] tracking-[-1px] poppins-semibold text-title mb-[15px]">
         {finalOwnerChangeTitle}
       </h3>
 
@@ -200,5 +204,15 @@ const finalOwnerChangeData = propsOwnerChangeData || ownerChangeData;
         </table>
       </div>
     </div>
-  </div>
+
+   {
+    freeDomainTitle &&  freeDomainText ? 
+     (<div class="mt-[20px]" >
+        <h3 class="text-[21px] tracking-[-1px] poppins-semibold text-title mb-[15px]">
+         {freeDomainTitle}
+        </h3>
+        <p class="paragraph mt-[10px] poppins-regular">{freeDomainText}</p>
+  </div> ) : (<></>)
+   }
+
 </section>
