@@ -150,7 +150,7 @@ const {
           {/* Pricing */}
           <div class="mb-6 flex">
             <p class="text-[45px] poppins-semibold  leading-[54px] text-title numbers" set:html={plan.price} />
-            <span class="ml-[8px] mt-[5px] text-[15px] poppins-thin">
+            <span class="ml-[8px] mt-[5px] text-[15px] poppins-light">
               {plan.typePrice}
             </span>
           </div>
@@ -185,7 +185,7 @@ const {
 
           <div>
             {plan.features.map((feature) => (
-              <div class="flex items-start">
+              <div class="flex list-features-plans items-start">
                 {typeof feature === "object" && "html" in feature ? (
                   <div
                     class="text-[14px] text-title poppins-regular leading-[1.8em]"

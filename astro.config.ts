@@ -16,13 +16,21 @@ export default defineConfig({
     react(), 
     compress(),
     Unfonts({
+      google: {
+        families: ['Poppins', 'Montserrat'],
+      },
       custom: {
-        families: [{
-          name: 'Poppins',
-          local: 'Poppins',
-          src: '/Poppins/*.ttf',
-          transform(font) {
-            if (font.basename === 'poppins-semibold') {
+        display: 'auto',
+        preload: true,
+        prefetch: true,
+        injectTo: 'head-prepend',
+        families: [
+          {
+            name: 'Poppins',
+            src: './public/Poppins/*.ttf',
+            local: 'Poppins',
+            transform(font: any) {
+              if (font.basename === 'poppins-semibold') {
               font.weight = 600
             } else if (font.basename === 'poppins-regular') {
               font.weight = 400
@@ -43,13 +51,10 @@ export default defineConfig({
             }
             return font
           }
-        }],
-        display: 'swap',
-        preload: true,
-        prefetch: false,
-        injectTo: 'head-prepend',
+        }],        
       },
     }),
+       
     sitemap({
       serialize(item) {
         const highPriorityPages = [

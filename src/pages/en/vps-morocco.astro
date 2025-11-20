@@ -1,0 +1,231 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SixCards from "../../components/commonSections/SixCards.astro";
+import TextLeftImageRight from "../../components/commonSections/TextLeftImageRight.astro";
+import FAQSection from "../../components/commonSections/FaqSection.astro";
+import TrustedBySection from "../../components/commonSections/TrustedBySection.astro";
+import VPSQuoteFormEn from "../../components/sectionsPageVpsMaroc/VPSQuoteFormEn.astro";
+import HeroHeadingPages from "../../components/ui/heroHeadingPages.astro";
+import StartsRatingYellowFooter from "../../components/ui/StartsRatingYellowFooter.astro";
+
+import { main_schema } from "../../mainSchema";
+
+const title = "VPS Maroc | Location serveur virtuel au Maroc - Hostino";
+const description =
+  "VPS Maroc. Découvrez nos VPS performants et sécurisés, hébergés dans un data center souverain sur le territoire marocain.";
+const imageUrl =
+  "https://www.hostino.ma/images/cloud-maroc.jpg";
+const canonical_url = "https://www.hostino.ma/vps-maroc";
+const ogAlt = "Vps Maroc";
+
+const hostingFeatures = [
+  {
+    image: "10/souverainete-des-donnees.png",
+    alt: "Data Sovereignty in Morocco",
+    title: "<span>Data</span> <br>Sovereignty",
+    description: `
+      Our Cloud servers are hosted in a data center located in Morocco, in compliance with <b>digital sovereignty requirements</b>, local hosting legal obligations, and international security and reliability standards (<b>certified Tier III</b>).
+    `,
+  },
+  {
+    image: "03/adresse-ip-maroc.png",
+    alt: "Moroccan IP address",
+    title: "Moroccan <br> <span>IP address</span>",
+    description: `
+      Our sovereign cloud solution allows you to obtain a Moroccan <b>IP address</b> assigned to a VPS server hosted in a data center located on <b>Moroccan territory</b>, with a very short response time and compliance with CNDP standards.
+    `,
+  },
+  {
+    image: "03/coonectivite-haut-debit.png",
+    alt: "High-Speed Connectivity",
+    title: "High-Speed <br><span>Connectivity</span>",
+    description: `
+      Through our partnerships with local <strong>telecom operators</strong>, we offer customized high-speed internet connections with low latency and adaptable speeds <strong>from 1 to 100 Mbps</strong> to meet your specific needs.
+    `,
+  },
+  {
+    image: "03/services-manages.png",
+    alt: "Managed Services",
+    title: "Managed <br><span>Services</span>",
+    description: `
+      With our sovereign cloud outsourcing solutions in Morocco, you benefit from a local Ops team that is expert in <b>Cloud and DevOps technologies</b>, ensuring the operational management of your cloud servers located in Morocco.
+    `,
+  },
+  {
+    image: "03/securite-monitoring.png",
+    alt: "Monitoring & Security",
+    title: "Monitoring <br>& <span>Security</span>",
+    description: `
+      Our cloud security service in Morocco provides <b>comprehensive protection</b> against internal and external threats, ensures rigorous access management, strengthens governance and data compliance, while <b>guaranteeing rapid recovery</b> in the event of a disaster.
+    `,
+  },
+  {
+    image: "03/conformite-anrt.png",
+    alt: "Regulatory compliance",
+    title: "Regulatory <br><span>compliance</span>",
+    description: `
+      By choosing a Moroccan sovereign cloud, you ensure the <strong>hosting and management</strong> of your critical data in full compliance with <strong>Law 09-08</strong> on the protection of personal data, while adhering to the recommendations of the <strong>CNDP</strong>.
+    `,
+  },
+];
+
+const faqData = [
+  {
+    question: "What is a Moroccan sovereign cloud?",
+    answers: [
+      "A sovereign Cloud Morocco refers to data hosting in a data center located within the national territory, ensuring that this data remains under the control of Moroccan jurisdiction, in full compliance with Law 09-08 on personal data protection, Law 05-20 on cybersecurity, and the recommendations of the CNDP (National Commission for the Protection of Personal Data).",
+    ],
+  },
+  {
+    question: "Who should choose sovereign cloud hosting in Morocco?",
+    answers: [
+      "Sovereign cloud hosting is intended for any entity handling sensitive or critical data in Morocco, whether public institutions or private companies. In sectors ranging from government and healthcare to finance, telecommunications, education, industry, or justice, data sovereignty provides essential guarantees: compliance with Moroccan legislation, enhanced protection against external threats and interference, and full control over strategic information.",
+      "Each sector benefits in its own way — protecting citizens' privacy, ensuring national security, safeguarding business confidentiality, or gaining a competitive edge — illustrating why the sovereign cloud is now a cornerstone of Morocco's digital strategy.",
+    ],
+  },
+  {
+    question: "What are the benefits of the sovereign cloud in Morocco?",
+    answers: [
+      "The sovereign cloud in Morocco offers several key advantages for organizations and institutions operating within the country:",
+      "<ul><li><strong>Legal Compliance:</strong> Ensures full alignment with Moroccan laws, including Law 09-08 on personal data protection and Law 05-20 on cybersecurity.</li><li><strong>Data Sovereignty:</strong> Keeps sensitive and strategic data within national borders, under Moroccan jurisdiction.</li><li><strong>Enhanced Security:</strong> Reduces exposure to foreign surveillance and external cyber threats through advanced security protocols and local data governance.</li><li><strong>Improved Trust:</strong> Builds confidence among citizens, clients, and partners by protecting the confidentiality and integrity of data.</li><li><strong>High Performance:</strong> Local data centers ensure lower latency, better speed, and higher availability.</li><li><strong>Support for National Strategy:</strong> Strengthens Morocco's digital independence and supports the national vision for technological and economic development.</li><li><strong>Custom Services:</strong> Enables tailored solutions adapted to the specific needs of regulated sectors like healthcare, education, finance, and public administration.</li></ul>",
+    ],
+  },
+  {
+    question: "What's the difference between shared hosting and Cloud VPS?",
+    answers: [
+      "Our shared cloud hosting solution is based on sharing system resources (CPU, RAM, etc.) between multiple websites hosted on the same server. In contrast, with a Cloud VPS, you benefit from dedicated, guaranteed, and isolated resources. On the shared platform, we manage the entire configuration, including security and the hosting environment.",
+      "However, Cloud VPS users are responsible for these technical aspects—unless they choose to delegate them to our experts.",
+    ],
+  },
+  {
+    question: "How long does it take to activate my shared hosting plan?",
+    answers: [
+      "There is no delay in the delivery of your Cloud Morocco hosting package. The activation time mainly depends on the payment method used. For example, credit card payments allow for instant activation of your hosting package.",
+    ],
+  },
+  {
+    question: "How long does it take to deliver my Cloud VPS server?",
+    answers: [
+      "Cloud Morocco VPS servers are custom-configured to meet each client's specific needs.",
+      "Delivery time depends on both the payment method used and how quickly you provide the necessary details, which should first be discussed with our sales team.",
+    ],
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hébergement web Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "1399",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "1082",
+      },
+    },
+  ],
+};
+---
+
+<Layout 
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+>
+  <main>
+    <HeroHeadingPages
+      smallTitle="VPS Maroc"
+      bigTitle="Morocco-based VPS Hosting"
+      className="pb-[80px]"
+      lineGreen={true}
+      btn={true}
+      nameBtn="Request a quote"
+      classTitle="md:w-[50%] mx-auto w-[80%]"
+      href="#vps"
+      lineGreen={false}
+      
+    />
+
+    <TextLeftImageRight
+      title="VPS Hosting in Morocco : we make it Easy!"
+      paragraphs={[
+        `Whether you’re a business in the financial sector, healthcare, <b>public administration</b>, or any other organization handling <b>sensitive data</b> or subject to data <b>sovereignty</b> requirements, choosing a VPS Morocco is a strategic decision. We make it easy to securely host, manage, and scale your infrastructure locally.<div></div>`,
+        `This choice allows you to comply with <b>Moroccan regulations</b> while significantly reducing the risks associated with hosting data abroad. By hosting your infrastructure on a VPS server in Morocco, your data remains under Moroccan jurisdiction, ensuring full compliance with <a href="https://www.dgssi.gov.ma/en/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des" rel="noopener"><span style="text-decoration: underline;"><b>Law 09-08</b></span></a> on personal data protection, <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/sites/default/files/legislative/brochure/2022-10/presentation_note_of_the_law_n_deg_05-20_on_cybersecurity_-_english_version.pdf" rel="noopener"><b>Law 05-20</b></a></span> on <b>cybersecurity</b>, and the guidelines of the CNDP.`,
+        `Call +212 531-031-186 and entrust the hosting of your sensitive data to a <b>trusted VPS</b> provider with a 100% Moroccan team at your service.`
+      ]}
+      imageSrc="/images/10/vps-morocco.jpg"
+      imageAlt="VPS au Maroc"
+      consultButtonTextExiste={false}
+      className="lg:mt-[150px] mt-[80px] mb-[50px]"
+    />
+
+    <TrustedBySection  
+        text=`<b>Hostino®</b>, a trusted partner for a vast network of businesses and institutions in Morocco and around the world.`
+        classNameImage="lg:w-[60%] w-[100%]"
+       />
+
+    <VPSQuoteFormEn  />
+
+    <SixCards
+      title="Advantages of Our VPS Morocco"
+      alignment="left"
+      features={hostingFeatures}
+    />
+
+
+       <TextLeftImageRight
+          title="What is VPS Morocco ?"
+          paragraphs={[
+            "VPS Morocco refers to virtual private server hosting infrastructure, services, and solutions operated locally in data centers within the Kingdom of Morocco. This approach aligns with Morocco's strategic ambition to reinforce its <b>digital sovereignty</b> by building robust national technological capabilities and minimizing reliance on international providers.",
+            "Opting for a <a href='https://www.hostino.ma/en/cloud-morocco/'>Cloud Morocco</a> VPS allows organizations—including government agencies, businesses, and individuals—to securely host, store, and process sensitive data locally. With comprehensive <b>data governance protocols</b>, digital information is managed transparently, adhering strictly to standards of traceability, confidentiality, and integrity.",
+            "By choosing VPS hosting Morocco, organizations can enhance their cybersecurity posture through rigorous monitoring, advanced defense mechanisms, and local expertise tailored specifically to combating digital threats.",
+          ]}
+          imageSrc="/images/10/cloud-souverain-maroc.jpg"
+          imageAlt="What is Cloud server in Morocco ?"
+          consultButtonTextExiste={false}
+          textButton=""
+          href=""
+        />
+
+    <FAQSection faqData={faqData} title="FAQ - VPS Morocco" />
+
+  </main>
+</Layout>
+

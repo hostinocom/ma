@@ -1,0 +1,117 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const title = "Modalités de paiement Hostino | Toutes nos options";
+const description =
+  "Découvrez toutes les modalités de paiement Hostino : virement bancaire, carte bancaire, espèces et chèque. Trouvez l’option qui vous convient pour régler vos services en toute sécurité.";
+const canonical_url = "https://www.hostino.ma/paiements";
+const imageUrl =
+  "https://www.hostino.ma/images/meta/hostino-mode-paiement.png";
+const ogAlt = "Modalités de paiement Hostino";
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+>
+    <section class="lg:py-[110px] bg-gray-200 py-[80px]">
+      <div class="container">
+        <h1 class="big-title">Modalités de<br class="md:block hidden" /> paiement</h1>
+      </div>
+    </section>
+
+    <section class="lg:my-[150px] bg-white my-[80px]">
+      <div class="container px-[30px]">
+        <div class="px-[30px]">
+            <h3 class="text-[27px] poppins-semibold  text-title">
+                Transfert d’argent ou Virement bancaire
+            </h3>
+            <p class="paragraph">
+              Virement bancaire ou transfert d’argent sans frais additionnels (versement en espèces) dans n’importe quelle <a href="https://bpnet.gbp.ma/Public/CustomerService/Agence" rel="noopener">agence de la <u>Banque Populaire</u>.</a>.
+            </p>
+
+            <ul class="my-[30px]">
+              <li class="poppins-regular paragraph-mb-0">– N° de compte (RIB) :  <b>164 640 21211 52330320002 28</b></li>
+               <li class="poppins-regular paragraph-mb-0">– N° de compte (IBAN) : <b>MA64 164 640 21211 52330320002 28</b></li>
+              <li class="poppins-regular paragraph-mb-0">– Bénéficiaire :  <b>Hostino SARL</b></li>
+            </ul>
+
+            <p class="paragraph">
+              Il est obligatoire d’inscrire le&nbsp;numéro de facture sur le justificatif de paiement&nbsp;et nous l’envoyer <span style="text-decoration: underline;"><a href="https://my.hostino.com/submitticket.php" rel="noopener"><b>par ticket</b></a></span> à notre service de facturation.
+            </p>
+
+            <p class="my-[25px] paragraph"><b>Délais de validation du paiement:</b><p>
+            <p class="paragraph">– Dépôt à la banque en espèces : 24 heures en moyenne suivant votre opération de versement (hors jours fériés et week-end).</p>
+            <p class="paragraph">– Virement bancaire compte à compte : 48 heures en moyenne après l’opération de virement (hors jours fériés et week-end).</p>
+        </div>
+
+
+        <div class="w-full">
+            <p class="text-[27px] text-title mb-[20px] poppins-semibold ">Carte Bancaire</p>
+            <img
+                src="/images/cmi-maroc.png"
+                alt="cmi maroc"
+                loading="eager"
+                class="w-[250px] mb-[25px] h-[50px] brightness"
+             />
+
+
+             <p class="paragraph">
+                Les transactions sont sécurisées par le Centre Monétique Interbancaire.<br />
+                 Les commandes doivent être payées depuis la rubrique <b>“Mes Factures”</b> de votre espace client.
+             </p>
+
+             <p class="paragraph">
+                    Il n’est pas obligatoire d’envoyer le reçu de paiement par ticket.
+             </p>
+             <p class="paragraph><b>Délais de validation du paiement:</b></p>
+             <p class="paragraph>Vos services seront activés ou renouvelés instantanément si la transaction se termine sans erreur, et le service concerné ne nécessite aucune validation préalable.</p>
+
+              <p class="text-[27px] mb-[25px] text-title poppins-semibold ">Espèces</p>
+              <p class="paragraph">Nous acceptons le paiement par espèces dans l’un de nos bureaux.</p>
+
+              <div class="my-[25px]">
+                <p class="paragraph>
+                    <b>Hostino SARL AU<br></b>T100 Technopark.<br>Tanger, Maroc
+                </p>
+              </div>
+              <p class="text-[17px] text-title"><b>Délai de validation:</b> Votre paiement sera validé à la réception de votre paiement.</p>
+
+        </div>
+
+        <div>
+<h3 class="text-[27px] text-title poppins-semibold ">Chèque</h3>
+
+<p class="text-[17px] text-title my-[25px] ">
+  À envoyer par le <strong>Service AMANA</strong> de la Poste du Maroc ou à déposer directement 
+  à l’un de nos bureaux à l’adresse :
+</p>
+
+<p class="text-[17px] text-title my-[25px] ">
+  <strong>Hostino SARL AU</strong><br>
+  T100 Technopark.<br>
+  Tanger, Maroc
+</p>
+
+<p class="text-[17px] text-title my-[25px] ">
+  Prière de noter sur le dos du chèque le <strong>numéro de facture</strong> 
+  et votre <strong>adresse email</strong>.
+</p>
+
+<p class="text-[17px] text-title my-[25px] ">
+<strong>Délai de validation du paiement :</strong></p>
+
+<p>
+  Après l’encaissement effectif de votre chèque sur notre compte bancaire, 
+  soit environ <strong>5 jours ouvrables</strong> (hors jours fériés et week-end) 
+  après le dépôt du chèque à notre agence bancaire.
+</p>
+        </div>
+        
+      </div>
+    </section>
+
+</Layout>

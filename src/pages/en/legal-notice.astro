@@ -1,0 +1,223 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StartsRatingYellowFooter from "../../components/ui/StartsRatingYellowFooter.astro";
+import { main_schema } from "../../mainSchema";
+
+const title = "Mentions légales - Hostino";
+const description =
+  "Mentions légales: le site web Hostino.ma est édité par la société Hostino SARL AU, T200 Technopark de Tanger - Maroc";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/mentions-legales";
+const ogAlt = "Mentions légales";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+>
+  <main>
+    <section class="lg:py-[110px] bg-gray-200 py-[50px]">
+      <div class="container">
+        <h1 class="big-title">Mentions légales</h1>
+      </div>
+    </section>
+
+    <section class="lg:my-[120px] my-[80px]">
+      <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-8">
+          {/* Sidebar */}
+           <div class="border-1  lg:col-span-3 md:col-span-5 col-span-1 rounded-[10px] py-[30px] px-[30px] border-gray-300" style={{maxHeight : "maxContant"}}>
+            <h3 class="text-[22px] poppins-semibold  text-title mb-[20px]">
+              Legal Documents
+            </h3>
+            <div class="w-full h-[1px] bg-gray-400 mb-[20px]"></div>
+
+            <ul class="space-y-3">
+              <li style="text-decoration: underline;">
+                <a class="text-title text-[17px] poppins-regular" href="/en/terms">
+                  Terms and Conditions
+                </a>
+              </li>
+              <li
+                style="text-decoration: underline; text-decoration-thickness: 2px;"
+              >
+                <a class="text-title text-[17px] poppins-regular" href="/en/legal-notice">Legal Notice</a>
+              </li>
+              <li style="text-decoration: underline;">
+                <a href="/en/cookies-policy" class="text-title text-[17px] poppins-regular">Cookies Policy</a>
+              </li>
+              <li style="text-decoration: underline;">
+                <a class="text-title text-[17px] poppins-regular" href="/en/privacy">
+                  Privacy Policy
+                </a>
+              </li>
+              <li style="text-decoration: underline;">
+                <a class="text-title text-[17px] poppins-regular" class="active" href="/en/abus">
+                  Anti-abuse Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+
+
+          {/* Content */}
+
+          <div class="lg:col-span-9 md:col-span-7 col-span-1 text-legal-documents">
+            <div>
+              <p>
+                Dans cet espace, l'utilisateur peut consulter toutes les
+                informations relatives aux mentions légales encadrant
+                l'utilisation du site Hostino.
+              </p>
+
+              <p>
+                Il est essentiel, en tant qu'utilisateur, de prendre
+                connaissance de ces mentions avant de poursuivre la navigation.
+              </p>
+
+              <h3>Hostino SARL AU</h3>
+
+              <div class="grid sm:grid-cols-2 grid-cols-1 gap-y-[15px]">
+                <div class="col-span-1">
+                  <h2>Adresse du siège</h2>
+                  <p>T100 Technopark, Tanger</p>
+                </div>
+                <div class="col-span-1">
+                  <h2>Directeur général</h2>
+                  <p>Aniss KIASSI</p>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 grid-cols-1 gap-y-[15px]">
+                <div class="col-span-1">
+                  <p style="margin-bottom: 0 !important;">
+                    <strong>E-mail</strong>
+                    <br />
+                    <a style="text-decoration: underline;" href="mailto:info@hostino.com">
+                      info@hostino.com
+                    </a>
+                  </p>
+                </div>
+
+                <div class="col-span-1">
+                  <p style="margin-bottom: 0 !important;">
+                    <strong>Site web</strong>
+                    <br />
+                    <a style="text-decoration: underline;" href="https://www.hostino.ma">
+                      www.hostino.ma
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="my-[27px] h-[2px] bg-gray-300"></div>
+
+              <div class="grid md:grid-cols-5 sm:grid-cols-2 grid-col-1 gap-4">
+                <p class="col-span-1">
+                  <strong>R.C</strong>
+                  <br />
+                  123893
+                </p>
+                <p class="col-span-1">
+                  <strong>Patente</strong>
+                  <br />
+                  50412781
+                </p>
+                <p class="col-span-1">
+                  <strong>I.F</strong>
+                  <br />
+                  51707097
+                </p>
+                <p class="col-span-1">
+                  <strong>R.I.B</strong>
+                  <br />
+                  164 640 21211 52330320002 28
+                </p>
+                <p class="col-span-1">
+                  <strong>ICE</strong>
+                  <br />
+                  002984236000036
+                </p>
+              </div>
+
+              <div class="my-[27px] h-[2px] bg-gray-300"></div>
+
+              <div class="mb-[27px]">
+                <span class="text-[13px] text-title">
+                  Toutes les informations sur ce site Internet sont en
+                  conformité avec la loi Marocaine et internationale.
+                </span>
+              </div>
+
+              <h3 class="mb-[27px]">Coordonnées</h3>
+
+              <ul>
+                <li>
+                  E-mail : <a href="mailto:info@hostino.com">info@hostino.com</a>
+                </li>
+                <li>
+                  Site web : <a href="https://www.hostino.ma"> https://www.hostino.ma </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+</Layout>
+

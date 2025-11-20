@@ -395,7 +395,7 @@ const PlanCard = ({
 
       <div className="border-t  border-gray-200 my-[40px]"></div>
 
-      <ul className="text-gray-700 features-plans text-sm space-y-2 flex-grow">
+      <ul className="text-gray-700 list-features-plans space-y-1">
         {plan.features.map((feature : any, index : number)  => (
           <li
             key={index}

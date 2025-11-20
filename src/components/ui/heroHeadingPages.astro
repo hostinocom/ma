@@ -1,4 +1,7 @@
 ---
+
+import AnimatedButton from "../../components/ui/AnimatedButton.astro";
+
 interface Props {
   smallTitle?: string;
   bigTitle: string | TrustedHTML;
@@ -7,7 +10,15 @@ interface Props {
   classTitle?: string
 }
 
-const { smallTitle, bigTitle, lineGreen = false, className , classTitle} = Astro.props;
+const { smallTitle, 
+        bigTitle, 
+        lineGreen = false, 
+        className , 
+        classTitle,
+        btn, 
+        href,
+        nameBtn
+        } = Astro.props;
 ---
 
 <div
@@ -30,6 +41,22 @@ const { smallTitle, bigTitle, lineGreen = false, className , classTitle} = Astro
         <div class="lg:w-[8%] md:w-[17%] w-[12%] h-[5px] bg-primary"></div>
       </div>
     )}
+
+    {
+      btn && (
+        <a href={href} class="inline-block max-w-max mx-auto text-white">
+          <AnimatedButton
+            text={nameBtn}
+            hoverText={nameBtn}
+            bgColor="bg-primary"
+            textColor="text-white"
+            hoverBgColor="bg-title"
+            class="py-[12px] px-[40px] poppins-semibold  rounded-lg"
+          />
+        </a>
+         )
+    }
+    
   </div>
 </div>
 

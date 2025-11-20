@@ -26,15 +26,10 @@ interface FormErrors {
       <!-- Header -->
       <div class="text-center mb-12">
         <h2 class="text-title text-3xl md:text-4xl lg:text-5xl poppins-semibold  mb-6">
-          Demande de devis
-          <br />
-          Cloud VPS Maroc
+          Request A Quote <br /> Today
         </h2>
         <p class="paragraph text-lg max-w-3xl mx-auto">
-          L'équipe Hostino® est à votre écoute : remplissez le formulaire
-          ci-dessous et l'un de nos experts vous contactera
-          <strong>dans les 24 heures</strong> pour répondre à toutes vos
-          questions.
+          For inquiries or support, please contact our team at <b>info@hostino.com</b>.
         </p>
       </div>
 
@@ -49,15 +44,15 @@ interface FormErrors {
       </div>
 
       <!-- Form -->
-      <form id="vps-quote-form" class="bg-white rounded-[10px] p-8 md:p-12">
+      <form  class="bg-white vps-quote-form rounded-[10px] p-8 md:p-12">
         <!-- Name and Company -->
         <div class="grid md:grid-cols-2 gap-6 mb-6">
           <div>
             <label
               for="name"
-              class="block text-title text-[17] font-medium mb-2"
+              class="block text-title text-[17] font-medium"
             >
-              Nom et prénom
+              Full Name
             </label>
             <input
               type="text"
@@ -72,7 +67,7 @@ interface FormErrors {
               for="company"
               class="block text-title text-[17] font-medium mb-2"
             >
-              Entreprise <span class="text-red-500">*</span>
+              Company<span class="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -93,7 +88,7 @@ interface FormErrors {
               for="phone"
               class="block text-title text-[17] font-medium mb-2"
             >
-              Téléphone <span class="text-red-500">*</span>
+              Phone <span class="text-red-500">*</span>
             </label>
             <input
               type="tel"
@@ -127,7 +122,7 @@ interface FormErrors {
         <!-- Vos besoins -->
         <div class="mb-8">
           <h3 class="text-title text-xl poppins-semibold  mb-6">
-            Vos besoins :
+            Your needs :
           </h3>
 
           <div class="grid md:grid-cols-3 gap-6 mb-6">
@@ -189,14 +184,14 @@ interface FormErrors {
               for="useCase"
               class="block text-title text-[17] font-medium mb-2"
             >
-              Cas d'utilisation :
+              Use case :
             </label>
             <input
               type="text"
               id="useCase"
               name="useCase"
               class="vps-form-input w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
-              placeholder="Ex: Hébergement web, base de données..."
+              placeholder="Examples: Web hosting, databases..."
             />
           </div>
         </div>
@@ -204,7 +199,7 @@ interface FormErrors {
         <!-- Informations supplémentaires -->
         <div class="mb-8">
           <h3 class="text-title text-xl poppins-semibold  mb-6">
-            Informations supplémentaires :
+              Additional information :
           </h3>
 
           <div class="mb-6">
@@ -212,7 +207,7 @@ interface FormErrors {
               for="os"
               class="block text-title text-[17] font-medium mb-2"
             >
-              Système d'exploitation :
+              Operating system :
               <span class="text-red-500">*</span>
             </label>
             <select
@@ -221,7 +216,7 @@ interface FormErrors {
               required
               class="vps-form-input w-full px-4 py-3 bg-gray-50 border rounded-lg focus:outline-none transition appearance-none cursor-pointer"
             >
-              <option value="">Veuillez choisir</option>
+              <option value="">Please choose</option>
               <option value="linux">
                 Linux (Ubuntu, Debian, CentOS, Almalinux...)
               </option>
@@ -237,7 +232,7 @@ interface FormErrors {
               for="controlPanel"
               class="block text-title text-[17] font-medium mb-2"
             >
-              Panneau de contrôle : <span class="text-red-500">*</span>
+              Control panel : <span class="text-red-500">*</span>
             </label>
             <select
               id="controlPanel"
@@ -256,7 +251,7 @@ interface FormErrors {
 
           <div class="mb-6">
             <p class="block text-title text-[17] poppins-regular mb-3">
-              Avez-vous besoin d'infogérance ?
+               Do you need outsourcing? 
             </p>
             <div class="flex gap-8 ">
               <label class="label-radio">
@@ -275,14 +270,14 @@ interface FormErrors {
                   value="non"
                   class="vps-form-input"
                 />
-                <span class="truncate">Non</span>
+                <span class="truncate">No</span>
               </label>
             </div>
           </div>
 
           <div class="mb-8">
             <p class="block text-title text-[17] poppins-regular mb-3">
-              Avez-vous besoin d'une sauvegarde distante ?
+                Do you need a remote backup? 
             </p>
             <div class="flex gap-8">
               <label class="label-radio">
@@ -301,7 +296,7 @@ interface FormErrors {
                   value="non"
                   class="vps-form-input"
                 />
-                <span class="truncate">Non</span>
+                <span class="truncate">No</span>
               </label>
             </div>
           </div>
@@ -320,13 +315,12 @@ interface FormErrors {
 
         <!-- Footer Note -->
         <p class=" text-[14px] text-left mt-6 text-gray-600">
-          En cliquant sur "Envoyer", vous autorisez Hostino™ à traiter les
-          données que vous avez fournis, conformément à sa
+          By clicking "Send", you authorize Hostino™ to process the data you have provided, in accordance with its
           <a
-            href="/politique-de-confidentialite/"
+            href="/en/privacy/"
             class="text-green-600 hover:underline"
           >
-            politique de confidentialité
+             privacy policy.
           </a>
           .
         </p>

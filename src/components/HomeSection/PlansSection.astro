@@ -312,7 +312,7 @@ const montserratClassName = "font-montserrat";
             </div>
           </div>
 
-          <ul class="text-title text-[15px] poppins-regular space-y-2 flex-grow">
+          <ul class="text-title list-features-plans text-[15px] poppins-regular space-y-1 flex-grow">
             <li class="flex items-center lg:justify-start justify-center">
               {plan.features.seo_optimized ? (
                 <>
@@ -357,13 +357,12 @@ const montserratClassName = "font-montserrat";
             </li>
             <li>
               {plan.features.wordpress_preinstalled ? (
-                <div class="flex items-center gap-1 lg:justify-start justify-center gap-2">
+                <div class="flex items-center gap-1 lg:justify-start justify-center gap-1">
                   <img
                     src="/images/wp.svg"
                     alt={plan.wordpress_alt}
                     width={16}
                     height={16}
-                    class="mr-1"
                     loading="eager"
                   />
                   <p>
