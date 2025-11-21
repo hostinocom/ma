@@ -124,16 +124,18 @@ const { lang } = Astro.props
         </a>
 
         <!-- Language Selector -->
-        <a href="/en">
+        <div>
          <AnimatedButton
           text="EN"
           hoverText="EN"
           bgColor="bg-primary"
           hoverBgColor="bg-title"
           textColor="text-white"
+          href="/en"
+          ariaLabel="English version"
           class="lang-switch-en hidden lg:block text-white bg-primary poppins-bold px-2 py-1"
         />
-        </a>
+        </div>
 
         <!-- Mobile Menu Button -->
        

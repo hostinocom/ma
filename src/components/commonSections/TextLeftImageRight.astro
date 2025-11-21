@@ -39,14 +39,14 @@ const {
         ) 
       }
         {typeof title === "string" ? (
-          <h3
+          <h2
             class="big-title xl:pr-[10px] lg:pr-[50px] poppins-semibold  text-title mb-6"
             set:html={title}
-          ></h3>
+          ></h2>
         ) : (
-          <h3 class="big-title xl:pr-[10px] lg:pr-[60px] poppins-semibold  text-title mb-6">
+          <h2 class="big-title xl:pr-[10px] lg:pr-[60px] poppins-semibold  text-title mb-6">
             {title}
-          </h3>
+          </h2>
         )}
         <div>
             {paragraphs.map((paragraph, index) =>

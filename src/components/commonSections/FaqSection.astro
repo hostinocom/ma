@@ -126,7 +126,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
               data-faq-button={index}
               aria-expanded="false"
             >
-              <span class="lg:text-[18px] md:text-[16px] text-[18px] poppins-semibold  text-title pr-4 transition-colors duration-300">
+              <span class="text-[16px]  poppins-semibold  text-title pr-4 transition-colors duration-300">
                 {item.question}
               </span>
               <svg
@@ -178,7 +178,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
                 data-faq-button={adjustedIndex}
                 aria-expanded="false"
               >
-                <span class="lg:text-[18px] md:text-[16px] text-[18px] poppins-semibold  text-title pr-4 transition-colors duration-300">
+                <span class="text-[16px] poppins-semibold  text-title pr-4 transition-colors duration-300">
                   {item.question}
                 </span>
                 <svg
@@ -201,7 +201,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
                 class="overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0"
                 data-faq-content={adjustedIndex}
               >
-                <div class="px-6 pb-6 text-[#022545] leading-relaxed transform transition-all poppins-regular duration-500 -translate-y-4">
+                <div class="px-6 pb-6 text-[#022545] leading-relaxed transform transition-all poppins-regular. duration-500 -translate-y-4">
                   {(() => {
                     const answer = renderAnswer(item);
                     if (typeof answer === "string") {
@@ -229,6 +229,7 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
     const buttons = document.querySelectorAll('[data-faq-button]');
     
     buttons.forEach((button) => {
+     
       button.addEventListener('click', () => {
         const index = button.getAttribute('data-faq-button');
         const content = document.querySelector(`[data-faq-content="${index}"]`);
