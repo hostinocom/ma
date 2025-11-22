@@ -67,18 +67,13 @@ const {
       </span>
     )
   }
+
   {
     arrowButton && (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width={3}
-        stroke={colorArrow}
-        class="w-4 h-4 absolute right-[8%] top-1/2 transform translate-y-[-39%]"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      <svg width="24" class="w-5 h-5 absolute poppins-bold right-[7%] top-1/2 transform translate-y-[-50%]" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
+    
     )
   }
 </button>

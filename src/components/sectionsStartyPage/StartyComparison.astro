@@ -100,6 +100,8 @@ const {
   title = "Comparer les plans Starty®",
   subTitle = "Tarification transparente pour chaque étape.",
   item1="Starty®",
+  href1="https://my.hostino.com/order.php?pid=36&language=french&country=MA&promocode=UI12S",
+  href2="https://my.hostino.com/order.php?pid=37&language=french&country=MA",
   item2="Starty® Plus"
   } = Astro.props
 ---
@@ -131,9 +133,8 @@ const {
     </div>
 
     <div>
-      {comparisonDataImporter.map((row, index) => (
+      {comparisonDataImporter.map((row : any , index : any) => (
         <div
-          key={index}
           class={`flex items-center p-4 gap-[10px] ${
             row.bgTransparent ? "bg-transparent" : "bg-gray-100"
           }`}
@@ -198,8 +199,7 @@ const {
 
       <div class="flex gap-[10px] w-full">
         <div class="lg:w-[40%] md:w-[37%] w-[0%]"></div>
-        <a
-          href="https://my.hostino.com/order.php?pid=36&language=french&country=MA"
+        <div
           class="text-white lg:w-[25%] md:md:w-[21%] w-[48%]"
         >
           <AnimatedButton
@@ -209,10 +209,10 @@ const {
             hoverBgColor="bg-title"
             textColor="text-white"
             class="btn-10-20 w-full"
+            href={href1}
           />
-        </a>
-        <a
-          href="https://my.hostino.com/order.php?pid=37&language=french&country=MA&promocode=UI12S"
+        </div>
+        <div
           class="text-white lg:w-[25%] md:md:w-[21%] w-[48%]"
         >
           <AnimatedButton
@@ -221,8 +221,9 @@ const {
             bgColor="bg-title"
             textColor="text-white"
             class="btn-10-20 w-full"
+            href={href2}
           />
-        </a>
+        </div>
       </div>
     </div>
   </div>

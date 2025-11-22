@@ -17,12 +17,12 @@ const questionsAnswers: FAQItem[] = [
     question: "Est‑ce que l'hébergement web Starty répond à mes besoins ?",
     answer: `
       
-        <p class="mb-4">
+        <p class="paragraph">
           Si vous débutez votre présence en ligne ou si vous gérez un site
           personnel avec un trafic faible ou moyen, l'hébergement web Starty®
           répond parfaitement à votre besoin par trois formules différentes :
         </p>
-        <ul class="space-y-3 mb-4">
+        <ul class="space-y-3 mb-4 text-[17px] text-title poppins-regular ">
           <li class="flex items-start gap-2">
             <svg
               class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
@@ -35,7 +35,7 @@ const questionsAnswers: FAQItem[] = [
                 clip-rule="evenodd"
               />
             </svg>
-            <span>Starty®, pour un démarrage à petit prix.</span>
+            <p>Starty®, pour un démarrage à petit prix.</p>
           </li>
           <li class="flex items-start gap-2">
             <svg
@@ -49,10 +49,10 @@ const questionsAnswers: FAQItem[] = [
                 clip-rule="evenodd"
               />
             </svg>
-            <span>
+            <p>
               Starty® pro, commencez comme un pro, prêt à passer au niveau
               supérieur.
-            </span>
+            </p>
           </li>
         </ul>
       `
@@ -109,7 +109,7 @@ const firstHalf = usedFaqData.slice(0, Math.ceil(usedFaqData.length / 2));
 const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
 ---
 
-<section class="bg-gray-200 lg:py-[150px] py-[80px]">
+<section class="bg-gray-200 faq-section lg:py-[150px] py-[80px]">
   <div class="container">
     <h2 class="title-section" set:html={title}></h2>
 
@@ -126,9 +126,9 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
               data-faq-button={index}
               aria-expanded="false"
             >
-              <span class="text-[16px]  poppins-semibold  text-title pr-4 transition-colors duration-300">
+              <p class="text-[16px]  poppins-semibold  text-title pr-4 transition-colors duration-300">
                 {item.question}
-              </span>
+              </p>
               <svg
                 class="w-6 h-6 text-primary flex-shrink-0 transition-transform duration-500 ease-in-out"
                 data-faq-icon={index}
@@ -153,13 +153,13 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
                 {(() => {
                   const answer = renderAnswer(item);
                   if (typeof answer === "string") {
-                    return <p set:html={answer}></p>;
+                    return <p class="text-[16px] paragraph-16" set:html={answer}></p>;
                   } else if (Array.isArray(answer)) {
                     return answer.map((phrase: string, idx: number) => (
-                      <p key={idx} class="paragraph-16" set:html={phrase}></p>
+                      <p key={idx} class="text-[16px] paragraph-16" set:html={phrase}></p>
                     ));
                   } else {
-                    return <Fragment>{answer}</Fragment>;
+                    return <Fragment><p class="text-[16px] paragraph-16">{answer}</p></Fragment>;
                   }
                 })()}
               </div>
@@ -178,9 +178,9 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
                 data-faq-button={adjustedIndex}
                 aria-expanded="false"
               >
-                <span class="text-[16px] poppins-semibold  text-title pr-4 transition-colors duration-300">
+                <p class="text-[16px] poppins-semibold  text-title pr-4 transition-colors duration-300">
                   {item.question}
-                </span>
+                </p>
                 <svg
                   class="w-6 h-6 text-primary flex-shrink-0 transition-transform duration-500 ease-in-out"
                   data-faq-icon={adjustedIndex}
@@ -205,13 +205,13 @@ const secondHalf = usedFaqData.slice(Math.ceil(usedFaqData.length / 2));
                   {(() => {
                     const answer = renderAnswer(item);
                     if (typeof answer === "string") {
-                      return <p set:html={answer} />;
+                      return <p class="text-[16px] paragraph-16" set:html={answer} />;
                     } else if (Array.isArray(answer)) {
                       return answer.map((phrase: string, idx: number) => (
-                        <p key={idx} class="paragraph" set:html={phrase}></p>
+                        <p key={idx} class="text-[16px] paragraph-16" set:html={phrase}></p>
                       ));
                     } else {
-                      return <Fragment>{answer}</Fragment>;
+                      return <Fragment><p class="text-[16px] paragraph-16">{answer}</p></Fragment>;
                     }
                   })()}
                 </div>

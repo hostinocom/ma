@@ -59,6 +59,49 @@ span{
   line-height: inherit;
 }
 
+
+
+@font-face {
+    font-family: "Poppins";
+    src: url("/poppins/poppins-light.ttf") format("ttf");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Poppins";
+    src: url("/poppins/poppins-regular.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Poppins";
+    src: url("/poppins/poppins-medium.ttf") format("ttf");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Poppins";
+    src: url("/poppins/poppins-semiBold.ttf") format("ttf");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Poppins";
+    src: url("/poppins/poppins-bold.ttf") format("ttf");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
@@ -176,6 +219,10 @@ span{
   gap: var(--row-gap);
 }
 
+body{
+  font-family: "Poppins", sans-serif;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -234,7 +281,9 @@ select {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: 0.2px;
   @apply text-[17px] text-title;
+  line-height: 1.7rem;
 }
 
 .list-dots-paragraph{
@@ -242,9 +291,12 @@ select {
   font-weight: 400;
   font-style: normal;
   color: var(--text);
+  line-height: 1.7rem;
+  letter-spacing: 0.2px;
 }
 
 .list-dots-paragraph li span{
+  letter-spacing: 0.2px;
   @apply sm:text-[17px] text-[16px];
 }
 
@@ -253,7 +305,7 @@ select {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
-  @apply lg:text-[60px] md:text-[50px] text-[42px] leading-[52px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[65px] text-title;
+  @apply lg:text-[59px] md:text-[50px] text-[42px] leading-[52px] md:tracking-[-1.5px] tracking-[-2px] lg:tracking-[-2.6px] md:leading-[52px] md:tracking-[-3px] lg:leading-[65px] text-title;
 }
 
 
@@ -332,7 +384,7 @@ span {
   font-weight: 400;
   font-style: normal;
   color: var(--text);
-  line-height: 29px;
+  line-height: 1.7rem;
   letter-spacing: 0.2px;
   @apply md:text-[17px] text-[16px] ;
 }
@@ -374,11 +426,14 @@ span {
   color: var(--text);
   line-height: 1.7rem;
   font-size: 16px;
-  margin-bottom: 1.5rem;
   letter-spacing: 0.2px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.paragraph-16:not(:last-child) {
+  margin-bottom: 1.5rem;
 }
 
 .paragraph-15 {
@@ -511,25 +566,33 @@ span {
 
 
 .text-legal-documents p {
+  letter-spacing: 0.2px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.7rem;
   @apply text-title text-[17px] font-normal mb-[27px]
 }
 
 .text-legal-documents h3 {
-  @apply text-title text-[27px] font-semibold mb-[20px]
+  @apply text-title text-[24px] tracking-[-0.027em] font-semibold mb-[10px] mt-[20px]
 }
 
 .text-legal-documents h2 {
   @apply text-title text-[24px] font-semibold
 }
 
-.text-legal-documents ul {
+.text-legal-documents .list-disc {
   padding-left: 42px;
   list-style-type: disc;
 }
 
+.text-legal-documents .list-disc li{
+  line-height: 1.5rem !important;
+}
+
 .text-legal-documents li {
   margin-bottom: 10px;
-  @apply text-title text-[16px] tracking-[-0.2px] font-normal
+  line-height: 1.7rem;
+  @apply text-title text-[17px] tracking-[-0.2px] font-normal
 }
 
 .text-legal-documents table {
@@ -904,4 +967,67 @@ input::placeholder {
 
 .vps-quote-form label{
   padding: 5px;
+}
+
+.faq-section ul{
+  color: var(--title);
+  font-size : 17px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.list-devis li b{
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size : 14;
+}
+
+.side-bar-legal{
+  height: max-content !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} 
+
+.side-bar-legal li a{
+  text-decoration: underline;
+  font-size : 17px;
+  font-weight: 400;
+  color: #022545;
+  
+} 
+
+.side-bar-legal li a.active{
+  font-size : 17px;
+  font-weight: 400;
+  color: rgba(128, 128, 128, 0.818);
+} 
+
+
+.faq-section p, .faq-section li{
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size : 16px !important;
+  line-height: 1.7rem;
+
+}
+
+
+.faq-section ul li p{
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 16px !important;
+  letter-spacing: 0.2px;
+  line-height: 1.7rem;
+}
+
+.identity li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  
+  font-size : 17px !important;
+  letter-spacing: 0.2px;
 }

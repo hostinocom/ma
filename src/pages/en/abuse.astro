@@ -1,0 +1,253 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StartsRatingYellowFooter from "../../components/ui/StartsRatingYellowFooter.astro";
+import { main_schema } from "../../mainSchema.ts";
+
+const title = "Politique anti-abus - Hostino";
+const description =
+  "Politique anti-abus concernant un site Internet ou un nom de domaine géré ou hébergé par Hostino.";
+const imageUrl =
+  "https://www.hostino.ma/wp-content/uploads/2024/10/hebergement-web.png";
+const canonical_url = "https://www.hostino.ma/abus/";
+const ogAlt = "Politique anti-abus - Hostino";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...main_schema,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hostino.ma/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: "1",
+          item: {
+            "@id": "https://www.hostino.ma",
+            name: "Hostino - Noms de domaine et hébergement web au Maroc",
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: "2",
+          item: {
+            "@id": canonical_url,
+            name: ogAlt,
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Product",
+      name: title,
+      url: canonical_url,
+      description: description,
+      brand: { "@type": "Brand", name: "Hostino" },
+      offers: {
+        "@type": "AggregateOffer",
+        url: canonical_url,
+        lowPrice: "118",
+        priceCurrency: "MAD",
+        availability: "InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "920",
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical_url={canonical_url}
+  imageUrl={imageUrl}
+  ogAlt={ogAlt}
+  articleSchema={articleSchema}
+  lang="en"
+>
+  <main>
+    <section class="lg:py-[110px] bg-gray-200 py-[80px]">
+      <div class="container">
+        <h1 class="big-title">Anti-abuse policy</h1>
+      </div>
+    </section>
+
+    <section class="lg:my-[120px] my-[80px]">
+      <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-8">
+          <!-- Sidebar -->
+          <div
+            class="border-1 side-bar-legal lg:col-span-3 md:col-span-5 col-span-1 rounded-[10px] py-[30px] px-[30px] border-gray-300"
+            style={{ maxHeight: "maxContant" }}
+          >
+            <h3 class="text-[22px] poppins-semibold text-title mb-[20px]">
+              Legal Documents
+            </h3>
+            <div class="w-full h-[1px] bg-gray-400 mb-[20px]"></div>
+
+            <ul class="space-y-3">
+              <li style="text-decoration: underline;">
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/terms"
+                >
+                  Terms and Conditions
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/legal-notice">Legal Notice</a
+                >
+              </li>
+              <li style="text-decoration: underline;">
+                <a
+                  href="/en/cookies-policy"
+                  class="text-title text-[17px] poppins-regular"
+                  >Cookies Policy</a
+                >
+              </li>
+              <li style="text-decoration: underline;">
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/privacy"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li style="text-decoration: underline;">
+                <a
+                  class="text-title text-[17px] poppins-regular active"
+                  href="/en/abuse"
+                >
+                  Anti-abuse Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Content -->
+          <div
+            class="lg:col-span-9 md:col-span-7 col-span-1 text-legal-documents"
+          >
+            <div class="elementor-widget-container">
+              <p>
+                Violations involving a website or domain name managed or hosted
+                by <b>Hostino</b> must be reported:
+              </p><p>
+                By email to: <b>info@hostino.com</b><br />By phone at: <b
+                  >+212 (05) 31 03 11 86</b>
+              </p><h3>Introduction</h3><p>
+                The safety and well-being of our users are priorities for us.
+                That’s why we have implemented this Anti-Abuse Policy to protect
+                our users and ensure a safe and respectful online environment.
+                This policy applies to all interactions on our website and
+                services, including comments, discussion spaces, private
+                messages, and social media posts associated with our site.
+              </p><h3>1. Prohibited behaviors</h3><p>
+                The following behaviors are strictly prohibited on our website
+                and services:
+              </p><ul class="list-disc">
+                <li>
+                  Spam: Sending unsolicited, bulk, or repetitive messages for
+                  commercial or other purposes is prohibited.
+                </li><li>
+                  Harassment and intimidation: Harassment, intimidation, or
+                  threatening of other users, whether through comments, private
+                  messages, or other means, are prohibited.
+                </li><li>
+                  Hate speech, discrimination and violence: Speech that incites
+                  hate, discrimination, violence, or promotes extremist
+                  ideologies is prohibited.
+                </li><li>
+                  Illegal or Inappropriate Content: Posting or promoting
+                  illegal, pornographic, violent, or otherwise inappropriate
+                  content is prohibited.
+                </li><li>
+                  Fraud and Impersonation: Using false identities, impersonating
+                  other users, or attempting to deceive other users through
+                  fraudulent means is prohibited.
+                </li><li>
+                  Computer Attacks: Attempting to hack, break into, or deny
+                  service to our website, our services, or other users’ accounts
+                  is prohibited.
+                </li>
+              </ul><h3>Reporting abuse</h3><p>
+                If you encounter any content or behavior that violates this
+                Anti-Abuse Policy, please report it immediately by contacting us
+                at info@hostino.com or by calling us at +212 (05) 31 03 11 86.
+                Please include as much information as possible to help us assess
+                and address the issue quickly and effectively.
+              </p><h3>Action taken in case of abuse</h3><p>
+                We will take all necessary steps to address reported situations
+                of abuse, including, but not limited to:
+              </p><ul class="list-disc">
+                <li>
+                  Warnings: Users who violate this Anti-Abuse Policy may receive
+                  an official warning.
+                </li><li>
+                  Account Suspension or Termination: In the event of repeated or
+                  serious violations, we reserve the right to suspend or
+                  terminate the user’s account.
+                </li><li>
+                  Reporting to the authorities: If we suspect that illegal
+                  conduct has occurred, we reserve the right to report the
+                  incident to the appropriate authorities.
+                </li>
+              </ul><h3>Policy Review</h3><p>
+                We reserve the right to revise and update this Anti-Abuse Policy
+                at any time. Changes will take effect immediately after being
+                posted on our website.
+              </p><h3>User Responsibilities</h3><p>
+                As a user of our website and services, you have the
+                responsibility to:
+              </p><ul class="list-disc">
+                <li>
+                  Comply with this Anti-Abuse Policy as well as our other
+                  policies and terms of use.
+                </li><li>
+                  Act responsibly and respectfully towards other users and our
+                  staff.<br />Act responsibly and respectfully towards other
+                  users and our staff.
+                </li>
+              </ul><h3>Cooperation with Authorities and Third Parties</h3><p>
+                We will cooperate with the competent authorities, Internet
+                service providers, and other third parties to investigate and
+                address reported cases of abuse. This may include providing
+                information about the concerned users, to the extent permitted
+                by our Privacy Policy and applicable legislation.
+              </p><h3>Dispute Resolution</h3><p>
+                If you believe that your rights have been violated or that you
+                have suffered harm due to non-compliance with this Anti-Abuse
+                Policy by another user, we encourage you to explore the legal
+                remedies available in your jurisdiction. We are prepared to
+                cooperate with the competent authorities and provide any
+                necessary assistance in the context of these procedures.
+              </p><h3>Contact us</h3><p>
+                If you have any questions or concerns regarding this Anti-Abuse
+                Policy or if you wish to report abuse, please contact us at the
+                following email address: info@hostino.com
+              </p><p>
+                Together, we can create a safe and respectful online environment
+                for all users of our website and services.
+              </p><p>
+                Thank you for your cooperation and commitment to following this
+                Anti-Abuse Policy.
+              </p><h3>Conclusion</h3><p>
+                <br />We are committed to creating and maintaining a safe and
+                respectful online environment for all our users. By adhering to
+                this Anti-Abuse Policy, you contribute to this goal and help
+                ensure that our community remains a welcoming and positive space
+                for all.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

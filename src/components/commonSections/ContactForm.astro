@@ -1,6 +1,11 @@
 ---
 interface Props {
   title: string;
+  classNameTitle?: string;
+  placeholderEmail?: string;
+  nameButton?: string;
+  placeholderName?: string;
+  placeholderPhone?: string;
 }
 
 const { title , classNameTitle = "" ,placeholderEmail , nameButton ,  placeholderName , placeholderPhone} = Astro.props;
@@ -9,7 +14,7 @@ const { title , classNameTitle = "" ,placeholderEmail , nameButton ,  placeholde
 <div class="py-[80px] flex items-center justify-center bg-title p-4">
   <div class="container text-center">
    <div class={classNameTitle}>
-       <h1
+       <h2
       class="text-white lg:text-[40px] md:text-[40px] poppins-semibold  text-[36px] mb-6 pb-2 leading-relaxed"
       set:html={title}
     />
@@ -55,14 +60,29 @@ const { title , classNameTitle = "" ,placeholderEmail , nameButton ,  placeholde
       <div id="form-message" class="mt-4 text-sm hidden"></div>
     </form>
 
-    <p class="text-gray-400 text-sm mt-8">
-     By clicking "Send", you agree to our 
-      <a
+     {
+      placeholderName === "Full name" ? (
+          <p class="text-gray-400 text-sm mt-8">
+         By clicking "Send", you agree to our 
+        <a
         href="/en/privacy"
         class="underline hover:text-green-500 transition duration-300"
       >
         privacy policy.
       </a>
+      </p>
+      ) : (
+        <p class="text-gray-400 text-sm mt-8">
+         En cliquant sur "Envoyer", vous acceptez notre
+        <a
+        href="/politique-de-confidentialite"
+        class="underline hover:text-green-500 transition duration-300"
+      >
+        politique de confidentialité.
+      </a>
+      </p>
+      )
+    }
     </p>
   </div>
 </div>

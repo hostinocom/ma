@@ -67,11 +67,12 @@ const articleSchema = {
   imageUrl={imageUrl}
   ogAlt={ogAlt}
   articleSchema={articleSchema}
+  lang="en"
 >
   <main>
     <section class="lg:py-[110px] bg-gray-200 py-[80px]">
       <div class="container">
-        <h1 class="big-title">Politique de confidentialité</h1>
+        <h1 class="big-title">Privacy Policy</h1>
       </div>
     </section>
 
@@ -79,491 +80,353 @@ const articleSchema = {
       <div class="container">
         <div class="grid md:grid-cols-12 grid-cols-1 gap-8">
           <!-- Sidebar -->
-          <div class="border-1  lg:col-span-3 md:col-span-5 col-span-1 rounded-[10px] py-[30px] px-[30px] border-gray-300" style={{maxHeight : "maxContant"}}>
-            <h3 class="text-[22px] poppins-semibold  text-title mb-[20px]">
+          <div
+            class="border-1 side-bar-legal lg:col-span-3 md:col-span-5 col-span-1 rounded-[10px] py-[30px] px-[30px] border-gray-300"
+            style={{ maxHeight: "maxContant" }}
+          >
+            <h3 class="text-[22px] poppins-semibold text-title mb-[20px]">
               Legal Documents
             </h3>
             <div class="w-full h-[1px] bg-gray-400 mb-[20px]"></div>
 
             <ul class="space-y-3">
-              <li style="text-decoration: underline;">
-                <a class="text-title text-[17px] poppins-regular" href="/en/terms">
+              <li style="">
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/terms"
+                >
                   Terms and Conditions
                 </a>
               </li>
-              <li
-                style="text-decoration: underline; text-decoration-thickness: 2px;"
-              >
-                <a class="text-title text-[17px] poppins-regular" href="/en/legal-notice">Legal Notice</a>
+              <li style=" text-decoration-thickness: 2px;">
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/legal-notice">Legal Notice</a
+                >
               </li>
-              <li style="text-decoration: underline;">
-                <a href="/en/cookies-policy" class="text-title text-[17px] poppins-regular">Cookies Policy</a>
+              <li style="">
+                <a
+                  href="/en/cookies-policy"
+                  class="text-title text-[17px] poppins-regular"
+                  >Cookies Policy</a
+                >
               </li>
-              <li style="text-decoration: underline;">
-                <a class="text-title text-[17px] poppins-regular" href="/en/privacy">
+              <li style="">
+                <a
+                  class="text-title text-[17px] poppins-regular active"
+                  href="/en/privacy"
+                >
                   Privacy Policy
                 </a>
               </li>
-              <li style="text-decoration: underline;">
-                <a class="text-title text-[17px] poppins-regular" class="active" href="/en/abus">
+              <li style="">
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/abuse"
+                >
                   Anti-abuse Policy
                 </a>
               </li>
             </ul>
           </div>
 
-
           <!-- Content -->
-          <div class="lg:col-span-9 md:col-span-7 col-span-1 text-legal-documents">
-            <div>
-              <h3>1. Objet :</h3>
-              <p>
-                1.1. La société Hostino fournit un service d'hébergement Web
-                et/ou nom de domaine.
-                <br />
-                1.2. Le présent contrat a pour objet de définir les
-                conditions techniques et financières dans lesquelles la
-                société Hostino et le client s'engagent mutuellement.
-              </p>
-              <h3>2. Accès au serveur et infogérance :</h3>
-              <p>
-                2.1. La société Hostino s'engage à tout mettre en œuvre pour
-                assurer la permanence, la continuité et la qualité des
-                services qu'elle propose.
-                <br />
-                2.2. La société Hostino se réserve cependant la faculté de
-                suspendre exceptionnellement et brièvement l'accessibilité
-                aux serveurs pour d'éventuelles interventions de maintenance
-                ou d'amélioration de ses services.
-                <br />
-                2.3 Infogérance pour les serveurs dédiés et VPS/Cloud:
-                <br />
-                2.3.1 L'infogérance ponctuelle est facturée à l'heure pour
-                une mission précise. En fonction de la mission que vous nous
-                avez confiée, nous vous communiquons à l'avance la durée
-                estimée de l'intervention.
-                <br />– Installation de votre serveur suivant vos besoins,
-                mise à jour du système d'exploitation…
-                <br />– Installation ou mise à jour d'un logiciel, d'un
-                serveur de messagerie, d'un serveur web, d'une application
-                métier…
-                <br />– Configuration des différents modules Apache …<br />–
-                Sécurisation de votre serveur, installation d'un Firewall…
-                <br />– Prise en charge d'un incident technique
-                <br />– Mise en place d'une politique de sauvegarde
-                <br />– Mise en place des différents comptes pour
-                l'installation de vos sites web (ftp, MySQL etc…)
-                <br />
-                2.3.2 Infogérance contrat mensuel :<br />
-                Installation du système d'exploitation et des différents
-                logiciels correspondant à vos besoins initiaux (système
-                d'exploitation au choix du partenaire)
-                <br />
-                Le monitoring de votre serveur et des différents services
-                hébergés
-                <br />
-                La mise en place des sauvegardes de votre serveur
-                <br />
-                La mise en place d'un Firewall
-                <br />
-                Interlocuteur unique : le support technique par ticket et
-                téléphone
-                <br />
-                La mise à jour régulière du système d'exploitation et des
-                différents logiciels
-                <br />
-                L'installation des correctifs de sécurité
-              </p>
-              <h3>3. Assistance</h3>
-              <p>
-                La société Hostino met à la disposition du client une
-                assistance technique par courrier E-mail, téléphone et Live
-                Chat.
-              </p>
-              <h3>4. Prix des services, facturation, règlements :</h3>
-              <p>
-                4.1. Les prix des prestations proposés sont ceux figurant
-                sur le site web hostino.ma, ils s'entendent hors taxes et
-                sont payables en Dhs marocains, Euro ou en $, d'avance et à
-                réception de la facture proforma, pour une période annuelle,
-                semestrielle, trimestrielle, ou mensuelle.
-                <br />
-                4.2. Les factures sont payables d'avance et à réception,
-                pour la période précisée dans la facture, le paiement des
-                factures s'effectue au choix du client, par virement
-                bancaire, carte bancaire marocaine, espèce, La Poste CCP,
-                Wafacash ou tout autre mode de paiement que propose la
-                société Hostino.
-                <br />
-                4.3. Lors d'un retard de paiement, la société Hostino
-                suspend l'exploitation de la prestation de service et/ou
-                résilier le contrat avec effet immédiat et sans
-                dédommagement.
-                <br />
-                4.4. Les comptes et les serveurs non réglés à échéance sont
-                considérés comme abandonnés et seront terminés.
-              </p>
-              <h3>5. Responsabilités :</h3>
-              <p>
-                5.1. En aucun cas la société Hostino ne saurait voir sa
-                responsabilité engagée à la suite de toute action ou recours
-                de tiers, le client devra garantir la société Hostino de
-                toute condamnation éventuelle à ce titre, notamment du fait
-                :<br />
-                d'informations, d'images, de sons, de textes, de vidéos
-                contraires aux législations et réglementations en vigueur,
-                contenus diffusés sur le ou les sites du client.
-                <br />
-                de la violation des droits de propriété intellectuelle
-                relatifs aux œuvres diffusées, en intégralité ou
-                partiellement, sur le ou les sites du client sans accord de
-                leur auteur.
-                <br />
-                de la suspension et/ou de la résiliation des comptes,
-                notamment à la suite du non-règlement des sommes dues en
-                exécution du présent contrat, et plus généralement du fait
-                de l'inexécution des obligations du client telles que fixées
-                par les présentes conditions.
-                <br />
-                5.2. En outre, du fait des caractéristiques et limites de
-                l'Internet que le client déclare parfaitement connaître, la
-                société Hostino ne saurait voir sa responsabilité engagée
-                pour notamment :<br />
-                Les difficultés d'accès au site hébergé du fait de la
-                saturation des réseaux à certaines périodes, la
-                contamination par virus des données et/ou logiciels du
-                client, dont la protection incombe à ce dernier.
-                <br />
-                Les intrusions malveillantes de tiers sur le site du client,
-                malgré les mesures raisonnables de sécurité mises en place.
-                <br />
-                Les détournements éventuels des mots de passe, codes
-                confidentiels, et plus généralement de toute information à
-                caractère sensible pour le client.
-                <br />
-                5.3. Il est contraire à la ligne de conduite que le client
-                effectue ou participe à l'une des activités suivantes :
-                <br />
-                Envoyer des courriers électroniques en masse à des personnes
-                qui n'en ont pas fait la demande (« Junk mail » ou «
-                Spamming »). Ainsi, tout envoi massif de courrier
-                électronique non sollicité par leurs destinataires est
-                strictement interdit.
-                <br />
-                Pénétrer ou tenter de pénétrer de manière non autorisée dans
-                un système informatique.
-                <br />
-                Héberger de sites racistes, pornographiques ou illégaux et
-                ceux ayant des liens hypertextes vers ces types de sites.
-                <br />
-                5.4. La société Hostino se réserve le droit d'interrompre, à
-                tout moment, le contrat d'hébergement, si elle vient à
-                prendre connaissance du non-respect de l'une des
-                dispositions des articles ci-dessus, ou en cas d'une
-                mauvaise manipulation soit du compte FTP, HTTP, MAIL ou
-                bases de données, … engendrant des dommages techniques de
-                ses serveurs.
-                <br />
-                Dans ces cas, la société Hostino ne procédera à aucun
-                remboursement.
-              </p>
-              <h3>6. Obligations de sécurité et de confidentialité :</h3>
-              <p>
-                La société Hostino, doit mettre en œuvre les mesures de
-                sécurité des locaux et des systèmes d'information pour
-                empêcher tous les risques inhérents au traitement et à la
-                nature des données à caractère personnel du Client, afin:
-              </p>
-              <p>
-                d'empêcher toute personne non autorisée d'avoir accès aux
-                systèmes informatiques de traitement des données à caractère
-                personnel;
-                <br />
-                d'empêcher que des supports de stockage puissent être lus,
-                copiés, modifiés ou déplacés sans autorisation;
-                <br />
-                d'empêcher toute introduction non autorisée de données dans
-                la mémoire ainsi que toute divulgation, toute modification
-                ou tout effacement non autorisés de données à caractère
-                personnel mémorisées;
-                <br />
-                d'empêcher des personnes non autorisées d'utiliser des
-                systèmes de traitement de données au moyen d'installations
-                de transmission de données;
-                <br />
-                de garantir que les utilisateurs autorisés d'un système de
-                traitement des données ne puissent accéder qu'aux données à
-                caractère personnel que leur droit d'accès leur permet de
-                consulter;
-                <br />
-                de garder une trace des données à caractère personnel qui
-                ont été communiquées, du moment où elles ont été
-                communiquées et de leur destinataire;
-                <br />
-                de garantir qu'il sera possible de vérifier a posteriori
-                quelles données à caractère personnel ont été traitées, à
-                quel moment et par quelles personnes;
-                <br />
-                de garantir que des données personnelles qui sont traitées
-                pour le compte de tiers ne peuvent l'être que de la façon
-                prévue par l'institution ou l'organe contractant;
-                <br />
-                de garantir que, lors de la communication de données à
-                caractère personnel et du transport de supports de stockage,
-                les données ne puissent être lues, copiées ou effacées sans
-                autorisation;
-                <br />
-                de concevoir sa structure organisationnelle de manière à ce
-                qu'elle réponde aux exigences de la protection des données.
-              </p>
-              <h3>7. Restrictions et limitations du service :</h3>
-              <p>
-                La société Hostino fera son possible pour aviser les clients
-                qui utilisent des scripts utilisant un trop grand
-                pourcentage de ressources système avant de suspendre
-                ceux-ci. Par contre, si les scripts causent des problèmes
-                aux autres clients ou que ceux-ci prennent beaucoup de
-                ressources ils pourront être stoppés sans préavis.
-                <br />
-                Le client est averti que l'utilisation non conforme à ce qui
-                est indiqué ci-dessus peut être de nature à rendre
-                incompatible le fonctionnement du site sur la plate-forme
-                d'hébergement mutualisé.
-                <br />
-                La société Hostino n'est pas responsable des prétentions ou
-                des dommages qui naissent chez le client, en raison de la
-                perte de données, ou en raison de l'impossibilité d'obtenir
-                l'accès à Internet, ou d'envoyer des informations ou d'en
-                recevoir.
-                <br />
-                La société Hostino réalise des sauvegardes, qui peuvent être
-                utilisées en cas de défaillance du système. Cependant,
-                Hostino ne propose pas de services de récupération de
-                données pour ses Clients.
-                <br />
-                La société Hostino ne saurait être tenue responsable des
-                pertes de données, des corruptions de données, des
-                difficultés ou impossibilités d'accès, ou encore de la
-                lenteur de la connexion, ou tout autre problème résultant du
-                système. La société Hostino pourra, à sa seule discrétion,
-                limiter ou refuser l'accès à ses serveurs dans l'hypothèse
-                où la société Hostino considérerait que ces limitations ou
-                refus d'accès sont nécessaires pour préserver la sécurité ou
-                l'intégrité du réseau.
-              </p>
-              <h3>8. Durée, renouvellement et dénonciation du contrat :</h3>
-              <p>
-                8.1. Le contrat est conclu pour une durée annuelle,
-                semestrielle, trimestrielle, ou mensuelle qui commence à
-                compter de la date de signature des présentes conditions.
-                <br />
-                8.2. La reconduction des abonnements n'est pas tacite, le
-                client est amené à régler sa facture pour que son service ou
-                domaine soit renouvelé.
-                <br />
-                8.3. Toute dénonciation devra être faite par E-mail,
-                Téléphone ou lettre recommandée adressée à : Hostino au plus
-                tard un mois avant la date d'anniversaire du contrat.
-              </p>
-              <h3>9. Obligation d'information :</h3>
-              <p>
-                Le client s'engage à mettre à jour ses informations
-                (notamment changement d'adresse, tél, etc.) directement sur
-                son compte client chez Hostino.
-              </p>
-              <h3>10. Loi applicable – Attribution de juridiction :</h3>
-              <p>
-                Le présent contrat est régi par la loi marocaine, tout
-                litige relatif à l'interprétation ou à l'exécution des
-                présentes sera de la compétence du Tribunal de Commerce ou
-                tout autre tribunal choisi par le client au Maroc.
-              </p>
-              <h3>
-                Conditions particulières liées à la réservation des noms de
-                domaines .ma :
-              </h3>
-              <p>
-                En effet, le renouvellement de noms de domaine « .ma » est
-                possible pour une période annuelle choisie (de 1 à 5 ans).
-                (Cf. article 26 de la décision de nommage).
+          <div
+            class="lg:col-span-9 md:col-span-7 col-span-1 text-legal-documents"
+          >
+            <div class="elementor-widget-container">
+              <h3>1. Purpose</h3><p>
+                1.1. Hostino provides web hosting and/or domain name services.<br
+                />1.2. This contract aims to define the technical and financial
+                conditions under which Hostino and the client mutually commit.
+              </p><h3>2. Server access and management</h3><p>
+                2.1. Hostino commits to do everything in its power to ensure the
+                permanence, continuity, and quality of the services it offers.<br
+                />2.2. Hostino reserves the right to temporarily and briefly
+                suspend server accessibility for occasional maintenance or
+                service improvements.<br />2.3 Server management for dedicated
+                and VPS/Cloud servers:<br />2.3.1 One-time management is billed
+                hourly for a specific task. Depending on the task you have
+                assigned to us, we will provide an estimated duration of the
+                intervention in advance.<br />– Server setup according to your
+                needs, updating the operating system, etc.<br />– Installing or
+                updating software, email servers, web servers, or business
+                applications.<br />– Configuring various Apache modules, etc.<br
+                />– Securing your server, installing a firewall, etc.<br />–
+                Handling technical incidents.<br />– Implementing backup
+                policies.<br />– Setting up accounts for your website
+                installations (FTP, MySQL, etc.).<br />2.3.2 Monthly management
+                contract:<br />Initial operating system and software
+                installation based on your requirements (operating system chosen
+                by the partner).<br />Server and hosted service monitoring.<br
+                />Server backup implementation.<br />Firewall installation.<br
+                />Single point of contact: technical support via ticket and
+                phone.<br />Regular operating system and software updates.<br
+                />Security patch installation.
+              </p><h3>3. Support</h3><p>
+                Hostino provides the client with technical support via email,
+                phone, and live chat.
+              </p><h3>4. Service pricing, invoicing, payments</h3><p>
+                4.1. The prices for services offered are listed on the
+                hostino.ma website, are exclusive of taxes, payable in Moroccan
+                Dirhams, Euros, or USD, and must be paid in advance upon receipt
+                of the proforma invoice for an annual, semi-annual, quarterly,
+                or monthly period.<br />4.2. Invoices are payable in advance
+                upon receipt for the specified period, and payments can be made
+                by the client through bank transfer, Moroccan bank card, cash,
+                postal check, Wafacash, or any other payment method offered by
+                Hostino.<br />4.3. In case of late payment, Hostino will suspend
+                service delivery and/or terminate the contract with immediate
+                effect and without compensation.<br />4.4. Unpaid accounts and
+                servers at the due date are considered abandoned and will be
+                terminated.
+              </p><h3>5. Responsibilities</h3><p>
+                5.1. Under no circumstances can Hostino be held liable for any
+                actions or claims by third parties; the client must indemnify
+                Hostino from any potential damages arising from:<br
+                />Information, images, sounds, texts, or videos that violate
+                applicable laws and regulations, contained within the client’s
+                website(s).<br />Violation of intellectual property rights
+                related to works distributed, in whole or in part, on the
+                client’s website(s) without the author’s consent.<br
+                />Suspension and/or termination of accounts, particularly due to
+                non-payment of amounts due under this contract or, more
+                generally, non-compliance with the client’s obligations set
+                forth in these terms.<br />5.2. Moreover, given the
+                characteristics and limitations of the Internet, which the
+                client acknowledges, Hostino cannot be held liable for:<br
+                />Difficulty accessing the hosted site due to network congestion
+                during certain periods, contamination of the client’s data
+                and/or software by viruses, for which the client is responsible
+                for protection.<br />Malicious intrusions by third parties into
+                the client’s site, despite reasonable security measures in
+                place.<br />Potential misappropriation of passwords,
+                confidential codes, and any sensitive information for the
+                client.<br />5.3. The client must not engage in or participate
+                in any of the following activities:<br />Sending unsolicited
+                mass emails to recipients who have not requested them (“Junk
+                mail” or “Spamming”). Unsolicited mass email sending is strictly
+                prohibited.<br />Unauthorized access or attempted access to a
+                computer system.<br />Hosting racist, pornographic, or illegal
+                websites or those containing hyperlinks to such sites.<br />5.4.
+                Hostino reserves the right to terminate the hosting contract at
+                any time if it becomes aware of a breach of any of the above
+                provisions or in case of improper handling of FTP, HTTP, MAIL,
+                or database accounts, causing technical damage to its servers.
+                In these cases, Hostino&nbsp;will not issue any refunds.
+              </p><h3>6. Security and confidentiality obligations</h3><p>
+                Hostino must implement security measures for premises and
+                information systems to prevent any risks inherent to the
+                processing and nature of the client’s personal data, in order
+                to:
+              </p><ul class="list-disc">
+                <li>
+                  to prevent unauthorized persons from accessing computer
+                  systems processing personal data;
+                </li><li>
+                  to prevent storage media from being read, copied, modified, or
+                  moved without authorization;
+                </li><li>
+                  to prevent unauthorized entry of data into memory and any
+                  unauthorized disclosure, modification, or deletion of stored
+                  personal data;
+                </li><li>
+                  to prevent unauthorized persons from using data processing
+                  systems through data transmission facilities;
+                </li><li>
+                  to guarantee that authorized users of a data processing system
+                  can only access the personal data that their access rights
+                  allow them to view;
+                </li><li>
+                  to keep a record of personal data that has been shared, from
+                  the moment it was shared and its recipient;
+                </li><li>
+                  to ensure that it will be possible to verify a posteriori
+                  which personal data have been processed, when and by whom;
+                </li><li>
+                  to ensure that it will be possible to verify retrospectively
+                  which personal data has been processed, when, and by whom;
+                </li><li>
+                  to ensure that personal data processed on behalf of third
+                  parties can only be done in the manner prescribed by the
+                  contracting institution or body;
+                </li><li>
+                  to design its organizational structure to meet the
+                  requirements of data protection.
+                </li>
+              </ul><h3>7. Service restrictions and limitations</h3><p>
+                Hostino will do its best to notify clients using scripts that
+                consume a high percentage of system resources before suspending
+                them. However, if the scripts cause problems for other clients
+                or consume a lot of resources, they may be stopped without
+                notice.<br />The client is warned that non-compliant use of the
+                above may render the site incompatible with the shared hosting
+                platform.<br />Hostino is not responsible for any claims or
+                damages arising from the client’s loss of data, inability to
+                access the Internet, or inability to send or receive
+                information.<br />Hostino performs backups, which may be used in
+                case of system failure. However, Hostino does not offer data
+                recovery services for its clients.<br />Hostino cannot be held
+                responsible for data loss, data corruption, access difficulties
+                or impossibilities, slow connections, or any other problems
+                resulting from the system. Hostino may, at its sole discretion,
+                limit or deny access to its servers if it believes these
+                limitations or refusals are necessary to maintain the security
+                or integrity of the network.
+              </p><h3>8. Contract duration, renewal, and termination</h3><p>
+                8.1. The contract is concluded for an annual, semi-annual,
+                quarterly, or monthly duration, starting from the date of
+                signing these terms and conditions.<br />8.2. Subscription
+                renewals are not automatic; the client must pay their invoice
+                for their service or domain to be renewed.<br />8.3. Any
+                termination must be made by email, phone, or registered letter
+                addressed to Hostino, no later than one month before the
+                anniversary date of the contract.
+              </p><h3>9. Information obligation</h3><p>
+                The client agrees to update their information (such as change of
+                address, phone number, etc.) directly on their customer account
+                with Hostino.
+              </p><h3>10. Applicable law – Jurisdiction</h3><p>
+                This contract is governed by Moroccan law, and any dispute
+                relating to the interpretation or execution of this contract
+                will fall under the jurisdiction of the Commercial Court or any
+                other court chosen by the client in Morocco.
+              </p><h3 class="wp-block-heading">
+                Specific conditions related to the reservation of .ma domain
+                names:
+              </h3><p>
+                Indeed, the renewal of “.ma” domain names is possible for a
+                chosen annual period (from 1 to 5 years). (See article 26 of the
+                naming decision).
                 https://www.anrt.ma/sites/default/files/2015-12-14-gestion-nom-domaine-ma-fr_0.pdf
-              </p>
-              <h3>Obligations et Droits du Demandeur/Titulaire</h3>
-              <p>
-                1. Le Demandeur ou le Titulaire reconnaît qu'il a lu les
-                dispositions de la décision de nommage, qu'il accepte d'être
-                lié par l'ensemble de ses modalités, dans sa version adoptée
-                et modifiée par l'ANRT. Ladite décision est disponible sur
-                le site Web de l'ANRT. :
+              </p><p>
+                <strong>Obligations and Rights of the Applicant/Holder</strong>
+              </p><p>
+                1. The Applicant or Holder acknowledges that they have read the
+                provisions of the naming decision, that they accept to be bound
+                by all its terms, in its version adopted and amended by ANRT.
+                Said decision is available on the ANRT website:
                 https://www.anrt.ma/sites/default/files/2015-12-14-gestion-nom-domaine-ma-fr_0.pdf
-              </p>
-              <p>
-                2. Le Titulaire bénéficie d'un usage exclusif et personnel
-                du nom de domaine enregistré pendant sa période de validité,
-                conformément aux dispositions réglementaires en vigueur.
-              </p>
-              <p>
-                3. Au moment de l'enregistrement ou du renouvellement d'un
-                nom de domaine, tout Demandeur ou Titulaire est censé avoir
-                accepté la collecte, le stockage et le traitement des
-                données le concernant par l'ANRT, ainsi que la publication
-                des données « WHOIS ».
-              </p>
-              <p>
-                4. Le Titulaire est censé avoir accepté que certaines
-                données le concernant soient transmises par l'ANRT aux
-                autorités compétentes, ou à une personne tierce conformément
-                à la législation en vigueur.
-              </p>
-              <p>
-                5. Le choix, l'utilisation et l'exploitation d'un nom de
-                domaine, ainsi que les sous domaines y afférents, relèvent
-                de la responsabilité du Titulaire. Ce dernier utilise le nom
-                de domaine enregistré et les sous domaines y afférents pour
-                son propre besoin, sans porter atteinte aux droits et aux
-                intérêts des tiers.
-              </p>
-              <p>
-                6. Le Titulaire est représenté par une personne physique,
-                dite contact administratif, dûment mandatée à cet effet et
-                établie au Maroc. Au cas où le Titulaire est une personne
-                physique, il peut être lui-même le contact administratif.
-              </p>
-              <p>
-                7. Le Titulaire reconnaît et convient que le contact
-                administratif est autorisé par ses soins à agir à titre de
-                mandataire du Titulaire dans le cadre de l'enregistrement et
-                de la gestion du nom de domaine. En cas de différend entre
-                le Titulaire et son contact administratif lors d'une
-                opération de gestion d'un nom de domaine, la position du
-                Titulaire prévaudra.
-              </p>
-              <p>
-                8. Le Titulaire doit fournir au Prestataire des adresses
-                postale et électronique effectives le concernant, ainsi que
-                des adresses postale et électronique effectives de son
-                contact administratif.
-              </p>
-              <p>
-                9. Le Titulaire doit s'assurer que tous les renseignements
-                relatifs à l'enregistrement d'un nom de domaine, communiqués
-                à son Prestataire, sont à jour, complets et exacts. Il est
-                tenu d'en assurer la mise à jour immédiate en cas de
-                changement les affectant. Le Titulaire est tenu de vérifier
-                que les données publiées sur le « WHOIS » sont complètes et
-                exactes, et de procéder sans délai aux mises à jour
-                nécessaires auprès du Prestataire.
-              </p>
-              <p>
-                10. Le Titulaire peut renouveler à tout moment son nom de
-                domaine conformément à la décision de nommage. A
-                l'expiration du nom de domaine, le Titulaire est tenu de
-                renouveler son nom de domaine durant la période de grâce de
-                renouvellement s'il souhaite le maintenir.
-              </p>
-              <p>
-                11. A l'expiration d'un nom de domaine, le Prestataire peut
-                le résilier au cas où le Titulaire ne procède pas au
-                paiement des frais de renouvellement y afférent. A la fin de
-                la période de grâce de renouvellement, le nom de domaine est
-                supprimé par l'ANRT.
-              </p>
-              <p>
-                12. Le Titulaire peut résilier son nom de domaine avant sa
-                date d'échéance. Le nom de domaine dispose d'une période de
-                grâce de résiliation durant laquelle le Titulaire peut
-                procéder à son réenregistrement.
-              </p>
-              <p>
-                13. Le Titulaire a le droit de demander le changement du
-                Prestataire à tout moment, sous réserve du respect des
-                dispositions de la décision de nommage et du présent
-                contrat.
-              </p>
-              <p>
-                14. Le Titulaire a le droit de transférer son nom de domaine
-                à une autre personne, sous réserve du respect des termes de
-                la décision de nommage et du présent contrat.
-              </p>
-              <p>
-                15. Le Titulaire s'engage à se soumettre à la procédure
-                alternative de résolution de litiges, et à toute décision de
-                l'ANRT concernant le nom de domaine «.ma» enregistré.
+              </p><p>
+                2.&nbsp;The Holder enjoys exclusive and personal use of the
+                registered domain name during its validity period, in accordance
+                with the applicable regulatory provisions.
+              </p><p>
+                3.&nbsp;At the time of registration or renewal of a domain name,
+                any Applicant or Holder is deemed to have accepted the
+                collection, storage, and processing of their data by ANRT, as
+                well as the publication of “WHOIS” data.
+              </p><p>
+                4.&nbsp;The Holder is deemed to have accepted that some of their
+                data may be transmitted by ANRT to competent authorities, or to
+                a third party in accordance with the applicable legislation.
+              </p><p>
+                5. The choice, use, and operation of a domain name, as well as
+                its associated subdomains, are the responsibility of the Holder.
+                The Holder uses the registered domain name and its associated
+                subdomains for their own needs, without infringing on the rights
+                and interests of third parties.
+              </p><p>
+                6.&nbsp;The Holder is represented by a natural person, called
+                the administrative contact, duly mandated for this purpose and
+                established in Morocco. If the Holder is a natural person, they
+                may also be the administrative contact.
+              </p><p>
+                7.&nbsp;The Holder acknowledges and agrees that the
+                administrative contact is authorized by them to act as the
+                Holder’s representative in the context of the registration and
+                management of the domain name. In case of a dispute between the
+                Holder and their administrative contact during domain name
+                management, the Holder’s position shall prevail.
+              </p><p>
+                8. The Holder must provide the Provider with valid postal and
+                email addresses for themselves, as well as valid postal and
+                email addresses for their administrative contact.
+              </p><p>
+                9. The Holder must ensure that all information relating to the
+                registration of a domain name, communicated to their Provider,
+                is up-to-date, complete, and accurate. They are required to
+                update it immediately in case of any changes. The Holder is
+                obliged to verify that the data published on the “WHOIS” are
+                complete and accurate and to promptly make necessary updates
+                with the Provider.
+              </p><p>
+                10. The Holder can renew their domain name at any time in
+                accordance with the naming decision. Upon the expiration of the
+                domain name, the Holder must renew their domain name during the
+                renewal grace period if they wish to maintain it.
+              </p><p>
+                11. Upon the expiration of a domain name, the Provider may
+                terminate it if the Holder does not pay the associated renewal
+                fees. At the end of the renewal grace period, the domain name is
+                deleted by ANRT.
+              </p><p>
+                12. The Holder may terminate their domain name before its
+                expiration date. The domain name has a termination grace period
+                during which the Holder may re-register it.
+              </p><p>
+                13. The Holder has the right to request a change of Provider at
+                any time, subject to compliance with the provisions of the
+                naming decision and this agreement.
+              </p><p>
+                14.&nbsp;The Holder has the right to transfer their domain name
+                to another person, provided that the terms of the naming
+                decision and this agreement are respected.
+              </p><p>
+                15. The Holder undertakes to submit to the alternative dispute
+                resolution procedure and any decision of ANRT concerning the
+                registered “.ma” domain name.
                 http://www.wipo.int/amc/fr/domains/rules/cctld/ma/index.html
+              </p><p>
+                <strong>Obligations and rights of the Provider</strong>
+              </p><p>
+                1. The Provider is required to inform the Holder of the
+                expiration of their domain name thirty (30) days before its due
+                date, and to allow them to renew their domain name at any time,
+                before or during the renewal grace period.
+              </p><p>
+                2.&nbsp;The Provider must make changes related to domain names
+                and Holders on the Registry whenever such changes are
+                communicated to&nbsp;them by the Holder.
+              </p><p>
+                3.&nbsp;Upon termination of the domain name, the Provider is
+                required to inform the Holder, specifying the termination grace
+                period during which they can recover the terminated domain name
+                at any time.
+              </p><p>
+                4.&nbsp;The Provider is required to provide Holders with a
+                website containing their complete and up-to-date contact
+                information. They must also publish on this site any changes
+                made by ANRT to regulatory provisions and domain name
+                registration and management procedures.
+              </p><p>
+                5.&nbsp;The Provider is required to inform the Holder of any
+                information or notification concerning them as soon as it is
+                received from ANRT.
+              </p><p>
+                6.&nbsp;The Provider must promptly inform the affected Holder of
+                any freezing, blocking, or deletion of a domain name by ANRT,
+                providing the reason as communicated by the latter.
+              </p><p>
+                7.&nbsp;At any time, and at the Holder’s request, the Provider
+                is required to provide them with the authorization code(s) for
+                one or more domain names free of charge, within one (1) working
+                day of receiving the request.
+              </p><p>
+                8.&nbsp;The Provider is required to assist Holders in
+                registering, renewing, terminating, and transferring domain
+                names, as well as updating the related information. They must
+                provide all necessary support to Applicants and Holders of
+                domain names to correctly provide the required information.
+              </p><p>
+                9.&nbsp;The Provider must not collect, use, or disclose any
+                personal or other data related to a Holder for purposes other
+                than those provided for by the registration and management of
+                the Holder’s domain names and in accordance with the applicable
+                regulatory provisions. The use of this data must comply with
+                regulations on the protection of natural persons with regard to
+                the processing of personal data.
               </p>
-              <p>Obligations et droits du Prestataire</p>
-              <p>
-                1. Le Prestataire est tenu d'informer le Titulaire de
-                l'expiration de son nom de domaine trente (30) jours avant
-                sa date d'échéance, et lui permettre de renouveler son nom
-                de domaine à tout moment, avant ou durant la période de
-                grâce de renouvellement.
-              </p>
-              <p>
-                2. Le Prestataire doit procéder aux modifications relatives
-                aux noms de domaine et aux Titulaires sur le Registre, à
-                chaque fois que lesdites modifications lui sont communiquées
-                par le Titulaire.
-              </p>
-              <p>
-                3. A la résiliation du nom de domaine, le Prestataire est
-                tenu d'en informer le Titulaire, en lui précisant la période
-                de grâce de résiliation durant laquelle il peut récupérer le
-                nom de domaine résilié à tout moment.
-              </p>
-              <p>
-                4. Le Prestataire est tenu de mettre à la disposition des
-                Titulaires un site web comprenant impérativement ses
-                coordonnées complètes et à jour. Il doit publier, également,
-                sur ce site, toutes les modifications apportées par l'ANRT
-                aux dispositions réglementaires et aux procédures
-                d'enregistrement et de gestion des noms de domaine.
-              </p>
-              <p>
-                5. Le Prestataire est tenu de porter à la connaissance du
-                Titulaire toute information ou notification le concernant
-                dès sa réception de la part de l'ANRT.
-              </p>
-              <p>
-                6. le Prestataire doit informer sans délai le Titulaire
-                concerné de tout gel, blocage ou suppression d'un nom de
-                domaine par l'ANRT, en lui communiquant le motif tel que
-                communiqué par cette dernière.
-              </p>
-              <p>
-                7. A tout moment, et à la demande du Titulaire, le
-                Prestataire est tenu de lui fournir gratuitement le(s)
-                code(s) d'autorisation d'un ou de plusieurs noms de domaine,
-                dans un délai d'un (1) jour ouvrable à la réception de
-                ladite demande.
-              </p>
-              <p>
-                8. Le Prestataire est tenu d'assister les Titulaires pour
-                l'enregistrement, le renouvellement, la résiliation et le
-                transfert des noms de domaine, ainsi que la mise à jour des
-                informations y afférentes. Il est tenu d'apporter tout
-                support nécessaire aux Demandeurs et Titulaires des noms de
-                domaine en vue de renseigner correctement les informations
-                requises.
-              </p>
-              <p>
-                9. Le Prestataire ne doit collecter, utiliser ou communiquer
-                aucune donnée, personnelle ou autre, relative à un
-                Titulaire, à des fins autres que celles prévues par
-                l'enregistrement et la gestion des noms de domaine du
-                Titulaire et ce, conformément aux dispositions
-                réglementaires en vigueur.
-              </p>
-              <p>
-                L'utilisation de ces données doit se faire en conformité
-                avec la réglementation sur la protection des personnes
-                physiques à l'égard du traitement des données à caractère
-                personnel.
-              </p>
-
-              <span class="poppins-regular text-[18px] text-gray-500 my-[30px]">
-                Dernière mise à jour: 07 avril 2025.
-              </span>
             </div>
           </div>
         </div>
@@ -571,4 +434,3 @@ const articleSchema = {
     </section>
   </main>
 </Layout>
-

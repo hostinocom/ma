@@ -66,6 +66,20 @@ const faqData = [
   },
 ];
 
+const devis =[
+  `<div class="flex items-center gap-2"><img class="w-4 h-4" src="/images/03/flag-maroc.svg" alt="Maroc"><b>Adresse IP marocaine</b></div>`,
+  `Jusqu'à <b>512 vCPU</b>`,
+  `Jusqu'à <b>1024 Go de RAM</b>`,
+  `Stockage <b>NVMe SSD évolutif</b>`,
+  `Datacenter certifié <b>Tier III et ISO 27001</b>`,
+  `Redondance réseau sur 2 emplacements`,
+  `Sauvegardes automatisées`,
+  `WAF avancé inclus`,
+  `Connectivité partagée ou dédiée`,
+  `Uptime garanti de <b>99.9%</b>`,
+  `<b>Infogérance sur mesure</b>`
+];
+
 
 const hostingFeatures = [
   {
@@ -275,7 +289,9 @@ const articleSchema = {
       consultButtonTextExiste={false}
     />
 
-    <ServerVps />
+    <ServerVps 
+        devis={devis}
+    />
 
     <FAQSection faqData={faqData} title="FAQ - Cloud Maroc" />
     

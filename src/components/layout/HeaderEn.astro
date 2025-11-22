@@ -99,8 +99,7 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
       </nav>
 
       <div class="flex items-center gap-4">
-        <a
-          href="https://my.hostino.com/index.php?rp=/login&language=english"
+        <div
           class="hidden sm:block text-title"
         >
           <AnimatedButton
@@ -110,10 +109,12 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
             hoverBgColor="bg-title"
             textColor="text-white"
             class="btn-10-20 text-title lg:block hidden poppins-semibold transition-colors"
-          />
-        </a>
+            href="https://my.hostino.com/index.php?rp=/login&language=english"
 
-       <a href="/">
+          />
+      </div>
+
+       <div>
          <AnimatedButton
           text="FR"
           hoverText="FR"
@@ -124,7 +125,8 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
           ariaLabel="Passer en français"
           class="lang-switch-fr hidden lg:block text-white bg-primary poppins-bold px-2 py-1"
         />
-        </a>
+       </div>
+      
 
           <div>
           <a href="https://wa.me/212663750908" 
@@ -216,8 +218,9 @@ import AnimatedButton from "../ui/AnimatedButton.astro";
         >
           Login
         </a>
+
         <a href="/">
-          <button class="lang-switch-fr-mobile w-full border border-primary text-title rounded-lg poppins-semibold  px-4 py-1 ">
+          <button  class="lang-switch-fr-mobile w-full border border-primary text-title rounded-lg poppins-semibold  px-4 py-1 ">
           FR
         </button>
         </a>

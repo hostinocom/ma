@@ -49,6 +49,8 @@ interface Props {
   bigTitle?: string;
   namePlaneBold?: boolean;
   titleExiste?: boolean;
+    lang?: string;
+
 }
 
 const hostingPlans: Plan[] = [
@@ -171,6 +173,8 @@ const {
   heroHeading,
   plans = hostingPlans,
   namePlaneBold,
+  lang
+
 } = Astro.props;
 
 const getWidthClass = (totalPlans: number) => {
@@ -203,7 +207,7 @@ const getWidthClass = (totalPlans: number) => {
         <div
           key={plan.id}
           class={`${
-            plan.most_popular.is_most_popular && "border-3 border-primary"
+            plan.most_popular.is_most_popular ? "border-3 border-primary" : "border-3 border-white"
           } bg-white relative lg:text-left text-center rounded-[10px] 
           ${getWidthClass(plans.length)}
           md:pt-[55px] md:px-[50px] md:pb-[50px] lg:pt-[50px] lg:pb-[40px] lg:px-[40px] pt-[45px] px-[25px] pb-[35px] shadow_main h-full`}
@@ -232,7 +236,7 @@ const getWidthClass = (totalPlans: number) => {
             ></h3>
           )}
           {plan.subtext && (
-            <p class="text-[#022545BD] md:text-left text-center text-[14px] poppins-regular leading-[21px] tracking-[0.3px]">
+            <p class="text-[#022545BD] md:text-left text-center text-[14px] poppins-regular pr-[30px] leading-[21px] tracking-[0.3px]">
               {plan.subtext}
             </p>
           )}
@@ -244,17 +248,17 @@ const getWidthClass = (totalPlans: number) => {
           <div class="mb-6">
             <div class="h-[40px]">
               {plan.price_original && (
-                <div class="flex items-center lg:justify-start justify-center gap-2 mb-2">
-                  <span class="text-primary numbers poppins-semibold  line-through text-lg">
+                <div class="flex items-center lg:justify-start justify-center gap-2">
+                  <p class="text-primary numbers poppins-semibold  line-through text-lg">
                     {plan.price_original}
-                  </span>
+                  </p>
                   <span class="bg-primary numbers py-[8px] text-white text-[15px] poppins-semibold  px-[10px] rounded-[8px]">
-                    Economisez {plan.save}
+                    {lang === "fr" ? "Economisez" : "Save"} {plan.save}
                   </span>
                 </div>
               )}
             </div>
-            <p class="text-base text-title poppins-semibold  mb-1">À seulement</p>
+            <p class="text-base text-title poppins-semibold  my-1">{lang === "fr" ? "À seulement" : "For only"}</p>
             <p class="text-[45px] numbers poppins-semibold  leading-[54px] text-title">
               {plan.price_discounted}
             </p>
@@ -302,7 +306,7 @@ const getWidthClass = (totalPlans: number) => {
                   fill={i < plan.performance_stars ? "#FFA500" : "none"}
                   stroke="#FFA500"
                   stroke-width="2"
-                  class="mr-1"
+                  class="mr-1 max-w-[18px] max-h-[18px]"
                 >
                   <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.857 1.524 8.276L12 18.897l-7.46 4.542 1.524-8.276L.001 9.306l8.331-1.151z" />
                 </svg>
@@ -321,9 +325,9 @@ const getWidthClass = (totalPlans: number) => {
                     height={16}
                     class="mr-1"
                   />
-                  <span class="text-title">
-                    Optimisé <b>SEO</b>
-                  </span>
+                  <p class="text-title">
+                    {lang !== "en" ? "Optimisé SEO" : "SEO Optimized"}
+                  </p>
                 </>
               ) : (
                 <>
@@ -334,20 +338,21 @@ const getWidthClass = (totalPlans: number) => {
                     height={16}
                     class="mr-1"
                   />
-                  <span class="text-shadow-gray-200 opacity-20">
-                    Optimisé SEO
-                  </span>
+                 
+                  <p class="text-shadow-gray-200 opacity-20">
+                    {lang === "fr" ? "Optimisé SEO" : "SEO Optimized"}
+                  </p>
                 </>
               )}
             </li>
             <li>
               {plan.features.free_domain ? (
                 <p>
-                  Nom de domaine <b>gratuit</b>
+                { lang !== "en" ? (<>Nom de domaine <b>gratuit</b></> ): <>Free <b>Domain Name</b></>}
                 </p>
               ) : (
                 <p class="text-shadow-gray-200 opacity-20">
-                  Nom de domaine gratuit
+                     { lang !== "en" ? "Nom de domaine gratuit" : "Free Domain Name"}
                 </p>
               )}
             </li>
@@ -362,17 +367,17 @@ const getWidthClass = (totalPlans: number) => {
                     class="mr-1"
                   />
                   <p>
-                    WordPress <b>préinstallé</b>
+                    {lang !== "en" ?  (<>WordPress <b>préinstallé</b></>) : ( <><b>WordPress</b> Pre-installed</>)}
                   </p>
                 </div>
               ) : (
                 <p class="text-shadow-gray-200 opacity-20">
-                  WordPress préinstallé
+                      {lang !== "en" ?  (<>WordPress <b>préinstallé</b></>) : ( <><b>WordPress</b> Pre-installed</>)}
                 </p>
               )}
             </li>
             <li>
-              Panneau de contrôle
+             { lang !== "en" ? "Panneau de contrôle" : "Control panel "}
               <b>
                 <i>{plan.features.control_panel}</i>
               </b>
@@ -381,22 +386,22 @@ const getWidthClass = (totalPlans: number) => {
               SSL : <b>{plan.features.ssl}</b>
             </li>
             <li>
-              Espace disque : <b>{plan.features.disk_space}</b>
+              {lang !== "en" ? "Espace disque" : "Disk space"} : <b>{plan.features.disk_space}</b>
             </li>
             <li>
-              Bande passante : <b>{plan.features.bandwidth}</b>
+              { lang !== "en" ? "Bande passante" : "Bandwidth"} : <b>{plan.features.bandwidth}</b>
             </li>
             <li>
-              Bases de données : <b>{plan.features.databases}</b>
+             { lang !== "en" ? "Bases de données" : "Databases" } : <b>{plan.features.databases}</b>
             </li>
             <li>
-              Comptes email : <b>{plan.features.email_accounts}</b>
+              {lang !== "en" ? "Comptes email" : "Email addresses "} : <b>{plan.features.email_accounts}</b>
             </li>
             <li>
-              Sous-domaines : <b>{plan.features.subdomains}</b>
+              {lang !== "en" ? "Sous-domaines" : "Subdomains"} : <b>{plan.features.subdomains}</b>
             </li>
             <li>
-              Sauvegardes : <b>{plan.features.backups}</b>
+              {lang !== "en" ? "Sauvegardes" : "Backups"} : <b>{plan.features.backups}</b>
             </li>
           </ul>
 
@@ -406,7 +411,7 @@ const getWidthClass = (totalPlans: number) => {
               <div class="mt-6">
                 <a
                   href={plan.more_performance.href}
-                  class="text-title text-base poppins-semibold  underline inline-flex items-center"
+                  class="text-title text-[14px] poppins-semibold  underline inline-flex items-center"
                 >
                   {plan.more_performance.text}
                 </a>

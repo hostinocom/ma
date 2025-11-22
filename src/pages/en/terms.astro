@@ -67,11 +67,12 @@ const articleSchema = {
   imageUrl={imageUrl}
   ogAlt={ogAlt}
   articleSchema={articleSchema}
+  lang="en"
 >
   <main>
     <section class="lg:py-[110px] bg-gray-200 py-[80px]">
       <div class="container">
-        <h1 class="big-title">Conditions générales</h1>
+        <h1 class="big-title">Terms and Conditions</h1>
       </div>
     </section>
 
@@ -79,1086 +80,1000 @@ const articleSchema = {
       <div class="container">
         <div class="grid md:grid-cols-12 grid-cols-1 gap-8">
           <!-- Sidebar -->
-          <div class="border-1 max-h-max lg:col-span-3 md:col-span-5 col-span-1 rounded-[10px] py-[30px] px-[30px] border-gray-300">
-            <h3 class="text-[22px] poppins-semibold  text-title mb-[20px]">
-              Documents légaux
+          <div
+            class="border-1 side-bar-legal max-h-max lg:col-span-3 md:col-span-5 col-span-1 rounded-[10px] py-[30px] px-[30px] border-gray-300"
+          >
+            <h3 class="text-[22px] poppins-semibold text-title mb-[20px]">
+              Legal Documents
             </h3>
             <div class="w-full h-[1px] bg-gray-400 mb-[20px]"></div>
 
             <ul class="space-y-3">
-              <li style="text-decoration: underline;">
-                <a class="active" href="/conditions-generales">
-                  Conditions générales
+              <li style="">
+                <a class="active" href="/en/terms">
+                  Terms and Conditions
                 </a>
               </li>
               <li>
-                <a href="/mentions-legales">Mentions légales</a>
+                <a href="/en/legal-notice">Legal Notice</a>
               </li>
-              <li style="text-decoration: underline;">
-                <a href="/politique-cookies">Politique Cookies</a>
+              <li style="">
+                <a href="/en/cookies-policy">Cookies Policy</a>
               </li>
-              <li style="text-decoration: underline;">
-                <a href="/politique-de-confidentialite">
-                  Politique de confidentialité
-                </a>
+              <li style="">
+                <a href="/en/privacy"> Privacy Policy </a>
               </li>
-              <li style="text-decoration: underline;">
-                <a href="/abus">Politique anti-bus</a>
+              <li style="">
+                <a href="/en/abuse">Anti-Abuse Policy</a>
               </li>
             </ul>
           </div>
 
           <!-- Content -->
-          <div class="lg:col-span-9 md:col-span-7 col-span-1 text-legal-documents">
+          <div
+            class="lg:col-span-9 md:col-span-7 col-span-1 text-legal-documents"
+          >
             <div>
               <p>
-                En achetant un hébergement, un nom de domaine ou tout autre
-                service ou produit auprès de Hostino, vous (le client)
-                concluez un accord avec&nbsp;
-                <span style="letter-spacing: 0.2px">
-                  <b>Hostino</b>
-                </span>
-                &nbsp;qui est lié par les conditions de service décrites
-                dans le présent document.
-              </p>
-              <p>
-                Le présent accord doit être interprété à tous égards
-                conformément aux lois du Royaume du Maroc, applicables aux
-                contrats exécutoires dans ce pays. En complétant le
-                processus de commande, vous acceptez d'avoir lu, compris et
-                être lié par ces conditions de service.
-              </p>
-              <h3>1. Définitions</h3>
-              <p>
-                1.1 Service d'hébergement – Tout espace mutualisé,
-                revendeur, virtuel ou dédié utilisé pour stocker et diffuser
-                du contenu sur le web.
-              </p>
-              <p>
-                1.2 Services additionnels – Tout produit ou service
-                considéré comme un « addon » à un service d'hébergement
-                principal, ou qui couvre les frais uniques pour le travail
-                supplémentaire effectué par un membre du personnel de
-                Hostino.
-              </p>
-              <p>
-                1.3 Utilisation des ressources – Toutes les ressources
-                allouées au client pour permettre le stockage et la
-                livraison du contenu web au sein d'un service d'hébergement.
-                Cela comprend, sans s'y limiter, l'espace disque, la
-                mémoire, le processus et la bande passante.
-              </p>
-              <p>
-                1.4 Abonnement – La durée (mensuelle, trimestrielle,
-                semestrielle, annuelle) applicable au service acheté.
-              </p>
-              <p>
-                1.5 Espace client – Une interface de gestion de compte pour
-                gérer la facturation de l'hébergement, des noms de domaine
-                ou des services supplémentaires achetés, y compris les
-                factures, les coordonnées et les enregistrements de
-                domaines.
-              </p>
-              <p>
-                1.6 PUA – Politique d'utilisation acceptable, elle permet de
-                définir les limites d'utilisation de chaque service.
-              </p>
-              <h3>2. Identité</h3>
-              <ul>
-                <li>
-                  Société :&nbsp;<b>Hostino SARL AU</b>
-                </li>
-                <li>
-                  Adresse du siège: <b>T100 Technopark Tangier, Morocco.</b>
-                </li>
-                <li>
-                  Directeur général: <b>Aniss KIASSI</b>
-                </li>
-                <li>
-                  RC :&nbsp;<b>123893 Tanger</b>
-                </li>
-                <li>
-                  TP: <b>50412781</b>
-                </li>
-                <li>
-                  IF:&nbsp;<b>51707097</b>
-                </li>
-                <li>
-                  RIB :&nbsp;<b>164 640 21211 52330320002 28</b>
-                </li>
-                <li>
-                  ICE :&nbsp;<b>002984236000036</b>
-                </li>
-                <li>
-                  E-mail:&nbsp;<b>info@hostino.com</b>
-                </li>
-                <li>
-                  Site web : <b>www.hostino.ma</b>
-                </li>
-              </ul>
-              <h3>3. Frais</h3>
-              <p>
-                3.1 Paiement – L'activation de tout nom de domaine ou
-                hébergement ou service supplémentaire dépend de la réception
-                par Hostino du paiement des frais indiqués sur le site web
-                ou de toute autre documentation ou devis personnalisé fourni
-                au client. Les paiements ultérieurs sont dus à la date
-                anniversaire de la période d'abonnement à l'avance pour le
-                service de la période d'abonnement suivante. Tous les frais
-                de service sont indiqués dans la description du produit ou
-                seront communiqués au client avant que le paiement ne soit
-                exigé pour tout devis personnalisé ou service commandé par
-                téléphone.
-              </p>
-              <p>
-                3.2 Frais d'installation – Le client accepte de payer à
-                l'avance et en totalité tout montant de nature non
-                récurrente nécessaire au déploiement initial du service
-                d'hébergement acheté. Ces frais sont indiqués comme frais
-                d'installation dans la description du service ou seront
-                divulgués dans tout devis personnalisé avant tout
-                approvisionnement de serveur, acquisition d'équipement ou
-                d'installation par Hostino.
-              </p>
-              <p>
-                3.3 Frais récurrents – Tous les abonnements pour les
-                services de noms de domaine et d'hébergement fournis par
-                Hostino sont récurrents par nature et le client s'engage à
-                payer tous les frais récurrents énumérés dans la description
-                du service à l'avance à chaque date anniversaire pour
-                confirmer le renouvellement de son service.
-              </p>
-              <p>
-                3.4 Frais non remboursables – Certains frais payés à Hostino
-                sont considérés comme non remboursables en raison de la
-                nature du produit ou du service acheté et cela comprend,
-                mais n'est pas limité à ce qui suit :
-              </p>
-              <p>
-                3.4.1 Produits de tiers – Les produits fournis par Hostino
-                où Hostino agit en tant que revendeur pour un autre
-                fournisseur (par exemple, les enregistrements de domaines,
-                les certificats SSL, les licences de messagerie Google et
-                Microsoft, les licences de produits de tiers) sont fournis
-                en tant que produits non remboursables et les remboursements
-                ne peuvent pas être effectués une fois que le produit a été
-                activé sur un compte.
-              </p>
-              <p>
-                3.4.2 Temps d'administration avancé – Les services pour
-                lesquels un travail supplémentaire doit être effectué par le
-                personnel de Hostino ne sont pas remboursables une fois que
-                le travail supplémentaire a été effectué.
-              </p>
-              <p>
-                3.5 Factures et relevés – les factures sont fournis au
-                client par e-mail en utilisant l'adresse e-mail de contact
-                attribuée au client ou tout autre contact de facturation
-                supplémentaire dans le système de facturation de Hostino. Si
-                le client souhaite recevoir une copie originale de sa
-                facture, il doit formuler sa demande au support clientèle en
-                indiquant l'adresse postale à laquelle il souhaite recevoir
-                la facture.
-              </p>
-              <p>
-                3.6 Relevés – Hostino ne fournit pas de relevés écrits ou
-                imprimés. Toutefois, l'historique des factures d'un compte
-                est toujours disponible pour être consulté par le client sur
-                son espace dédié.
-              </p>
-              <p>
-                3.7 Défaut de paiement – Hostino peut temporairement refuser
-                le service ou résilier le présent accord en cas de défaut de
-                paiement par le client des frais d'abonnement applicables
-                aux frais récurrents lorsque les frais sont en retard de 30
-                jours. Cette résiliation ou ce refus ne libère pas le client
-                de la responsabilité du paiement de tous les frais accumulés
-                pour les services renouvelés, plus les intérêts raisonnables
-                et les frais de recouvrement. Les comptes qui ne sont pas
-                recouvrables par Hostino peuvent être remis à une agence de
-                recouvrement externe, ce qui peut entraîner des frais
-                supplémentaires ou des amendes.
-              </p>
-              <h3>4. Remboursements, litiges et annulations</h3>
-              <p>
-                4.1 Garantie de remboursement – Hostino offre une garantie
-                de remboursement de 30 jours pour les services d'hébergement
-                mutualisé ou revendeur.
-              </p>
-              <p>
-                4.2 Remboursements – Tous les paiements effectués à Hostino
-                ne sont pas remboursables, sauf si la période de
-                remboursement est applicable et que la demande de
-                remboursement est faite dans les 30 jours suivant la date
-                d'activation du service. Les frais uniques d'installation et
-                les frais supplémentaires ne sont pas remboursables, sauf
-                lorsqu'un hébergement commandé ou un service supplémentaire
-                ne peut être fourni par Hostino. Lorsqu'un service commandé
-                ne peut pas être fourni mais qu'un service alternatif est
-                fourni à sa place, tous les frais d'installation uniques
-                applicables restent dus. Les remboursements ne sont pas
-                fournis automatiquement et doivent être demandés par le
-                client dans les 30 jours suivant la demande d'annulation.
-              </p>
-              <p>
-                Le remboursement des paiements effectués par PayPal ou carte
-                bancaire internationale sont effectués sur compte PayPal
-                émetteur ou le compte bancaire lié à la carte internationale
-                utilisée pour le paiement.
-              </p>
-              <p>
-                Pour tous les autres moyens de paiement (carte bancaire
-                marocaine, Tasshilat, espèces, virement bancaire et
-                versement bancaire), le remboursement est effectué sur le
-                solde du client et est consultable sur son espace client. Le
-                solde peut être utilisé pour payer de nouvelles commandes.
-              </p>
-              <p>
-                4.3 Litiges – Tous les litiges relatifs aux surfacturations
-                ou à la facturation doivent être signalés dans les 60 jours
-                suivant le moment où le litige est survenu. Si vous
-                contestez une charge à l'émetteur de votre carte de crédit
-                qui, à la seule discrétion de Hostino, est une charge valide
-                en vertu des dispositions des présentes conditions de
-                service, vous acceptez de payer à Hostino des « frais
-                administratifs » d'un minimum de 500 MAD et d'un maximum de
-                1500 MAD.
-              </p>
-              <p>
-                4.4 Annulation du service par le client – Hostino fournit un
-                service récurrent et continu qui restera actif jusqu'à sa
-                date d'échéance. Une facture proforma de renouvellement est
-                générée sur l'espace client quinze jours avant la date
-                d'échéance. Si le client ne procède pas au paiement, le
-                service est automatiquement suspendu. Le client peut à
-                n'importe quel moment formuler une demande d'annulation via
-                son espace client, il aura donc le choix entre l'annulation
-                immédiate du service ou à la fin de son abonnement. Dans le
-                cas où une demande d'annulation est formulée, aucune facture
-                de renouvellement n'est générée.
-              </p>
-              <p>
-                4.4.1 Pas de frais d'annulation – Hostino ne facture pas de
-                frais d'annulation et ne rembourse pas les frais prépayés,
-                sauf si la garantie de remboursement est applicable.
-              </p>
-              <p>
-                4.4.2 Pas d'accès au compte – Si le client souhaite annuler
-                un service et ne peut pas accéder à son espace client pour
-                une raison quelconque, le client doit prendre contact avec
-                Hostino par téléphone ou par ticket de support pour obtenir
-                les informations de connexion nécessaires ou les
-                instructions pour procéder à la demande d'annulation.
-              </p>
-              <p>
-                4.4.3 Données du client – En cas d'annulation réussie d'un
-                service d'hébergement, toutes les données stockées dans le
-                service annulé seront supprimées. Hostino&nbsp;ne fournit
-                aucune garantie que les données du client seront
-                récupérables une fois le processus d'annulation terminé.
-              </p>
-              <p>
-                4.5 Annulation du service par Hostino – Hostino peut annuler
-                le service d'hébergement du client pour toute violation des
-                présentes conditions de service ou les conditions
-                d'utilisation sans notification préalable. Hostino ne
-                fournit aucune garantie que les données du client seront
-                récupérables une fois le processus d'annulation terminé.
-              </p>
-              <h3>5. Propriété du compte</h3>
-              <p>
-                5.1 Propriétaire du compte – L'email principal et les
-                coordonnées du titulaire de l'espace client est considéré
-                comme le propriétaire légal du compte. L'hébergement
-                individuel ou les services supplémentaires qui sont associés
-                à un compte sont contrôlés par le propriétaire du compte et
-                les modifications et mises à jour des informations d'un
-                compte ne peuvent être effectuées que par le propriétaire du
-                compte ou son contact supplémentaire autorisé. Le
-                propriétaire du compte est établi au moment de la création
-                du compte. Les coordonnées d'un propriétaire de compte
-                doivent être celles d'une personne réelle. Il n'est pas
-                permis d'utiliser des noms fictifs ou « faux » pour les
-                coordonnées d'un propriétaire de compte. Les comptes
-                contenant des noms fictifs ou « faux » et des coordonnées
-                qui ne reflètent pas les coordonnées d'une personne réelle
-                peuvent être suspendus ou résiliés sans préavis.
-              </p>
-              <p>
-                Le titulaire légal d'un nom de domaine enregistré chez
-                Hostino est le propriétaire du compte par défaut ou le
-                contact que le propriétaire du compte indique lors de
-                l'enregistrement du nom de domaine.
-              </p>
-              <p>
-                5.2. Informations sur le compte – Le client garantit que
-                toutes les informations fournis à Hostino sont véridiques,
-                correctes, exactes et à jour et que la personne désignée
-                comme propriétaire du compte est âgée de 18 ans ou plus et
-                est légalement habilitée à agir et à conclure le présent
-                contrat en tant que client ou au nom du client.
-              </p>
-              <p>
-                5.2.1 Maintien des informations du compte – Le client est
-                responsable du maintien des informations de contact
-                renseignées sur son compte et le défaut de maintien à jour
-                des informations de contact ne garantit pas l'exonération
-                des frais, des frais en retard ou des avertissements émis
-                par Hostino.
-              </p>
-              <p>
-                5.3 Contact supplémentaire autorisé – Le propriétaire du
-                compte peut ajouter et autoriser une ou plusieurs personnes
-                de contact supplémentaires pour agir en son nom.
-              </p>
-              <p>
-                Pour que tout contact supplémentaire ajouté à un compte
-                puisse demander des modifications de compte, le contact
-                supplémentaire autorisé doit être configuré comme un
-                sous-compte avec ses propres informations de connexion et
-                avoir les autorisations appropriées. Si le contact
-                supplémentaire autorisé n'est pas activé en tant que
-                sous-compte, le contact n'aura que des autorisations
-                limitées pour prendre en charge un service et ne pourra pas
-                demander de modifications de la configuration de
-                l'hébergement ou du nom de domaine.
-              </p>
-              <p>
-                5.4 Transfert de compte – Le rôle de propriétaire de compte
-                peut être transféré à un autre contact supplémentaire
-                autorisé ou à un client Hostino en contactant notre équipe
-                de support.
-              </p>
-              <p>
-                5.5 Fermeture de compte – Un compte sera automatiquement
-                marqué comme inactif lorsqu'aucun hébergement actif ou nom
-                de domaine ou service supplémentaire n'est exploité sous le
-                compte. Le client garde l'accès à ce compte et peut
-                l'utiliser à tout moment pour consulter son historique de
-                commandes ou de services, ou pour commander un nouveau
-                service.
-              </p>
-              <h3>
-                6.&nbsp;
-                <span>
-                  Enregistrement, transfert et renouvellement de domaines
-                </span>
-              </h3>
-              <p>
-                6.1 Enregistrements de domaines – les enregistrements de
-                noms de domaine réussis qui ont terminé la procédure
-                d'enregistrement et sont considérés comme actifs par le
-                bureau d'enregistrement de domaines sont définitifs et ne
-                peuvent être annulés ou remboursés. Certaines extensions de
-                domaine peuvent nécessiter des informations supplémentaires
-                pour compléter l'enregistrement et Hostino ne fournit aucune
-                garantie qu'un enregistrement de domaine commandé sera
-                confirmé par le bureau d'enregistrement. Il est de la seule
-                responsabilité du client de vérifier quelles informations
-                sont nécessaires pour enregistrer un domaine particulier
-                avant de passer une commande d'enregistrement de domaine.
-              </p>
-              <p>
-                Dans le cas où des informations supplémentaires sont
-                requises par le bureau d'enregistrement pour valider
-                l'enregistrement d'un nom de domaine, Hostino contactera le
-                client pour les lui demander. Si le client ne répond pas
-                dans les délais ou si le bureau d'enregistrement refuse de
-                valider le domaine, les frais sont remboursés selon la
-                politique de remboursement décrite ci-haut.
-              </p>
-              <p>
-                6.2 Transferts de domaines – Les transferts de domaines
-                prennent généralement de 5 à 7 jours une fois que
-                l'autorisation finale a été reçue par le bureau
-                d'enregistrement de domaine. Hostino n'a pas le pouvoir
-                d'accélérer un transfert de domaine et ne peut donner aucune
-                garantie quant au temps nécessaire pour effectuer un
-                transfert. Le client doit s'assurer que toutes les
-                informations de contact sont à jour avec le registraire de
-                domaine actuel et que les codes de transfert appropriés ont
-                été obtenus avant de passer une commande de transfert de
-                domaine à Hostino.
-              </p>
-              <p>
-                6.3 Renouvellement de domaine – Les domaines doivent être
-                renouvelés avant leur date d'expiration pour éviter leur
-                suspension. De multiples notifications sont envoyées au
-                client pour l'informer des prochains renouvellements de
-                domaines à partir de 60 jours avant la date d'expiration
-                indiquée. Hostino n'a aucun contrôle sur le maintien d'un
-                nom de domaine actif une fois qu'il a atteint sa date
-                d'expiration et n'assume pas la responsabilité de
-                l'inaccessibilité d'un site web parce que le client n'a pas
-                renouvelé son nom de domaine.
-              </p>
-              <p>
-                6.4 Conditions particulières liées à la réservation des noms
-                de domaines .ma
-              </p>
-              <p>6.4.1 Obligations et droits du demandeur/titulaire</p>
-              <p>
-                Le Demandeur ou le Titulaire reconnaît qu'il a lu les
-                dispositions de la décision de nommage, qu'il accepte d'être
-                lié par l'ensemble de ses modalités, dans sa version adoptée
-                et modifiée par l'ANRT. Ladite décision est disponible sur
-                le site web de l'ANRT. :
-                https://www.anrt.ma/sites/default/files/2015-12-14-gestion-nom-domaine-ma-fr_0.pdf
-              </p>
-              <p>
-                Le Titulaire bénéficie d'un usage exclusif et personnel du
-                nom de domaine enregistré pendant sa période de validité,
-                conformément aux dispositions réglementaires en vigueur.
-              </p>
-              <p>
-                Au moment de l'enregistrement ou du renouvellement d'un nom
-                de domaine, tout Demandeur ou Titulaire est censé avoir
-                accepté la collecte, le stockage et le traitement des
-                données le concernant par l'ANRT, ainsi que la publication
-                des données « WHOIS ». Les données mentionnées lors de
-                l'enregistrement seront visibles sur le site officiel de
-                l'ANRT et sur les bases de données WHOIS publiques. Le
-                Titulaire ne peut pas cacher ces informations.
-              </p>
-              <p>
-                Le Titulaire est censé avoir accepté que certaines données
-                le concernant soient transmises par l'ANRT aux autorités
-                compétentes, ou à une personne tierce conformément à la
-                législation en vigueur.
-              </p>
-              <p>
-                Le choix, l'utilisation et l'exploitation d'un nom de
-                domaine, ainsi que les sous domaines y afférents, relèvent
-                de la responsabilité du Titulaire. Ce dernier utilise le nom
-                de domaine enregistré et les sous domaines y afférents pour
-                son propre besoin, sans porter atteinte aux droits et aux
-                intérêts des tiers.
-              </p>
-              <p>
-                Le Titulaire est représenté par une personne physique, dite
-                contact administratif, dûment mandatée à cet effet et
-                établie au Maroc. Au cas où le Titulaire est une personne
-                physique, il peut être lui-même le contact administratif.
-              </p>
-              <p>
-                Le Titulaire reconnaît et convient que le contact
-                administratif est autorisé par ses soins à agir à titre de
-                mandataire du Titulaire dans le cadre de l'enregistrement et
-                de la gestion du nom de domaine. En cas de différence entre
-                le Titulaire et son contact administratif lors d'une
-                opération de gestion d'un nom de domaine, la position du
-                Titulaire prévaudra.
-              </p>
-              <p>
-                Le Titulaire doit fournir au Prestataire des adresses
-                postale et électronique effectives le concernant, ainsi que
-                des adresses postale et électronique effectives de son
-                contact administratif.
-              </p>
-              <p>
-                Le Titulaire doit s'assurer que tous les renseignements
-                relatifs à l'enregistrement d'un nom de domaine, communiqués
-                à son Prestataire, sont à jour, complets et exacts. Il est
-                tenu d'en assurer la mise à jour immédiate en cas de
-                changement les affectant. Le Titulaire est tenu de vérifier
-                que les données publiées sur le « WHOIS » sont complètes et
-                exactes, et de procéder sans délai aux mises à jour
-                nécessaires auprès du Prestataire.
-              </p>
-              <p>
-                Le Titulaire peut renouveler à tout moment son nom de
-                domaine conformément à la décision de nommage. A
-                l'expiration du nom de domaine, le Titulaire est tenu de
-                renouveler son nom de domaine durant la période de grâce de
-                renouvellement s'il souhaite le maintenir.
-              </p>
-              <p>
-                A l'expiration d'un nom de domaine, le Prestataire peut le
-                résilier au cas où le Titulaire ne procède pas au paiement
-                des frais de renouvellement y afférent. A la fin de la
-                période de grâce de renouvellement, le nom de domaine est
-                supprimé par l'ANRT.
-              </p>
-              <p>
-                Le Titulaire peut résilier son nom de domaine avant sa date
-                d'échéance. Le nom de domaine dispose d'une période de grâce
-                de résiliation durant laquelle le Titulaire peut procéder à
-                son réenregistrement.
-              </p>
-              <p>
-                Le Titulaire a le droit de demander le changement du
-                Prestataire à tout moment, sous réserve du respect des
-                dispositions de la décision de nommage et du présent
-                contrat.
-              </p>
-              <p>
-                Le Titulaire a le droit de transférer son nom de domaine à
-                une autre personne, sous réserve du respect des termes de la
-                décision de nommage et du présent contrat.
-              </p>
-              <p>
-                Le Titulaire s'engage à se soumettre à la procédure
-                alternative de résolution de litiges, et à toute décision de
-                l'ANRT concernant le nom de domaine «.ma» enregistré.
-                http://www.wipo.int/amc/fr/domains/rules/cctld/ma/index.html
-              </p>
-              <p>6.4.2 Obligations et droits de Hostino</p>
-              <p>
-                Hostino est tenu d'informer le Titulaire de l'expiration de
-                son nom de domaine trente (30) jours avant sa date
-                d'échéance, et lui permettre de renouveler son nom de
-                domaine avant ou durant les 29 jours de la période de grâce
-                qui est de 30 jours pour les noms de domaine .MA.
-              </p>
-              <p>
-                Hostino doit procéder aux modifications relatives aux noms
-                de domaine et aux Titulaires sur le Registre, à chaque fois
-                que lesdites modifications lui sont communiquées par le
-                Titulaire.
-              </p>
-              <p>
-                A la résiliation du nom de domaine, Hostino est tenu d'en
-                informer le Titulaire, en lui précisant la période de grâce
-                de résiliation durant laquelle il peut récupérer le nom de
-                domaine résilié à tout moment.
-              </p>
-              <p>
-                Hostino est tenu de mettre à la disposition des Titulaires
-                un site web comprenant impérativement ses coordonnées
-                complètes et à jour. Il doit publier, également, sur ce
-                site, toutes les modifications apportées par l'ANRT aux
-                dispositions réglementaires et aux procédures
-                d'enregistrement et de gestion des noms de domaine.
-              </p>
-              <p>
-                Hostino est tenu de porter à la connaissance du Titulaire
-                toute information ou notification le concernant dès sa
-                réception de la part de l'ANRT.
-              </p>
-              <p>
-                Hostino doit informer sans délai le Titulaire concerné de
-                tout gel, blocage ou suppression d'un nom de domaine par
-                l'ANRT, en lui communiquant le motif tel que communiqué par
-                cette dernière.
-              </p>
-              <p>
-                A tout moment, et à la demande du Titulaire, Hostino est
-                tenu de lui fournir gratuitement le(s) code(s)
-                d'autorisation, aussi appelés codes d'autorisation de
-                transfert (EPP) d'un ou de plusieurs noms de domaine, dans
-                un délai d'un (2) jours ouvrables à la réception de ladite
-                demande.
-              </p>
-              <p>
-                Hostino est tenu d'assister les Titulaires pour
-                l'enregistrement, le renouvellement, la résiliation et le
-                transfert des noms de domaine, ainsi que la mise à jour des
-                informations y afférentes. Il est tenu d'apporter tout
-                support nécessaire aux Demandeurs et Titulaires des noms de
-                domaine en vue de renseigner correctement les informations
-                requises.
-              </p>
-              <p>
-                Hostino ne doit collecter, utiliser ou communiquer aucune
-                donnée, personnelle ou autre, relative à un Titulaire, à des
-                fins autres que celles prévues par l'enregistrement et la
-                gestion des noms de domaine du Titulaire et ce, conformément
-                aux dispositions réglementaires en vigueur. L'utilisation de
-                ces données doit se faire en conformité avec la
-                réglementation sur la protection des personnes physiques à
-                l'égard du traitement des données à caractère personnel.
-              </p>
-              <h3>7. Conditions générales et limites de support</h3>
-              <p>
-                7.1 Limites d'assistance – Hostino fournit une assistance
-                technique à ses clients directs uniquement et le fait
-                conformément aux limites de support qu'elle a définies.
-                L'assistance de Hostino est conçue pour aider les clients à
-                utiliser et à se connecter au service d'hébergement et ne
-                s'étend pas au diagnostic ou à la résolution des problèmes
-                liés au codage d'un site web ou d'une application web
-                hébergés dans le service d'hébergement du client.
-                L'assistance technique se fait par les moyens de support
-                affichés sur le site, à savoir : par téléphone durant les
-                horaires de travail ou par ticket de support 24h/24 et 7j/7.
-                Hostino ne peut fournir aucun service de télé-assistance et
-                l'équipe de support ne peut en aucun cas se connecter à
-                distance au poste du client.
-              </p>
-              <p>
-                7.1.1 Assistance aux clients du client – Hostino ne fournit
-                pas d'assistance technique directe aux clients du client.
-                Les revendeurs, les affiliés, les clients des serveurs, et
-                les clients qui ont plusieurs comptes d'hébergement
-                individuels sous un seul compte client ne doivent pas
-                conseiller à leurs clients de contacter Hostino directement
-                et doivent plutôt contacter Hostino au nom de leur client.
-                Hostino est heureux de vous aider pour toutes les questions
-                de support qui entrent dans le cadre de nos limites de
-                support lorsqu'il est demandé par le client direct.
-              </p>
-              <p>
-                7.2 Assistance avancée – Lorsque Hostino peut et accepte de
-                fournir une assistance avancée au client, des frais de
-                service supplémentaires pourraient être requises pour cette
-                intervention. Les frais d'assistance avancée sont payables à
-                l'avance en fonction du temps estimé par Hostino pour la
-                tâche supplémentaire à effectuer. Hostino ne garantit pas
-                qu'un problème ou une tâche sera résolu dans le temps
-                estimé, et si un temps supplémentaire est nécessaire, le
-                temps d'assistance avancée supplémentaire devra être payé
-                avant que tout travail supplémentaire ne soit effectué.
-              </p>
-              <p>
-                7.3 Responsabilité du contenu et de l'activité du compte –
-                Le client est seul responsable du contenu stocké et servi
-                par le service d'hébergement acheté et de l'activité de tout
-                script ou service de courrier électronique créé dans le
-                cadre du service d'hébergement. Le client doit maintenir la
-                sécurité de tous les mots de passe des comptes et des
-                applications ou des scripts et s'assurer que tous les
-                scripts dans le cadre du service d'hébergement sont exempts
-                de contenu malveillant qui pourrait nuire à toute partie de
-                l'infrastructure de Hostino, d'autres comptes clients
-                hébergés par Hostino, ou les systèmes externes des visiteurs
-                visualisant le contenu hébergé.
-              </p>
-              <p>
-                7.3.1 Utilisation acceptable – Le client doit s'assurer à
-                tout moment qu'il se conforme à la Politique d'utilisation
-                acceptable de Hostino et ne doit pas héberger de contenu ou
-                permettre toute activité de compte qui enfreint la PUA. Les
-                violations de la PUA sont régies par les conditions
-                suivantes :
-              </p>
-              <p>
-                7.3.1.1 Première violation – Lorsque Hostino détermine qu'un
-                service d'hébergement a violé un élément quelconque de la
-                PUA, le client reçoit un avertissement par courrier
-                électronique l'informant de la violation. Le service
-                d'hébergement peut, à la discrétion de Hostino, faire
-                l'objet d'une suspension temporaire en attendant que le
-                client accepte par écrit de s'abstenir de toute autre
-                violation.
-              </p>
-              <p>
-                7.3.1.2 Deuxième violation – Lorsque Hostino détermine qu'un
-                service d'hébergement a commis une deuxième violation de
-                tout élément de la PUA, le service d'hébergement sera soumis
-                à une suspension immédiate ou à une résiliation sans aucun
-                autre avis.
-              </p>
-              <p>
-                7.3.1.3 Suspension du service ou annulation – Hostino se
-                réserve le droit de suspendre l'accès au service
-                d'hébergement du client si, selon le jugement de Hostino, le
-                service du client est la source ou la cible de la violation
-                de l'une des conditions de la PUA ou des présentes
-                conditions de service. Si une activité inappropriée est
-                détectée, tous les comptes du client en question seront
-                désactivés jusqu'à la fin de l'enquête. La notification
-                préalable au client n'est pas assurée et dans des cas
-                extrêmes, les forces de l'ordre seront contactées au sujet
-                de l'activité. Le client ne sera pas crédité pour la durée
-                de la suspension du service d'hébergement.
-              </p>
-              <p>
-                7.3.2 Applications web – Le client doit s'assurer que toutes
-                les applications web utilisées sur le service d'hébergement
-                sont sécurisées, patchées et mises à jour. Les applications
-                open source sont vulnérables aux attaques via des exploits
-                dans le logiciel, et les développeurs du logiciel
-                fournissent généralement des mises à jour lorsque des
-                vulnérabilités ont été détectées. Il est de la
-                responsabilité du client d'installer toutes les mises à
-                jour/rappels pour maintenir la sécurité de l'application. Si
-                le client n'a pas les compétences requises pour effectuer
-                les mises à jour, il devra faire appel aux services d'un
-                développeur web capable de l'aider.
-              </p>
-              <p>
-                7.3.3 Maintien de la compatibilité – La nature des
-                environnements d'hébergement partagé et des applications de
-                serveur telles que Apache, PHP et MySQL est qu'ils sont
-                constamment mis à jour pour maintenir la stabilité, la
-                performance et la sécurité. Le fait de maintenir les
-                applications web patchées et mises à jour garantit à la fois
-                la sécurité du site web et des données, et est également
-                essentiel pour maintenir la compatibilité avec les
-                changements des applications serveur. Hostino met
-                régulièrement à jour toutes les applications serveur et il
-                est de la responsabilité du client de maintenir les
-                applications web installées pour assurer la compatibilité
-                avec les dernières versions stables et supportées de toutes
-                les applications serveur.
-              </p>
-              <p>
-                7.4 Utilisation des ressources – Tous les services
-                d'hébergement achetés ont une variété de limitations de
-                ressources appliquées conformément au plan applicable
-                associé au service. Il est de la responsabilité du client de
-                s'assurer que son service d'hébergement ne dépasse pas les
-                ressources allouées et de mettre à niveau son service s'il
-                est déterminé que plus de ressources sont nécessaires pour
-                garantir le bon fonctionnement d'un service d'hébergement.
-              </p>
-              <p>
-                7.4.1 Utilisation abusive des ressources (à l'exclusion des
-                clients de serveurs dédiés) – Hostino met en place des
-                restrictions de ressources par compte sur tous les services
-                d'hébergement partagés, revendeurs et VPS qui varient d'un
-                plan à l'autre. En plus de ces restrictions, les clients ne
-                doivent pas :
-              </p>
-              <p>
-                Utiliser 50 % ou plus des ressources CPU allouées pendant
-                plus de 60 secondes.
-                <br />
-                Exécuter des processus autonomes et non surveillés côté
-                serveur à tout moment sur le serveur. Cela inclut tous les
-                démons, tels que IRCD.
-                <br />
-                Exploiter un compte sur tout serveur partagé ou revendeur
-                dans le but de stocker des fichiers dont le contenu n'est
-                pas lié à l'exploitation et à la livraison de leurs
-                applications web ou qui pourrait violer la PUA de Hostino.
-                <br />
-                Exécuter tout type de logiciel d'indexation sur tout serveur
-                partagé ou revendeur.
-                <br />
-                Exécuter tout logiciel qui s'interface avec un réseau IRC
-                (Internet Relay Chat).
-                <br />
-                Exécuter tout type d'application de torrent binaire ou de
-                tracker ou participer à toute activité illégale de partage
-                de fichiers.
-                <br />
-                Exécuter des tâches cron sur un serveur partagé ou revendeur
-                avec des intervalles de moins de 5 minutes.
-                <br />
-                Exécuter des bases de données MySQL excessivement
-                volumineuses sur des serveurs partagés ou des comptes de
-                revendeurs. Les bases de données avec un nombre excessif de
-                tables MySQL (plus de 1000) ou d'une taille supérieure à 1
-                Go peuvent affecter négativement les performances du serveur
-                et sont strictement interdites.
-                <br />
-                Exécuter toute requête MySQL de plus de 15 secondes sur des
-                serveurs partagés ou des serveurs de revendeurs. Les tables
-                MySQL doivent être indexées de manière appropriée et
-                régulièrement mises à jour afin de garantir que les tables
-                individuelles ne contiennent pas un nombre excessif de
-                lignes.
-                <br />
-                Stocker plusieurs sauvegardes d'un compte d'hébergement sur
-                un serveur d'hébergement partagé. Les archives de sauvegarde
-                créées par les outils de sauvegarde d'un serveur sont
-                conçues pour être téléchargées hors du serveur afin de
-                maintenir des sauvegardes hors site. Faire des sauvegardes
-                qui contiennent d'autres archives de sauvegarde peut
-                entraîner une forte charge sur les matrices de stockage et
-                est strictement interdit. Tout service d'hébergement qui
-                dispose de plusieurs sauvegardes sur le serveur peut être
-                suspendu par Hostino jusqu'à ce que les sauvegardes soient
-                supprimées.
-                <br />
-                Stocker des fichiers dont la taille dépasse 100 Mo et qui ne
-                sont pas utilisés pour le besoin du site web. L'espace
-                d'hébergement ne doit en aucun cas être utilisé comme un
-                système de stockage ou d'archivage des fichiers. Tout le
-                contenu qui y figure doit être utilisé sur le site web.
-                <br />
-                Générer des sauvegardes sur l'hébergement partagé ou chez un
-                revendeur pour les comptes consommant plus de 15 Go d'espace
-                disque. Vous devez d'abord contacter le support technique,
-                puis une sauvegarde sera générée pour vous.
-                <br />
-                Conserver les emails dans la corbeille pendant plus de 30
-                jours. Les emails qui ont été conservés dans la corbeille
-                pendant plus de 30 jours seront automatiquement supprimés.
-                <br />
-                Utiliser des ressources VPS excessives en raison d'une
-                mauvaise configuration. Lorsqu'un client dispose d'un VPS
-                autogéré ou géré, nous pouvons apporter des modifications
-                mineures à la configuration sans préavis si la configuration
-                de ce serveur affecte négativement les autres serveurs VPS
-                sur le même hôte.
-                <br />
-                Stocker les fichiers dans la corbeille du cPanel. Lorsque
-                les fichiers sont supprimés via le gestionnaire de fichiers
-                du cPanel, ils sont temporairement stockés dans le dossier
-                Corbeille. Ce dossier contenant les fichiers supprimés sera
-                automatiquement effacé tous les 30 jours.
-                <br />
-                7.4.2 Inodes – Chaque fichier et répertoire hébergé sur les
-                serveurs de Hostino utilise 1 inode et les comptes
-                considérés comme utilisant un nombre excessif d'inodes sur
-                les serveurs partagés ou revendeurs devront mettre à niveau
-                leur service d'hébergement ou supprimer des fichiers. Pour
-                les services d'hébergement mutualisé et revendeur, un nombre
-                d'inodes de 250 000 ou plus est considéré comme excessif et
-                cause de problèmes de performances au niveau de
-                l'environnement. Nous recommandons de maintenir un nombre
-                d'inodes inférieur à 100 000 par compte pour une performance
-                optimale. Pour l'hébergement en VPS, un nombre d'inodes de 4
-                000 000 ou plus est considéré comme excessif.
-              </p>
-              <p>
-                7.4.3 Surveillance de la bande passante et du transfert de
-                données – La bande passante et le transfert de données sont
-                surveillés de différentes manières dans notre gamme de
-                services. Ci-dessous, les détails :
-              </p>
-              <p>
-                Les plans d'hébergement et de revendeurs partagés qui
-                incluent une bande passante « illimitée » ne sont surveillés
-                que pour une utilisation élevée. Ceci est fait pour
-                s'assurer que les services utilisant de grandes quantités de
-                bande passante le font conformément à nos conditions de
-                service.
-              </p>
-              <p>
-                Toute la bande passante est surveillée sur un cycle de mois
-                calendaire et peut ne pas correspondre au cycle de
-                facturation exact du service.
-              </p>
-              <p>
-                Les alertes aux clients sont envoyées à l'adresse
-                électronique de contact enregistrée dans le dossier avant
-                que tout quota de bande passante fixe ne soit atteint. Il
-                est de la responsabilité du client de contacter Hostino pour
-                appliquer une mise à niveau ou un addon approprié pour le
-                service concerné afin de couvrir toute utilisation
-                supplémentaire au-delà du quota du plan fixe.
-              </p>
-              <p>
-                Pour les plans d'hébergement du revendeur avec des quotas de
-                bande passante fixes, le dépassement du quota attribué
-                entraînera la suspension du service du revendeur et de tous
-                les sous-comptes jusqu'à ce que le plan soit mis à niveau
-                avec une bande passante supplémentaire. Pour acheter une
-                bande passante supplémentaire, le service doit être mis à
-                niveau vers le plan suivant qui fournit une bande passante
-                suffisante pour répondre aux besoins du revendeur.
-              </p>
-              <p>
-                Pour les plans VPS avec des quotas de bande passante fixes,
-                le dépassement du quota attribué entraînera la suspension du
-                service jusqu'à ce que le plan soit mis à niveau avec une
-                bande passante supplémentaire. Pour acheter une bande
-                passante supplémentaire, le service doit être mis à niveau
-                vers le plan suivant qui fournit une bande passante
-                suffisante pour répondre aux besoins du revendeur.
-              </p>
-              <p>
-                7.4.4 Abus de bande passante – Hostino se réserve le droit
-                de façonner, suspendre ou mettre fin au service de tout
-                client qui cause des problèmes de stabilité ou des problèmes
-                de performance pour les autres clients sur le réseau
-                Hostino. Hostino se réserve le droit, dans une situation où
-                le trafic d'un client entraîne des coûts non viables pour
-                son entreprise, soit de facturer le client à un tarif viable
-                (changement de plan/taux), soit de suspendre/interrompre le
-                service.
-              </p>
-              <p>
-                7.5 Streaming média – Hostino n'autorise pas le streaming
-                média sur aucun de ses plans d'hébergement. Les clients qui
-                souhaitent fournir des services de diffusion en continu de
-                médias doivent utiliser nos plans de serveurs dédiés. Les
-                services qui ne respectent pas cette clause sont
-                immédiatement suspendus sans notification préalable.
-              </p>
-              <p>
-                7.6 Offres obsolètes – Hostino se réserve le droit de mettre
-                à niveau le compte d'un client si l'offre contractée est
-                devenue obsolète et n'est plus listée sur le site de
-                Hostino. Le client est avisé par email et la modification
-                s'applique dès la date d'échéance qui suit la mise à niveau
-                du compte.
-              </p>
-              <h3>8. Outils, applications et licences de tiers</h3>
-              <p>
-                8.1 Applications et licences de tiers – Hostino peut fournir
-                l'accès à des logiciels et/ou services supplémentaires de
-                tiers (« Produits de tiers ») par le biais de revendeurs ou
-                d'autres accords commerciaux que Hostino a établis avec
-                certains fournisseurs (« Fournisseurs de tiers »). Sauf
-                indication contraire, le client comprend que l'assistance
-                technique pour les produits tiers est fournie par Hostino et
-                non par le fournisseur tiers. Ni Hostino ni aucun
-                fournisseur tiers ne fait de déclaration ou de garantie,
-                expresse ou implicite, concernant les produits tiers. Le
-                client reconnaît et accepte expressément que l'utilisation
-                de produits tiers est à ses propres risques et que ces
-                produits tiers sont fournis « tels quels » et sans
-                représentation ou garantie d'aucune sorte de Hostino ou d'un
-                fournisseur tiers, y compris, sans limitation, toute
-                garantie implicite de qualité marchande, d'adéquation à un
-                usage particulier, d'exactitude ou d'exhaustivité des
-                réponses ou des résultats, de correspondance à la
-                description ou de non-violation des droits des tiers. Dans
-                la mesure maximale permise par la loi applicable, ni Hostino
-                ni aucun fournisseur tiers ne sera légalement responsable de
-                tout dommage, qu'il soit direct, indirect ou consécutif,
-                découlant de l'utilisation ou de l'incapacité d'utiliser un
-                produit tiers. Le client s'engage à respecter les termes de
-                toute licence et/ou contrat d'abonnement d'utilisateur final
-                applicable pour les produits tiers et le client sera
-                entièrement responsable envers les fournisseurs tiers et/ou
-                Hostino en ce qui concerne toute utilisation inappropriée de
-                ces produits tiers ou la violation des contrats de licence
-                avec eux et/ou des contrats d'abonnement d'utilisateur final
-                applicables.
-              </p>
-              <p>
-                8.2 Licences Microsoft – Lorsque des licences pour les
-                logiciels Microsoft ont été achetées par Hostino, le client
-                s'engage à respecter les conditions de licence Microsoft, et
-                si des licences d'utilisation sont achetées, il est de la
-                responsabilité du client de s'assurer qu'il rapporte avec
-                précision et obtient le niveau approprié de licences
-                d'utilisation pour ses utilisations comme indiqué dans les
-                conditions de licence Microsoft.
-              </p>
-              <p>
-                8.3 Licences Google – Lorsque des licences pour les
-                logiciels Google ont été achetées par Hostino, le client
-                s'engage à respecter les conditions de licence Google, et si
-                des licences d'utilisation sont achetées, il est de la
-                responsabilité du client de s'assurer qu'il rapporte avec
-                précision et obtient le niveau approprié de licences
-                d'utilisation pour ses utilisations comme indiqué dans les
-                conditions de licence Google.
-              </p>
-              <p>
-                8.4 Disponibilité des fonctions – Hostino ne garantit pas
-                que toutes les fonctions disponibles dans un produit tiers
-                seront prises en charge ou mises à la disposition du client.
-                Il est à la seule discrétion de Hostino de déterminer
-                quelles fonctions sont activées et si Hostino fournira une
-                assistance pour l'utilisation des fonctions activées.
-              </p>
-              <h3>9. Informations juridiques complémentaires</h3>
-              <p>
-                9.1 Divulgation aux forces de l'ordre – La PUA de Hostino
-                interdit spécifiquement l'utilisation de notre service pour
-                des activités illégales et le client accepte que Hostino
-                puisse divulguer toute information sur le client, y compris
-                les numéros IP attribués, l'historique du compte,
-                l'utilisation du compte, etc. à tout agent des forces de
-                l'ordre qui en fait la demande par écrit sans autre
-                consentement ou notification au client. Hostino se réserve
-                le droit de mettre immédiatement fin à tout service
-                d'hébergement dont il s'avère qu'il héberge du contenu et
-                exerce des activités de nature illégale.
-              </p>
-              <p>
-                9.2 Sécurité du système et du réseau – Il est interdit aux
-                utilisateurs de violer ou de tenter de violer la sécurité du
-                réseau Hostino. Les violations de la sécurité du système ou
-                du réseau peuvent entraîner une responsabilité civile ou
-                pénale. Hostino enquêtera sur les événements qui peuvent
-                impliquer de telles violations et peut impliquer, et
-                coopérer avec les autorités chargées de l'application des
-                lois pour poursuivre les utilisateurs qui sont impliqués
-                dans ces violations. Ces violations comprennent, sans
-                limitation :
-              </p>
-              <p>
-                L'accès à des données non destinées à cet utilisateur ou la
-                connexion à un serveur ou un compte, auquel cet utilisateur
-                n'est pas autorisé à accéder.
-              </p>
-              <p>
-                Tenter de sonder, de scanner ou de tester la vulnérabilité
-                d'un système ou d'un réseau ou de violer les mesures de
-                sécurité ou d'authentification sans autorisation appropriée.
-              </p>
-              <p>
-                Tenter d'interférer avec le service à tout utilisateur, hôte
-                ou réseau, y compris, sans limitation, par des moyens de
-                surcharge, "d'inondation », de « mail bombing » ou de «
-                crash ».
-              </p>
-              <p>
-                Falsifier l'en-tête d'un paquet TCP/IP ou une partie des
-                informations de l'en-tête d'un courrier électronique ou d'un
-                message envoyé à un groupe de discussion.
-              </p>
-              <p>
-                Entreprendre toute action afin d'obtenir des services
-                auxquels cet utilisateur n'a pas droit.
-              </p>
-              <p>
-                9.3 Limitation de responsabilité – Hostino ne garantit pas
-                que tout hébergement ou service supplémentaire fourni sera
-                exempt d'erreurs ou d'interruptions. Hostino n'acceptera
-                aucune responsabilité pour les coûts ou les pertes encourus
-                par le client qui résultent de :
-              </p>
-              <p>
-                l'utilisation ou l'incapacité d'utiliser un service de
-                Hostino;
-              </p>
-              <p>
-                de toutes erreurs, fautes, omissions, interruptions, défauts
-                ou retards de fonctionnement ou de livraison;
-              </p>
-              <p>
-                l'accès non autorisé aux données ou aux services de Hostino;
-              </p>
-              <p>
-                la suspension ou la cessation des services en raison de
-                violations de la PUA;
-              </p>
-              <p>
-                la suspension ou la cessation de services en raison
-                d'obligations légales.
-              </p>
-              <p>
-                9.4 Indemnisation – Le client s'engage à indemniser Hostino
-                de toutes les demandes, responsabilités, pertes, coûts et
-                réclamations, y compris les frais juridiques raisonnables
-                revendiqués contre Hostino, qui peuvent survenir ou résulter
-                de l'utilisation de tout service d'hébergement fourni.
-              </p>
-              <p>
-                9.5 Modification des présentes conditions – Hostino se
-                réserve le droit de modifier, mettre à jour ou changer les
-                présentes conditions de service sans notification préalable.
-                Lorsque des modifications sont apportées qui peuvent avoir
-                un impact sur l'utilisation par le client d'un service de
-                Hostino, le client sera informé par e-mail en utilisant les
-                principales coordonnées de courriel au sein d'un compte et
-                la poursuite de l'exploitation par le client de tout
-                hébergement ou de services supplémentaires constitue une
-                acceptation des présentes conditions de service.
-              </p>
-              <p>Termes et conditions appliqués de l'ICANN :</p>
-              <p>
-                https://www.icann.org/resources/pages/approved-with-specs-2013-09-17-en
-                <br />
-                https://www.icann.org/resources/pages/educational-2012-02-25-en
-                <br />
-                https://www.icann.org/resources/pages/benefits-2013-09-16-en
-                <br />
-                https://lookup.icann.org/
-                <br />
-                Certains domaines sont régis par le Registrar Soluciones
-                Coporativas IP SL.
-              </p>
+                By purchasing hosting, a domain name, or any other service or
+                product from Hostino, you (the customer) enter into an agreement
+                with Hostino that is bound by the terms of service described in
+                this document. This agreement shall be interpreted in all
+                respects in accordance with the laws of the Kingdom of Morocco,
+                applicable to enforceable contracts in that country. By
+                completing the ordering process, you agree to have read,
+                understood, and be bound by these terms of service.
+              </p>
+              <h3>1. Definitions</h3>
+              <p>
+                <b>1.1 Hosting Service</b> – Any shared, reseller, virtual, or dedicated
+                space used to store and distribute content on the web.
+              </p>
+              <p>
+                <b>1.2 Additional Services</b> – Any product or service considered
+                an "addon" to a primary hosting service, or which covers the one-time
+                fees for additional work performed by a Hostino staff member.
+              </p>
+              <p>
+                <b>1.3 Resource Usage</b> – All resources allocated to the customer
+                to enable the storage and delivery of web content within a hosting
+                service. This includes, but is not limited to, disk space, memory,
+                processes, and bandwidth.
+              </p>
+              <p>
+                <b>1.4 Subscription</b> – The duration (monthly, quarterly, biannual,
+                annual) applicable to the purchased service.
+              </p>
+              <p>
+                <b>1.5 Client Area</b> – A client account management interface for
+                managing the billing of hosting, domain names, or additional services
+                purchased, including invoices, contact details, and domain registrations.
+              </p>
+              <p>
+                <b>1.6 AUP</b> – Acceptable Use Policy, which defines the usage limits
+                for each service.
+              </p>
+              <div>
+                <h3>2. Identity</h3>
+                <ul class="list-disc identity text-[17px]">
+                  <li>
+                    Company:&nbsp;<b>Hostino SARL AU</b>
+                  </li>
+                  <li>
+                    Office address: <b>T100 Technopark Tangier, Morocco.</b>
+                  </li>
+                  <li>
+                    General Manager: <b>Aniss KIASSI</b>
+                  </li>
+                  <li>
+                    RC:&nbsp;<b>123893 Tangier</b>
+                  </li>
+                  <li>
+                    Patent: <b>50412781</b>
+                  </li>
+                  <li>
+                    IF:&nbsp;<b>51707097</b>
+                  </li>
+                  <li>
+                    RIB:&nbsp;<b>164 640 21211 52330320002 28</b>
+                  </li>
+                  <li>
+                    ICE:&nbsp;<b>002984236000036</b>
+                  </li>
+                  <li>
+                    E-mail:&nbsp;<b>info@hostino.ma</b>
+                  </li>
+                  <li>
+                    Website: <b>hostino.ma</b>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div>
+                  <h3>3. Fees</h3>
+                  <ul>
+                    <p>
+                      <b>3.1 Payment</b> – Activation of any domain name, hosting,
+                      or additional service is dependent upon Hostino receiving payment
+                      of the fees indicated on the website or any other documentation
+                      or custom quote provided to the customer. Subsequent payments
+                      are due on the anniversary date of the subscription period
+                      in advance for the service of the following subscription period.
+                      All service fees are indicated in the product description or
+                      will be communicated to the customer before payment is required
+                      for any custom quote or service ordered by phone.
+                    </p>
+                    <p>
+                      <b>3.2 Setup Fees</b> – The customer agrees to pay in advance
+                      and in full any non-recurring amount necessary for the initial
+                      deployment of the purchased hosting service. These fees are
+                      indicated as setup fees in the service description or will
+                      be disclosed in any custom quote prior to any server provisioning,
+                      equipment acquisition, or installation by Hostino.
+                    </p>
+                    <p>
+                      <b>3.3 Recurring Fees</b> – All subscriptions for domain name
+                      and hosting services provided by Hostino are recurring in nature,
+                      and the customer agrees to pay all recurring fees listed in
+                      the service description in advance on each anniversary date
+                      to confirm the renewal of their service.
+                    </p>
+                    <p>
+                      <b>3.4 Non-Refundable Fees</b> – Certain fees paid to Hostino
+                      are considered non-refundable due to the nature of the product
+                      or service purchased, and this includes, but is not limited
+                      to, the following:
+                    </p>
+                    <p>
+                      <b>3.4.1 Third-party products</b> – Products provided by Hostino
+                      where Hostino acts as a reseller for another provider (e.g.
+                      domain registrations, SSL certificates, Google and Microsoft
+                      email licenses, third-party product licenses) are provided
+                      as non-refundable products and refunds cannot be made once
+                      the product has been activated on an account.
+                    </p>
+                    <p>
+                      <b>3.4.2 Advanced Administration Time</b> – Services for which
+                      additional work must be performed by Hostino staff are non-refundable
+                      once the additional work has been completed.
+                    </p>
+                    <p>
+                      <b>3.5 Invoices and Statements</b> – Invoices are provided
+                      to the customer via email using the contact email address assigned
+                      to the customer or any additional billing contact in Hostino's
+                      billing system. If the customer wishes to receive an original
+                      copy of their invoice, they must request it from customer support,
+                      indicating the postal address to which they wish to receive
+                      the invoice.
+                    </p>
+                    <p>
+                      <b>3.6 Statements</b> – Hostino does not provide written or
+                      printed statements. However, an account's billing history is
+                      always available for the customer to view in their dedicated
+                      area.
+                    </p>
+                    <p>
+                      <b>3.7 Default of payment</b> – Hostino may temporarily deny
+                      service or terminate this agreement in the event of a customer's
+                      default in paying the applicable subscription fees for recurring
+                      charges when the fees are 30 days overdue. This termination
+                      or denial does not release the customer from the responsibility
+                      of paying all accrued charges for renewed services, plus reasonable
+                      interest and collection fees. Accounts that are not recoverable
+                      by Hostino may be turned over to an external collection agency,
+                      which may result in additional fees or penalties.
+                    </p>
+                  </ul>
+                </div>
 
-              <span class="text-[18px] text-[#808080] poppins-regular">
-                Dernière mise à jour: 03 avril 2025.
-              </span>
+                <div>
+                  <h3>4. Refunds, disputes, and cancellations</h3>
+                  <ul>
+                    <li>
+                      <b>4.1 Money back guarantee</b> – Hostino offers a 30-day money-back
+                      guarantee for shared hosting or reseller services.
+                    </li>
+                    <li>
+                      <b>4.2 Refunds</b> – All payments made to Hostino are non-refundable,
+                      unless the refund period is applicable and the refund request
+                      is made within 30 days of the service activation date. One-time
+                      setup fees and additional charges are not refundable, except
+                      when ordered hosting or additional services cannot be provided
+                      by Hostino. When an ordered service cannot be provided but
+                      an alternative service is provided instead, all applicable
+                      one-time setup fees remain due. Refunds are not provided automatically
+                      and must be requested by the customer within 30 days of the
+                      cancellation request.
+                    </li>
+                    <li>
+                      Refunds for payments made through PayPal or international
+                      credit cards are made to the issuing PayPal account or the
+                      bank account linked to the international card used for
+                      payment.
+                    </li>
+                    <li>
+                      For all other payment methods (Moroccan bank card,
+                      Tasshilat, cash, bank transfer, and bank deposit), the
+                      refund is made to the customer's balance and is viewable
+                      in their client area. The balance can be used to pay for
+                      new orders.
+                    </li>
+                    <li>
+                      <b>4.3 Disputes</b> – All disputes relating to overcharges
+                      or billing must be reported within 60 days of the time the
+                      dispute occurred. If you dispute a charge to your credit card
+                      issuer that, in Hostino's sole discretion, is a valid charge
+                      under the provisions of these terms of service, you agree to
+                      pay Hostino an "administrative fee" of a minimum of 500 MAD
+                      and a maximum of 1500 MAD.
+                    </li>
+                    <li>
+                      <b>4.4 Cancellation of the service by the customer</b> – Hostino
+                      provides a recurring and continuous service that will remain
+                      active until its expiration date. A proforma renewal invoice
+                      is generated in the customer's account fifteen days before
+                      the due date. If the customer does not make the payment, the
+                      service is automatically suspended. The customer may request
+                      cancellation at any time through their client area, choosing
+                      between immediate cancellation of the service or cancellation
+                      at the end of the subscription. If a cancellation request is
+                      submitted, no renewal invoice is generated.
+                    </li>
+                    <li>
+                      <b>4.4.1 No Cancellation Fee</b> – Hostino does not charge
+                      cancellation fees and does not refund prepaid fees unless the
+                      money-back guarantee is applicable.
+                    </li>
+                    <li>
+                      <b>4.4.2 No Access to Account</b> – If the customer wishes
+                      to cancel a service and cannot access their client area for
+                      any reason, the customer must contact Hostino by phone or support
+                      ticket to obtain the necessary login information or instructions
+                      for submitting a cancellation request.
+                    </li>
+                    <li>
+                      <b>4.4.3 Customer Data</b> – In the event of a successful cancellation
+                      of a hosting service, all data stored in the canceled service
+                      will be deleted. Hostino provides no guarantee that customer
+                      data will be recoverable once the cancellation process is complete.
+                    </li>
+                    <li>
+                      <b>4.5 Service cancellation by Hostino</b> – Hostino may cancel
+                      the customer's hosting service for any breach of these terms
+                      of service or terms of use without prior notice. Hostino provides
+                      no guarantee that the customer's data will be recoverable once
+                      the cancellation process is complete.
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3>5. Account ownership</h3>
+                  <ul>
+                    <li>
+                      <b>5.1 Account Owner</b> – The primary email and contact information
+                      of the account holder in the client area is considered the
+                      legal owner of the account. Individual hosting or additional
+                      services associated with an account are controlled by the account
+                      owner, and modifications and updates to an account's information
+                      can only be made by the account owner or their authorized additional
+                      contact. The account owner is established at the time the account
+                      is created. The contact details of an account owner must be
+                      those of a real person. It is not permitted to use fictitious
+                      or "fake" names for the contact details of an account owner.
+                      Accounts containing fictitious or "fake" names and contact
+                      details that do not reflect the contact details of a real person
+                      may be suspended or terminated without notice.
+                    </li>
+                    <li>
+                      The legal holder of a domain name registered with Hostino
+                      is the default account owner or the contact indicated by
+                      the account owner during domain name registration.
+                    </li>
+                    <li>
+                      <b>5.2 Account Information</b> – The customer warrants that
+                      all information provided to Hostino is truthful, correct, accurate,
+                      and up-to-date and that the person designated as the account
+                      owner is 18 years of age or older and is legally empowered
+                      to act and enter into this contract as a customer or on behalf
+                      of the customer.
+                    </li>
+                    <li>
+                      <b>5.2.1 Maintaining of Account Information</b> – The customer
+                      is responsible for maintaining the contact information provided
+                      on their account, and failure to maintain up-to-date contact
+                      information does not guarantee exoneration from fees, late
+                      fees, or warnings issued by Hostino.
+                    </li>
+                    <li>
+                      <b>5.3 Authorized Additional Contact</b> – The account owner
+                      may add and authorize one or more additional contact persons
+                      to act on their behalf.
+                    </li>
+                    <li>
+                      For any additional contact added to an account to request
+                      account modifications, the authorized additional contact
+                      must be set up as a sub-account with their own login
+                      information and have appropriate permissions. If the
+                      authorized additional contact is not enabled as a
+                      sub-account, the contact will only have limited
+                      permissions to support a service and will not be able to
+                      request changes to the hosting or domain name
+                      configuration.
+                    </li>
+                    <li>
+                      <b>5.4 Account transfer</b> – The account owner role can be
+                      transferred to another authorized additional contact or an
+                      Hostino customer by contacting our support team.
+                    </li>
+                    <li>
+                      <b>5.5 Account Closure</b> – An account will automatically
+                      be marked as inactive when no active hosting or domain name
+                      or additional service is being operated under the account.
+                      The customer retains access to this account and can use it
+                      at any time to review their order or service history, or to
+                      order a new service.
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3>6. Domain registration, transfer and renewal</h3>
+                  <p>
+                    <b>6.1 Domain registrations</b> – Successful domain name registrations
+                    that have completed the registration process and are considered
+                    active by the domain registration office are final and cannot
+                    be canceled or refunded. Some domain extensions may require additional
+                    information to complete registration, and Hostino provides no
+                    guarantee that a requested domain registration will be confirmed
+                    by the registration office. It is the customer's sole responsibility
+                    to check which information is required to register a particular
+                    domain before placing a domain registration order.
+                  </p>
+                  <p>
+                    In cases where additional information is required by the
+                    registration office to validate the registration of a domain
+                    name, Hostino will contact the customer to request it. If
+                    the customer does not respond within the deadlines or if the
+                    registration office refuses to validate the domain, the fees
+                    are refunded according to the refund policy described above.
+                  </p>
+                  <p>
+                    <b>6.2 Domain transfers</b> – Domain transfers generally take
+                    5 to 7 days once the final authorization has been received by
+                    the domain registration office. Hostino does not have the power
+                    to expedite a domain transfer and cannot provide any guarantees
+                    regarding the time required to perform a transfer. The customer
+                    must ensure that all contact information is up-to-date with the
+                    current domain registrar and that the appropriate transfer codes
+                    have been obtained before placing a domain transfer order with
+                    Hostino.
+                  </p>
+                  <p>
+                    <b>6.3 Domain renewal</b> – Domains must be renewed before their
+                    expiration date to avoid suspension. Multiple notifications are
+                    sent to the customer to inform them of upcoming domain renewals
+                    starting from 60 days before the indicated expiration date. Hostino
+                    has no control over maintaining an active domain name once it
+                    has reached its expiration date and is not responsible for the
+                    inaccessibility of a website because the customer has not renewed
+                    their domain name.
+                  </p>
+                  <p>
+                    <b
+                      >6.4 Specific conditions related to the reservation of .ma
+                      domain names</b
+                    >
+                  </p>
+                  <p>
+                    <b>6.4.1 Obligations and rights of the applicant/holder</b>
+                  </p>
+                  <p>
+                    The Applicant or Holder acknowledges that they have read the
+                    provisions of the naming decision, that they accept to be
+                    bound by all of its terms, in the version adopted and
+                    amended by ANRT:
+                    https://www.anrt.ma/sites/default/files/2015-12-14-gestion-nom-domaine-ma-fr_0.pdf
+                  </p>
+                  <p>
+                    The Holder has exclusive and personal use of the registered
+                    domain name during its validity period, in accordance with
+                    the applicable regulatory provisions.
+                  </p>
+                  <p>
+                    At the time of registration or renewal of a domain name, any
+                    Applicant or Holder is deemed to have accepted the
+                    collection, storage, and processing of their data by the
+                    ANRT, as well as the publication of "WHOIS" data. The data
+                    mentioned during registration will be visible on the
+                    official ANRT website and public WHOIS databases. The Holder
+                    cannot hide this information.
+                  </p>
+                  <p>
+                    The Holder is deemed to have accepted that certain data
+                    concerning them may be transmitted by the ANRT to the
+                    competent authorities or to a third party in accordance with
+                    the applicable legislation.
+                  </p>
+                  <p>
+                    The choice, use, and operation of a domain name, as well as
+                    the related subdomains, are the responsibility of the
+                    Holder. The latter uses the registered domain name and
+                    related subdomains for their own needs, without infringing
+                    on the rights and interests of third parties.
+                  </p>
+                  <p>
+                    The Holder is represented by a natural person, called the
+                    administrative contact, duly mandated for this purpose and
+                    established in Morocco. If the Holder is a natural person,
+                    they may be the administrative contact themselves.
+                  </p>
+                  <p>
+                    The Holder acknowledges and agrees that the administrative
+                    contact is authorized by them to act as the Holder's agent
+                    in the context of domain name registration and management.
+                    In the event of a difference between the Holder and their
+                    administrative contact during a domain name management
+                    operation, the Holder's position shall prevail.
+                  </p>
+                  <p>
+                    The Holder must provide the Provider with effective postal
+                    and electronic addresses concerning them, as well as
+                    effective postal and electronic addresses for their
+                    administrative contact.
+                  </p>
+                  <p>
+                    The Holder must ensure that all information relating to the
+                    registration of a domain name, communicated to their
+                    Provider, is up-to-date, complete and accurate. They are
+                    required to immediately update this information in case of
+                    any changes affecting it. The Holder is responsible for
+                    verifying that the data published on the "WHOIS" is complete
+                    and accurate, and for promptly making any necessary updates
+                    with the Provider.
+                  </p>
+                  <p>
+                    The Holder may renew their domain name at any time in
+                    accordance with the naming decision. Upon expiration of the
+                    domain name, the Holder is required to renew their domain
+                    name during the renewal grace period if they wish to
+                    maintain it.
+                  </p>
+                  <p>
+                    Upon the expiration of a domain name, the Provider may
+                    terminate it if the Holder does not proceed with the payment
+                    of the associated renewal fees. At the end of the renewal
+                    grace period, the domain name is deleted by the ANRT.
+                  </p>
+                  <p>
+                    The Holder may terminate their domain name before its
+                    expiration date. The domain name has a termination grace
+                    period during which the Holder may proceed with its
+                    re-registration.
+                  </p>
+                  <p>
+                    The Holder has the right to request a change of Provider at
+                    any time, subject to compliance with the provisions of the
+                    naming decision and this contract.
+                  </p>
+                  <p>
+                    The Holder has the right to transfer their domain name to
+                    another person, subject to compliance with the terms of the
+                    naming decision and this contract.
+                  </p>
+                  <p>
+                    The Holder undertakes to submit to the alternative dispute
+                    resolution procedure and to any decision of the ANRT
+                    concerning the registered ".ma" domain name.
+                    http://www.wipo.int/amc/en/domains/rules/cctld/ma/index.html
+                  </p>
+                  <p><b>6.4.2 Obligations and rights of Hostino</b></p>
+                  <p>
+                    Hostino is required to inform the Holder of the expiration
+                    of their domain name thirty (30) days before its due date
+                    and allow them to renew their domain name before or during
+                    the 29 days of the grace period, which is 30 days for .MA
+                    domain names.
+                  </p>
+                  <p>
+                    Hostino must make changes related to domain names and
+                    Holders in the Registry whenever such changes are
+                    communicated to them by the Holder.
+                  </p>
+                  <p>
+                    Upon termination of the domain name, Hostino is required to
+                    inform the Holder, specifying the termination grace period
+                    during which they can recover the terminated domain name at
+                    any time.
+                  </p>
+                  <p>
+                    Hostino is required to provide Holders with a website that
+                    necessarily includes their complete and up-to-date contact
+                    information. It must also publish on this site any changes
+                    made by ANRT to regulatory provisions and domain name
+                    registration and management procedures.
+                  </p>
+                  <p>
+                    Hostino is required to make the Holder aware of any
+                    information or notification concerning them as soon as it is
+                    received from ANRT.
+                  </p>
+                  <p>
+                    Hostino must promptly inform the concerned Holder of any
+                    freeze, block, or deletion of a domain name by ANRT,
+                    communicating the reason as provided by the latter.
+                  </p>
+                  <p>
+                    At any time, and at the request of the Holder, Hostino is
+                    required to provide them free of charge with the
+                    authorization code(s), also called transfer authorization
+                    codes (EPP) for one or more domain names, within two (2)
+                    working days of receiving said request.
+                  </p>
+                  <p>
+                    Hostino is required to assist Holders in registering,
+                    renewing, terminating, and transferring domain names, as
+                    well as updating the related information. It is required to
+                    provide all necessary support to Applicants and Holders of
+                    domain names to correctly complete the required information.
+                  </p>
+                  <p>
+                    Hostino must not collect, use, or disclose any data,
+                    personal or otherwise, relating to a Holder, for purposes
+                    other than those provided for by the registration and
+                    management of the Holder's domain names, and in accordance
+                    with the applicable regulatory provisions. The use of this
+                    data must comply with the regulations on the protection of
+                    individuals with regard to the processing of personal data.
+                  </p>
+                </div>
+
+                <div>
+                  <h3>7. General conditions and limits of support</h3>
+                  <p>
+                    <b>7.1 Support Limits</b> – Hostino provides technical support
+                    to its direct customers only and does so in accordance with the
+                    support limits it has defined. Hostino's support is designed
+                    to help customers use and connect to the hosting service and
+                    does not extend to diagnosing or resolving issues related to
+                    the coding of a website or web application hosted in the customer's
+                    hosting service. Technical support is provided through the support
+                    means displayed on the website, namely: by phone during working
+                    hours or by support ticket 24/7. Hostino cannot provide remote
+                    assistance services, and the support team cannot remotely connect
+                    to the customer's workstation under any circumstances.
+                  </p>
+                  <p>
+                    <b>7.1.1 Support for customer's clients</b> – Hostino does not
+                    provide direct technical support to the customer's clients. Resellers,
+                    affiliates, server clients, and customers who have multiple individual
+                    hosting accounts under a single client account should not advise
+                    their clients to contact Hostino directly and should instead
+                    contact Hostino on behalf of their client. Hostino is happy to
+                    assist with any support questions that fall within the scope
+                    of our support limits when requested by the direct customer.
+                  </p>
+                  <p>
+                    <b>7.2 Advanced support</b> – When Hostino can and agrees to
+                    provide advanced support to the customer, additional service
+                    fees may be required for this intervention. Advanced support
+                    fees are payable in advance based on the time estimated by Hostino
+                    for the additional task to be performed. Hostino does not guarantee
+                    that a problem or task will be resolved within the estimated
+                    time, and if additional time is needed, the extra advanced support
+                    time will need to be paid before any additional work is performed.
+                  </p>
+                  <p>
+                    <b>7.3 Responsibility for content and account activity</b> –
+                    The customer is solely responsible for the content stored and
+                    served by the purchased hosting service and the activity of any
+                    script or email service created as part of the hosting service.
+                    The customer must maintain the security of all account and application
+                    or script passwords and ensure that all scripts within the hosting
+                    service are free of malicious content that could harm any part
+                    of Hostino's infrastructure, other customer accounts hosted by
+                    Hostino, or the external systems of visitors viewing the hosted
+                    content.
+                  </p>
+                  <p>
+                    <b>7.3.1 Acceptable Use</b> – The customer must ensure at all
+                    times that they comply with Hostino's Acceptable Use Policy and
+                    must not host content or allow any account activity that violates
+                    the AUP. Violations of the AUP are governed by the following
+                    conditions:
+                  </p>
+                  <p>
+                    <b>7.3.1.1 First Violation</b> – When Hostino determines that
+                    a hosting service has violated any element of the AUP, the customer
+                    will receive an email warning informing them of the violation.
+                    The hosting service may, at Hostino's discretion, be subject
+                    to a temporary suspension pending the customer's written agreement
+                    to refrain from any further violations.
+                  </p>
+                  <p>
+                    <b>7.3.1.2 Second Violation</b> – When Hostino determines that
+                    a hosting service has committed a second violation of any element
+                    of the AUP, the hosting service will be subject to immediate
+                    suspension or termination without any further notice.
+                  </p>
+                  <p>
+                    <b>7.3.1.3 Service Suspension or Cancellation</b> – Hostino reserves
+                    the right to suspend the customer's access to the hosting service
+                    if, in Hostino's judgment, the customer's service is the source
+                    or target of a violation of any of the conditions of the AUP
+                    or these terms of service. If inappropriate activity is detected,
+                    all accounts of the customer in question will be disabled until
+                    the end of the investigation. Prior notification to the customer
+                    is not guaranteed, and in extreme cases, law enforcement will
+                    be contacted regarding the activity. The customer will not be
+                    credited for the duration of the hosting service suspension.
+                  </p>
+                  <p>
+                    <b>7.3.2 Web applications</b> – The customer must ensure that
+                    all web applications used on the hosting service are secure,
+                    patched, and updated. Open-source applications are vulnerable
+                    to attacks via exploits in the software, and the software developers
+                    generally provide updates when vulnerabilities have been detected.
+                    It is the customer's responsibility to install all updates/patches
+                    to maintain application security. If the customer lacks the necessary
+                    skills to perform the updates, they will need to engage the services
+                    of a web developer capable of assisting them.
+                  </p>
+                  <p>
+                    <b>7.3.3 Maintaining compatibility</b> – The nature of shared
+                    hosting environments and server applications such as Apache,
+                    PHP, and MySQL is that they are constantly updated to maintain
+                    stability, performance, and security. Keeping web applications
+                    patched and updated ensures both the security of the website
+                    and data and is also essential for maintaining compatibility
+                    with changes to server applications. Hostino regularly updates
+                    all server applications, and it is the customer's responsibility
+                    to maintain the installed web applications to ensure compatibility
+                    with the latest stable and supported versions of all server applications.
+                  </p>
+                  <p>
+                    <b>7.4 Resource usage</b> – All hosting services purchased have
+                    a variety of resource limitations applied in accordance with
+                    the applicable plan associated with the service. It is the customer's
+                    responsibility to ensure that their hosting service does not
+                    exceed the allocated resources and to upgrade their service if
+                    it is determined that more resources are needed to ensure the
+                    proper functioning of a hosting service.
+                  </p>
+                  <p>
+                    <b
+                      >7.4.1 Resource abuse (excluding dedicated server
+                      customers)</b
+                    > – Hostino implements resource restrictions per account on all
+                    shared hosting, reseller, and VPS services that vary from plan
+                    to plan. In addition to these restrictions, customers must not:
+                  </p>
+                  <ul class="list-disc mb-[20px]">
+                    <li>
+                      Using 50% or more of allocated CPU resources for more than
+                      60 seconds.
+                    </li>
+                    <li>
+                      Running unattended, server-side processes at any time on
+                      the server. This includes any daemons, such as IRCD.
+                    </li>
+                    <li>
+                      Operating an account on any shared or reseller server for
+                      the purpose of storing files whose content is not related
+                      to the operation and delivery of their web applications or
+                      that could violate Hostino’s AUP.
+                    </li>
+                    <li>
+                      Running any type of indexing software on any shared or
+                      reseller server.
+                    </li>
+                    <li>
+                      Running any software that interfaces with an IRC (Internet
+                      Relay Chat) network.
+                    </li>
+                    <li>
+                      Running any type of binary torrent application or tracker
+                      or participating in any illegal file-sharing activity.
+                    </li>
+                    <li>
+                      Running cron jobs on a shared or reseller server with
+                      intervals of less than 5 minutes.
+                    </li>
+                    <li>
+                      Running excessively large MySQL databases on shared
+                      servers or reseller accounts. Databases with an excessive
+                      number of MySQL tables (over 1000) or larger than 1GB in
+                      size can negatively affect server performance and are
+                      strictly prohibited.
+                    </li>
+                    <li>
+                      Running any MySQL query longer than 15 seconds on shared
+                      or reseller servers. MySQL tables must&nbsp;be properly
+                      indexed and regularly updated to ensure that individual
+                      tables do not contain an excessive number of rows.
+                    </li>
+                    <li>
+                      Storing multiple backups of a hosting account on a shared
+                      hosting server. Backup archives created by a server’s
+                      backup tools are designed to be downloaded off the server
+                      to maintain off-site backups. Making backups that contain
+                      other backup archives can result in a heavy load on
+                      storage arrays and is strictly prohibited. Any hosting
+                      service that has multiple backups on the server may be
+                      suspended by Hostino until the backups are removed.
+                    </li>
+                    <li>
+                      Storing files larger than 100MB that are not used for the
+                      website’s needs. Hosting space must not be used as a
+                      storage or archiving system for files. All content must be
+                      used on the website.
+                    </li>
+                    <li>
+                      Generating backups on shared or reseller hosting for
+                      accounts consuming more than 15GB of disk space. You must
+                      first contact technical support, and then a backup will be
+                      generated for you.
+                    </li>
+                    <li>
+                      Retaining emails in the trash for more than 30 days.
+                      Emails that have been kept in the trash for more than 30
+                      days will be automatically deleted.
+                    </li>
+                    <li>
+                      Using excessive VPS resources due to poor configuration.
+                      When a client has a self-managed or managed VPS, we may
+                      make minor configuration changes without notice if that
+                      server’s configuration negatively affects other VPS
+                      servers on the same host.
+                    </li>
+                    <li>
+                      Storing files in the cPanel trash. When files are deleted
+                      via the cPanel file manager, they are temporarily stored
+                      in the Trash folder. This folder containing deleted files
+                      will be automatically cleared every 30 days.
+                    </li>
+                  </ul>
+                  <p>
+                    <b>7.4.2 Inodes</b> – Each file and directory hosted on Hostino
+                    servers uses 1 inode, and accounts considered to be using an
+                    excessive number of inodes on shared or reseller servers will
+                    need to upgrade their hosting service or remove files. For shared
+                    and reseller hosting services, an inode count of 250,000 or more
+                    is considered excessive and a cause of performance issues in
+                    the environment. We recommend maintaining an inode count below
+                    100,000 per account for optimal performance. For VPS hosting,
+                    an inode count of 4,000,000 or more is considered excessive.
+                  </p>
+                  <p>
+                    <b>7.4.3 Bandwidth and Data Transfer Monitoring</b> – Bandwidth
+                    and data transfer are monitored in various ways across our range
+                    of services. Details are provided below:
+                  </p>
+                  <p>
+                    Shared hosting and reseller plans that include "unlimited"
+                    bandwidth are monitored only for high usage. This is done to
+                    ensure that services using large amounts of bandwidth do so
+                    in accordance with our terms of service.
+                  </p>
+                  <p>
+                    All bandwidth is monitored on a calendar month cycle and may
+                    not match the exact billing cycle of the service.
+                  </p>
+                  <p>
+                    Alerts to customers are sent to the contact email address
+                    registered in the file before any fixed bandwidth quota is
+                    reached. It is the customer's responsibility to contact
+                    Hostino to apply an appropriate upgrade or addon for the
+                    concerned service to cover any additional usage beyond the
+                    fixed plan quota.
+                  </p>
+                  <p>
+                    For reseller hosting plans with fixed bandwidth quotas,
+                    exceeding the assigned quota will result in the suspension
+                    of the reseller service and all sub-accounts until the plan
+                    is upgraded with additional bandwidth. To purchase
+                    additional bandwidth, the service must be upgraded to the
+                    next plan that provides sufficient bandwidth to meet the
+                    reseller's needs.
+                  </p>
+                  <p>
+                    For VPS plans with fixed bandwidth quotas, exceeding the
+                    allocated quota will result in the suspension of the service
+                    until the plan is upgraded with additional bandwidth. To
+                    purchase additional bandwidth, the service must be upgraded
+                    to the next plan that provides sufficient bandwidth to meet
+                    the reseller's needs.
+                  </p>
+                  <p>
+                    <b>7.4.4 Bandwidth Abuse</b> – Hostino reserves the right to
+                    shape, suspend or terminate the service of any customer causing
+                    stability or performance issues for other customers on the Hostino
+                    network. Hostino reserves the right, in a situation where a customer's
+                    traffic results in non-viable costs for its business, either
+                    to charge the customer at a viable rate (plan/rate change) or
+                    to suspend/terminate the service.
+                  </p>
+                  <p>
+                    <b>7.5 Media Streaming</b> – Hostino does not allow media streaming
+                    on any of its hosting plans. Customers who wish to provide media
+                    streaming services must use our dedicated server plans. Services
+                    that do not comply with this clause are immediately suspended
+                    without prior notification.
+                  </p>
+                  <p>
+                    <b>7.6 Obsolete offers</b> – Hostino reserves the right to upgrade
+                    a customer's account if the contracted offer has become obsolete
+                    and is no longer listed on the Hostino website. The customer
+                    is notified by email, and the change applies from the due date
+                    following the account upgrade.
+                  </p>
+                </div>
+
+                <div>
+                  <h3>8. Third-party tools, applications, and licenses</h3>
+                  <p>
+                    <b>8.1 Third Party Applications and Licenses</b> – Hostino may
+                    provide access to additional third-party software and/or services
+                    ("Third-Party Products") through resellers or other commercial
+                    agreements that Hostino has established with certain providers
+                    ("Third-Party Providers"). Unless otherwise indicated, the customer
+                    understands that technical support for third-party products is
+                    provided by Hostino and not by the third-party provider. Neither
+                    Hostino nor any third-party provider makes any representation
+                    or warranty, express or implied, regarding third-party products.
+                    The customer expressly acknowledges and agrees that their use
+                    of third-party products is at their own risk and that these third-party
+                    products are provided "as is" and without representation or warranty
+                    of any kind from Hostino or a third-party provider, including,
+                    without limitation, any implied warranty of merchantability,
+                    fitness for a particular purpose, accuracy, or completeness of
+                    responses or results, correspondence to description, or non-infringement
+                    of third-party rights. To the maximum extent permitted by applicable
+                    law, neither Hostino nor any third-party provider shall be legally
+                    liable for any damages, whether direct, indirect, or consequential,
+                    arising from the use or inability to use a third-party product.
+                    The customer agrees to comply with the terms of any applicable
+                    license and/or end-user subscription agreement for third-party
+                    products, and the customer will be fully responsible to third-party
+                    providers and/or Hostino regarding any inappropriate use of these
+                    third-party products or violation of license agreements with
+                    them and/or applicable end-user subscription agreements.
+                  </p>
+                  <p>
+                    <b>8.2 Microsoft Licenses</b> – When licenses for Microsoft software
+                    have been purchased by Hostino, the customer agrees to comply
+                    with Microsoft's license terms, and if usage licenses are purchased,
+                    it is the customer's responsibility to ensure they accurately
+                    report and obtain the appropriate level of usage licenses for
+                    their uses as stated in Microsoft's license terms.
+                  </p>
+                  <p>
+                    <b>8.3 Google Licenses</b> – When licenses for Google software
+                    have been purchased by Hostino, the customer agrees to comply
+                    with Google's license terms, and if usage licenses are purchased,
+                    it is the customer's responsibility to ensure they accurately
+                    report and obtain the appropriate level of usage licenses for
+                    their uses as stated in Google's license terms.
+                  </p>
+                  <p>
+                    <b>8.4 Features availability</b> – Hostino does not guarantee
+                    that all features available in a third-party product will be
+                    supported or made available to the customer. It is at the sole
+                    discretion of Hostino to determine which features are enabled
+                    and whether Hostino will provide assistance for the use of the
+                    enabled features.
+                  </p>
+                </div>
+
+                <div>
+                  <h3>9. Additional legal information</h3>
+                  <p>
+                    <b>9.1 Disclosure to Law Enforcement</b> – Hostino's AUP specifically
+                    prohibits the use of our service for illegal activities, and
+                    the customer agrees that Hostino may disclose any information
+                    about the customer, including assigned IP numbers, account history,
+                    account usage, etc., to any law enforcement agent who requests
+                    it in writing without further consent or notification to the
+                    customer. Hostino reserves the right to immediately terminate
+                    any hosting service found to be hosting content and conducting
+                    activities of an illegal nature.
+                  </p>
+                  <p>
+                    <b>9.2 System and Network Security</b> – Users are prohibited
+                    from violating or attempting to violate the security of the Hostino
+                    network. Violations of system or network security may result
+                    in civil or criminal liability. Hostino will investigate events
+                    that may involve such violations and may involve, and cooperate
+                    with, law enforcement authorities to prosecute users who are
+                    involved in these violations. These violations include, without
+                    limitation:
+                  </p>
+                  <p>
+                    Access to data not intended for this user or connection to a
+                    server or account that this user is not authorized to
+                    access.
+                  </p>
+                  <p>
+                    Attempting to probe, scan, or test the vulnerability of a
+                    system or network or to breach security or authentication
+                    measures without proper authorization.
+                  </p>
+                  <p>
+                    Attempting to interfere with the service to any user, host,
+                    or network, including, without limitation, by means of
+                    overloading, "flooding," "mail bombing," or "crashing."
+                  </p>
+                  <p>
+                    Falsifying the header of a TCP/IP packet or any part of the
+                    header information of an email or a message sent to a
+                    newsgroup.
+                  </p>
+                  <p>
+                    Undertaking any action to obtain services to which the user
+                    is not entitled.
+                  </p>
+                  <p>
+                    <b>9.3 Limitation of Liability</b> – Hostino does not guarantee
+                    that any hosting or additional services provided will be error-free
+                    or uninterrupted. Hostino will not accept any liability for costs
+                    or losses incurred by the customer that result from:
+                  </p>
+                  <p>the use or inability to use a Hostino service;</p>
+                  <p>
+                    any errors, faults, omissions, interruptions, defects, or
+                    delays in operation or delivery;
+                  </p>
+                  <p>unauthorized access to Hostino's data or services;</p>
+                  <p>
+                    suspension or termination of services due to violations of
+                    the AUP;
+                  </p>
+                  <p>
+                    suspension or termination of services due to legal
+                    obligations.
+                  </p>
+                  <p>
+                    <b>9.4 Indemnification</b> – The customer agrees to indemnify
+                    Hostino from all claims, liabilities, losses, costs, and claims,
+                    including reasonable legal fees claimed against Hostino, which
+                    may arise or result from the use of any hosting service provided.
+                  </p>
+                  <p>
+                    <b>9.5 Modification of these Terms</b> – Hostino reserves the
+                    right to modify, update or change these terms of service without
+                    prior notice. When changes are made that may impact the customer's
+                    use of a Hostino service, the customer will be informed by email
+                    using the primary email contact details within an account and
+                    the continued operation by the customer of any hosting or additional
+                    services constitutes acceptance of these terms of service.
+                  </p>
+                  <p><strong>ICANN Applied Terms and Conditions:</strong></p>
+                  <ul class="list-disc mb-[20px]">
+                    <li>
+                      https://www.icann.org/resources/pages/approved-with-specs-2013-09-17-en
+                    </li>
+                    <li>
+                      https://www.icann.org/resources/pages/educational-2012-02-25-en
+                    </li>
+                    <li>
+                      https://www.icann.org/resources/pages/benefits-2013-09-16-en
+                    </li>
+                    <li>https://lookup.icann.org/</li>
+                  </ul>
+                </div>
+
+                <p class="text-[17px] text-title mb-[10px] poppins-regular">
+                  Some domains are governed by the Registrar Soluciones
+                  Corporativas IP SL.
+                </p>
+                <p class="text-[17px] text-title poppins-regular">
+                  Last update: October 13, 2024.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
   </main>
 </Layout>
-
-

@@ -338,12 +338,12 @@ const PlanCard = ({
       <div className="border-t  border-gray-200 my-[40px]"></div>
 
       <div className="w-full flex sm:justify-start justify-center">
-      <div className="flex rounded-[6px] gap-[1px]  w-full overflow-hidden items-center  mb-6 flex-wrap">
+      <div className={`flex justify-between ${plan.gbOptions.length === 3 ? "w-full" : "w-[66%]"} rounded-[8px]   overflow-hidden items-center  mb-6 flex-wrap`}>
         {plan.gbOptions.map((option) => (
           <button
             key={option.gb}
             onClick={() => setSelectedGb(option.gb)}
-            className={`py-[8px] lg:px-[18px] w-[33%] px-[18px] poppins-semibold  text-[16px] transition ${
+            className={`py-[7px] lg:px-[18px] ${plan.gbOptions.length === 3 ? "w-[33%]" : "w-[49.7%]"} px-[18px] poppins-medium  text-[16px] transition ${
               selectedGb === option.gb
                 ? "bg-primary text-white"
                 : "bg-title text-white hover:bg-primary"
@@ -357,9 +357,9 @@ const PlanCard = ({
 
       {/* Pricing */}
       <div className="mb-6">
-        <p className="text-[18px] text-title poppins-semibold   mb-1">{plan.order.text === "Order now" ? "Starting at" : "À seulement"}</p>
+        <p className="text-[18px] text-title poppins-semibold   ">{plan.order.text === "Order now" ? "Starting at" : "À seulement"}</p>
         <p
-          className="font-[Montserrat] text-[40px] poppins-semibold  leading-[54px] text-title"
+          className="font-[Montserrat] text-[40px] poppins-semibold my-1 leading-[54px] text-title"
         >
           {currentOption?.price}
         </p>
@@ -371,7 +371,7 @@ const PlanCard = ({
           plan.most_popular.is_most_popular
             ? "bg-primary"
             : "bg-title hover:bg-primary transition"
-        } text-white flex text-[18px] poppins-semibold  items-center mt-[18px] gap-3 justify-center  py-[20px] rounded-[10px] text-center mb-4 transition`}
+        } text-white flex text-[18px] poppins-semibold  items-center  gap-3 justify-center  py-[20px] rounded-[10px] text-center mb-4 transition`}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -426,7 +426,7 @@ export default function PlansEmail({
   title = `Choisissez votre plan email<br className="sm:block hidden"/> professionnel {ville}`
 }: Props) {
   return (
-    <section id={"plans"} className={`${className} overflow-hidden  relative`}>
+    <section id={id || "plans"} className={`${className} overflow-hidden  relative`}>
       <div className="container">
         {!heroHeading && (
           <div className="text-center">

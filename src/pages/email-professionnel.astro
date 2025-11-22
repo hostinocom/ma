@@ -216,7 +216,7 @@ const articleSchema = {
             Créez votre Email Professionnel Maroc, associés à votre nom de
             domaine, <b>à partir de 25 DH/mois.</b>
           </p>
-          <a href="#offres">
+          <div>
             <AnimatedButton
               text={"Voir nos offres"}
               hoverText="Voir nos offres"
@@ -226,8 +226,9 @@ const articleSchema = {
               class="text-title border-3 border-primary rounded-sm px-[40px] text-[18px] poppins-semibold  py-[10px]"
               arrowButton={true}
               colorArrow={"#022545"}
+              href="#offres"
             />
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -240,13 +241,13 @@ const articleSchema = {
       title="Maily®, la révolution de la messagerie Pro au Maroc"
       paragraphs={[
         `Hébergez votre messagerie professionnelle sur un service <b>Cloud sécurisé et chiffré</b>, garantissant la confidentialité de vos informations et une communication rapide et fiable.`,
-        `Cette solution garantit que vos données restent sous la juridiction marocaine, tout en assurant une conformité totale avec la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des" rel="noopener"><b>loi 09-08</b></a></span> relative à la protection des données personnelles, la <span style="text-decoration: underline;"><a href="https://www.dgssi.gov.ma/fr/loi-ndeg-0520-relative-la-cybersecurite" rel="noopener"><b>loi 05-20</b></a></span> sur la cybersécurité, ainsi qu'avec les recommandations de la CNDP.`,
-        `Appelez le +212 531-031-186 et confiez l'hébergement de vos données sensibles à un prestataire de confiance basé au Maroc.`,
-      ]}
+        `Oubliez les problèmes d’envoi et de réception liés aux <b>solutions de messagerie low-cost</b> incluses dans les packs d’hébergement web (Roundcube Webmail etc…), souvent confrontées à des problèmes de fiabilité : <b>messages non envoyés</b>, spams, ou erreurs fréquentes de type « <b>max defers and failures</b> ». Maily® est bien plus qu’une simple boîte email pro Maroc : c’est une solution complète qui allie sécurité, productivité et efficacité, pour une expérience collaborative incomparable.`,
+        `Besoin d’aide pour créer vos adresses e-mail professionnelles ? Nos experts sont là <b>pour vous accompagner</b>. Appelez-nous au +212 (0)5 31 03 11 86.`
+        ]}
       imageSrc="/images/05/email-professionnel-maroc.jpg"
       imageAlt="Email professionnel Maroc"
       consultButtonTextExiste={false}
-      class="lg:mt-[150px] mt-[80px] mb-[50px]"
+      className="lg:mt-[150px] mt-[80px] mb-[50px]"
     />
     <TrustedBySection classNameImage="md:w-[65%] w-[100%] mx-auto h-auto" />
 

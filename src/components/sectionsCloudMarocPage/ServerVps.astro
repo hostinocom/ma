@@ -11,7 +11,8 @@ const paragraphsServerVps = [
 const {
   title = titleServerVps ,
   paragraphs = paragraphsServerVps,
-  nameButton
+  nameButton,
+  devis
 } = Astro.props
 ---
 
@@ -43,28 +44,10 @@ const {
 
           <ConsultButton href="/vps-maroc#vps" text="Demander un devis" />
 
-          <ul class="pl-6 space-y-2 text-title">
-            <li class="text-center mx-auto">
-              <div class="flex mx-auto justify-center">
-                <img
-                  src="/images/03/flag-maroc.svg"
-                  alt="Check"
-                  width={20}
-                  height={20}
-                />
-                <p><b>Adresse IP marocaine</b></p>
-              </div>
-            </li>
-            <li class="text-[14px]">Jusqu'à <b>512 vCPU</b></li>
-            <li class="text-[14px]">Jusqu'à <b>1024 Go de RAM</b></li>
-            <li class="text-[14px]">Stockage <b>NVMe SSD évolutif</b></li>
-            <li class="text-[14px]">Datacenter certifié <b>Tier III et ISO 27001</b></li>
-            <li class="text-[14px]">Redondance réseau sur 2 emplacements</li>
-            <li class="text-[14px]">Sauvegardes automatisées</li>
-            <li class="text-[14px]">WAF avancé inclus</li>
-            <li class="text-[14px]">Connectivité partagée ou dédiée</li>
-            <li class="text-[14px]">Uptime garanti de <b>99.9%</b></li>
-            <li class="text-[14px]"><b>Infogérance sur mesure</b></li>
+          <ul class="pl-6 space-y-[2px] list-devis text-title flex flex-col items-center justify-center">
+              {devis.map((item : any) => (
+                <li class="list-disc text-left text-[15px]" set:html={item} />
+              ))}
           </ul>
         </div>
       </div>

@@ -67,11 +67,12 @@ const articleSchema = {
   imageUrl={imageUrl}
   ogAlt={ogAlt}
   articleSchema={articleSchema}
+  lang="en"
 >
   <main>
     <section class="lg:py-[110px] bg-gray-100 py-[80px]">
       <div class="container">
-        <h1 class="big-title">Politique cookies</h1>
+        <h1 class="big-title">Cookie Policy</h1>
       </div>
     </section>
 
@@ -79,33 +80,51 @@ const articleSchema = {
       <div class="container">
         <div class="grid md:grid-cols-12 grid-cols-1 gap-8">
           {/* Sidebar */}
-           <div class="border-1  lg:col-span-3 md:col-span-5 col-span-1 rounded-[10px] py-[30px] px-[30px] border-gray-300" style={{maxHeight : "maxContant"}}>
-            <h3 class="text-[22px] poppins-semibold  text-title mb-[20px]">
+          <div
+            class="border-1 side-bar-legal lg:col-span-3 md:col-span-5 col-span-1 rounded-[10px] py-[30px] px-[30px] border-gray-300"
+            style={{ maxHeight: "maxContant" }}
+          >
+            <h3 class="text-[22px] poppins-semibold text-title mb-[20px]">
               Legal Documents
             </h3>
             <div class="w-full h-[1px] bg-gray-400 mb-[20px]"></div>
 
             <ul class="space-y-3">
               <li style="text-decoration: underline;">
-                <a class="text-title text-[17px] poppins-regular" href="/en/terms">
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/terms"
+                >
                   Terms and Conditions
                 </a>
               </li>
-              <li
-                style="text-decoration: underline; text-decoration-thickness: 2px;"
-              >
-                <a class="text-title text-[17px] poppins-regular" href="/en/legal-notice">Legal Notice</a>
+              <li>
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/legal-notice">Legal Notice</a
+                >
               </li>
               <li style="text-decoration: underline;">
-                <a href="/en/cookies-policy" class="text-title text-[17px] poppins-regular">Cookies Policy</a>
+                <a
+                  href="/en/cookies-policy"
+                  class="text-title text-[17px] active poppins-regular"
+                  >Cookies Policy</a
+                >
               </li>
               <li style="text-decoration: underline;">
-                <a class="text-title text-[17px] poppins-regular" href="/en/privacy">
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  href="/en/privacy"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li style="text-decoration: underline;">
-                <a class="text-title text-[17px] poppins-regular" class="active" href="/en/abus">
+                <a
+                  class="text-title text-[17px] poppins-regular"
+                  class="active"
+                  href="/en/abuse"
+                >
                   Anti-abuse Policy
                 </a>
               </li>
@@ -113,40 +132,33 @@ const articleSchema = {
           </div>
 
           {/* Content */}
-          <div class="lg:col-span-9 md:col-span-7 col-span-1 text-legal-documents">
+          <div
+            class="lg:col-span-9 md:col-span-7 col-span-1 text-legal-documents"
+          >
             <div>
-              <h3>Définition d'un cookie</h3>
+              <h3>Definition of a Cookie</h3>
               <p>
-                Un cookie est un fichier d'information que le serveur des sites
-                web de Hostino envoie à l'appareil (ordinateur, smartphone,
-                tablette, etc.) de l'utilisateur qui accède aux pages, afin de
-                stocker et récupérer des informations concernant sa navigation
-                depuis cet appareil. Il existe de nombreuses ressources
-                expliquant ce que sont les cookies et à quoi ils servent.
-              </p>
-              <p>
-                De notre côté, nous allons vous expliquer comment les cookies
-                affectent les sites web de Hostino. Toutefois, si vous souhaitez
-                en savoir plus, vous pouvez consulter la documentation publiée
-                par la Commission Nationale de Contrôle de la Protection des
-                Données à Caractère Personnel (CNDP) sur leur
-                <a
+                A cookie is an information file that the server of Hostino's
+                websites sends to the user's device (computer, smartphone,
+                tablet, etc.) when they access the pages, in order to store and
+                retrieve information about their browsing activity on that
+                device. There are many resources available that explain what
+                cookies are and what they are used for.<br />Here, we will
+                explain how cookies affect Hostino's websites.<br />However, if
+                you would like to learn more, you can consult the documentation
+                published by the National Commission for the Control of Personal
+                Data Protection (CNDP) on their <a
                   href="https://www.cndp.ma/wp-content/uploads/2023/01/CNDP-guide-conformite-sites-web-fr.pdf"
-                  rel="noopener"
-                  style="text-decoration: underline !important"
-                >
-                  site officiel
-                </a>
-                .
+                  rel="noopener">official website</a
+                >.
               </p>
 
-              <h3>Portée de cette politique</h3>
+              <h3>Scope of this Policy</h3>
               <p>
-                Cette politique de cookies s'applique à hostino.ma, ainsi qu'aux
-                autres domaines et sous-domaines de Hostino, qui sont les
-                suivants :
+                This cookie policy applies to hostino.ma, as well as the other
+                Hostino domains and subdomains listed below:
               </p>
-              <ul>
+              <ul class="list-disc">
                 <li>www.hostino.ma</li>
                 <li>www.hostino.ma/en</li>
                 <li>www.hostino.com</li>
@@ -154,330 +166,369 @@ const articleSchema = {
                 <li>webmail.hostino.com</li>
               </ul>
 
-              <h3>Types de cookies</h3>
+              <h3>Types of Cookies</h3>
               <p>
-                Il existe différents types de cookies qui peuvent être classés
-                selon les critères suivants : (i) selon l'entité qui les gère,
-                (ii) selon leur finalité, et (iii) selon la durée pendant
-                laquelle elles restent actives.
+                There are different types of cookies, which can be classified
+                according to the following criteria: (i) the entity that manages
+                them, (ii) their purpose, and (iii) the duration for which they
+                remain active.<br />According to the managing entity, cookies
+                can be internal (first-party cookies), stored on the user's
+                device by Hostino, or third-party cookies, stored by a domain or
+                website other than Hostino, such as Google, YouTube, etc., which
+                process personal data according to their own cookie and privacy
+                policies.
               </p>
               <p>
-                Selon l'entité qui les gère, les cookies peuvent être internes
-                (cookies propres), c'est-à-dire enregistrées sur le terminal de
-                l'utilisateur depuis Hostino, ou de tiers, enregistrées depuis un
-                domaine ou site web différent de Hostino, comme par exemple
-                Google, YouTube, etc., qui traitent les données personnelles
-                selon leur propre politique de cookies et politique de
-                confidentialité.
+                Based on their purpose, cookies may be: (i) strictly necessary
+                or technical cookies, essential for user navigation (e.g.,
+                enabling functions and services, traffic control, etc.); (ii)
+                analytical cookies, which allow tracking and analysis of user
+                behavior to measure website activity; and (iii) preference or
+                personalization cookies, which store information to provide the
+                user with a customized experience.
               </p>
               <p>
-                En fonction de leur finalité, elles peuvent être : (i) des cookies
-                strictement nécessaires ou techniques, indispensables à la
-                navigation de l'utilisateur (par exemple, activer les fonctions
-                et services, contrôler le trafic, etc.) ; (ii) des cookies
-                analytiques, qui permettent le suivi et l'analyse du comportement
-                des utilisateurs pour mesurer l'activité du site web ; et (iii) des
-                cookies de préférences ou de personnalisation, permettant de
-                mémoriser des informations pour offrir à l'utilisateur une
-                expérience personnalisée.
-              </p>
-              <p>
-                Enfin, selon la durée de conservation, elles peuvent être : de
-                session, collectant et stockant des données uniquement pendant la
-                session utilisateur ; ou persistantes, où les données restent
-                stockées sur le terminal et peuvent être consultées et traitées
-                pendant une période définie par le responsable du cookie, allant de
-                quelques minutes à plusieurs années.
+                Finally, based on duration, cookies may be: session cookies,
+                which collect and store data only during the user's session; or
+                persistent cookies, where data remains stored on the device and
+                can be accessed and processed for a defined period set by the
+                cookie controller, ranging from a few minutes to several years.
               </p>
 
-              <h3>Utilisation des cookies</h3>
+              <h3>Use of Cookies</h3>
               <p>
-                Hostino SARL AU, dont le siège est situé T100 Technopark Tanger
-                (MAROC) et avec <b>ICE 002984236000036</b> (ci-après, Hostino),
-                utilise différents types de cookies détaillés ci-dessous à des fins
-                fonctionnelles et statistiques, pour détecter les activités
-                frauduleuses, et pour mesurer l'efficacité des campagnes
-                publicitaires et des services.
+                Hostino SARL AU, headquartered at T100 Technopark Tangier
+                (MOROCCO), with <b>ICE 002984236000036</b> (hereinafter referred
+                to as Hostino), uses the types of cookies detailed below for functional
+                and statistical purposes, to detect fraudulent activities, and to
+                measure the effectiveness of advertising campaigns and services.
               </p>
               <p>
-                <b>Cookies techniques ou nécessaires</b>
-                <br />
-                Ces cookies sont essentiels au bon fonctionnement du site web et
-                ne peuvent pas être désactivés dans nos systèmes.
+                <b>Technical or Necessary Cookies</b><br />These cookies are
+                essential for the proper functioning of the website and cannot
+                be disabled in our systems.
               </p>
               <p>
-                <b>Cookies analytiques</b>
-                <br />
-                Ces cookies permettent le suivi et l'analyse du comportement des
-                utilisateurs des sites web associés, y compris la mesure de
-                l'impact des publicités.
+                <b>Analytical Cookies</b><br />These cookies allow the tracking
+                and analysis of the behavior of users of associated websites,
+                including measuring the impact of advertisements.
               </p>
               <p>
-                <b>Cookies publicitaires</b>
-                <br />
-                Ces cookies sont liés à la publicité affichée à l'utilisateur et
-                collectent des informations sur son comportement de navigation
-                afin d'afficher des annonces pertinentes.
+                <b>Advertising Cookies</b><br />These cookies are related to the
+                advertisements displayed to users and collect information about
+                their browsing behavior in order to show relevant ads.
               </p>
-              <p>La classification correspondante est présentée ci-dessous :</p>
+              <p>The corresponding classification is presented below:</p>
 
-              <table>
+              <table class="w-full">
                 <thead>
                   <tr>
                     <th>Cookie</th>
-                    <th>Détails</th>
+                    <th>Details</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>_gcl_aw</td>
-                    <td>
-                      Domaine : Google Ads
-                      <br />
-                      Description : Activer la diffusion ou le reciblage des
-                      publicités
-                      <br />
-                      Propriétaire : Google
-                      <br />
-                      Durée : 90 jours
-                    </td>
+                    <td
+                      >Domain: Google Ads<br />Description: Enables ad serving
+                      or retargeting<br />Owner: Google<br />Duration: 90 days</td
+                    >
                   </tr>
                   <tr>
                     <td>ads/ga-audiences</td>
-                    <td>
-                      Domaine : Google Ads
-                      <br />
-                      Description :<br />
-                      Propriétaire : Google
-                      <br />
-                      Durée :
-                    </td>
+                    <td
+                      >Domain: Google Ads<br />Description: <br />Owner: Google<br
+                      />Duration:</td
+                    >
                   </tr>
                   <tr>
                     <td>usprivacy</td>
-                    <td>
-                      Domaine : IAB TCF
-                      <br />
-                      Description : Stocker les préférences de confidentialité
-                      <br />
-                      Propriétaire : IAB
-                      <br />
-                      Durée : divers
-                    </td>
+                    <td
+                      >Domain: IAB TCF<br />Description: Stores privacy
+                      preferences<br />Owner: IAB<br />Duration: varies</td
+                    >
                   </tr>
                   <tr>
                     <td>crisp-clientsocket*</td>
-                    <td>
-                      Domaine : Crisp Live Chat
-                      <br />
-                      Description : Stocker l'état du chat
-                      <br />
-                      Propriétaire : Crisp
-                      <br />
-                      Durée : 6 mois
-                    </td>
+                    <td
+                      >Domain: Crisp Live Chat<br />Description: Stores chat
+                      state<br />Owner: Crisp<br />Duration: 6 months</td
+                    >
                   </tr>
                   <tr>
                     <td>_grecaptcha</td>
-                    <td>
-                      Domaine : Google reCAPTCHA
-                      <br />
-                      Description : Offrir une protection contre le spam
-                      <br />
-                      Propriétaire : Google
-                      <br />
-                      Durée : 6 mois
-                    </td>
+                    <td
+                      >Domain: Google reCAPTCHA<br />Description: Provides spam
+                      protection<br />Owner: Google<br />Duration: 6 months</td
+                    >
                   </tr>
                   <tr>
                     <td>rc::c</td>
-                    <td>
-                      Domaine : Google reCAPTCHA
-                      <br />
-                      Description :<br />
-                      Propriétaire : Google
-                      <br />
-                      Durée :
-                    </td>
+                    <td
+                      >Domain: Google reCAPTCHA<br />Description: <br />Owner:
+                      Google<br />Duration:</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>rc::b</td>
+                    <td
+                      >Domain: Google reCAPTCHA<br />Description: <br />Owner:
+                      Google<br />Duration:</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>rc::a</td>
+                    <td
+                      >Domain: Google reCAPTCHA<br />Description: <br />Owner:
+                      Google<br />Duration:</td
+                    >
                   </tr>
                   <tr>
                     <td>mirage_cache_manifest</td>
-                    <td>
-                      Domaine : Cloudflare
-                      <br />
-                      Description :<br />
-                      Propriétaire : Cloudflare
-                      <br />
-                      Durée : persistante
-                    </td>
+                    <td
+                      >Domain: Cloudflare<br />Description: <br />Owner:
+                      Cloudflare<br />Duration: persistent</td
+                    >
                   </tr>
                   <tr>
                     <td>cmplz_functional</td>
-                    <td>
-                      Domaine : Complianz
-                      <br />
-                      Description : Stocker les préférences de consentement aux
-                      cookies
-                      <br />
-                      Propriétaire : Complianz
-                      <br />
-                      Durée : 365 jours
-                    </td>
+                    <td
+                      >Domain: Complianz<br />Description: Stores cookie consent
+                      preferences<br />Owner: Complianz<br />Duration: 365 days</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>cmplz_statistics</td>
+                    <td
+                      >Domain: Complianz<br />Description: Stores cookie consent
+                      preferences<br />Owner: Complianz<br />Duration: 365 days</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>cmplz_preferences</td>
+                    <td
+                      >Domain: Complianz<br />Description: Stores cookie consent
+                      preferences<br />Owner: Complianz<br />Duration: 365 days</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>cmplz_marketing</td>
+                    <td
+                      >Domain: Complianz<br />Description: Stores cookie consent
+                      preferences<br />Owner: Complianz<br />Duration: 365 days</td
+                    >
                   </tr>
                   <tr>
                     <td>Google Maps API</td>
-                    <td>
-                      Domaine : Google Maps
-                      <br />
-                      Description : Demander l'adresse IP de l'utilisateur
-                      <br />
-                      Propriétaire : Google
-                      <br />
-                      Durée : aucune
-                    </td>
+                    <td
+                      >Domain: Google Maps<br />Description: Requests user IP
+                      address<br />Owner: Google<br />Duration: none</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>GPS</td>
+                    <td
+                      >Domain: YouTube<br />Description: Stores location data<br
+                      />Owner: Google<br />Duration: session</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>VISITOR_INFO1_LIVE</td>
+                    <td
+                      >Domain: YouTube<br />Description: Enables ad serving or
+                      retargeting<br />Owner: Google<br />Duration: 6 months</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>YSC</td>
+                    <td
+                      >Domain: YouTube<br />Description: Stores and tracks user
+                      interactions<br />Owner: Google<br />Duration: session</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>PREF</td>
+                    <td
+                      >Domain: YouTube<br />Description: Stores user preferences<br
+                      />Owner: Google<br />Duration: 8 months</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>_gcl_au</td>
+                    <td
+                      >Domain: Google Adsense<br />Description: Stores and
+                      tracks conversions<br />Owner: Google<br />Duration:
+                      persistent</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>google_adsense_settings</td>
+                    <td
+                      >Domain: Google Adsense<br />Description: Enables ad
+                      serving or retargeting<br />Owner: Google<br />Duration:
+                      persistent</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>_gcl_ls</td>
+                    <td
+                      >Domain: Google Adsense<br />Description: Stores and
+                      tracks interactions<br />Owner: Google<br />Duration:</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>Google Fonts API</td>
+                    <td
+                      >Domain: Google Fonts<br />Description: Requests user IP
+                      address<br />Owner: Google<br />Duration: none</td
+                    >
                   </tr>
                   <tr>
                     <td>elementor</td>
-                    <td>
-                      Domaine : Elementor
-                      <br />
-                      Description : Stocker les actions effectuées par les
-                      utilisateurs sur le site web
-                      <br />
-                      Propriétaire : Elementor
-                      <br />
-                      Durée : persistante
-                    </td>
+                    <td
+                      >Domain: Elementor<br />Description: Stores user actions
+                      on the website<br />Owner: Elementor<br />Duration:
+                      persistent</td
+                    >
                   </tr>
                   <tr>
                     <td>wpEmojiSettingsSupports</td>
-                    <td>
-                      Domaine : WordPress
-                      <br />
-                      Description : Stocker les informations du navigateur
-                      <br />
-                      Propriétaire : WordPress
-                      <br />
-                      Durée : session
-                    </td>
+                    <td
+                      >Domain: WordPress<br />Description: Stores browser
+                      information<br />Owner: WordPress<br />Duration: session</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>wordpress_test_cookie</td>
+                    <td
+                      >Domain: WordPress<br />Description: Checks if cookies can
+                      be set<br />Owner: WordPress<br />Duration: session</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>wp_lang</td>
+                    <td
+                      >Domain: WordPress<br />Description: Stores language
+                      settings<br />Owner: WordPress<br />Duration: session</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>wp-settings-*</td>
+                    <td
+                      >Domain: WordPress<br />Description: Stores user
+                      preferences<br />Owner: WordPress<br />Duration:
+                      persistent</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>wp-settings-time-*</td>
+                    <td
+                      >Domain: WordPress<br />Description: Stores user
+                      preferences<br />Owner: WordPress<br />Duration: 1 year</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>wordpress_logged_in_*</td>
+                    <td
+                      >Domain: WordPress<br />Description: Keeps users logged in<br
+                      />Owner: WordPress<br />Duration: persistent</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>wp_consent_*</td>
+                    <td
+                      >Domain: WordPress<br />Description: Stores cookie consent
+                      preferences<br />Owner: WordPress<br />Duration: 1 month</td
+                    >
                   </tr>
                 </tbody>
               </table>
 
-              <h3>Gestion des cookies via le navigateur</h3>
+              <h3>Cookie Management via the Browser</h3>
               <p>
-                L'utilisateur peut – à tout moment – choisir les cookies qu'il
-                souhaite autoriser sur ce site web, également via les paramètres
-                de son navigateur, par exemple :
+                The user can – at any time – choose which cookies they wish to
+                allow on this website, including through their browser settings,
+                for example:
               </p>
-              <ul>
+              <ul class="list-disc mb-[30px]">
                 <li>
-                  Chrome, en suivant
-                  <a
-                    href="http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647"
+                  Chrome, by following <a
+                    href="http://support.google.com/chrome/bin/answer.py?hl=es&answer=95647"
                     target="_blank"
-                    rel="noopener"
-                    style="text-decoration: underline"
-                  >
-                    ces instructions
-                  </a>
-                  .
+                    class="underline"
+                    rel="noopener">these instructions
+                    </a >.
                 </li>
                 <li>
-                  Explorer, en suivant
-                  <a
+                  Explorer, by following <a
                     href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d"
                     target="_blank"
-                    rel="noopener"
-                    style="text-decoration: underline"
-                  >
-                    ces instructions
-                  </a>
-                  .
+                    class="underline"
+                    rel="noopener">these instructions</a
+                  >.
                 </li>
                 <li>
-                  Firefox, en suivant
-                  <a
+                  Firefox, by following <a
                     href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias"
                     target="_blank"
-                    rel="noopener"
-                    style="text-decoration: underline"
-                  >
-                    ces instructions
-                  </a>
-                  .
+                    class="underline"
+                    rel="noopener">these instructions</a
+                  >.
                 </li>
                 <li>
-                  Safari, en suivant
-                  <a
-                    href="https://support.apple.com/kb/PH19214?viewlocale=es_ES&amp;locale=en_US"
+                  Safari, by following <a
+                    href="https://support.apple.com/kb/PH19214?viewlocale=es_ES&locale=en_US"
                     target="_blank"
-                    rel="noopener"
-                    style="text-decoration: underline"
-                  >
-                    ces instructions
-                  </a>
-                  .
+                    class="underline"
+                    rel="noopener">these instructions</a
+                  >.
                 </li>
                 <li>
-                  Opera, en suivant
-                  <a
+                  Opera, by following <a
                     href="https://help.opera.com/en/latest/web-preferences/#cookies"
                     target="_blank"
-                    rel="noopener"
-                    style="text-decoration: underline"
-                  >
-                    ces instructions
-                  </a>
-                  .
+                    class="underline"
+                    rel="noopener">these instructions</a
+                  >.
                 </li>
               </ul>
               <p>
-                Les navigateurs web sont les outils responsables du stockage des
-                cookies. C'est depuis ces navigateurs que l'utilisateur peut
-                exercer son droit de suppression ou de désactivation des cookies.
+                Web browsers are the tools responsible for storing cookies. It
+                is through these browsers that the USER can exercise their right
+                to delete or disable cookies.<br />Neither this website nor its
+                legal representatives can guarantee the proper or improper
+                handling of cookies by the browsers mentioned above.
               </p>
               <p>
-                Ni ce site web ni ses représentants légaux ne peuvent garantir la
-                bonne ou mauvaise gestion des cookies par les navigateurs
-                mentionnés.
-              </p>
-              <p>
-                Dans certains cas, il est nécessaire d'installer des cookies pour
-                que le navigateur n'oublie pas la décision de l'utilisateur de ne
-                pas les accepter.
+                In some cases, it is necessary to install cookies so that the
+                browser remembers the USER's decision not to accept them.
               </p>
 
-              <h3>Acceptation de la politique de cookies</h3>
+              <h3>Acceptance of the Cookie Policy</h3>
               <p>
-                L'acceptation de la présente politique de cookies implique que
-                l'utilisateur a été informé de manière claire et complète sur
-                l'utilisation des dispositifs de stockage et de récupération de
-                données (cookies), et que Hostino dispose de son consentement pour
-                leur utilisation, conformément aux dispositions applicables en
-                matière de protection des données au Maroc.
-              </p>
-              <p>
-                Dans ce dernier cas, l'utilisateur peut retirer son consentement à
-                tout moment en ajustant ses préférences relatives aux cookies via
-                le panneau de gestion des cookies.
+                Acceptance of this cookie policy implies that the USER has been
+                clearly and fully informed about the use of data storage and
+                retrieval tools (cookies), and that Hostino has the USER's
+                consent to use them, in accordance with applicable data
+                protection laws in Morocco, particularly Law 09-08 on the
+                protection of individuals with regard to the processing of
+                personal data, when such consent serves as the legal basis for
+                processing.<br />In such cases, the USER may withdraw their
+                consent at any time by adjusting their cookie preferences via
+                the cookie management panel.
               </p>
 
-              <h3>Questions ou demandes</h3>
+              <h3>Questions or Requests</h3>
               <p>
-                Pour toute question ou demande concernant cette politique de
-                cookies, l'utilisateur peut contacter Hostino via l'adresse
-                <a href="mailto:info@hostino.com">info@hostino.com</a>.
+                For any questions or requests regarding this cookie policy, the
+                USER may contact Hostino at info@hostino.com.
               </p>
-              <span class="poppins-regular text-[18px] text-gray-500 my-[30px]">
-                Dernière mise à jour: 11 avril 2025.
-              </span>
+              <span class="poppins-regular text-[18px] text-gray-500 my-[30px]"><br />Last updated: April 11, 2025.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
   </main>
 </Layout>
-
